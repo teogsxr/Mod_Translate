@@ -1,7 +1,7 @@
 # SHA256 for package files outside data/wem_replacements_0006.
 # Individual WEM hashes are recorded in data/manifest.json entries.
 55d7245eb1ff3299b9561a48185222a368cc88ea47f00947e31db15f5e1b03a8  CONTROLLA_PRIMA.cmd
-76717ada527ac959b716779049859a1a92d128a55d79ede5a7747654b2f1976f  data/manifest.json
+2510839a80de8191d67200d263f0aeea2c70aa193a3fa07420e7cfa1f38bc1d9  data/manifest.json
 cbfbf2480def3e845b147deef3dcfbf19b4a12716230417c4eba8ce9fc3b392c  DESCRIZIONE_MOD_PORTALE.md
 8491d5be91000af9b45547f351084c9b93d3d361ce9ca290751b3920197dad1a  install.cmd
 8a7207d310b0f7cccf8c6027fb186a0928f5c844063904fdb6cc8a92772fdb0f  INSTALLA_MOD_VOCI_ITALIANE.cmd

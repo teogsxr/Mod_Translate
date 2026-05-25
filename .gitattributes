@@ -1,0 +1,9 @@
+*.wem binary
+*.paz binary
+*.pamt binary
+*.papgt binary
+*.exe binary
+*.dll binary
+*.pyd binary
+*.zip binary
+*.png binary

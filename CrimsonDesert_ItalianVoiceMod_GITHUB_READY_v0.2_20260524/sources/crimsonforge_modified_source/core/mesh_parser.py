@@ -1,0 +1,2537 @@
+"""PAM / PAMLOD / PAC mesh parser for Crimson Desert.
+
+Parses Pearl Abyss 3D mesh files from PAZ archives into an intermediate
+representation (vertices, UVs, normals, faces, materials, bones, weights)
+that can be exported to OBJ, FBX, or rendered in the 3D preview.
+
+Format overview (all share the 'PAR ' magic):
+  PAM     — static meshes (objects, props, world geometry)
+  PAMLOD  — LOD variants (5 quality levels per mesh)
+  PAC     — skinned character meshes (with bone indices + weights)
+
+Vertex positions are uint16-quantized and dequantized using the per-file
+bounding box.  UVs are stored as float16 at vertex offset +8/+10.  Bone
+weights (PAC only) follow the UV data.
+"""
+
+from __future__ import annotations
+
+import os
+import re
+import struct
+import math
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Optional
+
+from utils.logger import get_logger
+
+logger = get_logger("core.mesh_parser")
+
+# ── Constants ────────────────────────────────────────────────────────
+
+PAR_MAGIC = b"PAR "
+
+# PAM header offsets
+HDR_MESH_COUNT = 0x10
+HDR_BBOX_MIN = 0x14
+HDR_BBOX_MAX = 0x20
+HDR_GEOM_OFF = 0x3C
+# When non-zero, field 0x44 is the LZ4-compressed size of the geometry
+# section and 0x40 is the expected decompressed size.
+HDR_GEOM_DECOMP_SIZE = 0x40
+HDR_GEOM_COMP_SIZE   = 0x44
+
+# Submesh table
+SUBMESH_TABLE = 0x410
+SUBMESH_STRIDE = 0x218
+SUBMESH_TEX_OFF = 0x10
+SUBMESH_MAT_OFF = 0x110
+
+# Global-buffer prefab constants
+GLOBAL_VERT_BASE = 3068
+PAM_IDX_OFF = 0x19840
+
+# PAMLOD header offsets
+PAMLOD_LOD_COUNT = 0x00
+PAMLOD_GEOM_OFF = 0x04
+PAMLOD_BBOX_MIN = 0x10
+PAMLOD_BBOX_MAX = 0x1C
+PAMLOD_ENTRY_TABLE = 0x50
+
+# Stride candidates for auto-detection
+STRIDE_CANDIDATES = [6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 36, 40, 44, 48, 52, 56, 60, 64]
+
+
+# ── Data structures ──────────────────────────────────────────────────
+
+@dataclass
+class MeshVertex:
+    """Single vertex with position, UV, and optional bone data."""
+    x: float = 0.0
+    y: float = 0.0
+    z: float = 0.0
+    u: float = 0.0
+    v: float = 0.0
+    nx: float = 0.0
+    ny: float = 1.0
+    nz: float = 0.0
+    bone_indices: tuple[int, ...] = ()
+    bone_weights: tuple[float, ...] = ()
+
+
+@dataclass
+class SubMesh:
+    """A submesh within a PAM/PAC file."""
+    name: str = ""
+    material: str = ""
+    texture: str = ""
+    vertices: list[tuple[float, float, float]] = field(default_factory=list)
+    uvs: list[tuple[float, float]] = field(default_factory=list)
+    normals: list[tuple[float, float, float]] = field(default_factory=list)
+    faces: list[tuple[int, int, int]] = field(default_factory=list)
+    bone_indices: list[tuple[int, ...]] = field(default_factory=list)
+    bone_weights: list[tuple[float, ...]] = field(default_factory=list)
+    # Per-vertex bone NAME tuples, parallel to ``bone_indices``. Set
+    # by ``import_fbx`` to the FBX cluster's target Model name (which
+    # is the source skeleton's bone name). Empty everywhere else
+    # (parse_pac doesn't have name info; import_obj doesn't either).
+    # The PAC rebuilder uses these as the strict 1+1 source for
+    # mapping skin back into PAC bytes — when both the v2 sidecar's
+    # ``skeleton_bones`` table and ``bone_names`` are present, the
+    # rebuilder writes the user's edited skin straight back into the
+    # PAC's byte slots; when either is missing it refuses (no fallback).
+    bone_names: list[tuple[str, ...]] = field(default_factory=list)
+    vertex_count: int = 0
+    face_count: int = 0
+    source_vertex_offsets: list[int] = field(default_factory=list)
+    source_index_offset: int = -1
+    source_index_count: int = 0
+    source_vertex_stride: int = 0
+    source_descriptor_offset: int = -1
+    source_bbox_min: tuple[float, float, float] = (0.0, 0.0, 0.0)
+    source_bbox_extent: tuple[float, float, float] = (0.0, 0.0, 0.0)
+    source_lod_count: int = 0
+    # Per-imported-vertex back-reference to the vertex slot in the
+    # ORIGINAL submesh that this one was sourced from, or -1 when the
+    # vertex was added after export (user inserted new geometry in
+    # Blender). Populated by the OBJ importer when a ``.cfmeta.json``
+    # sidecar was written during export, or by positional matching
+    # when no sidecar is available. The PAC rebuilder uses this to
+    # pick the correct donor vertex record (which carries bone
+    # indices + weights + normals) instead of falling back to the
+    # nearest-position heuristic, which is fragile when the user
+    # actually moves vertices.
+    source_vertex_map: list[int] = field(default_factory=list)
+
+
+@dataclass
+class ParsedMesh:
+    """Complete parsed mesh file."""
+    path: str = ""
+    format: str = ""  # "pam", "pamlod", "pac"
+    bbox_min: tuple[float, float, float] = (0, 0, 0)
+    bbox_max: tuple[float, float, float] = (0, 0, 0)
+    submeshes: list[SubMesh] = field(default_factory=list)
+    lod_levels: list[list[SubMesh]] = field(default_factory=list)  # PAMLOD only
+    total_vertices: int = 0
+    total_faces: int = 0
+    has_uvs: bool = False
+    has_bones: bool = False
+
+
+@dataclass
+class PreviewMesh:
+    """Flattened buffers used by the Explorer preview."""
+    format: str = ""
+    vertices: list[tuple[float, float, float]] = field(default_factory=list)
+    normals: list[tuple[float, float, float]] = field(default_factory=list)
+    faces: list[tuple[int, int, int]] = field(default_factory=list)
+    submesh_count: int = 0
+    total_vertices: int = 0
+    total_faces: int = 0
+
+
+@dataclass
+class PacDescriptor:
+    """Per-submesh PAC metadata recovered from section 0."""
+    name: str
+    material: str
+    bbox_min: tuple[float, float, float]
+    bbox_extent: tuple[float, float, float]
+    vertex_counts: list[int]
+    index_counts: list[int]
+    palette: tuple[int, ...] = ()
+    descriptor_offset: int = 0
+    stored_lod_count: int = 0
+
+
+# ── Utility ──────────────────────────────────────────────────────────
+
+def _dequant_u16(v: int, mn: float, mx: float) -> float:
+    """uint16 → float: bbox_min + (v / 65535) * (bbox_max - bbox_min)."""
+    return mn + (v / 65535.0) * (mx - mn)
+
+
+def _dequant_i16(v: int, mn: float, mx: float) -> float:
+    """int16 → float (legacy global-buffer format)."""
+    return mn + ((v + 32768) / 65536.0) * (mx - mn)
+
+
+def _compute_face_normal(v0, v1, v2):
+    """Compute face normal from 3 vertex positions."""
+    ax, ay, az = v1[0] - v0[0], v1[1] - v0[1], v1[2] - v0[2]
+    bx, by, bz = v2[0] - v0[0], v2[1] - v0[1], v2[2] - v0[2]
+    nx = ay * bz - az * by
+    ny = az * bx - ax * bz
+    nz = ax * by - ay * bx
+    length = math.sqrt(nx * nx + ny * ny + nz * nz)
+    if length > 1e-8:
+        return (nx / length, ny / length, nz / length)
+    return (0.0, 1.0, 0.0)
+
+
+def _compute_smooth_normals(vertices, faces):
+    """Compute per-vertex smooth normals by averaging adjacent face normals."""
+    normals = [[0.0, 0.0, 0.0] for _ in range(len(vertices))]
+    for a, b, c in faces:
+        if a < len(vertices) and b < len(vertices) and c < len(vertices):
+            fn = _compute_face_normal(vertices[a], vertices[b], vertices[c])
+            for idx in (a, b, c):
+                normals[idx][0] += fn[0]
+                normals[idx][1] += fn[1]
+                normals[idx][2] += fn[2]
+    result = []
+    for n in normals:
+        length = math.sqrt(n[0] ** 2 + n[1] ** 2 + n[2] ** 2)
+        if length > 1e-8:
+            result.append((n[0] / length, n[1] / length, n[2] / length))
+        else:
+            result.append((0.0, 1.0, 0.0))
+    return result
+
+
+# ── Stride detection ─────────────────────────────────────────────────
+
+def _detect_pac_vertex_stride(data: bytes, vert_start: int, split_off: int) -> int:
+    """Detect PAC vertex stride using the constant marker at byte offset +12."""
+    vert_region_size = split_off - vert_start
+    if vert_region_size <= 0:
+        return 40
+
+    best_stride = 40
+    best_hits = -1
+    candidate_order = [40, 36, 32, 44, 48, 52, 56, 60, 64, 28, 24, 20, 16, 12, 8, 6]
+
+    for stride in candidate_order:
+        sample_count = min(64, vert_region_size // stride)
+        if sample_count < 4:
+            continue
+
+        hits = 0
+        for i in range(sample_count):
+            rec_off = vert_start + i * stride
+            if rec_off + 16 > split_off:
+                break
+            if struct.unpack_from("<I", data, rec_off + 12)[0] == 0x3C000000:
+                hits += 1
+
+        if hits > best_hits or (hits == best_hits and abs(stride - 40) < abs(best_stride - 40)):
+            best_stride = stride
+            best_hits = hits
+
+    return best_stride
+
+
+def _find_local_stride(data: bytes, geom_off: int, voff: int, n_verts: int, n_idx: int):
+    """Detect vertex stride for per-mesh layout where indices follow vertex data."""
+    for stride in STRIDE_CANDIDATES:
+        vert_start = geom_off + voff
+        idx_off = vert_start + n_verts * stride
+        if idx_off + n_idx * 2 > len(data):
+            continue
+        # Validate: all index values must be < n_verts
+        valid = True
+        for j in range(min(n_idx, 100)):  # sample first 100 for speed
+            val = struct.unpack_from("<H", data, idx_off + j * 2)[0]
+            if val >= n_verts:
+                valid = False
+                break
+        if valid:
+            # Full validation on remaining
+            if n_idx > 100:
+                valid = all(
+                    struct.unpack_from("<H", data, idx_off + j * 2)[0] < n_verts
+                    for j in range(100, n_idx)
+                )
+            if valid:
+                return stride, idx_off
+    return None, None
+
+
+# ── PAM Parser ───────────────────────────────────────────────────────
+
+_XAR_MAGIC = b"XAR "  # extended PAR variant; same layout, no parseable geometry
+
+def parse_pam(data: bytes, filename: str = "") -> ParsedMesh:
+    """Parse a .pam static mesh file."""
+    if len(data) < 0x40 or (data[:4] != PAR_MAGIC and data[:4] != _XAR_MAGIC):
+        raise ValueError(f"Not a valid PAM file: bad magic {data[:4]!r}")
+    if data[:4] == _XAR_MAGIC:
+        return ParsedMesh(path=filename, format="pam")
+
+    result = ParsedMesh(path=filename, format="pam")
+    result.bbox_min = struct.unpack_from("<fff", data, HDR_BBOX_MIN)
+    result.bbox_max = struct.unpack_from("<fff", data, HDR_BBOX_MAX)
+    geom_off   = struct.unpack_from("<I", data, HDR_GEOM_OFF)[0]
+    geom_decomp = struct.unpack_from("<I", data, HDR_GEOM_DECOMP_SIZE)[0]
+    geom_comp   = struct.unpack_from("<I", data, HDR_GEOM_COMP_SIZE)[0]
+    mesh_count = struct.unpack_from("<I", data, HDR_MESH_COUNT)[0]
+    bmin, bmax = result.bbox_min, result.bbox_max
+
+    if geom_comp:
+        import lz4.block
+        compressed = data[geom_off : geom_off + geom_comp]
+        decompressed = lz4.block.decompress(compressed, uncompressed_size=geom_decomp)
+        data = data[:geom_off] + decompressed
+
+    # Read submesh table
+    raw_entries = []
+    for i in range(mesh_count):
+        off = SUBMESH_TABLE + i * SUBMESH_STRIDE
+        if off + SUBMESH_STRIDE > len(data):
+            break
+        nv = struct.unpack_from("<I", data, off)[0]
+        ni = struct.unpack_from("<I", data, off + 4)[0]
+        ve = struct.unpack_from("<I", data, off + 8)[0]
+        ie = struct.unpack_from("<I", data, off + 12)[0]
+        tex = data[off + SUBMESH_TEX_OFF:off + SUBMESH_TEX_OFF + 256].split(b"\x00")[0].decode("ascii", "replace")
+        mat = data[off + SUBMESH_MAT_OFF:off + SUBMESH_MAT_OFF + 256].split(b"\x00")[0].decode("ascii", "replace")
+        raw_entries.append({"i": i, "nv": nv, "ni": ni, "ve": ve, "ie": ie, "tex": tex, "mat": mat})
+
+    # Detect combined-buffer layout
+    is_combined = False
+    if mesh_count > 1:
+        ve_acc = ie_acc = 0
+        is_combined = True
+        for r in raw_entries:
+            if r["ve"] != ve_acc or r["ie"] != ie_acc:
+                is_combined = False
+                break
+            ve_acc += r["nv"]
+            ie_acc += r["ni"]
+
+    if is_combined:
+        _parse_combined_buffer(data, raw_entries, geom_off, bmin, bmax, result,
+                               geom_decomp=geom_decomp)
+    else:
+        _parse_independent_meshes(data, raw_entries, geom_off, bmin, bmax, result)
+
+    primary_total_vertices = sum(len(sm.vertices) for sm in result.submeshes)
+    has_invalid_offsets = any(
+        off < geom_off or off + 6 > len(data)
+        for sm in result.submeshes
+        for off in sm.source_vertex_offsets
+    )
+
+    # Fallback: scan for vertex+index blocks when the primary table-based parse
+    # found no usable geometry, or when it produced impossible vertex offsets.
+    # Some extended-layout PAMs need the scan path; others should not be parsed
+    # twice, or they end up with duplicated submeshes.
+    if mesh_count > 0 and (primary_total_vertices == 0 or has_invalid_offsets):
+        result.submeshes.clear()
+        _parse_scan_fallback(data, raw_entries, geom_off, bmin, bmax, result)
+
+    # Compute normals for all submeshes
+    for sm in result.submeshes:
+        sm.normals = _compute_smooth_normals(sm.vertices, sm.faces)
+
+    result.total_vertices = sum(len(sm.vertices) for sm in result.submeshes)
+    result.total_faces = sum(len(sm.faces) for sm in result.submeshes)
+    result.has_uvs = any(sm.uvs for sm in result.submeshes)
+
+    logger.info("Parsed PAM %s: %d submeshes, %d verts, %d faces",
+                filename, len(result.submeshes), result.total_vertices, result.total_faces)
+    return result
+
+
+def _parse_independent_meshes(data, entries, geom_off, bmin, bmax, result):
+    """Parse PAM with per-submesh or global vertex buffers."""
+    idx_avail = (len(data) - PAM_IDX_OFF) // 2
+
+    for r in entries:
+        i, nv, ni, voff, ioff = r["i"], r["nv"], r["ni"], r["ve"], r["ie"]
+        tex, mat = r["tex"], r["mat"]
+
+        # Try local layout first
+        stride, idx_off = _find_local_stride(data, geom_off, voff, nv, ni)
+
+        if stride is not None:
+            verts, uvs, faces, offsets = _extract_local_mesh(
+                data, geom_off, voff, stride, idx_off, nv, ni, bmin, bmax
+            )
+        elif ioff + ni <= idx_avail:
+            verts, uvs, faces, offsets = _extract_global_mesh(data, geom_off, ni, ioff, bmin, bmax)
+        else:
+            continue
+
+        sm = SubMesh(
+            name=f"mesh_{i:02d}_{mat or str(i)}",
+            material=mat, texture=tex,
+            vertices=verts, uvs=uvs, faces=faces,
+            source_vertex_offsets=offsets,
+            vertex_count=len(verts), face_count=len(faces),
+        )
+        result.submeshes.append(sm)
+
+
+def _parse_scan_fallback(data, entries, geom_off, bmin, bmax, result):
+    """Fallback parser: scan for vertex+index blocks in extended-layout PAMs.
+
+    Breakable/destructible PAMs often have extra metadata (physics, destruction
+    fragments) between the header and the actual geometry. This scanner probes
+    the region after geom_off to locate the real vertex positions (uint16
+    quantized) and matching index block.
+    """
+    total_v = sum(r["nv"] for r in entries)
+    total_i = sum(r["ni"] for r in entries)
+    if total_v < 3 or total_i < 3:
+        return
+
+    search_limit = min(len(data) - 100, geom_off + min(len(data) // 2, 2000000))
+
+    # Scan for a block of u16 values that look like quantized vertex positions
+    # (spread across the 0-65535 range), followed by valid indices.
+    # Step by 2 in small files, step by 4 in large files for speed.
+    step = 2 if (search_limit - geom_off) < 500000 else 4
+    for scan_start in range(geom_off, search_limit, step):
+        # Quick check: read 10 potential XYZ triples (stride 6)
+        if scan_start + 60 > len(data):
+            break
+        vals = [struct.unpack_from("<H", data, scan_start + j * 2)[0] for j in range(30)]
+        spread = max(vals) - min(vals)
+        if spread < 5000:
+            continue
+
+        # Found candidate vertex data. Try common strides
+        for try_stride in [6, 8, 10, 12, 14, 16, 20, 24, 28, 32]:
+            test_idx_off = scan_start + total_v * try_stride
+            if test_idx_off + total_i * 2 > len(data):
+                continue
+
+            # Validate: first 50 indices must be < total_v
+            valid = True
+            for j in range(min(50, total_i)):
+                v = struct.unpack_from("<H", data, test_idx_off + j * 2)[0]
+                if v >= total_v:
+                    valid = False
+                    break
+            if not valid:
+                continue
+
+            # Full validation on a larger sample
+            valid = all(
+                struct.unpack_from("<H", data, test_idx_off + j * 2)[0] < total_v
+                for j in range(min(total_i, 500))
+            )
+            if not valid:
+                continue
+
+            # Found valid layout! Parse as combined buffer from this offset
+            logger.info("Scan fallback: found vertex data at 0x%X stride=%d for %s",
+                        scan_start, try_stride, entries[0].get("tex", ""))
+
+            has_uv = try_stride >= 12
+            idx_base = test_idx_off
+
+            for r in entries:
+                nv, ni = r["nv"], r["ni"]
+                vert_base = scan_start + r["ve"] * try_stride
+                idx_off = idx_base + r["ie"] * 2
+
+                indices = [struct.unpack_from("<H", data, idx_off + j * 2)[0]
+                           for j in range(ni)]
+                if not indices:
+                    continue
+
+                unique = sorted(set(indices))
+                idx_map = {gi: li for li, gi in enumerate(unique)}
+
+                verts, uvs, offsets = [], [], []
+                for gi in unique:
+                    foff = vert_base + gi * try_stride
+                    if foff + 6 > len(data):
+                        break
+                    xu, yu, zu = struct.unpack_from("<HHH", data, foff)
+                    offsets.append(foff)
+                    verts.append((_dequant_u16(xu, bmin[0], bmax[0]),
+                                  _dequant_u16(yu, bmin[1], bmax[1]),
+                                  _dequant_u16(zu, bmin[2], bmax[2])))
+                    if has_uv and foff + 12 <= len(data):
+                        u = struct.unpack_from("<e", data, foff + 8)[0]
+                        v = struct.unpack_from("<e", data, foff + 10)[0]
+                        uvs.append((u, v))
+
+                faces = []
+                for j in range(0, ni - 2, 3):
+                    a, b, c = indices[j], indices[j + 1], indices[j + 2]
+                    if a in idx_map and b in idx_map and c in idx_map:
+                        faces.append((idx_map[a], idx_map[b], idx_map[c]))
+
+                sm = SubMesh(
+                    name=f"mesh_{r['i']:02d}_{r['mat'] or str(r['i'])}",
+                    material=r["mat"], texture=r["tex"],
+                    vertices=verts, uvs=uvs, faces=faces,
+                    source_vertex_offsets=offsets,
+                    vertex_count=len(verts), face_count=len(faces),
+                )
+                result.submeshes.append(sm)
+
+            result.total_vertices = sum(len(sm.vertices) for sm in result.submeshes)
+            result.total_faces = sum(len(sm.faces) for sm in result.submeshes)
+            result.has_uvs = any(sm.uvs for sm in result.submeshes)
+            return  # Done
+
+    # Second pass: scan BACKWARD from end of file for the index block
+    # This handles files where extra per-vertex data creates non-integer strides
+    for scan_end_off in range(len(data) - 2, geom_off + total_v * 6, -2):
+        test_start = scan_end_off - total_i * 2 + 2
+        if test_start < geom_off:
+            break
+
+        # Quick check first index
+        first_val = struct.unpack_from("<H", data, test_start)[0]
+        if first_val >= total_v:
+            continue
+
+        # Check first 30 indices
+        valid = True
+        for j in range(min(30, total_i)):
+            v = struct.unpack_from("<H", data, test_start + j * 2)[0]
+            if v >= total_v:
+                valid = False
+                break
+        if not valid:
+            continue
+
+        # Deeper validation
+        valid = all(
+            struct.unpack_from("<H", data, test_start + j * 2)[0] < total_v
+            for j in range(min(total_i, 300))
+        )
+        if not valid:
+            continue
+
+        # Full validation
+        valid = all(
+            struct.unpack_from("<H", data, test_start + j * 2)[0] < total_v
+            for j in range(total_i)
+        )
+        if not valid:
+            continue
+
+        # Found index block! Calculate vertex region
+        vert_region = test_start - geom_off
+        # Try common strides that fit
+        best_stride = None
+        for try_stride in [6, 8, 10, 12, 14, 16, 20, 24, 28, 32]:
+            expected_end = geom_off + total_v * try_stride
+            # Allow up to 16KB padding between vertex data and index data
+            if expected_end <= test_start and (test_start - expected_end) < 16384:
+                best_stride = try_stride
+                break
+
+        if best_stride is None:
+            # Use floor division of vert_region / total_v
+            best_stride = vert_region // total_v
+            if best_stride < 6:
+                best_stride = 6
+
+        has_uv = best_stride >= 12
+        idx_base = test_start
+        logger.info("Backward scan: found idx at 0x%X stride=%d for %d verts",
+                    test_start, best_stride, total_v)
+
+        for r in entries:
+            nv, ni = r["nv"], r["ni"]
+            vert_base = geom_off + r["ve"] * best_stride
+            idx_off = idx_base + r["ie"] * 2
+
+            indices = [struct.unpack_from("<H", data, idx_off + j * 2)[0]
+                       for j in range(ni)]
+            if not indices:
+                continue
+
+            unique = sorted(set(indices))
+            idx_map = {gi: li for li, gi in enumerate(unique)}
+
+            verts, uvs, offsets = [], [], []
+            for gi in unique:
+                foff = vert_base + gi * best_stride
+                if foff + 6 > len(data):
+                    break
+                xu, yu, zu = struct.unpack_from("<HHH", data, foff)
+                offsets.append(foff)
+                verts.append((_dequant_u16(xu, bmin[0], bmax[0]),
+                              _dequant_u16(yu, bmin[1], bmax[1]),
+                              _dequant_u16(zu, bmin[2], bmax[2])))
+                if has_uv and foff + 12 <= len(data):
+                    u = struct.unpack_from("<e", data, foff + 8)[0]
+                    v = struct.unpack_from("<e", data, foff + 10)[0]
+                    uvs.append((u, v))
+
+            faces = []
+            for j in range(0, ni - 2, 3):
+                a, b, c = indices[j], indices[j + 1], indices[j + 2]
+                if a in idx_map and b in idx_map and c in idx_map:
+                    faces.append((idx_map[a], idx_map[b], idx_map[c]))
+
+            sm = SubMesh(
+                name=f"mesh_{r['i']:02d}_{r['mat'] or str(r['i'])}",
+                material=r["mat"], texture=r["tex"],
+                vertices=verts, uvs=uvs, faces=faces,
+                source_vertex_offsets=offsets,
+                vertex_count=len(verts), face_count=len(faces),
+            )
+            result.submeshes.append(sm)
+
+        result.total_vertices = sum(len(sm.vertices) for sm in result.submeshes)
+        result.total_faces = sum(len(sm.faces) for sm in result.submeshes)
+        result.has_uvs = any(sm.uvs for sm in result.submeshes)
+        return
+
+    logger.debug("Scan fallback: no valid vertex block found after 0x%X", geom_off)
+
+
+def _parse_combined_buffer(data, entries, geom_off, bmin, bmax, result,
+                           geom_decomp: int = 0):
+    """Parse PAM with shared vertex + index buffer."""
+    total_verts = sum(r["nv"] for r in entries)
+    total_idx = sum(r["ni"] for r in entries)
+
+    stride = None
+
+    # When the expected decompressed geometry size is known (from PAM header
+    # field 0x40), derive the stride algebraically instead of probing.
+    # This is essential for files with total_verts > 65535, where any u16
+    # index is trivially < total_verts and the probe gives false positives.
+    if geom_decomp > 0 and total_verts > 0:
+        idx_bytes = total_idx * 2
+        if geom_decomp > idx_bytes:
+            remainder = geom_decomp - idx_bytes
+            if remainder % total_verts == 0:
+                candidate = remainder // total_verts
+                if candidate in STRIDE_CANDIDATES:
+                    idx_base_c = geom_off + total_verts * candidate
+                    if idx_base_c + idx_bytes <= len(data):
+                        stride = candidate
+
+    # Fallback: iterate candidates and validate a sample of indices.
+    # Reliable only when total_verts <= 65535 (otherwise all u16 are valid).
+    if stride is None:
+        for s in STRIDE_CANDIDATES:
+            idx_base_s = geom_off + total_verts * s
+            if idx_base_s + total_idx * 2 > len(data):
+                continue
+            probe = min(total_idx, 50)
+            valid = sum(
+                1 for j in range(probe)
+                if struct.unpack_from("<H", data, idx_base_s + j * 2)[0] < total_verts
+            )
+            if valid == probe:
+                stride = s
+                break
+    if stride is None:
+        return
+
+    idx_base = geom_off + total_verts * stride
+
+    for r in entries:
+        nv, ni = r["nv"], r["ni"]
+        vert_base = geom_off + r["ve"] * stride
+        idx_off = idx_base + r["ie"] * 2
+        tex, mat = r["tex"], r["mat"]
+
+        indices = [struct.unpack_from("<H", data, idx_off + j * 2)[0] for j in range(ni)]
+        if not indices:
+            continue
+
+        unique = sorted(set(indices))
+        idx_map = {gi: li for li, gi in enumerate(unique)}
+        has_uv = stride >= 12
+
+        verts, uvs, offsets = [], [], []
+        for gi in unique:
+            foff = vert_base + gi * stride
+            if foff + 6 > len(data):
+                break
+            xu, yu, zu = struct.unpack_from("<HHH", data, foff)
+            offsets.append(foff)
+            verts.append((_dequant_u16(xu, bmin[0], bmax[0]),
+                          _dequant_u16(yu, bmin[1], bmax[1]),
+                          _dequant_u16(zu, bmin[2], bmax[2])))
+            if has_uv and foff + 12 <= len(data):
+                u = struct.unpack_from("<e", data, foff + 8)[0]
+                v = struct.unpack_from("<e", data, foff + 10)[0]
+                uvs.append((u, v))
+
+        faces = []
+        for j in range(0, ni - 2, 3):
+            a, b, c = indices[j], indices[j + 1], indices[j + 2]
+            if a in idx_map and b in idx_map and c in idx_map:
+                faces.append((idx_map[a], idx_map[b], idx_map[c]))
+
+        sm = SubMesh(
+            name=f"mesh_{r['i']:02d}_{mat or str(r['i'])}",
+            material=mat, texture=tex,
+            vertices=verts, uvs=uvs, faces=faces,
+            source_vertex_offsets=offsets,
+            vertex_count=len(verts), face_count=len(faces),
+        )
+        result.submeshes.append(sm)
+
+
+def _extract_local_mesh(data, geom_off, voff, stride, idx_off, nv, ni, bmin, bmax):
+    """Extract vertices/uvs/faces from local (per-mesh) layout."""
+    indices = [struct.unpack_from("<H", data, idx_off + j * 2)[0] for j in range(ni)]
+    unique = sorted(set(indices))
+    idx_map = {gi: li for li, gi in enumerate(unique)}
+    has_uv = stride >= 12
+
+    verts, uvs, offsets = [], [], []
+    for gi in unique:
+        foff = geom_off + voff + gi * stride
+        if foff + 6 > len(data):
+            break
+        xu, yu, zu = struct.unpack_from("<HHH", data, foff)
+        offsets.append(foff)
+        verts.append((_dequant_u16(xu, bmin[0], bmax[0]),
+                      _dequant_u16(yu, bmin[1], bmax[1]),
+                      _dequant_u16(zu, bmin[2], bmax[2])))
+        if has_uv and foff + 12 <= len(data):
+            u = struct.unpack_from("<e", data, foff + 8)[0]
+            v = struct.unpack_from("<e", data, foff + 10)[0]
+            uvs.append((u, v))
+
+    faces = []
+    for j in range(0, ni - 2, 3):
+        a, b, c = indices[j], indices[j + 1], indices[j + 2]
+        if a in idx_map and b in idx_map and c in idx_map:
+            faces.append((idx_map[a], idx_map[b], idx_map[c]))
+
+    return verts, uvs, faces, offsets
+
+
+def _extract_global_mesh(data, geom_off, ni, ioff, bmin, bmax):
+    """Extract vertices/uvs/faces from global (prefab) layout."""
+    indices = [struct.unpack_from("<H", data, PAM_IDX_OFF + (ioff + j) * 2)[0] for j in range(ni)]
+    unique = sorted(set(indices))
+    idx_map = {gi: li for li, gi in enumerate(unique)}
+
+    verts = []
+    offsets = []
+    for gi in unique:
+        li = gi - GLOBAL_VERT_BASE
+        foff = geom_off + li * 6
+        if foff + 6 > len(data):
+            break
+        xi, yi, zi = struct.unpack_from("<hhh", data, foff)
+        offsets.append(foff)
+        verts.append((_dequant_i16(xi, bmin[0], bmax[0]),
+                      _dequant_i16(yi, bmin[1], bmax[1]),
+                      _dequant_i16(zi, bmin[2], bmax[2])))
+
+    faces = []
+    for j in range(0, ni - 2, 3):
+        a, b, c = indices[j], indices[j + 1], indices[j + 2]
+        if a in idx_map and b in idx_map and c in idx_map:
+            faces.append((idx_map[a], idx_map[b], idx_map[c]))
+
+    return verts, [], faces, offsets
+
+
+# ── PAMLOD Parser ────────────────────────────────────────────────────
+
+def _get_pamlod_lod_chunks(data: bytes, geom_off: int, lod_count: int) -> list[bytes] | None:
+    """Extract per-LOD geometry chunks from the embedded file table.
+
+    Three table layouts are supported (all at geom_off - (lod_count+1)*12):
+
+    Format A/C — [start_offset, decomp_size, lz4_size] per LOD:
+      LOD0's entry has start_offset == geom_off.  It may be at entries[0]
+      (Format A, no preceding placeholder) or entries[1] (Format C, entries[0]
+      is all-zero).  lz4_size=0 means raw; >0 means LZ4-block-compressed.
+      e.g. cd_barricade_gaurd_02.pamlod (A), cd_spot_tower_10_stairs_01.pamlod (C)
+
+    Format B — [decomp_size, lz4_size, section_end_offset] per LOD:
+      entries[0] = [0, 0, geom_off] anchors the geometry start.
+      For LOD k: section starts at entries[k].f3, decomp/lz4 are in entries[k+1].
+      e.g. cd_puzzle_anamorphic_north_01.pamlod
+
+    Returns one bytes object per LOD, or None to fall back to sequential scan.
+    """
+    table_base = geom_off - (lod_count + 1) * 12
+    if table_base < 0:
+        return None
+    geom_size = len(data) - geom_off
+
+    entries = []
+    for i in range(lod_count + 1):
+        off = table_base + i * 12
+        if off + 12 > len(data):
+            return None
+        entries.append((
+            struct.unpack_from("<I", data, off)[0],
+            struct.unpack_from("<I", data, off + 4)[0],
+            struct.unpack_from("<I", data, off + 8)[0],
+        ))
+
+    import lz4.block as _lz4
+
+    def _read_chunk(file_off: int, decomp_sz: int, comp_sz: int) -> bytes | None:
+        """Decompress or slice one LOD chunk; return None on error."""
+        if file_off >= len(data) or decomp_sz == 0:
+            return None
+        if comp_sz > 0:
+            if comp_sz >= decomp_sz or file_off + comp_sz > len(data):
+                return None
+            try:
+                return bytes(_lz4.decompress(data[file_off : file_off + comp_sz],
+                                             uncompressed_size=decomp_sz))
+            except Exception:
+                return None
+        else:
+            if file_off + decomp_sz > len(data):
+                return None
+            return bytes(data[file_off : file_off + decomp_sz])
+
+    # ── Format A/C ───────────────────────────────────────────────────
+    # Find the entry where f1 == geom_off; that entry and the next
+    # (lod_count-1) entries describe LOD0 .. LOD(N-1).
+    # A: cd_barricade_gaurd_02.pamlod (LOD0 entry at index 0)
+    # C: cd_spot_tower_10_stairs_01.pamlod (all-zero placeholder at index 0)
+    lod0_idx = None
+    for i, (f1, _, _) in enumerate(entries):
+        if f1 == geom_off and i + lod_count <= len(entries):
+            lod0_idx = i
+            break
+
+    if lod0_idx is not None:
+        lod_entries = entries[lod0_idx : lod0_idx + lod_count]
+        has_compressed = any(cs > 0 for _, _, cs in lod_entries)
+        if not has_compressed:
+            return None  # all raw — sequential scan handles this
+
+        chunks: list[bytes] = []
+        for file_off, decomp_sz, comp_sz in lod_entries:
+            c = _read_chunk(file_off, decomp_sz, comp_sz)
+            if c is None:
+                return None
+            chunks.append(c)
+        return chunks
+
+    # ── Format B ─────────────────────────────────────────────────────
+    # entries[0] = [0, 0, geom_off]; each subsequent entry has
+    # [decomp, lz4, end_offset] and entries[k].f3 is the section start.
+    # e.g. cd_puzzle_anamorphic_north_01.pamlod
+    if entries[0][2] == geom_off:
+        has_compressed = any(entries[k + 1][1] > 0 for k in range(lod_count))
+        if not has_compressed:
+            return None
+
+        chunks = []
+        for k in range(lod_count):
+            start     = entries[k][2]       # section start in file
+            decomp_sz = entries[k + 1][0]   # decompressed size
+            lz4_sz    = entries[k + 1][1]   # LZ4 block size (0 = raw)
+            c = _read_chunk(start, decomp_sz, lz4_sz)
+            if c is None:
+                return None
+            chunks.append(c)
+        return chunks
+
+    # ── Format D ─────────────────────────────────────────────────────
+    # entries[k] = [lz4_size_of_prev_LOD, start_offset, decomp_size].
+    # entries[0].f2 == geom_off; LZ4 size for LOD k is entries[k+1].f1.
+    # e.g. cd_aka_house_module_b_roof_0002.pamlod
+    if entries[0][1] == geom_off:
+        has_lz4_d = any(entries[k + 1][0] > 0 for k in range(lod_count))
+        has_any_data_d = any(entries[k][2] > 0 for k in range(lod_count))
+        if not has_any_data_d:
+            return None
+        # For all-raw Format D tables validate decomp sum ≈ geom_size to avoid
+        # false positives from garbage bytes at the table position.
+        if not has_lz4_d:
+            all_decomp = sum(entries[k][2] for k in range(lod_count))
+            if abs(all_decomp - geom_size) > 32 * lod_count:
+                return None
+
+        chunks = []
+        for k in range(lod_count):
+            start     = entries[k][1]       # f2 = section start in file
+            decomp_sz = entries[k][2]       # f3 = decompressed size
+            lz4_sz    = entries[k + 1][0]   # next entry's f1 = LZ4 block size (0=raw)
+            c = _read_chunk(start, decomp_sz, lz4_sz)
+            if c is None:
+                return None
+            chunks.append(c)
+        return chunks
+
+    return None
+
+
+def _match_chunks_to_groups(chunks: list[bytes],
+                            groups: list) -> list[tuple | None]:
+    """Pair each chunk with the lod_group whose geometry size matches.
+
+    For each chunk of size S, find the group (tv, ti) and stride s such that
+    tv*s + ti*2 == S.  Returns a list of (group, stride) or None when unmatched.
+    Used when the per-LOD table provides the authoritative LOD order which may
+    differ from vertex-count order.
+    """
+    matched: list[tuple | None] = [None] * len(chunks)
+    used: set[int] = set()
+    # Try strides in descending order then validate indices to resolve ambiguity
+    # when multiple (group, stride) pairs produce the same chunk size.
+    for k, chunk in enumerate(chunks):
+        S = len(chunk)
+        for s in reversed(STRIDE_CANDIDATES):
+            for gi, grp in enumerate(groups):
+                if gi in used:
+                    continue
+                tv = sum(e["nv"] for e in grp)
+                ti = sum(e["ni"] for e in grp)
+                if tv * s + ti * 2 != S:
+                    continue
+                # Validate that indices at the expected position are all < tv
+                idx_base = tv * s
+                if idx_base + min(ti, 100) * 2 > len(chunk):
+                    continue
+                if all(struct.unpack_from("<H", chunk, idx_base + j * 2)[0] < tv
+                       for j in range(min(ti, 100))):
+                    matched[k] = (grp, s)
+                    used.add(gi)
+                    break
+            if matched[k] is not None:
+                break
+    return matched
+
+
+def parse_pamlod(data: bytes, filename: str = "", lod_level: int = 0) -> ParsedMesh:
+    """Parse a .pamlod LOD mesh file. lod_level=0 is highest quality."""
+    result = ParsedMesh(path=filename, format="pamlod")
+
+    lod_count = struct.unpack_from("<I", data, PAMLOD_LOD_COUNT)[0]
+    geom_off = struct.unpack_from("<I", data, PAMLOD_GEOM_OFF)[0]
+    if lod_count == 0 or geom_off == 0 or geom_off >= len(data):
+        return result
+
+    result.bbox_min = struct.unpack_from("<fff", data, PAMLOD_BBOX_MIN)
+    result.bbox_max = struct.unpack_from("<fff", data, PAMLOD_BBOX_MAX)
+    bmin, bmax = result.bbox_min, result.bbox_max
+
+    # Locate LOD entries by scanning for texture strings ending in "dds\0".
+    # Most entries use a full path like "name.dds\0"; some files (e.g. cave
+    # stalactites, large composite objects) use just "dds\0" with no prefix.
+    # Each submesh entry has a texture field AND a material field, both of which
+    # may end in "dds\0".  Material names sit 0x10C bytes after the texture name
+    # and produce false positives whose voff values exceed the geometry section
+    # size; the voff*6 > geom_size guard filters them out.
+    geom_size = len(data) - geom_off
+    entries = []
+    search_region = data[PAMLOD_ENTRY_TABLE:geom_off]
+    for m in re.finditer(rb"[^\x00]{0,255}dds\x00", search_region):
+        tex_start = PAMLOD_ENTRY_TABLE + m.start()
+        nv_off = tex_start - 0x10
+        if nv_off < PAMLOD_ENTRY_TABLE:
+            continue
+        nv = struct.unpack_from("<I", data, nv_off)[0]
+        ni = struct.unpack_from("<I", data, nv_off + 4)[0]
+        if not (1 <= nv <= 131072 and ni > 0 and ni % 3 == 0):
+            continue
+        voff = struct.unpack_from("<I", data, tex_start - 0x08)[0]
+        ioff = struct.unpack_from("<I", data, tex_start - 0x04)[0]
+        if voff * 6 > geom_size:
+            continue
+        tex = data[tex_start:tex_start + 256].split(b"\x00")[0].decode("ascii", "replace")
+        mat_start = tex_start + 0x100
+        mat = data[mat_start:mat_start + 256].split(b"\x00")[0].decode("ascii", "replace") if mat_start < geom_off else ""
+        entries.append({"nv": nv, "ni": ni, "voff": voff, "ioff": ioff,
+                        "tex_start": tex_start, "tex": tex, "mat": mat})
+
+    entries.sort(key=lambda e: e["tex_start"])
+
+    # Group into LOD levels
+    lod_groups = []
+    cur_group, ve_acc, ie_acc = [], 0, 0
+    for e in entries:
+        if e["voff"] == ve_acc and e["ioff"] == ie_acc:
+            cur_group.append(e)
+            ve_acc += e["nv"]
+            ie_acc += e["ni"]
+        else:
+            if cur_group:
+                lod_groups.append(cur_group)
+            cur_group = [e]
+            ve_acc = e["nv"]
+            ie_acc = e["ni"]
+    if cur_group:
+        lod_groups.append(cur_group)
+    lod_groups = lod_groups[:lod_count]
+
+    if not lod_groups:
+        return result
+
+    # Check for per-LOD geometry chunks (files where some LODs are LZ4-compressed
+    # within the raw PAZ payload but the PAMT decompressor returned raw bytes).
+    per_lod_chunks = _get_pamlod_lod_chunks(data, geom_off, lod_count)
+
+    # For sequential-scan files (no chunk table), sort groups by total vertex count
+    # descending so the highest-quality LOD is always first.  For some large
+    # composite objects the DDS entries for LOD0 appear after LOD1+ entries in
+    # the header, causing the file-position sort to assign a smaller LOD as LOD0.
+    if per_lod_chunks is None and len(lod_groups) > 1:
+        lod_groups.sort(key=lambda g: -sum(e["nv"] for e in g))
+
+    # Pre-compute the algebraic stride for sequential-scan files.  When any LOD
+    # has total_nv > 65535 the index-value probe is trivially satisfied (every
+    # u16 < total_nv), so the probe always accepts stride=6.  Deriving stride
+    # from the total geometry budget avoids this false-positive.
+    seq_alg_stride: int | None = None
+    if per_lod_chunks is None:
+        all_nv = sum(sum(e["nv"] for e in g) for g in lod_groups)
+        all_ni = sum(sum(e["ni"] for e in g) for g in lod_groups)
+        if all_nv > 0:
+            remaining = geom_size - all_ni * 2
+            if remaining > 0:
+                s_est = remaining / all_nv
+                best = min(STRIDE_CANDIDATES, key=lambda s: abs(s - s_est))
+                if abs(best - s_est) < 2.0:
+                    seq_alg_stride = best
+
+    # When per-LOD chunks are available, match each chunk to its lod_group by
+    # geometry size.  This is needed for files where the table's LOD order differs
+    # from the vertex-count order (e.g. eggs where LOD0 has fewer verts than LOD1).
+    chunk_matches: list[tuple | None] = []
+    if per_lod_chunks:
+        chunk_matches = _match_chunks_to_groups(per_lod_chunks, lod_groups)
+
+    # Parse each LOD level
+    cur = geom_off
+    for lod_i, group in enumerate(lod_groups):
+        total_nv = sum(e["nv"] for e in group)
+        total_ni = sum(e["ni"] for e in group)
+
+        # Use a pre-decompressed per-LOD chunk when available; otherwise fall
+        # back to scanning the main data buffer sequentially from cur.
+        if per_lod_chunks and lod_i < len(per_lod_chunks):
+            lod_buf   = per_lod_chunks[lod_i]
+            lod_start = 0
+        else:
+            lod_buf   = data
+            lod_start = cur
+
+        # When a chunk↔group match was found, use the matched group and stride
+        # directly — no stride scan needed.
+        matched_group_stride: tuple | None = (
+            chunk_matches[lod_i] if chunk_matches and lod_i < len(chunk_matches) else None
+        )
+        if matched_group_stride is not None:
+            group, matched_stride = matched_group_stride
+            total_nv = sum(e["nv"] for e in group)
+            total_ni = sum(e["ni"] for e in group)
+            found_base    = lod_start
+            found_stride  = matched_stride
+            found_idx_off = lod_start + total_nv * matched_stride
+        else:
+            # Find stride with padding scan.
+            # Use the algebraic stride when available (sequential scan, tv>65535 safe).
+            found_base = found_stride = found_idx_off = None
+            stride_candidates = (
+                [seq_alg_stride] if seq_alg_stride is not None and lod_buf is data
+                else STRIDE_CANDIDATES
+            )
+            for pad in range(0, 64, 2):
+                base = lod_start + pad
+                for stride in stride_candidates:
+                    cand = base + total_nv * stride
+                    if cand + total_ni * 2 > len(lod_buf):
+                        continue
+                    if all(struct.unpack_from("<H", lod_buf, cand + j * 2)[0] < total_nv
+                           for j in range(min(total_ni, 100))):
+                        found_base = base
+                        found_stride = stride
+                        found_idx_off = cand
+                        break
+                if found_base is not None:
+                    break
+
+        if found_base is None:
+            result.lod_levels.append([])
+            if lod_buf is data:
+                cur += 2
+            continue
+
+        # Parse submeshes for this LOD
+        lod_submeshes = []
+        vert_offset = 0
+        has_uv = found_stride >= 12
+
+        all_verts, all_uvs, all_faces, all_offsets = [], [], [], []
+        for e in group:
+            nv_e, ni_e = e["nv"], e["ni"]
+            vert_base_e = found_base + e["voff"] * found_stride
+            idx_off_e = found_idx_off + e["ioff"] * 2
+
+            indices = [struct.unpack_from("<H", lod_buf, idx_off_e + j * 2)[0] for j in range(ni_e)]
+            unique = sorted(set(indices))
+            idx_map = {gi: li + vert_offset for li, gi in enumerate(unique)}
+
+            for gi in unique:
+                foff = vert_base_e + gi * found_stride
+                if foff + 6 > len(lod_buf):
+                    break
+                xu, yu, zu = struct.unpack_from("<HHH", lod_buf, foff)
+                all_offsets.append(foff)
+                all_verts.append((_dequant_u16(xu, bmin[0], bmax[0]),
+                                  _dequant_u16(yu, bmin[1], bmax[1]),
+                                  _dequant_u16(zu, bmin[2], bmax[2])))
+                if has_uv and foff + 12 <= len(lod_buf):
+                    u = struct.unpack_from("<e", lod_buf, foff + 8)[0]
+                    v = struct.unpack_from("<e", lod_buf, foff + 10)[0]
+                    all_uvs.append((u, v))
+
+            for j in range(0, ni_e - 2, 3):
+                a, b, c = indices[j], indices[j + 1], indices[j + 2]
+                if a in idx_map and b in idx_map and c in idx_map:
+                    all_faces.append((idx_map[a], idx_map[b], idx_map[c]))
+
+            vert_offset += len(unique)
+
+        mat_name = group[0]["mat"] or f"lod{lod_i}"
+        sm = SubMesh(
+            name=f"lod{lod_i:02d}_{mat_name}",
+            material=mat_name,
+            texture=group[0]["tex"],
+            vertices=all_verts, uvs=all_uvs, faces=all_faces,
+            normals=_compute_smooth_normals(all_verts, all_faces),
+            source_vertex_offsets=all_offsets,
+            vertex_count=len(all_verts), face_count=len(all_faces),
+        )
+        lod_submeshes.append(sm)
+        result.lod_levels.append(lod_submeshes)
+        if lod_buf is data:
+            cur = found_idx_off + total_ni * 2
+
+    # Use requested LOD level as the main submeshes
+    if lod_level < len(result.lod_levels) and result.lod_levels[lod_level]:
+        result.submeshes = result.lod_levels[lod_level]
+    elif result.lod_levels:
+        # Fallback to first non-empty LOD
+        for lod in result.lod_levels:
+            if lod:
+                result.submeshes = lod
+                break
+
+    result.total_vertices = sum(len(sm.vertices) for sm in result.submeshes)
+    result.total_faces = sum(len(sm.faces) for sm in result.submeshes)
+    result.has_uvs = any(sm.uvs for sm in result.submeshes)
+
+    logger.info("Parsed PAMLOD %s: %d LODs, using LOD %d (%d verts, %d faces)",
+                filename, len(result.lod_levels), lod_level,
+                result.total_vertices, result.total_faces)
+    return result
+
+
+# ── PAC Parser (skinned mesh) ────────────────────────────────────────
+
+def parse_pac(data: bytes, filename: str = "") -> ParsedMesh:
+    """Parse a .pac skinned character mesh.
+
+    PAC format (reverse-engineered from binary analysis):
+      Header: 80 bytes
+        [0x00] 4B: 'PAR ' magic
+        [0x04] 4B: version (0x01000903)
+        [0x10] 4B: zero
+        [0x14] N×8B or N×4B: section sizes (u64 or u32, variable count)
+
+      Section 0: Metadata
+        - u32 flags, u8 n_lods
+        - n_lods × u32: section start offsets (LOD0 first)
+        - n_lods × u32: vertex/index split offsets per section
+        - Per submesh descriptor:
+            [u8 len][mesh_name] [u8 len][mat_name]
+            [u8 flag][2B pad] [8 floats: pivot(2) + bbox(6)]
+            [u8 bone_count][bone_indices...]
+            [n_lods × u16: vert counts] [n_lods × u32: idx counts]
+
+      Sections 1..N: LOD levels (1=lowest, N=highest/LOD0)
+        Part A: 40-byte vertex records (up to split offset)
+        Part B: uint16 triangle list indices (after split offset)
+
+      40-byte vertex record:
+        [0-5]  3×uint16: quantized XYZ position
+        [6-7]  uint16: packed data (normal/tangent)
+        [8-11] 2×float16: UV coordinates
+        [12-15] constant (0x3C000000)
+        [16-19] 4 bytes data
+        [20-27] zeros
+        [28-31] bone index bytes (0xFF=none)
+        [32-35] bone weight bytes
+        [36-39] FFFFFFFF terminator
+
+      Per-submesh bounding box for dequantization:
+        bbox_min = (float[2], float[3], float[4])
+        bbox_max = (float[5], float[6], float[7])
+        pivot    = (float[0], float[1])  (bone attachment point)
+    """
+    if len(data) < 0x50 or data[:4] != PAR_MAGIC:
+        raise ValueError(f"Not a valid PAC file: bad magic {data[:4]!r}")
+
+    result = ParsedMesh(path=filename, format="pac")
+
+    # ── Parse section layout using section offset table in section 0 ──
+    # Section 0 always starts at byte 80. Its first bytes contain:
+    #   [u32 flags] [u8 n_lods] [n_lods × u32 section_offsets] [n_lods × u32 split_offsets]
+    # Section offsets are absolute file positions (LOD0 first = largest, descending).
+    # This is the most reliable way to determine section boundaries.
+    header_size = 80
+
+    if len(data) < header_size + 5:
+        return _pac_fallback_pam(data, filename)
+
+    s0_start = header_size
+    off = s0_start
+    flags = struct.unpack_from("<I", data, off)[0]
+    n_lods = data[off + 4]
+    off += 5
+
+    if n_lods == 0 or n_lods > 10:
+        return _pac_fallback_pam(data, filename)
+
+    # Read section offsets (absolute file positions, LOD0 first = descending)
+    lod_offsets = [struct.unpack_from("<I", data, off + i * 4)[0] for i in range(n_lods)]
+    off += n_lods * 4
+    split_offsets = [struct.unpack_from("<I", data, off + i * 4)[0] for i in range(n_lods)]
+    off += n_lods * 4
+
+    # Compute section boundaries from offsets:
+    #   sec0: header_size to min(lod_offsets)
+    #   LOD sections: between sorted offsets, last one ends at file_end
+    sorted_offsets = sorted(lod_offsets)
+    boundaries = [header_size] + sorted_offsets + [len(data)]
+    sections = [(boundaries[i], boundaries[i + 1]) for i in range(len(boundaries) - 1)]
+
+    # Validate: sec0 must have positive size
+    if sections[0][1] <= sections[0][0]:
+        return _pac_fallback_pam(data, filename)
+
+    s0_end = sections[0][1]
+
+    # ── Find and parse submesh descriptors ──
+    # Scan forward for first length-prefixed ASCII string
+    scan = off
+    while scan < s0_end - 10:
+        b = data[scan]
+        if 4 < b < 100:
+            test = data[scan + 1:scan + 1 + b]
+            if len(test) == b and all(32 <= c < 127 for c in test):
+                break
+        scan += 1
+    off = scan
+
+    pac_submeshes = []
+    while off < s0_end - 20:
+        name_len = data[off]
+        if name_len == 0 or name_len > 200 or off + 1 + name_len >= s0_end:
+            break
+        mesh_name = data[off + 1:off + 1 + name_len].decode("ascii", "replace")
+        off += 1 + name_len
+        if not all(32 <= ord(c) < 127 for c in mesh_name):
+            break
+
+        mat_len = data[off]
+        mat_name = data[off + 1:off + 1 + mat_len].decode("ascii", "replace") if mat_len > 0 else ""
+        off += 1 + mat_len
+
+        # flag(1) + pad(2) + 8 floats(32) + bone data
+        off += 3
+        bbox_floats = [struct.unpack_from("<f", data, off + i * 4)[0] for i in range(8)]
+        off += 32
+
+        # Bone data: [u8 bone_count] [bone_count × u8 indices]
+        # Bone indices are padded to even byte count (odd bc gets +1 pad byte).
+        bone_count = data[off]
+        off += 1
+        bone_palette = tuple(data[off:off + bone_count])
+        bones_size = bone_count + (bone_count % 2)  # round up to even
+        off += bones_size
+
+        # Per-LOD vertex counts (n_lods × u16) + index counts (n_lods × u32)
+        # Some files have fewer idx_counts than n_lods — validate and truncate.
+        vert_counts = [struct.unpack_from("<H", data, off + i * 2)[0] for i in range(n_lods)]
+        off += n_lods * 2
+
+        idx_counts = []
+        max_reasonable_idx = 10_000_000  # no single submesh has 10M indices
+        for i in range(n_lods):
+            if off + 4 > s0_end:
+                break
+            val = struct.unpack_from("<I", data, off)[0]
+            if val > max_reasonable_idx:
+                break  # hit garbage — stop reading idx_counts
+            idx_counts.append(val)
+            off += 4
+        # Pad missing LODs with 0
+        while len(idx_counts) < n_lods:
+            idx_counts.append(0)
+
+        bmin = (bbox_floats[2], bbox_floats[3], bbox_floats[4])
+        bmax = (bbox_floats[5], bbox_floats[6], bbox_floats[7])
+
+        pac_submeshes.append({
+            "name": mesh_name, "material": mat_name,
+            "bmin": bmin, "bmax": bmax,
+            "vert_counts": vert_counts, "idx_counts": idx_counts,
+            "bone_palette": bone_palette,
+        })
+
+        # Check if next byte starts another submesh name
+        if off >= s0_end - 4:
+            break
+        next_b = data[off]
+        if next_b == 0 or next_b > 200:
+            break
+        peek = data[off + 1:off + 1 + min(next_b, 6)]
+        if not all(32 <= c < 127 for c in peek):
+            break
+
+    if not pac_submeshes:
+        return _pac_fallback_pam(data, filename)
+
+    # ── Extract LOD0 geometry (highest quality = last data section) ──
+    lod0_sec_start, lod0_sec_end = sections[-1]
+    lod0_split = split_offsets[0] if split_offsets else 0
+
+    # Auto-detect vertex stride from section size:
+    #   section = (total_verts × stride) + (total_indices × 2)
+    #   stride = (section_size - total_indices × 2) / total_verts
+    if lod0_split <= lod0_sec_start or lod0_split > lod0_sec_end:
+        lod0_sec_size = lod0_sec_end - lod0_sec_start
+        total_lod0_verts = sum(sm["vert_counts"][0] for sm in pac_submeshes)
+        total_lod0_indices = sum(sm["idx_counts"][0] for sm in pac_submeshes)
+
+        if total_lod0_verts == 0:
+            return _pac_fallback_pam(data, filename)
+
+        vert_stride = (lod0_sec_size - total_lod0_indices * 2) // total_lod0_verts
+        lod0_split = lod0_sec_start + total_lod0_verts * vert_stride
+    else:
+        vert_stride = _detect_pac_vertex_stride(data, lod0_sec_start, lod0_split)
+
+    if vert_stride < 6 or vert_stride > 128:
+        logger.debug("PAC %s: computed stride %d out of range, trying PAM fallback",
+                     filename, vert_stride)
+        return _pac_fallback_pam(data, filename)
+
+    vert_off = lod0_sec_start
+    idx_off = lod0_split
+
+    for sm_info in pac_submeshes:
+        declared_nv = sm_info["vert_counts"][0]
+        ni = sm_info["idx_counts"][0]
+        bmin = sm_info["bmin"]
+        bmax = sm_info["bmax"]
+        bone_palette = sm_info.get("bone_palette", ())
+
+        raw_faces = []
+        max_index = -1
+        for i in range(0, ni - 2, 3):
+            if idx_off + (i + 2) * 2 + 2 > min(len(data), lod0_sec_end):
+                break
+            a = struct.unpack_from("<H", data, idx_off + i * 2)[0]
+            b = struct.unpack_from("<H", data, idx_off + (i + 1) * 2)[0]
+            c = struct.unpack_from("<H", data, idx_off + (i + 2) * 2)[0]
+            raw_faces.append((a, b, c))
+            max_index = max(max_index, a, b, c)
+
+        available_records = max(0, (lod0_split - vert_off) // max(vert_stride, 1))
+        actual_nv = max_index + 1 if max_index >= 0 else declared_nv
+        if actual_nv > available_records:
+            logger.debug(
+                "PAC %s submesh %s references %d verts but only %d records fit before split",
+                filename, sm_info["name"], actual_nv, available_records,
+            )
+            actual_nv = available_records
+
+        used_indices = sorted({
+            idx for face in raw_faces for idx in face
+            if 0 <= idx < actual_nv
+        })
+        idx_map = {src_idx: dst_idx for dst_idx, src_idx in enumerate(used_indices)}
+
+        verts = []
+        uvs = []
+        source_offsets = []
+        bone_indices = []
+        bone_weights = []
+        for src_idx in used_indices:
+            rec_off = vert_off + src_idx * vert_stride
+            if rec_off + 12 > min(len(data), lod0_split):
+                break
+            xu, yu, zu = struct.unpack_from("<HHH", data, rec_off)
+            verts.append((
+                _dequant_u16(xu, bmin[0], bmax[0]),
+                _dequant_u16(yu, bmin[1], bmax[1]),
+                _dequant_u16(zu, bmin[2], bmax[2]),
+            ))
+            source_offsets.append(rec_off)
+
+            try:
+                u = struct.unpack_from("<e", data, rec_off + 8)[0]
+                v = struct.unpack_from("<e", data, rec_off + 10)[0]
+                uvs.append((u, v) if (not math.isnan(u) and not math.isnan(v)) else (0.0, 0.0))
+            except Exception:
+                uvs.append((0.0, 0.0))
+
+            packed_bones = ()
+            packed_weights = ()
+            if rec_off + 36 <= min(len(data), lod0_split):
+                # PAC vertex skin layout (verified Apr 2026):
+                #   bytes 28-31: 4 weights (u8), sum to 240-255
+                #   bytes 32-35: 4 slot indices (u8) — see palette note below
+                #
+                # The slot value is NOT a direct PAB bone index. It's
+                # an index into a per-mesh bone palette stored in the
+                # adjacent ``.pabc`` file (verified Apr 2026 via
+                # decryption + reverse-engineering). The 4-entry
+                # inline palette in the PAC submesh def is just a
+                # fast-path subset; slots ≥ 4 require the PABC for
+                # correct resolution.
+                #
+                # We don't have the PABC palette here — parse_pac
+                # only sees the .pac bytes. The caller is expected
+                # to remap bone_indices via :func:`apply_skin_palette`
+                # after loading the PABC. Until that's done, the
+                # slot values in this list are PABC RECORD INDICES,
+                # not PAB bone indices, and using them directly
+                # produces the upper-body-shatter artifact (slot 17
+                # would map to PAB[17] = R Thigh when the correct
+                # answer is PABC[17] = R ThighTwist).
+                # 8-bone skinning layout (verified May 2026 from shader DXIL —
+                # see test_only/research/PAC_VERTEX_RECORD_DECODED.md):
+                #   bytes 28-35: 8 × u8 weights (each / 255)
+                #   bytes 20-27: bone palette slots 0-5 packed 6 × 10-bit
+                #   bytes 12-15: bone palette slots 6-7 as 2 × f16 (int + 0.5)
+                raw_weights = struct.unpack_from("<BBBBBBBB", data, rec_off + 28)
+                b20_lo, b20_hi = struct.unpack_from("<II", data, rec_off + 20)
+                slot6_h, slot7_h = struct.unpack_from("<ee", data, rec_off + 12)
+                raw_slots = (
+                     b20_lo        & 0x3FF,
+                    (b20_lo >> 10) & 0x3FF,
+                    (b20_lo >> 20) & 0x3FF,
+                     b20_hi        & 0x3FF,
+                    (b20_hi >> 10) & 0x3FF,
+                    (b20_hi >> 20) & 0x3FF,
+                    int(slot6_h + 0.5) if not math.isnan(slot6_h) else 0,
+                    int(slot7_h + 0.5) if not math.isnan(slot7_h) else 0,
+                )
+                mapped_slots = []
+                mapped_weights = []
+                weight_sum = sum(raw_weights)
+                inv_sum = (1.0 / weight_sum) if weight_sum > 0 else 0.0
+                for slot, weight in zip(raw_slots, raw_weights):
+                    if weight == 0:
+                        continue
+                    if slot < len(bone_palette):
+                        mapped_slots.append(int(bone_palette[slot]))
+                    else:
+                        mapped_slots.append(int(slot))
+                    mapped_weights.append(weight * inv_sum)
+                packed_bones = tuple(mapped_slots)
+                packed_weights = tuple(mapped_weights)
+            bone_indices.append(packed_bones)
+            bone_weights.append(packed_weights)
+
+        faces = []
+        for a, b, c in raw_faces:
+            if a in idx_map and b in idx_map and c in idx_map:
+                faces.append((idx_map[a], idx_map[b], idx_map[c]))
+
+        sm = SubMesh(
+            name=sm_info["name"],
+            material=sm_info["material"],
+            texture="",
+            vertices=verts,
+            uvs=uvs,
+            faces=faces,
+            normals=_compute_smooth_normals(verts, faces),
+            bone_indices=bone_indices,
+            bone_weights=bone_weights,
+            vertex_count=len(verts),
+            face_count=len(faces),
+            source_vertex_offsets=source_offsets,
+        )
+        result.submeshes.append(sm)
+
+        if any(bone_indices):
+            result.has_bones = True
+
+        vert_off += actual_nv * vert_stride
+        idx_off += ni * 2
+
+    # Compute overall stats
+    if result.submeshes:
+        all_verts = [v for sm in result.submeshes for v in sm.vertices]
+        if all_verts:
+            xs = [v[0] for v in all_verts]
+            ys = [v[1] for v in all_verts]
+            zs = [v[2] for v in all_verts]
+            result.bbox_min = (min(xs), min(ys), min(zs))
+            result.bbox_max = (max(xs), max(ys), max(zs))
+
+    result.total_vertices = sum(len(sm.vertices) for sm in result.submeshes)
+    result.total_faces = sum(len(sm.faces) for sm in result.submeshes)
+    result.has_uvs = any(sm.uvs for sm in result.submeshes)
+
+    logger.info("Parsed PAC %s: %d submeshes, %d verts, %d faces",
+                filename, len(result.submeshes), result.total_vertices, result.total_faces)
+    return result
+
+
+def _parse_par_sections(data: bytes) -> list[dict]:
+    """Parse the PAR section table from the 80-byte header."""
+    if len(data) < 0x50 or data[:4] != PAR_MAGIC:
+        return []
+
+    sections = []
+    offset = 0x50
+    for i in range(8):
+        slot_off = 0x10 + i * 8
+        comp_size = struct.unpack_from("<I", data, slot_off)[0]
+        decomp_size = struct.unpack_from("<I", data, slot_off + 4)[0]
+        stored_size = comp_size if comp_size > 0 else decomp_size
+        if decomp_size <= 0:
+            continue
+        if offset + stored_size > len(data):
+            return []
+        sections.append({"index": i, "offset": offset, "size": decomp_size})
+        offset += stored_size
+    return sections
+
+
+def _find_name_strings(region: bytes, desc_start: int) -> tuple[str, str]:
+    """Extract the two length-prefixed ASCII names immediately before a descriptor."""
+    names = []
+    cursor = desc_start
+
+    for _ in range(2):
+        found = False
+        for back in range(1, 200):
+            pos = cursor - back
+            if pos < 0:
+                break
+            candidate_len = region[pos]
+            if candidate_len == 0 or candidate_len != back - 1:
+                continue
+            name_bytes = region[pos + 1:cursor]
+            if not name_bytes or not all(32 <= c < 127 for c in name_bytes):
+                continue
+            names.append(name_bytes.decode("ascii", "replace"))
+            cursor = pos
+            found = True
+            break
+        if not found:
+            names.append(f"unknown_{desc_start:x}")
+
+    names.reverse()
+    return names[0], names[1]
+
+
+def _find_pac_descriptors(
+    data: bytes,
+    sec0_offset: int,
+    sec0_size: int,
+    n_lods: int,
+) -> list[PacDescriptor]:
+    """Recover PAC descriptors by matching known 4/3/2-LOD descriptor patterns."""
+    region = data[sec0_offset:sec0_offset + sec0_size]
+    if not region:
+        return []
+
+    found: list[tuple[int, PacDescriptor]] = []
+    seen_starts: set[int] = set()
+    pad_len = max(4, n_lods)
+
+    def _append_descriptor(idx: int, stored_lod_count: int, vc_off: int, ic_off: int) -> None:
+        desc_start = idx - 35
+        if desc_start in seen_starts or desc_start < 0:
+            return
+        if desc_start + ic_off + stored_lod_count * 4 > len(region):
+            return
+        if region[desc_start] != 0x01:
+            return
+
+        try:
+            floats = struct.unpack_from("<8f", region, desc_start + 3)
+        except struct.error:
+            return
+
+        vert_counts = [
+            struct.unpack_from("<H", region, desc_start + vc_off + i * 2)[0]
+            for i in range(stored_lod_count)
+        ]
+        idx_counts = [
+            struct.unpack_from("<I", region, desc_start + ic_off + i * 4)[0]
+            for i in range(stored_lod_count)
+        ]
+
+        if not any(v > 0 for v in vert_counts):
+            return
+        if any(v > 200000 for v in vert_counts):
+            return
+        if any(i > 20000000 for i in idx_counts):
+            return
+
+        name, material = _find_name_strings(region, desc_start)
+        palette = tuple(region[idx + 1:idx + 1 + stored_lod_count])
+        padded_vc = vert_counts + [0] * max(0, pad_len - stored_lod_count)
+        padded_ic = idx_counts + [0] * max(0, pad_len - stored_lod_count)
+
+        found.append((
+            desc_start,
+            PacDescriptor(
+                name=name,
+                material=material,
+                bbox_min=(floats[2], floats[3], floats[4]),
+                bbox_extent=(floats[5], floats[6], floats[7]),
+                vertex_counts=padded_vc,
+                index_counts=padded_ic,
+                palette=palette,
+                descriptor_offset=sec0_offset + desc_start,
+                stored_lod_count=stored_lod_count,
+            ),
+        ))
+        seen_starts.add(desc_start)
+
+    # PAC section-0 descriptors are not fully uniform. Most use the classic:
+    #   4 LODs: 04 00 01 02 03
+    #   3 LODs: 03 00 01 02
+    #   2 LODs: 02 00 01
+    # Some character heads (for example Kliff/Macduff) use a 3-LOD variant
+    # with an extra marker byte before the count table:
+    #   03 00 01 01 02
+    # Support both layouts while deduping by desc_start so we can parse the
+    # full head mesh instead of only the eyecover helper submesh.
+    pattern_specs = [
+        (bytes([0x04, 0x00, 0x01, 0x02, 0x03]), 4, 40, 48,
+         lambda idx: True),
+        (bytes([0x03, 0x00, 0x01, 0x01, 0x02]), 3, 40, 46,
+         lambda idx: True),
+        (bytes([0x03, 0x00, 0x01, 0x02]), 3, 40, 46,
+         lambda idx: idx < 1 or region[idx - 1] != 0x04),
+        (bytes([0x02, 0x00, 0x01]), 2, 40, 44,
+         lambda idx: idx < 1 or region[idx - 1] not in (0x03, 0x04)),
+    ]
+
+    for pattern, lod_count, vc_off, ic_off, should_accept in pattern_specs:
+        pos = 0
+        while True:
+            idx = region.find(pattern, pos)
+            if idx == -1:
+                break
+            if should_accept(idx):
+                _append_descriptor(idx, lod_count, vc_off, ic_off)
+            pos = idx + len(pattern)
+
+    found.sort(key=lambda item: item[0])
+    return [desc for _, desc in found]
+
+
+def _decode_pac_position_u16(value: int, bbox_min: float, bbox_extent: float) -> float:
+    if abs(bbox_extent) < 1e-8:
+        return bbox_min
+    return bbox_min + (value / 32767.0) * bbox_extent
+
+
+def _decode_pac_normal(data: bytes, rec_off: int) -> tuple[float, float, float]:
+    """Decode the packed-normal u32 at vertex offset +16.
+
+    Verified against the shader DXIL of
+    ``CSMainSkinnedMeshStreamOutVertexData`` in
+    ``shader/skinnedmeshstreamout.hlsl``: the shader reads bits
+    10-19 → nx, 20-29 → ny, and uses bit 30 as the sign of nz.
+    nz magnitude is reconstructed as
+    ``sqrt(max(0, 1 - nx² - ny²))``, then negated when bit 30 is set.
+
+    Bits 0-9 and bit 31 of this u32 are NOT consumed by the streamout
+    shader. They carry engine-internal data that the parser does not
+    yet use; they are preserved verbatim across the round-trip.
+
+    Pre-May-2026 implementations of this function read three 10-bit
+    values from bits 0-29 and cyclically rotated them onto (nx, ny, nz)
+    — that legacy interpretation produced normals whose nz came from
+    bits 0-9 (which the engine doesn't read) and ignored the sign bit
+    at bit 30. It still gave plausible numbers because OBJ→PAC→OBJ
+    round-trips passed through unchanged donor data; it failed once
+    the user actually rebuilt geometry, because the in-game lighting
+    is driven by bit 30 and that bit was being preserved from the
+    donor instead of computed from the new mesh's nz sign.
+    """
+    try:
+        packed = struct.unpack_from("<I", data, rec_off + 16)[0]
+    except struct.error:
+        return (0.0, 1.0, 0.0)
+
+    nx_raw = (packed >> 10) & 0x3FF
+    ny_raw = (packed >> 20) & 0x3FF
+    nx = nx_raw / 511.5 - 1.0
+    ny = ny_raw / 511.5 - 1.0
+    nz_sq = 1.0 - nx * nx - ny * ny
+    if nz_sq < 0.0:
+        nz_sq = 0.0
+    nz = math.sqrt(nz_sq)
+    if packed & 0x40000000:
+        nz = -nz
+    return (nx, ny, nz)
+
+
+def _decode_pac_vertex_record(
+    data: bytes,
+    rec_off: int,
+    desc: PacDescriptor,
+) -> tuple[tuple[float, float, float], tuple[float, float], tuple[float, float, float], tuple[int, ...], tuple[float, ...]]:
+    xu, yu, zu = struct.unpack_from("<HHH", data, rec_off)
+    pos = (
+        _decode_pac_position_u16(xu, desc.bbox_min[0], desc.bbox_extent[0]),
+        _decode_pac_position_u16(yu, desc.bbox_min[1], desc.bbox_extent[1]),
+        _decode_pac_position_u16(zu, desc.bbox_min[2], desc.bbox_extent[2]),
+    )
+
+    try:
+        u = struct.unpack_from("<e", data, rec_off + 8)[0]
+        v = struct.unpack_from("<e", data, rec_off + 10)[0]
+        uv = (0.0, 0.0) if math.isnan(u) or math.isnan(v) else (u, v)
+    except Exception:
+        uv = (0.0, 0.0)
+
+    normal = _decode_pac_normal(data, rec_off)
+
+    packed_bones: tuple[int, ...] = ()
+    packed_weights: tuple[float, ...] = ()
+    if rec_off + 40 <= len(data):
+        # Verified May 2026 by reverse-engineering the actual shipping shader
+        # ``CSMainSkinnedMeshStreamOutVertexData`` from
+        # ``shader/skinnedmeshstreamout.hlsl`` (DXIL via ``dxc -dumpbin``).
+        # See ``test_only/research/PAC_VERTEX_RECORD_DECODED.md`` for the
+        # full evidence (each shader instruction quoted).
+        #
+        # ── BONE-COUNT GATE (DXIL lines 558-577, 705-707, 737-740) ──
+        # %216 = (byte39_high6 * 0.0159 < 1.0)        # 8-bone-mode flag
+        # %298 = (LOD_param < 512) AND NOT %216
+        # %299 = if %298: i16 6 else: i16 4           # active bone count
+        # %320 = IMin(%299, 4)         # first batch processes %299..4 bones
+        # %346 = %299 - 4              # second batch processes max(0, %299-4)
+        # The engine reads ONLY the first %299 (slot, weight) pairs.
+        # Slots 6 and 7 (f16 at bytes 12-15) are STORED but NEVER READ —
+        # they're real texcoord components (UV2 / UV3 for the streamout
+        # shader's texcoord half4 at offset 8). Pre-2026-05-08 implementations
+        # decoded slots 6,7 as ``int(half + 0.5)`` and added their weights
+        # to the resolution; that was a misread of the shader. The engine's
+        # %299 is bounded at 6, so slots 6,7 are dead weight in the file.
+        #
+        # The byte39 high-6-bit predicate is: byte39 LO 6 bits == 63 ⇒ %216
+        # FALSE ⇒ %299 = 6. Otherwise %299 = 4 (assuming LOD < 512, which
+        # is always true for LOD-0/1 rendering — the path we extract).
+        #
+        # ── STORAGE LAYOUT ──
+        #   bytes 8-15  — half4 _texcoord (UV.xy at 8-11, UV2.xy at 12-15)
+        #   bytes 16-19 — packed normal (bits 10-19→nx, 20-29→ny, 30=nz sign)
+        #   bytes 20-27 — uint2 _packedBoneIndex (6 × 10-bit slots)
+        #                 slot[0] = bits 0-9   of u32 at offset 20
+        #                 slot[1] = bits 10-19
+        #                 slot[2] = bits 20-29
+        #                 slot[3] = bits 0-9   of u32 at offset 24
+        #                 slot[4] = bits 10-19
+        #                 slot[5] = bits 20-29
+        #   bytes 28-35 — uint2 _packedBoneWeight (8 × u8, but only the
+        #                 first %299 are read; remaining are dead bytes)
+        #   bytes 36-39 — _packedVertexColorRG_systemProperty
+        #                 byte 39 low-6 bits = bone-count gate (63 = 6-bone)
+        b39_low6 = data[rec_off + 39] & 0x3F
+        bone_count = 6 if b39_low6 == 63 else 4
+
+        raw_weights = struct.unpack_from("<BBBBBBBB", data, rec_off + 28)
+        b20_lo, b20_hi = struct.unpack_from("<II", data, rec_off + 20)
+
+        raw_slots = (
+             b20_lo        & 0x3FF,
+            (b20_lo >> 10) & 0x3FF,
+            (b20_lo >> 20) & 0x3FF,
+             b20_hi        & 0x3FF,
+            (b20_hi >> 10) & 0x3FF,
+            (b20_hi >> 20) & 0x3FF,
+        )
+        # Truncate to the active bone count — engine ignores the rest.
+        active_slots = raw_slots[:bone_count]
+        active_weights = raw_weights[:bone_count]
+
+        mapped_bones = []
+        mapped_weights = []
+        weight_sum = sum(active_weights)
+        inv_sum = (1.0 / weight_sum) if weight_sum > 0 else 0.0
+        for slot, weight in zip(active_slots, active_weights):
+            if weight == 0:
+                continue
+            mapped_bones.append(desc.palette[slot] if slot < len(desc.palette) else slot)
+            mapped_weights.append(weight * inv_sum)
+        packed_bones = tuple(mapped_bones)
+        packed_weights = tuple(mapped_weights)
+
+    return pos, uv, normal, packed_bones, packed_weights
+
+
+def _read_pac_indices(
+    data: bytes,
+    section_offset: int,
+    section_size: int,
+    index_start: int,
+    index_count: int,
+) -> list[int]:
+    """Read a PAC index segment with hard bounds checks."""
+    if index_count <= 0:
+        return []
+
+    max_count = max(0, min(index_count, (section_size - index_start) // 2))
+    base = section_offset + index_start
+    return [struct.unpack_from("<H", data, base + i * 2)[0] for i in range(max_count)]
+
+
+def _find_pac_section_layout(
+    data: bytes,
+    geom_sec: dict,
+    descriptors: list[PacDescriptor],
+    lod: int,
+    total_indices: int,
+    stride: int = 40,
+) -> tuple[int, int]:
+    """Find the vertex/index split inside a decompressed PAC geometry section.
+
+    ``stride`` is the vertex record size in bytes. Callers that know the
+    stride from prior detection should pass it in explicitly; the default
+    of 40 matches every observed shipping PAC at the time of writing and
+    keeps the layout solver sound for the common case.
+    """
+    sec_off = geom_sec["offset"]
+    sec_size = geom_sec["size"]
+    total_verts = sum(d.vertex_counts[lod] for d in descriptors)
+    primary_bytes = total_verts * stride
+    index_bytes = total_indices * 2
+
+    if primary_bytes + index_bytes >= sec_size:
+        return 0, primary_bytes
+
+    gap = sec_size - primary_bytes - index_bytes
+    if gap <= 0:
+        return 0, primary_bytes
+
+    first_desc = next((d for d in descriptors if d.vertex_counts[lod] > 0), None)
+    if first_desc is None:
+        return 0, primary_bytes
+
+    first_vc = first_desc.vertex_counts[lod]
+
+    def _available_vertices(v_start: int, i_start: int) -> int:
+        if i_start <= v_start:
+            return 0
+        return max(0, (i_start - v_start) // stride)
+
+    def _scan_idx_start(after_verts: int) -> Optional[int]:
+        for adj in range(0, sec_size - after_verts, 2):
+            trial = after_verts + adj
+            if trial + 6 > sec_size:
+                break
+            v0 = struct.unpack_from("<H", data, sec_off + trial)[0]
+            v1 = struct.unpack_from("<H", data, sec_off + trial + 2)[0]
+            v2 = struct.unpack_from("<H", data, sec_off + trial + 4)[0]
+            if v0 == 0 and v1 < first_vc and v2 < first_vc:
+                return trial
+        return None
+
+    def _measure_quality(v_start: int, i_start: Optional[int]) -> float:
+        if i_start is None or i_start + total_indices * 2 > sec_size:
+            return float("inf")
+
+        first_ic = next((d.index_counts[lod] for d in descriptors if d.index_counts[lod] > 0), 0)
+        n_tris = first_ic // 3
+        if n_tris == 0:
+            return 0.0
+
+        sample_step = max(1, n_tris // 30)
+        sample_tri_indices = set(range(min(12, n_tris)))
+        sample_tri_indices.update(range(0, n_tris, sample_step))
+        sample_tris: list[tuple[int, int, int]] = []
+        sample_max_idx = -1
+        for tri_idx in sorted(sample_tri_indices):
+            idx_base = sec_off + i_start + tri_idx * 6
+            if idx_base + 6 > len(data):
+                return float("inf")
+            i0, i1, i2 = struct.unpack_from("<HHH", data, idx_base)
+            sample_tris.append((i0, i1, i2))
+            sample_max_idx = max(sample_max_idx, i0, i1, i2)
+
+        needed_vc = max(first_vc, sample_max_idx + 1)
+        if needed_vc <= 0 or needed_vc > _available_vertices(v_start, i_start):
+            return float("inf")
+
+        preview_positions = []
+        for i in range(needed_vc):
+            rec_off = sec_off + v_start + i * stride
+            if rec_off + stride > len(data):
+                return float("inf")
+            xu, yu, zu = struct.unpack_from("<HHH", data, rec_off)
+            preview_positions.append((
+                _decode_pac_position_u16(xu, first_desc.bbox_min[0], first_desc.bbox_extent[0]),
+                _decode_pac_position_u16(yu, first_desc.bbox_min[1], first_desc.bbox_extent[1]),
+                _decode_pac_position_u16(zu, first_desc.bbox_min[2], first_desc.bbox_extent[2]),
+            ))
+
+        total_edge = 0.0
+        for i0, i1, i2 in sample_tris:
+            if max(i0, i1, i2) >= len(preview_positions):
+                return float("inf")
+            p0, p1, p2 = preview_positions[i0], preview_positions[i1], preview_positions[i2]
+            e0 = math.dist(p0, p1)
+            e1 = math.dist(p1, p2)
+            e2 = math.dist(p2, p0)
+            total_edge += max(e0, e1, e2)
+        return total_edge
+
+    secondary_bytes = (gap // stride) * stride
+    best_v_start = 0
+    best_i_start = primary_bytes + secondary_bytes
+    best_quality = _measure_quality(best_v_start, best_i_start)
+
+    for n_secondary in range(0, gap // stride + 1):
+        v_start = n_secondary * stride
+        all_verts_end = v_start + primary_bytes
+        if all_verts_end >= sec_size:
+            break
+        idx_start = _scan_idx_start(all_verts_end)
+        if idx_start is None or idx_start + total_indices * 2 > sec_size:
+            continue
+        quality = _measure_quality(v_start, idx_start)
+        if quality < best_quality:
+            best_quality = quality
+            best_v_start = v_start
+            best_i_start = idx_start
+
+    return best_v_start, best_i_start
+
+
+def parse_pac(data: bytes, filename: str = "") -> ParsedMesh:
+    """Parse a decompressed PAC skinned mesh file."""
+    if len(data) < 0x50 or data[:4] != PAR_MAGIC:
+        raise ValueError(f"Not a valid PAC file: bad magic {data[:4]!r}")
+
+    result = ParsedMesh(path=filename, format="pac")
+
+    sections = _parse_par_sections(data)
+    sec_by_idx = {s["index"]: s for s in sections}
+    sec0 = sec_by_idx.get(0)
+    if not sec0:
+        return _pac_fallback_pam(data, filename)
+
+    n_lods = data[sec0["offset"] + 4] if sec0["size"] >= 5 else 0
+    if n_lods <= 0 or n_lods > 10:
+        return _pac_fallback_pam(data, filename)
+
+    descriptors = _find_pac_descriptors(data, sec0["offset"], sec0["size"], n_lods)
+    if not descriptors:
+        return _pac_fallback_pam(data, filename)
+
+    geom_section_idx = next((i for i in [4, 3, 2, 1] if i in sec_by_idx), None)
+    if geom_section_idx is None:
+        return _pac_fallback_pam(data, filename)
+
+    geom_sec = sec_by_idx[geom_section_idx]
+    lod = 4 - geom_section_idx
+
+    # Detect the vertex record stride from the LOD0 section before we compute
+    # the vertex/index split. Every shipping PAC observed so far uses 40-byte
+    # records (the 0x3C000000 marker at +12 resolves uniquely at stride=40),
+    # but the detector degrades gracefully to other strides in the 6..64 range
+    # so non-standard PACs — if the engine ever ships any — still parse.
+    preliminary_split = geom_sec["offset"] + geom_sec["size"]
+    stride = _detect_pac_vertex_stride(
+        data,
+        geom_sec["offset"],
+        preliminary_split,
+    ) or 40
+
+    total_indices = sum(d.index_counts[lod] for d in descriptors)
+    vert_base, idx_byte_offset = _find_pac_section_layout(
+        data, geom_sec, descriptors, lod, total_indices, stride=stride
+    )
+    index_region_start = idx_byte_offset
+
+    desc_vert_offsets = []
+    vert_cursor = vert_base
+    for desc in descriptors:
+        desc_vert_offsets.append(vert_cursor)
+        vert_cursor += desc.vertex_counts[lod] * stride
+
+    for di, desc in enumerate(descriptors):
+        vc = desc.vertex_counts[lod]
+        ic = desc.index_counts[lod]
+        if vc == 0 and ic == 0:
+            continue
+
+        indices = _read_pac_indices(data, geom_sec["offset"], geom_sec["size"], idx_byte_offset, ic)
+
+        vertex_owner_idx = di
+        owner_vc = vc
+        max_idx = max(indices) if indices else -1
+        if max_idx >= vc:
+            partner_idx = next(
+                (pj for pj, partner in enumerate(descriptors)
+                 if pj != di and partner.vertex_counts[lod] > max_idx),
+                None,
+            )
+            if partner_idx is not None:
+                vertex_owner_idx = partner_idx
+                owner_vc = descriptors[partner_idx].vertex_counts[lod]
+            else:
+                available_vc = max(0, (index_region_start - desc_vert_offsets[di]) // stride)
+                if max_idx < available_vc:
+                    owner_vc = max_idx + 1
+
+        vertex_start = desc_vert_offsets[vertex_owner_idx]
+        verts = []
+        uvs = []
+        normals = []
+        source_offsets = []
+        bone_indices = []
+        bone_weights = []
+
+        for vi in range(owner_vc):
+            rec_off = geom_sec["offset"] + vertex_start + vi * stride
+            if rec_off + stride > len(data):
+                break
+            pos, uv, normal, bones, weights = _decode_pac_vertex_record(data, rec_off, desc)
+            verts.append(pos)
+            uvs.append(uv)
+            normals.append(normal)
+            source_offsets.append(rec_off)
+            bone_indices.append(bones)
+            bone_weights.append(weights)
+
+        faces = []
+        for i in range(0, len(indices) - 2, 3):
+            a, b, c = indices[i], indices[i + 1], indices[i + 2]
+            if a < len(verts) and b < len(verts) and c < len(verts):
+                faces.append((a, b, c))
+
+        bbox_max = tuple(desc.bbox_min[i] + desc.bbox_extent[i] for i in range(3))
+        sm = SubMesh(
+            name=desc.name,
+            material=desc.material,
+            texture="",
+            vertices=verts,
+            uvs=uvs if len(uvs) == len(verts) else [],
+            normals=normals if len(normals) == len(verts) else _compute_smooth_normals(verts, faces),
+            faces=faces,
+            bone_indices=bone_indices,
+            bone_weights=bone_weights,
+            vertex_count=len(verts),
+            face_count=len(faces),
+            source_vertex_offsets=source_offsets,
+            source_index_offset=geom_sec["offset"] + idx_byte_offset,
+            source_index_count=len(indices),
+            source_vertex_stride=stride,
+            source_descriptor_offset=desc.descriptor_offset,
+            source_bbox_min=desc.bbox_min,
+            source_bbox_extent=desc.bbox_extent,
+            source_lod_count=desc.stored_lod_count,
+        )
+        result.submeshes.append(sm)
+        result.has_bones = result.has_bones or any(bone_indices)
+
+        if len(result.submeshes) == 1:
+            result.bbox_min = desc.bbox_min
+            result.bbox_max = bbox_max
+        else:
+            result.bbox_min = tuple(min(result.bbox_min[i], desc.bbox_min[i]) for i in range(3))
+            result.bbox_max = tuple(max(result.bbox_max[i], bbox_max[i]) for i in range(3))
+
+        idx_byte_offset += ic * 2
+
+    if not result.submeshes:
+        return _pac_fallback_pam(data, filename)
+
+    result.total_vertices = sum(len(sm.vertices) for sm in result.submeshes)
+    result.total_faces = sum(len(sm.faces) for sm in result.submeshes)
+    result.has_uvs = any(sm.uvs for sm in result.submeshes)
+
+    # Stash the raw PAC bytes on the mesh so the skin-palette decoder
+    # can locate the per-mesh palette table without going back to disk.
+    # Used by ``derive_skin_slot_to_pab_geometric`` in the FBX export
+    # pipeline.
+    result._pac_bytes = data
+
+    logger.info("Parsed PAC %s: %d submeshes, %d verts, %d faces",
+                filename, len(result.submeshes), result.total_vertices, result.total_faces)
+    return result
+
+
+def _pac_fallback_pam(data: bytes, filename: str) -> ParsedMesh:
+    """Fallback: try parsing PAC as PAM (works for some small PAC files)."""
+    try:
+        result = parse_pam(data, filename)
+        if result.total_vertices > 0:
+            return result
+    except Exception:
+        pass
+    logger.debug("PAC %s: unsupported format variant, skipping", filename)
+    return ParsedMesh(path=filename, format="pac")
+
+
+def _flatten_parsed_mesh_for_preview(mesh: ParsedMesh) -> PreviewMesh:
+    """Flatten ParsedMesh submeshes into a single preview buffer."""
+    preview = PreviewMesh(
+        format=mesh.format,
+        submesh_count=len(mesh.submeshes),
+    )
+
+    vert_offset = 0
+    for sm in mesh.submeshes:
+        preview.vertices.extend(sm.vertices)
+        if sm.normals and len(sm.normals) == len(sm.vertices):
+            preview.normals.extend(sm.normals)
+        else:
+            preview.normals.extend([(0.0, 1.0, 0.0)] * len(sm.vertices))
+        preview.faces.extend((a + vert_offset, b + vert_offset, c + vert_offset) for a, b, c in sm.faces)
+        vert_offset += len(sm.vertices)
+
+    preview.total_vertices = len(preview.vertices)
+    preview.total_faces = len(preview.faces)
+    return preview
+
+
+def _preview_mesh_has_valid_indices(preview: PreviewMesh) -> bool:
+    """Check whether a flattened preview buffer is self-consistent."""
+    if not preview.vertices or not preview.faces:
+        return False
+    max_idx = max(max(face) for face in preview.faces)
+    return max_idx < len(preview.vertices)
+
+
+def _build_pac_preview_mesh(data: bytes, filename: str = "") -> PreviewMesh:
+    """Build PAC preview buffers using the same flattening strategy as CDMB."""
+    sections = _parse_par_sections(data)
+    if not sections:
+        return _flatten_parsed_mesh_for_preview(parse_pac(data, filename))
+
+    sec_by_idx = {section["index"]: section for section in sections}
+    sec0 = sec_by_idx.get(0)
+    if sec0 is None:
+        return _flatten_parsed_mesh_for_preview(parse_pac(data, filename))
+
+    geom_section_idx = next((idx for idx in [4, 3, 2, 1] if idx in sec_by_idx), None)
+    if geom_section_idx is None:
+        return _flatten_parsed_mesh_for_preview(parse_pac(data, filename))
+
+    geom_sec = sec_by_idx[geom_section_idx]
+    lod = 4 - geom_section_idx
+    descriptors = _find_pac_descriptors(data, sec0["offset"], sec0["size"], max(1, len(sections) - 1))
+    if not descriptors:
+        return _flatten_parsed_mesh_for_preview(parse_pac(data, filename))
+
+    # Detect vertex stride from the LOD0 section — same logic as the full
+    # parser above. Falls back to 40 for non-detectable cases, which matches
+    # every observed shipping PAC.
+    stride = _detect_pac_vertex_stride(
+        data,
+        geom_sec["offset"],
+        geom_sec["offset"] + geom_sec["size"],
+    ) or 40
+
+    total_indices = sum(desc.index_counts[lod] for desc in descriptors)
+    vert_base, idx_byte_offset = _find_pac_section_layout(
+        data, geom_sec, descriptors, lod, total_indices, stride=stride,
+    )
+
+    desc_vert_offsets = []
+    cursor = vert_base
+    for desc in descriptors:
+        desc_vert_offsets.append(cursor)
+        cursor += desc.vertex_counts[lod] * stride
+
+    preview = PreviewMesh(format="pac")
+    desc_output_offset: dict[int, int] = {}
+    vert_offset = 0
+
+    for di, desc in enumerate(descriptors):
+        vc = desc.vertex_counts[lod]
+        ic = desc.index_counts[lod]
+        if vc == 0:
+            idx_byte_offset += ic * 2
+            continue
+
+        vert_byte_offset = desc_vert_offsets[di]
+        indices = _read_pac_indices(data, geom_sec["offset"], geom_sec["size"], idx_byte_offset, ic)
+        max_idx = max(indices) if indices else 0
+
+        if max_idx >= vc:
+            partner_idx = next(
+                (pj for pj, partner in enumerate(descriptors) if pj != di and partner.vertex_counts[lod] > max_idx),
+                None,
+            )
+
+            if partner_idx is not None and partner_idx in desc_output_offset:
+                base_offset = desc_output_offset[partner_idx]
+                for i in range(0, len(indices) - 2, 3):
+                    preview.faces.append((
+                        indices[i] + base_offset,
+                        indices[i + 1] + base_offset,
+                        indices[i + 2] + base_offset,
+                    ))
+            else:
+                source_offset = desc_vert_offsets[partner_idx] if partner_idx is not None else vert_byte_offset
+                source_vc = descriptors[partner_idx].vertex_counts[lod] if partner_idx is not None else vc
+                desc_output_offset[di] = vert_offset
+                emitted = 0
+                for vi in range(source_vc):
+                    rec_off = geom_sec["offset"] + source_offset + vi * stride
+                    if rec_off + stride > len(data):
+                        break
+                    pos, _, normal, _, _ = _decode_pac_vertex_record(data, rec_off, desc)
+                    preview.vertices.append(pos)
+                    preview.normals.append(normal)
+                    emitted += 1
+                for i in range(0, len(indices) - 2, 3):
+                    a, b, c = indices[i], indices[i + 1], indices[i + 2]
+                    if a < emitted and b < emitted and c < emitted:
+                        preview.faces.append((a + vert_offset, b + vert_offset, c + vert_offset))
+                vert_offset += emitted
+        else:
+            desc_output_offset[di] = vert_offset
+            emitted = 0
+            for vi in range(vc):
+                rec_off = geom_sec["offset"] + vert_byte_offset + vi * stride
+                if rec_off + stride > len(data):
+                    break
+                pos, _, normal, _, _ = _decode_pac_vertex_record(data, rec_off, desc)
+                preview.vertices.append(pos)
+                preview.normals.append(normal)
+                emitted += 1
+            for i in range(0, len(indices) - 2, 3):
+                a, b, c = indices[i], indices[i + 1], indices[i + 2]
+                if a < emitted and b < emitted and c < emitted:
+                    preview.faces.append((a + vert_offset, b + vert_offset, c + vert_offset))
+            vert_offset += emitted
+
+        idx_byte_offset += ic * 2
+
+    preview.submesh_count = len([desc for desc in descriptors if desc.vertex_counts[lod] > 0])
+    preview.total_vertices = len(preview.vertices)
+    preview.total_faces = len(preview.faces)
+    expected_faces = total_indices // 3
+    if not _preview_mesh_has_valid_indices(preview) or preview.total_faces < expected_faces:
+        return _flatten_parsed_mesh_for_preview(parse_pac(data, filename))
+    return preview
+
+
+def build_preview_mesh(data: bytes, filename: str = "") -> PreviewMesh:
+    """Build flattened preview buffers for Explorer rendering."""
+    ext = os.path.splitext(filename.lower())[1]
+    if ext == ".pac":
+        return _build_pac_preview_mesh(data, filename)
+    return _flatten_parsed_mesh_for_preview(parse_mesh(data, filename))
+
+
+# ── Auto-detect and parse ────────────────────────────────────────────
+
+def parse_mesh(data: bytes, filename: str = "") -> ParsedMesh:
+    """Auto-detect file type and parse accordingly."""
+    ext = os.path.splitext(filename.lower())[1]
+    if ext == ".pamlod":
+        return parse_pamlod(data, filename)
+    elif ext == ".pac":
+        return parse_pac(data, filename)
+    else:
+        return parse_pam(data, filename)
+
+
+def is_mesh_file(path: str) -> bool:
+    """Check if a file path is a supported mesh format."""
+    ext = os.path.splitext(path.lower())[1]
+    return ext in (".pam", ".pamlod", ".pac")
+
+
+def apply_skin_palette(mesh: ParsedMesh, slot_to_pab: list[int]) -> int:
+    """Remap each vertex's bone indices through the per-mesh PABC palette.
+
+    PAC vertex bone slots are NOT direct PAB bone indices — they're
+    indices into a per-mesh palette stored in the adjacent ``.pabc``
+    file. ``parse_pac`` returns the raw slots; this function applies
+    the palette so bone_indices reference the correct skeleton bones.
+
+    ``slot_to_pab`` is a list where ``slot_to_pab[N]`` gives the global
+    PAB bone index for slot N. Slots outside the palette are dropped.
+
+    Returns the number of (vertex, bone) pairs that were successfully
+    remapped. A return value of 0 indicates the palette didn't match
+    any slots — typically a sign the wrong PABC was loaded.
+    """
+    n_remapped = 0
+    n_dropped = 0
+    palette_len = len(slot_to_pab)
+    for sm in mesh.submeshes:
+        new_indices: list[tuple[int, ...]] = []
+        new_weights: list[tuple[float, ...]] = []
+        for slots, weights in zip(sm.bone_indices, sm.bone_weights):
+            kept_b: list[int] = []
+            kept_w: list[float] = []
+            for slot, w in zip(slots, weights):
+                if 0 <= slot < palette_len:
+                    pab_idx = slot_to_pab[slot]
+                    if pab_idx >= 0:
+                        kept_b.append(int(pab_idx))
+                        kept_w.append(float(w))
+                        n_remapped += 1
+                        continue
+                n_dropped += 1
+            # Renormalize the kept weights so they still sum to 1.
+            wsum = sum(kept_w)
+            if wsum > 1e-6:
+                inv = 1.0 / wsum
+                kept_w = [w * inv for w in kept_w]
+            new_indices.append(tuple(kept_b))
+            new_weights.append(tuple(kept_w))
+        sm.bone_indices = new_indices
+        sm.bone_weights = new_weights
+
+    logger.info(
+        "Applied skin palette: %d vertex-bone pairs remapped, %d dropped",
+        n_remapped, n_dropped,
+    )
+    return n_remapped
+
+
+def derive_skin_slot_to_pab_geometric(
+    mesh: ParsedMesh,
+    skeleton,
+) -> int:
+    """Resolve PAC vertex skin slots to PAB bones using the per-mesh
+    skinning palette table that the engine reads at runtime.
+
+    THE ENCODING (verified May 2026 by RE-ing real game data)
+    --------------------------------------------------------
+    Every shipping PAC contains a per-mesh skinning palette stored
+    as a contiguous run of 4-byte u32 entries inside section 0,
+    after the submesh descriptors. Each entry layout::
+
+        bits 0-23:  bone hash (24-bit, matches a PAB bone hash)
+        bits 24-31: random byte — uninspected by the engine
+
+    The vertex record's slot index is a DIRECT INDEX into this
+    table. ``palette[slot] = bone_hash`` -> resolve via the PAB's
+    bone-hash table to a global bone index. There is no further
+    indirection or fallback — the table IS the engine's authoritative
+    palette.
+
+    Verified on shipping data:
+
+      * Damian (`cd_phw_00_nude_00_0001_damian.pac`):
+        206-entry table at file offset 0x1DA. The right-shoulder
+        vertex's slot 65 -> palette[65] = ``Bip01 R ClavicleTwist``
+        (PAB index 140) at world position (-0.14, +1.56, +0.01) —
+        exactly where that vertex lives.
+
+      * UB_0151 (`cd_phw_00_ub_00_0151.pac`):
+        95-entry table at file offset 0x53A0.
+
+      * Iron Man helmet (`cd_phm_00_hel_00_0363.pac`):
+        58-entry table at file offset 0x3A1.
+
+    THE SCAN
+    --------
+    We don't yet have a deterministic byte-offset rule pointing at
+    the table from the section header (the section 0 header carries
+    the LOD section offsets but not the palette offset). So we
+    locate the table empirically by scanning every 4-byte boundary
+    in the PAC and finding the longest run whose low-24-bit matches
+    a known PAB bone hash. PAB hashes are 24-bit values in a sparse
+    16M-value space (448 bones / 16,777,216 keys ≈ 2.7 × 10⁻⁵ chance
+    of any random 3-byte sequence matching), so even 5 consecutive
+    matches is statistically impossible by chance — the longest run
+    we find IS the palette by construction.
+
+    Returns total (vertex, bone) pairs assigned. Mutates
+    ``mesh.submeshes[*].bone_indices/bone_weights`` in place,
+    converting palette slots to PAB bone indices.
+
+    Strict mode — NO FALLBACK. If a slot index is out of range of
+    the palette, OR a palette entry's hash doesn't resolve to a PAB
+    bone, that (vertex, slot) pairing is dropped. Vertices left with
+    no bones are emitted un-weighted (they stay in bind position
+    when bones rotate, never dragged to a guessed bone).
+    """
+    # ── Idempotency guard ──────────────────────────────────────────────
+    # The body of this function MUTATES ``sm.bone_indices`` in place
+    # (line ~2441), replacing 10-bit palette slot indices with full PAB
+    # bone indices. A second call on the same mesh would treat the
+    # already-resolved PAB indices (range 0..N where N can be 400+) as
+    # palette slots and either drop them (idx >= palette_size, scrambling
+    # weights to 0) or remap them to wrong bones (head verts ending up
+    # weighted to finger bones).
+    #
+    # The Right-Click Export Full Character flow already runs ONCE per
+    # click on a fresh ParsedMesh, so this guard is dormant in normal
+    # use. It exists as a safety net so any future workflow (preview
+    # pre-pass, bulk re-export, save-and-resave) that accidentally
+    # re-runs the resolver on the same mesh becomes a safe no-op
+    # instead of corrupting the rig.
+    #
+    # Verified failure mode without this guard (file 03 Test C):
+    # head vertex (97, 347, 346) → second call → (442,) = wrong finger
+    # bone; hand submesh ends up with 0 valid clusters.
+    if getattr(mesh, "_palette_resolved", False):
+        return 0
+
+    if not skeleton or not getattr(skeleton, "bones", None):
+        return 0
+
+    pab_hashes = getattr(skeleton, "bone_hashes", None)
+    if pab_hashes is None or len(pab_hashes) != len(skeleton.bones):
+        logger.warning(
+            "derive_skin_slot_to_pab_geometric: skeleton has no "
+            "bone_hashes attribute; cannot decode palette."
+        )
+        return 0
+    hash_to_pab = {h: i for i, h in enumerate(pab_hashes)}
+
+    pac_bytes = getattr(mesh, "_pac_bytes", None)
+    if pac_bytes is None:
+        logger.warning(
+            "derive_skin_slot_to_pab_geometric: mesh has no _pac_bytes "
+            "attribute; caller must stash raw PAC bytes."
+        )
+        return 0
+
+    palette = _scan_pac_skin_palette(pac_bytes, set(pab_hashes))
+    if not palette:
+        logger.warning(
+            "derive_skin_slot_to_pab_geometric: could not locate "
+            "skinning palette table in PAC bytes."
+        )
+        return 0
+    logger.info("Decoded PAC skinning palette: %d entries.", len(palette))
+
+    n_assigned = 0
+    n_dropped = 0
+    n_unresolved = 0
+    for sm in mesh.submeshes:
+        if not sm.bone_indices:
+            continue
+        new_indices: list[tuple[int, ...]] = []
+        new_weights: list[tuple[float, ...]] = []
+        for slots, weights in zip(sm.bone_indices, sm.bone_weights):
+            kept_b: list[int] = []
+            kept_w: list[float] = []
+            for s, w in zip(slots, weights):
+                w = float(w)
+                if w <= 0:
+                    continue
+                s = int(s)
+                if 0 <= s < len(palette):
+                    pab_h = palette[s]
+                    pab_i = hash_to_pab.get(pab_h, -1)
+                    if pab_i >= 0:
+                        kept_b.append(pab_i)
+                        kept_w.append(w)
+                        n_assigned += 1
+                        continue
+                    else:
+                        n_unresolved += 1
+                else:
+                    n_dropped += 1
+            if kept_b:
+                wsum = sum(kept_w)
+                if wsum > 1e-6:
+                    inv = 1.0 / wsum
+                    kept_w = [w * inv for w in kept_w]
+                merged: dict[int, float] = {}
+                for b, w in zip(kept_b, kept_w):
+                    merged[b] = merged.get(b, 0.0) + w
+                new_indices.append(tuple(merged.keys()))
+                new_weights.append(tuple(merged.values()))
+            else:
+                new_indices.append(())
+                new_weights.append(())
+        sm.bone_indices = new_indices
+        sm.bone_weights = new_weights
+
+    logger.info(
+        "PAC palette resolution: %d pairs assigned, %d slot-out-of-range, "
+        "%d hash-not-in-PAB.",
+        n_assigned, n_dropped, n_unresolved,
+    )
+
+    # Mark the mesh so the idempotency guard at the top of this function
+    # short-circuits any future call on the same ParsedMesh. The slot-
+    # to-PAB indirection is now baked into sm.bone_indices and a second
+    # resolution pass would corrupt it (see file 03 Test C in the
+    # research bundle for the byte-level falsification).
+    mesh._palette_resolved = True
+    return n_assigned
+
+
+def _scan_pac_skin_palette(
+    pac_bytes: bytes, valid_hashes: set,
+) -> list[int]:
+    """Find the per-mesh skinning palette in a PAC.
+
+    Scans for the longest contiguous run of 4-byte u32 entries whose
+    low-24-bit matches a PAB bone hash. Returns the list of 24-bit
+    hashes in palette-index order, or an empty list if no qualifying
+    run exists.
+    """
+    n = len(pac_bytes)
+    best_off = -1
+    best_len = 0
+    i = 0
+    while i + 4 <= n:
+        word = (pac_bytes[i]
+                | (pac_bytes[i + 1] << 8)
+                | (pac_bytes[i + 2] << 16))
+        if word in valid_hashes:
+            run_len = 0
+            j = i
+            while j + 4 <= n:
+                w2 = (pac_bytes[j]
+                      | (pac_bytes[j + 1] << 8)
+                      | (pac_bytes[j + 2] << 16))
+                if w2 in valid_hashes:
+                    run_len += 1
+                    j += 4
+                else:
+                    break
+            if run_len > best_len:
+                best_len = run_len
+                best_off = i
+            i = j
+        else:
+            i += 1
+    if best_len < 5 or best_off < 0:
+        return []
+    palette: list[int] = []
+    for k in range(best_len):
+        off = best_off + k * 4
+        h = (pac_bytes[off]
+             | (pac_bytes[off + 1] << 8)
+             | (pac_bytes[off + 2] << 16))
+        palette.append(h)
+    return palette
+

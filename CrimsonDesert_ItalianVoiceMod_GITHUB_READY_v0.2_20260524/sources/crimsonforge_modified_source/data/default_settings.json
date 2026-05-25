@@ -1,0 +1,136 @@
+{
+    "version": "1.0.0",
+    "general": {
+        "theme": "dark",
+        "language": "en",
+        "last_game_path": "",
+        "last_output_path": "",
+        "recent_files": []
+    },
+    "ai_providers": {
+        "openai": {
+            "enabled": true,
+            "api_key": "",
+            "base_url": "https://api.openai.com/v1",
+            "default_model": "",
+            "timeout_seconds": 60,
+            "max_retries": 3
+        },
+        "anthropic": {
+            "enabled": true,
+            "api_key": "",
+            "base_url": "https://api.anthropic.com/v1",
+            "default_model": "",
+            "timeout_seconds": 60,
+            "max_retries": 3
+        },
+        "gemini": {
+            "enabled": true,
+            "api_key": "",
+            "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+            "default_model": "",
+            "timeout_seconds": 60,
+            "max_retries": 3
+        },
+        "deepseek": {
+            "enabled": true,
+            "api_key": "",
+            "base_url": "https://api.deepseek.com",
+            "default_model": "",
+            "timeout_seconds": 60,
+            "max_retries": 3
+        },
+        "ollama": {
+            "enabled": true,
+            "api_key": "ollama",
+            "base_url": "http://localhost:11434/v1",
+            "default_model": "",
+            "timeout_seconds": 120,
+            "max_retries": 1
+        },
+        "vllm": {
+            "enabled": false,
+            "api_key": "",
+            "base_url": "http://localhost:8000/v1",
+            "default_model": "",
+            "timeout_seconds": 120,
+            "max_retries": 1
+        },
+        "mistral": {
+            "enabled": true,
+            "api_key": "",
+            "base_url": "https://api.mistral.ai/v1",
+            "default_model": "",
+            "timeout_seconds": 60,
+            "max_retries": 3
+        },
+        "cohere": {
+            "enabled": true,
+            "api_key": "",
+            "base_url": "https://api.cohere.com/v2",
+            "default_model": "",
+            "timeout_seconds": 60,
+            "max_retries": 3
+        },
+        "custom": {
+            "enabled": false,
+            "api_key": "",
+            "base_url": "",
+            "default_model": "",
+            "timeout_seconds": 60,
+            "max_retries": 3
+        },
+        "deepl": {
+            "enabled": false,
+            "api_key": "",
+            "base_url": "https://api.deepl.com/v2",
+            "default_model": "deepl",
+            "timeout_seconds": 60,
+            "max_retries": 3
+        }
+    },
+    "translation": {
+        "autosave_enabled": true,
+        "autosave_interval_seconds": 30,
+        "batch_size": 10,
+        "batch_delay_ms": 500,
+        "max_concurrent_requests": 3,
+        "default_source_lang": "en",
+        "default_target_lang": "",
+        "system_prompt": "",
+        "user_prompt_template": "",
+        "projects_dir": ""
+    },
+    "tts": {
+        "elevenlabs_tts_api_key": "",
+        "azure_tts_api_key": "",
+        "azure_region": "eastus",
+        "omnivoice_api_key": "",
+        "omnivoice_base_url": "http://127.0.0.1:8880",
+        "omnivoice_tts_default_model": "omnivoice",
+        "omnivoice_timeout_seconds": 120,
+        "omnivoice_num_step": 32,
+        "omnivoice_guidance_scale": 3.0,
+        "omnivoice_denoise": true,
+        "omnivoice_duration_seconds": 0.0,
+        "omnivoice_t_shift": 0.1,
+        "omnivoice_position_temperature": 5.0,
+        "omnivoice_class_temperature": 0.0,
+        "omnivoice_clone_mode": "one_shot",
+        "omnivoice_profile_name": "",
+        "omnivoice_voice_mode": "auto",
+        "omnivoice_auto_reference": true,
+        "omnivoice_refresh_profile": true
+    },
+    "repack": {
+        "auto_backup": true,
+        "verify_after_repack": true,
+        "preserve_timestamps": true,
+        "backup_dir": ""
+    },
+    "advanced": {
+        "log_level": "INFO",
+        "log_file": "",
+        "debug_mode": false
+    }
+}

@@ -51,7 +51,7 @@ Mod fan gratuita e non a scopo di lucro. Gli audio sono generati con AI e deriva
 
 Per Nexus e consigliata la variante `NEXUS_SAFE`, senza runtime Python portatile e senza file eseguibili. In quella versione l'utente deve avere Python 3 installato.
 potete trovare la mod al seguente link: https://www.nexusmods.com/crimsondesert/mods/2741?tab=description
-Nota 26/05/2026: attualmente la mod è bloccata sul sito e in attesa che gli admin blocchino il contenuto.
+Nota 26/05/2026: attualmente la mod è bloccata sul sito e in attesa che gli admin approvino il contenuto.
 
 Dona con PayPal per acquistare crediti AI e velocizzare il processo di traduzione.
 <div style="text-align:center; margin-top:40px;">

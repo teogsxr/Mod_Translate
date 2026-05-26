@@ -1,31 +1,41 @@
-# Crimson Desert Italian Voice Mod v0.2
+# Crimson Desert Italian Voice Mod v0.3-hotfix-20260526
 
 Pacchetto pronto per installare solo le voci italiane generate per Crimson Desert.
 Non serve installare Python: il runtime ufficiale portatile e incluso nel pacchetto.
+
+## Stato
+
+- Audio italiani patchabili: 51,246 WEM
+- Package voce modificato: `0006`
+- Payload audio: `data/wem_replacements_0006/`
+- File `.paz` originali inclusi: nessuno
+- Backup automatico prima della scrittura
+- Verifica tecnica: tutti i target voce non testuali risultano coperti; hard error WEM rilevati e corretti.
+
+## Cosa cambia rispetto alla prima pubblicazione
+
+- Copertura ampliata da circa `42,759` a `51,246` WEM.
+- Recuperate molte voci mancanti di main quest, cutscene, scene dialogue e dialoghi ambientali.
+- Corrette alcune battute del prologo, inclusa la pronuncia di `Giails` e alcune frasi di Kliff.
+- Riparati WEM corrotti o non validi trovati durante l'audit.
+- Aggiornati manifest, report di controllo e sorgenti inclusi nel pacchetto.
+- Incluso Python portatile per evitare prerequisiti manuali lato utente.
 
 ## Compatibilita verificata
 
 - Steam AppID: `3321460`
 - Steam buildid testato: `23374070`
 - `CrimsonDesert.exe`: `1.0.0.1492`
-- Data pacchetto: `2026-05-24`
+- Data hotfix: `2026-05-26`
 
 Questa e la versione supportata con certezza. Su altre build puo funzionare, ma non e garantito.
 Se il gioco viene aggiornato e aggiunge nuovi audio, quei nuovi audio restano originali/inglesi.
 Se una patch rinomina o rimuove audio gia presenti nel manifest, l'installer si ferma prima di modificare gli archivi.
 
-## Contenuto
-
-- Audio italiani patchabili: 42,759 WEM
-- Package voce modificato: `0006`
-- Payload audio: `data/wem_replacements_0006.zip` (1.09 GB)
-- File `.paz` originali inclusi: nessuno
-- Backup automatico prima della scrittura
-
 ## Installazione rapida
 
 1. Chiudi Crimson Desert, Steam Cloud sync in corso e CrimsonForge.
-2. Estrai tutto lo zip in una cartella qualsiasi.
+2. Estrai o scarica tutta la cartella della mod in una posizione qualsiasi.
 3. Avvia `CONTROLLA_PRIMA.cmd`.
 4. Avvia `INSTALLA_MOD_VOCI_ITALIANE.cmd`.
 5. Se il gioco non e nel percorso Steam standard, inserisci la cartella di Crimson Desert quando richiesto.

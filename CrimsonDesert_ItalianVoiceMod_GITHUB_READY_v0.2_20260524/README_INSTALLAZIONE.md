@@ -9,16 +9,6 @@ Pacchetto pronto per installare le voci italiane generate per Crimson Desert.
 - Payload audio: `data/wem_replacements_0006/`
 - Python portatile: incluso in `installer/python`
 - Data hotfix: `2026-05-26`
-- Verifica tecnica: tutti i target voce non testuali risultano coperti; hard error WEM rilevati e corretti.
-
-## Cosa cambia rispetto alla prima pubblicazione
-
-- Copertura ampliata da circa `42,759` a `51,246` WEM.
-- Recuperate molte voci mancanti di main quest, cutscene, scene dialogue e dialoghi ambientali.
-- Corrette alcune battute del prologo, inclusa la pronuncia di `Giails` e alcune frasi di Kliff.
-- Riparati WEM corrotti o non validi trovati durante l'audit.
-- Aggiornati manifest, report di controllo e sorgenti inclusi nel pacchetto.
-- Incluso Python portatile per evitare prerequisiti manuali lato utente.
 
 ## Compatibilita verificata
 

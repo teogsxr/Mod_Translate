@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import os
 import re
@@ -106,7 +107,7 @@ def normalize_key(group: str, path: str) -> str:
 
 
 def clean_tts_text(text: str) -> str:
-    text = (text or "").replace("&lt;", "<").replace("&gt;", ">").replace("&amp;", "&")
+    text = html.unescape(text or "")
 
     def repl(match: re.Match) -> str:
         token = match.group(0).strip("{}")
@@ -115,12 +116,31 @@ def clean_tts_text(text: str) -> str:
         return token.rsplit("#", 1)[-1].replace("_", " ")
 
     text = re.sub(r"\{[^{}]*StaticInfo[^{}]*\}", repl, text, flags=re.IGNORECASE)
-    text = re.sub(r"<\s*br\s*/?\s*>", ". ", text, flags=re.IGNORECASE)
+    parts = re.split(r"\s*<\s*br\s*/?\s*>\s*", text, flags=re.IGNORECASE)
+    if len(parts) > 1:
+        joined = parts[0].strip()
+        for part in (p.strip() for p in parts[1:]):
+            if not part:
+                continue
+            if not joined:
+                joined = part
+                continue
+            if re.search(r"[.!?…,:;]$", joined) or re.match(r"^[,.;:!?]", part):
+                separator = " "
+            elif re.match(r"^[a-zà-öø-ÿ]", part, flags=re.IGNORECASE) and part[:1].islower():
+                separator = " "
+            else:
+                separator = ". "
+            joined += separator + part
+        text = joined
     text = re.sub(r"<[^>]+>", " ", text)
     text = re.sub(r"\s+", " ", text)
     text = re.sub(r"\s+([,.;:!?])", r"\1", text)
+    text = re.sub(r"([,;:])\s*\.", r"\1", text)
+    text = re.sub(r"\.\s*([,;:])", r"\1", text)
     text = re.sub(r"([!?])\s*\.", r"\1", text)
-    text = re.sub(r"\.{2,}", ".", text)
+    text = re.sub(r"(?<!\.)\.\.(?!\.)", ".", text)
+    text = re.sub(r"\.{4,}", "...", text)
     return text.strip()
 
 

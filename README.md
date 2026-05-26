@@ -1,3 +1,12 @@
+<div style="text-align:center; margin-top: 32px;">
+  <a href="https://www.paypal.com/donate/?business=matteo.sai%40hotmail.it"
+     target="_blank"
+     rel="noopener noreferrer"
+     style="display:inline-block; padding:12px 24px; background:#0070ba; color:white; text-decoration:none; border-radius:8px; font-weight:bold;">
+    Dona con PayPal per acquistare crediti AI e velocizzare il processo di traduzione.
+  </a>
+</div>
+
 # Crimson Desert Italian Voice Mod
 
 Doppiaggio italiano AI fan-made per Crimson Desert.

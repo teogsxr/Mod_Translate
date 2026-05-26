@@ -1,64 +1,38 @@
-# Crimson Desert Italian Voice Mod v0.2 - GitHub ready
+# Crimson Desert Italian Voice Mod v0.3-hotfix-20260526
 
-Pacchetto pronto per installare solo le voci italiane generate per Crimson Desert.
-Non serve installare Python: il runtime ufficiale portatile e incluso nel pacchetto.
+Pacchetto pronto per installare le voci italiane generate per Crimson Desert.
+
+## Stato
+
+- Voci italiane incluse: 51,246
+- Package voce modificato: `0006`
+- Payload audio: `data/wem_replacements_0006/`
+- Python portatile: incluso in `installer/python`
+- Data hotfix: `2026-05-26`
 
 ## Compatibilita verificata
 
 - Steam AppID: `3321460`
 - Steam buildid testato: `23374070`
 - `CrimsonDesert.exe`: `1.0.0.1492`
-- Data pacchetto: `2026-05-24`
 
-Questa e la versione supportata con certezza. Su altre build puo funzionare, ma non e garantito.
-Se il gioco viene aggiornato e aggiunge nuovi audio, quei nuovi audio restano originali/inglesi.
-Se una patch rinomina o rimuove audio gia presenti nel manifest, l'installer si ferma prima di modificare gli archivi.
+Su build diverse puo funzionare, ma non e garantito. Se il gioco viene aggiornato e aggiunge nuove quest o nuovi audio, quelli resteranno originali. Se una patch rinomina o rimuove audio presenti nel manifest, l'installer si ferma prima di patchare.
 
-## Contenuto
+## Installazione
 
-- Audio italiani patchabili: 42,759 WEM
-- Package voce modificato: `0006`
-- Payload audio: `data\wem_replacements_0006\` (cartella, circa 1.09 GB)
-- Python portatile incluso: `installer\python\python.exe`
-- Sorgenti e strumenti di lavoro: `sources\`
-- File `.paz` originali inclusi: nessuno
-- Backup automatico prima della scrittura
+1. Chiudi Crimson Desert, Steam e CrimsonForge.
+2. Avvia `CONTROLLA_PRIMA.cmd`.
+3. Avvia `INSTALLA_MOD_VOCI_ITALIANE.cmd`.
+4. Se richiesto, indica la cartella di installazione di Crimson Desert.
 
-## Installazione rapida
-
-1. Chiudi Crimson Desert, Steam Cloud sync in corso e CrimsonForge.
-2. Scarica il repository/pacchetto GitHub ed estrai tutto mantenendo la struttura delle cartelle.
-3. Avvia `CONTROLLA_PRIMA.cmd`.
-4. Avvia `INSTALLA_MOD_VOCI_ITALIANE.cmd`.
-5. Se il gioco non e nel percorso Steam standard, inserisci la cartella di Crimson Desert quando richiesto.
-6. Avvia il gioco e usa la lingua voce inglese/il package voce `0006`.
-
-L'installer modifica:
-
-- `0006\0.pamt`
-- `0006\0.paz`
-- `0006\1.paz`
-- `meta\0.papgt`
-
-Il backup viene creato in:
-
-`Crimson Desert\crimson_desert_it_voice_backup\DATA_ORA`
-
-## Disinstallazione
-
-Metodo consigliato: da Steam usa "Verifica integrita dei file installati".
-
-Metodo manuale: copia dal backup i file `meta\0.papgt`, `0006\0.pamt`, `0006\0.paz` e `0006\1.paz` nella cartella del gioco.
+L'installer crea un backup automatico degli archivi modificati.
 
 ## Qualita realistica
 
-Questa e una beta AI fan-made, non un doppiaggio professionale.
-Le voci sono state generate clonando/condizionando le voci originali: molte battute sono giocabili e comprensibili, ma alcune possono avere accento inglese o straniero, ritmo imperfetto, enfasi strana, pause non ideali o resa emotiva non sempre naturale.
+Questa e una beta AI fan-made, non un doppiaggio professionale. Molte battute sono comprensibili e giocabili, ma alcune possono avere accento inglese/straniero, ritmo imperfetto, enfasi strana o pronunce da correggere manualmente.
 
-Per eliminare davvero gli accenti servirebbe un secondo progetto piu lungo con voci italiane dedicate, profili separati per personaggio e revisione manuale.
+Per eliminare davvero gli accenti servirebbe un secondo progetto piu lungo con voci italiane dedicate e revisione manuale.
 
 ## Nota non commerciale
 
-Questo pacchetto e un progetto fan gratuito e non a scopo di lucro.
-Gli audio sono generati con AI e derivano/sono condizionati dalle voci originali del gioco: non venderlo, non metterlo dietro paywall e non monetizzarlo.
-Rispetta le regole del gioco, della piattaforma e dei titolari dei diritti. Se un avente diritto chiede la rimozione, il pacchetto va rimosso.
+Questo pacchetto e gratuito e non a scopo di lucro. Gli audio sono generati con AI e derivano/sono condizionati dalle voci originali del gioco: non venderlo, non metterlo dietro paywall e non monetizzarlo.

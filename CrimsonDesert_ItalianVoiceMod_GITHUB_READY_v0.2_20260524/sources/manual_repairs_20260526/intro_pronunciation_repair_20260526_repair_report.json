@@ -1,0 +1,47 @@
+{
+  "created_at": "2026-05-26T05:28:08+00:00",
+  "game": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Crimson Desert",
+  "kliff_reference": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\single_repairs\\unique_kliff_intro_0310_player_00002\\ref_original_20260525_215441.wav",
+  "montage": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\intro_pronunciation_repair_20260526\\CAMPIONE_INTRO_PRONUNCIA_FIX.wav",
+  "items": [
+    {
+      "path": "sound/unique_kliff_intro_0310_player_00000.wem",
+      "text": "La spada di Giails...",
+      "source_text": "Giles's sword...",
+      "reason": "Use phonetic Italian TTS spelling for Giles.",
+      "key": "0006:sound/unique_kliff_intro_0310_player_00000.wem",
+      "before_wem": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\intro_pronunciation_repair_20260526\\before_wem\\unique_kliff_intro_0310_player_00000.wem",
+      "wav": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\intro_pronunciation_repair_20260526\\wav\\unique_kliff_intro_0310_player_00000.wav",
+      "wem": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\intro_pronunciation_repair_20260526\\wem\\unique_kliff_intro_0310_player_00000.wem",
+      "sha256": "f9672f3c699a2b3ea6e24ba753623cf02a160ea5f447008b5b4aeebf8ea3cfb0",
+      "size": 37952,
+      "signature": "a9be24f73cb27e0afdc4786543d57dbce87410dfc45e1f8858cb6566b6b88b0d"
+    },
+    {
+      "path": "sound/unique_kliff_intro_0310_player_00002.wem",
+      "text": "Giails... riposa in pace.",
+      "source_text": "Giles... Rest well.",
+      "reason": "Use phonetic Italian TTS spelling for Giles.",
+      "key": "0006:sound/unique_kliff_intro_0310_player_00002.wem",
+      "before_wem": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\intro_pronunciation_repair_20260526\\before_wem\\unique_kliff_intro_0310_player_00002.wem",
+      "wav": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\intro_pronunciation_repair_20260526\\wav\\unique_kliff_intro_0310_player_00002.wav",
+      "wem": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\intro_pronunciation_repair_20260526\\wem\\unique_kliff_intro_0310_player_00002.wem",
+      "sha256": "46fec44e249d0422a6895d2eeffa2514de4161a01752b7f6b0b389c639abd796",
+      "size": 48191,
+      "signature": "9218906f288a07e0417a596af151e43c8da6b369963f4e0cd9c57d41fe755178"
+    },
+    {
+      "path": "sound/unique_kliff_splithorn_boss_0200_player_00004.wem",
+      "text": "Dai, adesso càlmati.",
+      "source_text": "Hey, hey. Calm down.",
+      "reason": "Force correct Italian stress on calmati.",
+      "key": "0006:sound/unique_kliff_splithorn_boss_0200_player_00004.wem",
+      "before_wem": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\intro_pronunciation_repair_20260526\\before_wem\\unique_kliff_splithorn_boss_0200_player_00004.wem",
+      "wav": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\intro_pronunciation_repair_20260526\\wav\\unique_kliff_splithorn_boss_0200_player_00004.wav",
+      "wem": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\intro_pronunciation_repair_20260526\\wem\\unique_kliff_splithorn_boss_0200_player_00004.wem",
+      "sha256": "841088a15e752c1131b623256feb8b63e1992a35d4ef9d1090c39911844abba0",
+      "size": 39622,
+      "signature": "0e97f9fd539d9deab10af7402db36da8538ad929febcf1bc717bbca6f3a391b2"
+    }
+  ]
+}

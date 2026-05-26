@@ -1,27 +1,40 @@
 # Crimson Desert Italian Voice Mod
 
-Pacchetto GitHub-ready della mod voce italiana AI fan-made per Crimson Desert.
+Doppiaggio italiano AI fan-made per Crimson Desert.
 
-La cartella principale da usare e:
+Questa repository contiene il pacchetto installabile e i sorgenti di lavoro della mod. La cartella principale e:
 
 `CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.2_20260524`
 
-Nota: il nome cartella resta quello della prima pubblicazione, ma il contenuto e stato aggiornato con hotfix `0.3-hotfix-20260526` del `2026-05-26`.
+Il nome cartella resta quello della prima pubblicazione, ma il contenuto e aggiornato alla release `0.3-hotfix-20260526`.
 
-## Cosa contiene
+## Stato attuale
 
-- Installer pronto all'uso per applicare le voci italiane al package voce `0006`.
-- Payload audio gia esploso in `data\wem_replacements_0006\`, senza zip audio annidato.
-- Python portatile incluso in `installer\python\`, quindi l'utente non deve installare Python a parte.
-- Sorgenti, script e note di lavoro in `sources\`.
+- Voci italiane incluse: 51.246 file WEM.
+- Package voce modificato: `0006`.
+- Compatibilita verificata: Steam buildid `23374070`, `CrimsonDesert.exe` `1.0.0.1492`.
+- Hotfix inclusi: recupero voci mancanti, pulizia casi `StaticInfo`, correzioni manuali sull'intro.
+- Payload audio esploso in `data/wem_replacements_0006/`, senza archivi audio annidati.
 
-## Installazione
+## Installazione da GitHub
 
-1. Scarica il repository da GitHub.
-2. Entra in `CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.2_20260524`.
+1. Scarica la repository.
+2. Apri `CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.2_20260524`.
 3. Avvia `CONTROLLA_PRIMA.cmd`.
 4. Avvia `INSTALLA_MOD_VOCI_ITALIANE.cmd`.
 
-Compatibilita verificata: Steam buildid `23374070`, `CrimsonDesert.exe` `1.0.0.1492`.
+Il pacchetto GitHub include Python portatile in `installer/python`, quindi non richiede Python installato nel sistema.
 
-Questa e una beta AI fan-made gratuita e non commerciale. Le voci derivano/sono condizionate dalle voci originali del gioco: non vendere, non mettere dietro paywall e non monetizzare il pacchetto.
+## Qualita e limiti
+
+Questa e una beta AI ampia, giocabile, ma non un doppiaggio professionale. Alcune frasi possono avere accento inglese o straniero, ritmo imperfetto, enfasi strana o pronunce da rifinire. Le voci sono state generate clonando o condizionando le voci originali, quindi il risultato mantiene parte del carattere originale ma non sempre suona italiano naturale.
+
+Feedback e correzioni puntuali sono benvenuti, soprattutto con nome file o scena in cui l'audio non funziona bene.
+
+## Uso non commerciale
+
+Mod fan gratuita e non a scopo di lucro. Gli audio sono generati con AI e derivano o sono condizionati dalle voci originali del gioco. Non vendere il pacchetto, non metterlo dietro paywall e non monetizzarlo.
+
+## Nexus Mods
+
+Per Nexus e consigliata la variante `NEXUS_SAFE`, senza runtime Python portatile e senza file eseguibili. In quella versione l'utente deve avere Python 3 installato.

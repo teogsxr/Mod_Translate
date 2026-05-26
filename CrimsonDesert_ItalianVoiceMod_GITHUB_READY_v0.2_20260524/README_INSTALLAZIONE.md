@@ -1,10 +1,10 @@
 # Crimson Desert Italian Voice Mod v0.3-hotfix-20260526
 
-Pacchetto pronto per installare le voci italiane generate per Crimson Desert.
+Pacchetto pronto per installare le voci italiane AI fan-made di Crimson Desert.
 
 ## Stato
 
-- Voci italiane incluse: 51,246
+- Voci italiane incluse: 51.246
 - Package voce modificato: `0006`
 - Payload audio: `data/wem_replacements_0006/`
 - Python portatile: incluso in `installer/python`
@@ -25,14 +25,20 @@ Su build diverse puo funzionare, ma non e garantito. Se il gioco viene aggiornat
 3. Avvia `INSTALLA_MOD_VOCI_ITALIANE.cmd`.
 4. Se richiesto, indica la cartella di installazione di Crimson Desert.
 
-L'installer crea un backup automatico degli archivi modificati.
+L'installer crea un backup automatico degli archivi modificati prima di applicare i WEM italiani.
+
+## Cosa cambia
+
+- Aggiunge voci italiane al package audio `0006`.
+- Mantiene le strutture originali del gioco e sostituisce solo i WEM indicati dal manifest.
+- Include hotfix per voci mancanti, righe con placeholder `StaticInfo` lette male e alcune battute iniziali corrette manualmente.
 
 ## Qualita realistica
 
-Questa e una beta AI fan-made, non un doppiaggio professionale. Molte battute sono comprensibili e giocabili, ma alcune possono avere accento inglese/straniero, ritmo imperfetto, enfasi strana o pronunce da correggere manualmente.
+Questa e una beta AI fan-made, non un doppiaggio professionale. Molte battute sono comprensibili e giocabili, ma alcune possono avere accento inglese o straniero, ritmo imperfetto, enfasi strana o pronunce da correggere manualmente.
 
-Per eliminare davvero gli accenti servirebbe un secondo progetto piu lungo con voci italiane dedicate e revisione manuale.
+Per eliminare davvero gli accenti servirebbe un progetto piu lungo con voci italiane dedicate, scelta dei riferimenti voce personaggio per personaggio e revisione manuale.
 
 ## Nota non commerciale
 
-Questo pacchetto e gratuito e non a scopo di lucro. Gli audio sono generati con AI e derivano/sono condizionati dalle voci originali del gioco: non venderlo, non metterlo dietro paywall e non monetizzarlo.
+Questo pacchetto e gratuito e non a scopo di lucro. Gli audio sono generati con AI e derivano o sono condizionati dalle voci originali del gioco: non venderlo, non metterlo dietro paywall e non monetizzarlo.

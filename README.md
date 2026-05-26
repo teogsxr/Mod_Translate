@@ -1,18 +1,13 @@
-<div id="paypal-donate-button-container"></div>
-
-<script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-
-<script>
-  PayPal.Donation.Button({
-    env: 'production',
-    business: 'matteo.sai@hotmail.it',
-    image: {
-      src: 'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
-      title: 'Dona con PayPal',
-      alt: 'Dona con PayPal'
-    }
-  }).render('#paypal-donate-button-container');
-</script>
+<div style="text-align:center; margin-top:40px;">
+  <a href="https://www.paypal.com/donate/?business=matteo.sai%40hotmail.it&currency_code=EUR"
+     target="_blank"
+     rel="noopener noreferrer">
+    <img
+      src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+      alt="Dona con PayPal"
+      style="border:0;">
+  </a>
+</div>
 
 # Crimson Desert Italian Voice Mod
 

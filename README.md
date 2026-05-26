@@ -1,3 +1,4 @@
+Dona con PayPal per acquistare crediti AI e velocizzare il processo di traduzione.
 <div style="text-align:center; margin-top:40px;">
   <a href="https://www.paypal.com/donate/?business=matteo.sai%40hotmail.it&currency_code=EUR"
      target="_blank"
@@ -52,11 +53,15 @@ Per Nexus e consigliata la variante `NEXUS_SAFE`, senza runtime Python portatile
 potete trovare la mod al seguente link: https://www.nexusmods.com/crimsondesert/mods/2741?tab=description
 Nota 26/05/2026: attualmente la mod è bloccata sul sito e in attesa che gli admin blocchino il contenuto.
 
-<div style="text-align:center; margin-top: 32px;">
-  <a href="https://www.paypal.com/donate/?business=matteo.sai%40hotmail.it"
+Dona con PayPal per acquistare crediti AI e velocizzare il processo di traduzione.
+<div style="text-align:center; margin-top:40px;">
+  <a href="https://www.paypal.com/donate/?business=matteo.sai%40hotmail.it&currency_code=EUR"
      target="_blank"
-     rel="noopener noreferrer"
-     style="display:inline-block; padding:12px 24px; background:#0070ba; color:white; text-decoration:none; border-radius:8px; font-weight:bold;">
-    Dona con PayPal per acquistare crediti AI e velocizzare il processo di traduzione.
+     rel="noopener noreferrer">
+    <img
+      src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+      alt="Dona con PayPal"
+      style="border:0;">
   </a>
+</div>
 </div>

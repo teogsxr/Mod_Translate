@@ -1,9 +1,13 @@
-<div style="text-align: center; margin-top: 32px;">
+<div style="text-align: center; margin-top: 40px;">
+  <p style="margin-bottom: 12px; font-size: 16px;">
+    Se vuoi supportare il progetto, puoi fare una donazione:
+  </p>
+
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
     <input type="hidden" name="cmd" value="_donations">
     <input type="hidden" name="business" value="matteo.sai@hotmail.it">
     <input type="hidden" name="currency_code" value="EUR">
-    <input type="hidden" name="item_name" value="Donazione">
+    <input type="hidden" name="item_name" value="Supporto al progetto">
 
     <input
       type="image"
@@ -11,13 +15,6 @@
       name="submit"
       alt="Dona con PayPal"
       title="Dona con PayPal"
-    >
-
-    <img
-      alt=""
-      src="https://www.paypal.com/en_US/i/scr/pixel.gif"
-      width="1"
-      height="1"
     >
   </form>
 </div>

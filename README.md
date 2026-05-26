@@ -38,3 +38,12 @@ Mod fan gratuita e non a scopo di lucro. Gli audio sono generati con AI e deriva
 ## Nexus Mods
 
 Per Nexus e consigliata la variante `NEXUS_SAFE`, senza runtime Python portatile e senza file eseguibili. In quella versione l'utente deve avere Python 3 installato.
+
+<div style="text-align:center; margin-top: 32px;">
+  <a href="https://www.paypal.com/donate/?business=matteo.sai%40hotmail.it"
+     target="_blank"
+     rel="noopener noreferrer"
+     style="display:inline-block; padding:12px 24px; background:#0070ba; color:white; text-decoration:none; border-radius:8px; font-weight:bold;">
+    Dona con PayPal per acquistare crediti AI e velocizzare il processo di traduzione.
+  </a>
+</div>

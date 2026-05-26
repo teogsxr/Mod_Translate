@@ -1,10 +1,25 @@
-<div style="text-align:center; margin-top: 32px;">
-  <a href="https://www.paypal.com/donate/?business=matteo.sai%40hotmail.it"
-     target="_blank"
-     rel="noopener noreferrer"
-     style="display:inline-block; padding:12px 24px; background:#0070ba; color:white; text-decoration:none; border-radius:8px; font-weight:bold;">
-    Dona con PayPal per acquistare crediti AI e velocizzare il processo di traduzione.
-  </a>
+<div style="text-align: center; margin-top: 32px;">
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="matteo.sai@hotmail.it">
+    <input type="hidden" name="currency_code" value="EUR">
+    <input type="hidden" name="item_name" value="Donazione">
+
+    <input
+      type="image"
+      src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+      name="submit"
+      alt="Dona con PayPal"
+      title="Dona con PayPal"
+    >
+
+    <img
+      alt=""
+      src="https://www.paypal.com/en_US/i/scr/pixel.gif"
+      width="1"
+      height="1"
+    >
+  </form>
 </div>
 
 # Crimson Desert Italian Voice Mod

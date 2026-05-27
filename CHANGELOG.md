@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1-compat-20260527
+
+- Aggiunto autodetect percorsi per Steam, Epic, GOG, XboxGames e percorsi manuali.
+- Aggiunto `DIAGNOSTICA_COMPATIBILITA.cmd` per creare report senza modificare il gioco.
+- Aggiunto dry-run compatibilita prima della patch.
+- Bloccata per sicurezza l'installazione su Xbox App/Microsoft Store: e stato segnalato errore all'avvio dopo patch e serve verificare gli archivi prima di dichiararla compatibile.
+- Aggiornate istruzioni GitHub/Nexus con matrice compatibilita store.
+
 ## Work in progress - revisione voci
 
 - Aggiunta cartella `community/` per spiegare il lavoro in corso senza toccare la release installabile.

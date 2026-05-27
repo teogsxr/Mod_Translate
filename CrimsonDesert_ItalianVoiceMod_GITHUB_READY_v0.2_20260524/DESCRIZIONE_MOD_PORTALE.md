@@ -13,6 +13,16 @@ Questa mod applica 51.246 file audio italiani al package voce `0006`. Il pacchet
 - `CrimsonDesert.exe`: `1.0.0.1492`
 - Hotfix pacchetto: `2026-05-26`
 
+Steam e la piattaforma verificata.
+
+Epic/GOG o installazioni manuali possono funzionare solo se gli archivi sono compatibili; l'installer chiede una conferma esplicita prima di procedere.
+
+Xbox App/Microsoft Store non e attualmente supportata. Un utente ha segnalato errore all'avvio dopo patch; per sicurezza l'installer blocca Xbox App e include `DIAGNOSTICA_COMPATIBILITA.cmd` per generare un report da inviare.
+
+Su GitHub e disponibile anche un tool standalone per utenti Xbox:
+
+`tools/xbox-compatibility-diagnostic/`
+
 Su versioni diverse potrebbe funzionare, ma non e garantito. Se il gioco viene aggiornato e aggiunge nuovi audio, quei nuovi audio resteranno originali.
 
 ## Qualita delle voci

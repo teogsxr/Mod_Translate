@@ -25,6 +25,7 @@ Il nome cartella resta quello della prima pubblicazione, ma il contenuto e aggio
 - Voci italiane incluse: 51.246 file WEM.
 - Package voce modificato: `0006`.
 - Compatibilita verificata: Steam buildid `23374070`, `CrimsonDesert.exe` `1.0.0.1492`.
+- Store: Steam supportato; Epic/GOG/manuale non testati ma installabili solo con conferma; Xbox App/Microsoft Store bloccata per sicurezza finche non avremo una base compatibile verificata.
 - Hotfix inclusi: recupero voci mancanti, pulizia casi `StaticInfo`, correzioni manuali sull'intro.
 - Payload audio esploso in `data/wem_replacements_0006/`, senza archivi audio annidati.
 
@@ -57,6 +58,21 @@ Per capire la struttura della repository: `REPOSITORY_LAYOUT.md`.
 4. Avvia `INSTALLA_MOD_VOCI_ITALIANE.cmd`.
 
 Il pacchetto GitHub include Python portatile in `installer/python`, quindi non richiede Python installato nel sistema.
+
+Se usi Xbox App/Microsoft Store, non installare la patch: e stato segnalato errore all'avvio del gioco dopo modifica degli archivi. Avvia `DIAGNOSTICA_COMPATIBILITA.cmd` e apri una Issue allegando il report generato.
+
+## Utenti Xbox App / Microsoft Store
+
+Al momento Xbox App/Microsoft Store e bloccata per sicurezza. Non significa che sara impossibile supportarla: serve capire se gli archivi Microsoft sono uguali a quelli Steam o se Xbox blocca i file modificati con un controllo integrita esterno.
+
+Per aiutarci:
+
+1. Apri `tools/xbox-compatibility-diagnostic/`.
+2. Avvia `DIAGNOSTICA_XBOX_COMPATIBILITA.cmd`.
+3. Carica il file `.txt` o `.json` generato nella cartella `reports`.
+4. Apri una Issue usando il template `Compatibilita Xbox App`.
+
+Il tool standalone non installa la mod e non modifica il gioco.
 
 ## Qualita e limiti
 

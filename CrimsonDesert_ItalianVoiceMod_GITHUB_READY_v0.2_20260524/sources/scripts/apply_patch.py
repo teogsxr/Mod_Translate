@@ -251,31 +251,61 @@ def backup_files(game_path: Path, files: list[Path]) -> Path:
     return backup_dir
 
 
+def detect_store(game_path: Path) -> str:
+    lower = str(game_path).replace("/", "\\").lower()
+    if "\\steamapps\\common\\" in lower:
+        return "steam"
+    if "\\xboxgames\\" in lower or "\\windowsapps\\" in lower:
+        return "xbox"
+    if "\\epic games\\" in lower or "\\epicgames\\" in lower:
+        return "epic"
+    if "\\gog galaxy\\games\\" in lower or "\\gog games\\" in lower:
+        return "gog"
+    return "unknown"
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Applica la mod audio italiana di Crimson Desert.")
     parser.add_argument("--game-path", default=r"C:\Program Files (x86)\Steam\steamapps\common\Crimson Desert")
     parser.add_argument("--package-dir", default=str(Path(__file__).resolve().parents[1]))
     parser.add_argument("--no-backup", action="store_true")
     parser.add_argument("--skip-hash", action="store_true")
+    parser.add_argument("--dry-run", action="store_true", help="Verifica compatibilita senza scrivere file.")
+    parser.add_argument("--allow-untested-store", action="store_true", help="Permette store non Steam non testati, esclusa Xbox App.")
     args = parser.parse_args()
 
     game_path = Path(args.game_path).resolve()
     package_dir = Path(args.package_dir).resolve()
     manifest_path = package_dir / "data" / "manifest.json"
     payload_path = package_dir / "data" / "wem_replacements_0006.zip"
+    payload_dir = package_dir / "data" / "wem_replacements_0006"
     pamt_path = game_path / "0006" / "0.pamt"
     papgt_path = game_path / "meta" / "0.papgt"
 
     if not manifest_path.is_file():
         raise RuntimeError(f"Manifest non trovato: {manifest_path}")
-    if not payload_path.is_file():
-        raise RuntimeError(f"Payload audio non trovato: {payload_path}")
+    if not payload_path.is_file() and not payload_dir.is_dir():
+        raise RuntimeError(f"Payload audio non trovato: {payload_path} o {payload_dir}")
     if not pamt_path.is_file() or not papgt_path.is_file():
         raise RuntimeError(f"Percorso gioco non valido: {game_path}")
+
+    store = detect_store(game_path)
+    if store == "xbox":
+        raise RuntimeError(
+            "Versione Xbox App/Microsoft Store non supportata in scrittura. "
+            "Un utente ha segnalato errore all'avvio dopo patch; usa DIAGNOSTICA_COMPATIBILITA.cmd "
+            "e invia il report prima di installare su Xbox App."
+        )
+    if store != "steam" and not args.allow_untested_store:
+        raise RuntimeError(
+            "Store non Steam non testato. Riesegui da INSTALLA_MOD_VOCI_ITALIANE.cmd e conferma il rischio, "
+            "oppure usa DIAGNOSTICA_COMPATIBILITA.cmd per inviarci un report."
+        )
 
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     entries = manifest["entries"]
     print(f"Gioco: {game_path}")
+    print(f"Store rilevato: {store}")
     print(f"Audio da applicare: {len(entries)}")
 
     pamt = parse_pamt(pamt_path, game_path / "0006")
@@ -289,6 +319,11 @@ def main() -> int:
             print(f"  ... altri {len(missing) - 25}")
         return 2
 
+    if args.dry_run:
+        print("Dry-run OK: tutti i file del manifest esistono nella base indicata.")
+        print("Nessun file e stato modificato.")
+        return 0
+
     paz_paths = sorted({Path(entry_by_path[m["path"].lower()].paz_file) for m in entries})
     backup_dir = None
     if not args.no_backup:
@@ -300,10 +335,17 @@ def main() -> int:
     space_map = build_space_map(pamt.file_entries)
     modified_paz: set[Path] = set()
 
-    with zipfile.ZipFile(payload_path, "r") as zf:
+    zf = zipfile.ZipFile(payload_path, "r") if payload_path.is_file() else None
+    try:
         for idx, item in enumerate(entries, start=1):
             rel_path = item["path"].replace("\\", "/")
-            data = zf.read(rel_path)
+            if zf is not None:
+                data = zf.read(rel_path)
+            else:
+                source = payload_dir / Path(rel_path)
+                if not source.is_file():
+                    raise RuntimeError(f"Payload audio mancante: {source}")
+                data = source.read_bytes()
             if not args.skip_hash:
                 digest = hashlib.sha256(data).hexdigest()
                 if digest != item["sha256"]:
@@ -319,6 +361,9 @@ def main() -> int:
             modified_paz.add(Path(entry.paz_file))
             if idx == 1 or idx % 500 == 0 or idx == len(entries):
                 print(f"  {idx}/{len(entries)}")
+    finally:
+        if zf is not None:
+            zf.close()
 
     print("Ricalcolo checksum PAZ...")
     for paz_path in sorted(modified_paz):

@@ -1,0 +1,38 @@
+name: Compatibilita Xbox App
+description: Invia un report per aiutare a supportare Xbox App / Microsoft Store
+title: "[Xbox compatibility] "
+labels: ["xbox-compatibility"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        La versione Xbox App/Microsoft Store e bloccata per sicurezza finche non verifichiamo gli archivi. Esegui il tool in `tools/xbox-compatibility-diagnostic/` e allega il report generato.
+  - type: checkboxes
+    id: diagnostic
+    attributes:
+      label: Report diagnostico
+      options:
+        - label: Ho eseguito `DIAGNOSTICA_XBOX_COMPATIBILITA.cmd`
+          required: true
+        - label: Allego il file `.txt` o `.json` generato nella cartella `reports`
+          required: true
+  - type: input
+    id: store
+    attributes:
+      label: Store
+      description: Scrivi Xbox App / Microsoft Store, oppure altro store se diverso.
+      placeholder: Xbox App / Microsoft Store
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Errore visto
+      description: Incolla il messaggio di errore all'avvio o descrivi cosa succede.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Note aggiuntive
+      description: Versione Windows, cartella installazione, screenshot o altri dettagli utili.

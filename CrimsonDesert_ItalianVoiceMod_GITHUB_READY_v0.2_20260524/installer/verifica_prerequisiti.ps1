@@ -4,6 +4,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $PackageDir = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
+. (Join-Path $PackageDir "installer\game_path_helpers.ps1")
 $Manifest = Join-Path $PackageDir "data\manifest.json"
 $PayloadZip = Join-Path $PackageDir "data\wem_replacements_0006.zip"
 $PayloadDir = Join-Path $PackageDir "data\wem_replacements_0006"
@@ -60,14 +61,26 @@ if (Test-Path $PayloadDir) {
     $Errors++
 }
 
-if (-not (Test-Path (Join-Path $GamePath "meta\0.papgt"))) {
-    Write-Warn "Percorso gioco standard non trovato: $GamePath"
-    $Manual = Read-Host "Inserisci la cartella Crimson Desert oppure premi Invio per saltare"
-    if ($Manual) { $GamePath = $Manual }
+$ResolvedGamePath = Select-CrimsonGamePath -InitialPath $GamePath
+if ($ResolvedGamePath) {
+    $GamePath = $ResolvedGamePath
+} else {
+    Write-Warn "Percorso gioco non trovato. Puoi installare solo indicando una cartella valida di Crimson Desert."
 }
 
 if (Test-Path (Join-Path $GamePath "meta\0.papgt")) {
     Write-Ok "Percorso gioco valido: $GamePath"
+    $StoreName = Get-CrimsonStoreName $GamePath
+    if ($StoreName -eq "Steam") {
+        Write-Ok "Store rilevato: Steam"
+    } elseif ($StoreName -eq "Xbox App / Microsoft Store") {
+        Write-Bad "Store rilevato: Xbox App / Microsoft Store. Questa versione e bloccata per sicurezza: e stato segnalato errore all'avvio dopo patch."
+        Write-Warn "Esegui DIAGNOSTICA_COMPATIBILITA.cmd e inviaci il report. Per ripristinare, usa Ripara/Verifica dall'app Xbox."
+        $Errors++
+    } else {
+        Write-Warn "Store rilevato: $StoreName. Non testato ufficialmente; installazione possibile solo con conferma esplicita."
+        $Warnings++
+    }
     $Exe = Join-Path $GamePath "bin64\CrimsonDesert.exe"
     if (Test-Path $Exe) {
         $ExeVersion = (Get-Item $Exe).VersionInfo.FileVersion
@@ -75,14 +88,16 @@ if (Test-Path (Join-Path $GamePath "meta\0.papgt")) {
         else { Write-Warn "Versione eseguibile diversa: $ExeVersion (testata: $ExpectedExeVersion)"; $Warnings++ }
     } else { Write-Warn "CrimsonDesert.exe non trovato in bin64"; $Warnings++ }
 
-    $SteamApps = Split-Path -Parent (Split-Path -Parent $GamePath)
-    $ManifestPath = Join-Path $SteamApps "appmanifest_3321460.acf"
-    if (Test-Path $ManifestPath) {
-        $BuildLine = Select-String -Path $ManifestPath -Pattern '"buildid"\s+"([^"]+)"' | Select-Object -First 1
-        if ($BuildLine -and $BuildLine.Matches[0].Groups[1].Value -eq $ExpectedBuildId) { Write-Ok "Steam buildid testato: $ExpectedBuildId" }
-        elseif ($BuildLine) { $Found = $BuildLine.Matches[0].Groups[1].Value; Write-Warn "Steam buildid diverso: $Found (testata: $ExpectedBuildId)"; $Warnings++ }
-        else { Write-Warn "Buildid Steam non letto dal manifest"; $Warnings++ }
-    } else { Write-Warn "Manifest Steam non trovato: $ManifestPath"; $Warnings++ }
+    if ($StoreName -eq "Steam") {
+        $SteamApps = Split-Path -Parent (Split-Path -Parent $GamePath)
+        $ManifestPath = Join-Path $SteamApps "appmanifest_3321460.acf"
+        if (Test-Path $ManifestPath) {
+            $BuildLine = Select-String -Path $ManifestPath -Pattern '"buildid"\s+"([^"]+)"' | Select-Object -First 1
+            if ($BuildLine -and $BuildLine.Matches[0].Groups[1].Value -eq $ExpectedBuildId) { Write-Ok "Steam buildid testato: $ExpectedBuildId" }
+            elseif ($BuildLine) { $Found = $BuildLine.Matches[0].Groups[1].Value; Write-Warn "Steam buildid diverso: $Found (testata: $ExpectedBuildId)"; $Warnings++ }
+            else { Write-Warn "Buildid Steam non letto dal manifest"; $Warnings++ }
+        } else { Write-Warn "Manifest Steam non trovato: $ManifestPath"; $Warnings++ }
+    }
 
     $NeedBackup = @(
         Join-Path $GamePath "meta\0.papgt"
@@ -99,6 +114,23 @@ if (Test-Path (Join-Path $GamePath "meta\0.papgt")) {
     $RecommendedFree = $BackupBytes + 2GB
     if ($Drive.Free -ge $RecommendedFree) { Write-Ok "Spazio libero sufficiente: $(Format-GB $Drive.Free) (backup stimato: $(Format-GB $BackupBytes))" }
     else { Write-Warn "Spazio libero basso: $(Format-GB $Drive.Free). Consigliati almeno $(Format-GB $RecommendedFree)."; $Warnings++ }
+
+    if ($PythonCommand -and $StoreName -ne "Xbox App / Microsoft Store") {
+        Write-Host ""
+        Write-Host "Verifico compatibilita base con dry-run..."
+        $DryArgs = @()
+        if ($PythonCommand.Count -gt 1) { $DryArgs += $PythonCommand[1] }
+        $DryArgs += @(
+            (Join-Path $PackageDir "installer\apply_patch.py"),
+            "--game-path", $GamePath,
+            "--package-dir", $PackageDir,
+            "--dry-run"
+        )
+        if ($StoreName -ne "Steam") { $DryArgs += "--allow-untested-store" }
+        & $PythonCommand[0] @DryArgs
+        if ($LASTEXITCODE -eq 0) { Write-Ok "Dry-run compatibilita completato" }
+        else { Write-Bad "Dry-run compatibilita fallito"; $Errors++ }
+    }
 } else {
     Write-Warn "Percorso gioco non verificato. L'installer lo richiedera al momento dell'installazione."
     $Warnings++

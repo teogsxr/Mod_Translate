@@ -251,12 +251,27 @@ def backup_files(game_path: Path, files: list[Path]) -> Path:
     return backup_dir
 
 
+def detect_store(game_path: Path) -> str:
+    lower = str(game_path).replace("/", "\\").lower()
+    if "\\steamapps\\common\\" in lower:
+        return "steam"
+    if "\\xboxgames\\" in lower or "\\windowsapps\\" in lower:
+        return "xbox"
+    if "\\epic games\\" in lower or "\\epicgames\\" in lower:
+        return "epic"
+    if "\\gog galaxy\\games\\" in lower or "\\gog games\\" in lower:
+        return "gog"
+    return "unknown"
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Applica la mod audio italiana di Crimson Desert.")
     parser.add_argument("--game-path", default=r"C:\Program Files (x86)\Steam\steamapps\common\Crimson Desert")
     parser.add_argument("--package-dir", default=str(Path(__file__).resolve().parents[1]))
     parser.add_argument("--no-backup", action="store_true")
     parser.add_argument("--skip-hash", action="store_true")
+    parser.add_argument("--dry-run", action="store_true", help="Verifica compatibilita senza scrivere file.")
+    parser.add_argument("--allow-untested-store", action="store_true", help="Permette store non Steam non testati, esclusa Xbox App.")
     args = parser.parse_args()
 
     game_path = Path(args.game_path).resolve()
@@ -274,9 +289,23 @@ def main() -> int:
     if not pamt_path.is_file() or not papgt_path.is_file():
         raise RuntimeError(f"Percorso gioco non valido: {game_path}")
 
+    store = detect_store(game_path)
+    if store == "xbox":
+        raise RuntimeError(
+            "Versione Xbox App/Microsoft Store non supportata in scrittura. "
+            "Un utente ha segnalato errore all'avvio dopo patch; usa DIAGNOSTICA_COMPATIBILITA.cmd "
+            "e invia il report prima di installare su Xbox App."
+        )
+    if store != "steam" and not args.allow_untested_store:
+        raise RuntimeError(
+            "Store non Steam non testato. Riesegui da INSTALLA_MOD_VOCI_ITALIANE.cmd e conferma il rischio, "
+            "oppure usa DIAGNOSTICA_COMPATIBILITA.cmd per inviarci un report."
+        )
+
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     entries = manifest["entries"]
     print(f"Gioco: {game_path}")
+    print(f"Store rilevato: {store}")
     print(f"Audio da applicare: {len(entries)}")
 
     pamt = parse_pamt(pamt_path, game_path / "0006")
@@ -289,6 +318,11 @@ def main() -> int:
         if len(missing) > 25:
             print(f"  ... altri {len(missing) - 25}")
         return 2
+
+    if args.dry_run:
+        print("Dry-run OK: tutti i file del manifest esistono nella base indicata.")
+        print("Nessun file e stato modificato.")
+        return 0
 
     paz_paths = sorted({Path(entry_by_path[m["path"].lower()].paz_file) for m in entries})
     backup_dir = None

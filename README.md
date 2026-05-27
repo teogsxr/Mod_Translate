@@ -28,6 +28,27 @@ Il nome cartella resta quello della prima pubblicazione, ma il contenuto e aggio
 - Hotfix inclusi: recupero voci mancanti, pulizia casi `StaticInfo`, correzioni manuali sull'intro.
 - Payload audio esploso in `data/wem_replacements_0006/`, senza archivi audio annidati.
 
+## Sviluppo in corso
+
+La versione attuale resta disponibile e installabile. In parallelo sto lavorando a una revisione qualitativa delle voci, soprattutto per prologo, personaggi principali e antagonisti.
+
+Il lavoro nuovo e documentato in:
+
+`community/`
+
+Dentro ci sono:
+
+- roadmap del lavoro sulle voci;
+- aggiornamento scritto sullo stato dello sviluppo;
+- sample audio separati dalla patch installabile;
+- candidati voce per Kliff;
+- sample di Myurdin come antagonista;
+- indicazioni per lasciare feedback tramite Issue.
+
+I sample audio non vanno copiati nel gioco: servono solo per ascolto e feedback.
+
+Per capire la struttura della repository: `REPOSITORY_LAYOUT.md`.
+
 ## Installazione da GitHub
 
 1. Scarica la repository.
@@ -42,6 +63,8 @@ Il pacchetto GitHub include Python portatile in `installer/python`, quindi non r
 Questa e una beta AI ampia, giocabile, ma non un doppiaggio professionale. Alcune frasi possono avere accento inglese o straniero, ritmo imperfetto, enfasi strana o pronunce da rifinire. Le voci sono state generate clonando o condizionando le voci originali, quindi il risultato mantiene parte del carattere originale ma non sempre suona italiano naturale.
 
 Feedback e correzioni puntuali sono benvenuti, soprattutto con nome file o scena in cui l'audio non funziona bene.
+
+Per pareri sulle nuove voci, apri una Issue usando il template `Feedback voce / audio`.
 
 ## Uso non commerciale
 

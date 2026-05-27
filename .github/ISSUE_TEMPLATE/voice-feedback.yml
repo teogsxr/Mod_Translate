@@ -1,0 +1,40 @@
+name: Feedback voce / audio
+description: Segnala una voce da migliorare o dai un parere sui sample audio
+title: "[Voice feedback] "
+labels: ["voice-feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Grazie per il feedback. Piu dettagli ci sono, piu e facile correggere la voce giusta.
+  - type: input
+    id: scene
+    attributes:
+      label: Scena o punto del gioco
+      description: Esempio: prologo, primo villaggio, main quest, mercante, guardia.
+    validations:
+      required: true
+  - type: input
+    id: character
+    attributes:
+      label: Personaggio o voce
+      description: Esempio: Kliff, Myurdin, Sebastian, guardia, mercante.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Cosa non va?
+      description: Accento, ritmo, voce sbagliata, audio muto, frase troncata, pronuncia, emozione.
+    validations:
+      required: true
+  - type: input
+    id: file
+    attributes:
+      label: Nome file WEM, se lo conosci
+      description: Facoltativo, ma molto utile.
+  - type: textarea
+    id: expected
+    attributes:
+      label: Come dovrebbe suonare?
+      description: Descrivi il tono ideale o indica quale sample preferisci.

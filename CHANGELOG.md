@@ -1,5 +1,12 @@
 # Changelog
 
+## Work in progress - revisione voci
+
+- Aggiunta cartella `community/` per spiegare il lavoro in corso senza toccare la release installabile.
+- Aggiunti sample audio separati dalla patch: candidati voce Kliff e sample antagonista Myurdin.
+- Aggiunta roadmap per la futura revisione qualitativa delle voci.
+- Aggiunto template GitHub Issue per feedback su voci, pronunce, accenti, audio muti o frasi troncate.
+
 ## 0.3-hotfix-20260526
 
 - Riallineato il pacchetto GitHub con 51.246 WEM italiani completati.

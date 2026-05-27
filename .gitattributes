@@ -7,3 +7,5 @@
 *.pyd binary
 *.zip binary
 *.png binary
+*.mp3 binary
+*.wav binary

@@ -79,7 +79,9 @@ I pacchetti installabili vengono pubblicati come asset nelle [GitHub Releases](h
 - zip GitHub: `CrimsonDesert_ItalianVoiceMod_GITHUB_READY_vMAJOR.MINOR_YYYYMMDD.zip`;
 - zip Nexus: `CrimsonDesert_ItalianVoiceMod_NEXUS_SAFE_vMAJOR.MINOR_YYYYMMDD.zip`.
 
-Le cartelle installabili vecchie rimaste nella repository sono spostate in `legacy/packages/` e servono solo come storico. La release corrente resta sempre indicata in alto nel README e nella sezione Releases.
+La cartella `CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.4_20260528` resta visibile nella root della repository per chi vuole navigare i file senza scaricare lo zip. Per l'installazione normale resta consigliato usare lo zip nella sezione Releases o su Nexus Mods.
+
+Le cartelle vecchie restano in `legacy/packages/` e servono solo come storico.
 
 ## Qualità e limiti
 

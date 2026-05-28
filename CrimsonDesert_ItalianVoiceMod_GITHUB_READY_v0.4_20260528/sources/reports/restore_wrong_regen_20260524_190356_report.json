@@ -1,0 +1,1001 @@
+{
+  "status": "ok",
+  "restored_at": "2026-05-24T17:18:18+00:00",
+  "source_backup": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\crimsonforge_backups\\20260524_190356",
+  "paths_file": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\wrongly_regenerated_from_progress_20260524_190356_191102.txt",
+  "path_count": 122,
+  "changed_before_restore": 122,
+  "already_identical_before_restore": 0,
+  "repack_success": true,
+  "repack_errors": [],
+  "new_safety_backup": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Crimson Desert\\..\\crimsonforge_backups\\20260524_191815",
+  "papgt": {
+    "ok": true,
+    "stored": "0xB0A0A9BE",
+    "computed": "0xB0A0A9BE"
+  },
+  "pamt_0006": {
+    "ok": true,
+    "stored": "0xD6886684",
+    "computed": "0xD6886684"
+  },
+  "verify_mismatches": [],
+  "precheck": [
+    {
+      "path": "sound/ndw_adult_1_questdialog_contents_03861.wem",
+      "backup_size": 35201,
+      "current_size": 15588,
+      "backup_sha256": "e9f6f10929339a9ed9a13c83bd9111f3cfdeed2852e3b75926de8e77e8dd9577",
+      "current_sha256_before": "7e56ba300ffc1f725afba807cf397b84bab8c88b2b2f29a69772cb7bbfa49d65",
+      "same_before": false
+    },
+    {
+      "path": "sound/ndw_adult_1_questdialog_contents_04174.wem",
+      "backup_size": 29035,
+      "current_size": 15279,
+      "backup_sha256": "f23593d79dedd1c100904465c20434069e611ea391ec203802030a7c65e64fa0",
+      "current_sha256_before": "2381c1c8fbb2404c0ff24333fb61942d73f96011c1c8fa2a76142bfde2afdb49",
+      "same_before": false
+    },
+    {
+      "path": "sound/ndw_adult_2_questdialog_contents_03735.wem",
+      "backup_size": 32485,
+      "current_size": 21099,
+      "backup_sha256": "56e165eac1c0e66a7bf17cd02da2652a7724011d045eee90466f4e9fb5051c24",
+      "current_sha256_before": "bf335e3991099f3d2d17535c416b2828891ec6d0938985b19ebbe171dc470325",
+      "same_before": false
+    },
+    {
+      "path": "sound/ndw_adult_2_questdialog_contents_03867.wem",
+      "backup_size": 19699,
+      "current_size": 13088,
+      "backup_sha256": "783c04d4295fc2ac3bf76005a028a06e61e2f2921ed3fa16fec8b2d5f9acd744",
+      "current_sha256_before": "c7f1f346fb0760250c4829ce076863330480540f1369f5eaac98d87900e6568f",
+      "same_before": false
+    },
+    {
+      "path": "sound/ndw_adult_3_questdialog_contents_03871.wem",
+      "backup_size": 30270,
+      "current_size": 17863,
+      "backup_sha256": "f08b6ca697c43fab36d039055a26e7fd8acfd1c1d96a979e4f01aaaa2efb8707",
+      "current_sha256_before": "6d46137ecfc4208d7469bf6f5f77d78d965ea2e23fc615590890137226f4a1c1",
+      "same_before": false
+    },
+    {
+      "path": "sound/ndw_adult_3_questdialog_contents_03872.wem",
+      "backup_size": 48262,
+      "current_size": 27115,
+      "backup_sha256": "91c9b04a2ab2556791d83c663c2d18881eeecf2f6be43149d255f758064a65c8",
+      "current_sha256_before": "3af370e1f8a37b7ffef85e127f517963ab3a489f3548187b6134a8aa0937890b",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_1_aidialogstringinfogroup_criminal_01746.wem",
+      "backup_size": 38459,
+      "current_size": 20943,
+      "backup_sha256": "0277b32fac6272de95f34b4ea864efc3c43ac08438280daf8cb0b68d0a94bfea",
+      "current_sha256_before": "9a6144b26cbb332418cc48a23b541e9b58a2f131f500ce6633c943a7ffd9fd00",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_1_questdialog_contents_02671.wem",
+      "backup_size": 41268,
+      "current_size": 26560,
+      "backup_sha256": "7f256b3a7f82b2aa53412364337f40c71dd0288c38b6024713f5aa06060c6c5a",
+      "current_sha256_before": "10f40f4ed2c9ce33070d0e23ebed9e7bd492269ad51d8b36d516281e361b4870",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_1_questdialog_contents_03045.wem",
+      "backup_size": 61948,
+      "current_size": 56694,
+      "backup_sha256": "767d35be7eae21f4f805887331b066ba6e6439da8ab472d96215e3a56be07cc4",
+      "current_sha256_before": "8643eb39ece3fcc003c693389fdf7f7f75b81abbb6cd672ef79ab51e597fed56",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_2_questdialog_contents_03036.wem",
+      "backup_size": 30557,
+      "current_size": 20262,
+      "backup_sha256": "5ceed7f3b6415a6d2973719761cb21314edd39d19335493f2fe17138f6737f89",
+      "current_sha256_before": "8ff2960109994c25d508bb78266fc545487fa58e9b5ee34b6c91e23032ea1c0a",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_2_questdialog_contents_03501.wem",
+      "backup_size": 36177,
+      "current_size": 17242,
+      "backup_sha256": "ad899062f1351879c0a7ccc33bbc343d1b2fc7ed0cb1e30ec65b2738eaaf6558",
+      "current_sha256_before": "b8ab4ec25e1392b99f90429b0fdf3c0cfaa4f3afee5905864edd1aa6c98dc504",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_2_questdialog_main_01340.wem",
+      "backup_size": 52308,
+      "current_size": 31748,
+      "backup_sha256": "f0997a6514475d0cfa543db628919e13af1632c7fe7fb5b5a96c6740cd72da12",
+      "current_sha256_before": "e6bca34095d8ce626a87020a7fa80f9cbff46960394169af755343ea531c6e91",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_3_questdialog_contents_02430.wem",
+      "backup_size": 47755,
+      "current_size": 32840,
+      "backup_sha256": "fb39438803e349ccddc9d6b08c6bbb41e1e3bc771c49d187bf6273a611c88b49",
+      "current_sha256_before": "09796a12b4dfd2642097d8f1dc7427ec82b9c7a39be4b96a712c930405d1fc93",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_3_questdialog_contents_02630.wem",
+      "backup_size": 48933,
+      "current_size": 25372,
+      "backup_sha256": "a3d78504db8e262ebe3a0b399838432478f23396acb5c7befd4baf524adf837d",
+      "current_sha256_before": "474852a082ee0fca228fcda4e5e490bc7f37286b4894168c477995672b3356bb",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_3_questdialog_contents_03041.wem",
+      "backup_size": 39528,
+      "current_size": 28739,
+      "backup_sha256": "11abc96a6404d27b666d7660d4f2702920acb3e04929cee2a2ae91817f87f370",
+      "current_sha256_before": "acbfeb38994c7d08035e6780d50b4fc226eebd986700f88f97a53ca8176b6a94",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_4_questdialog_contents_03101.wem",
+      "backup_size": 30793,
+      "current_size": 20190,
+      "backup_sha256": "848bfed583aa2a9470466355dd963b42e757568590651bc54602948450004934",
+      "current_sha256_before": "0f6c8d235fc147c585d3d1eafb874a3e454b30938c221288aaf8a3843d2fbc52",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_4_questdialog_contents_03412.wem",
+      "backup_size": 33068,
+      "current_size": 15340,
+      "backup_sha256": "cd580785a31843bed7b0c8242ad2ff7e6e98f1b5480516c0e92f5ca6be92e96b",
+      "current_sha256_before": "399952baf69732037bafa8b7a58fe6340d2828907efb131d53f54f388e221629",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_4_questdialog_contents_03413.wem",
+      "backup_size": 45275,
+      "current_size": 30660,
+      "backup_sha256": "0f0335a6e3c3cd33b15acc99adf2cc8e0032682703bb59b9c9e8a8e8449a8bef",
+      "current_sha256_before": "ecaf7a2dee9003a65b3916ae350b8f07e82d6d7233b50b3a962566da0cb086ab",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_4_questdialog_contents_03414.wem",
+      "backup_size": 53626,
+      "current_size": 32058,
+      "backup_sha256": "ec4d07ae3ebbfe09eabd8878ff46e6b82e91299ed4da638c2c3eb9f65a5acc16",
+      "current_sha256_before": "cbfb6762617740349d4aece82038e23b1dfa162f2ebc3d14859b6ee43a544e11",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_5_questdialog_contents_03050.wem",
+      "backup_size": 67056,
+      "current_size": 41454,
+      "backup_sha256": "2ac0fb751a48710747e2ebb58f370282c965ed943a5f7aa3c34d11f5728f5c70",
+      "current_sha256_before": "efec829928daaad7712a09a25ff606a15c4764bebbbf64ee826b95998e4f6e63",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_5_questdialog_contents_03516.wem",
+      "backup_size": 25373,
+      "current_size": 18147,
+      "backup_sha256": "18fa2d9d641daaf8b069a91ea95203db2f84c767a85355878f0ed0d539f8f850",
+      "current_sha256_before": "7669ea2bae9f8feb86a3b0baa1a7c108c26fba6c6d9afc7a06d310a275f2d0e3",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_6_questdialog_contents_03010.wem",
+      "backup_size": 43680,
+      "current_size": 28776,
+      "backup_sha256": "262d531a56741fb13f7a2192d8384f5c9b62abe61a37e3ea1872a1e44bdea96d",
+      "current_sha256_before": "72418009be2a8821b7bb9c3e9a5c70a83440e2e2e2c1605dc585c871f7834896",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngm_adult_7_questdialog_contents_03015.wem",
+      "backup_size": 30438,
+      "current_size": 18509,
+      "backup_sha256": "2c702d9e5d34c6da9d16e94da31556a753303e2995fa0200f8fd6f18afde15d3",
+      "current_sha256_before": "04bb4e37661f1b27fca4fa072345a95d748e290e3a78d41e6294f59703fc5c67",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngw_adult_1_questdialog_contents_02226.wem",
+      "backup_size": 26560,
+      "current_size": 16320,
+      "backup_sha256": "7d619e0580c360d66da25191952ea3e3c9f614a4d7c46ab11d6fc366bd6e01a0",
+      "current_sha256_before": "f232c3de23f66cb32b2e5973992d77e9d8af9f243209b10178ebb501af997444",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngw_adult_2_questdialog_contents_02230.wem",
+      "backup_size": 19117,
+      "current_size": 9962,
+      "backup_sha256": "25e202ab698696fb64eeef21f2eee9247920a131d05bb0fb12c18130baa9049f",
+      "current_sha256_before": "510dc332aa1f0ab334e93f94691dd8280b9707f5a32938f0828760b1756e8f1c",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngw_adult_3_questdialog_contents_02235.wem",
+      "backup_size": 26217,
+      "current_size": 15447,
+      "backup_sha256": "c8f806b991a0ff499a5212d86c4bb5321eb9d3c01b808de8e68d8ae8dfeaab5f",
+      "current_sha256_before": "11789defd5f0f37577c7a62785285a9ff4c6a57b8c0c021a088f0b6c13961e71",
+      "same_before": false
+    },
+    {
+      "path": "sound/ngw_adult_3_questdialog_contents_03786.wem",
+      "backup_size": 87801,
+      "current_size": 75470,
+      "backup_sha256": "3e436388685ff44934c946fe63a2a4d4f5de90000193d49d1305b6f3ed636474",
+      "current_sha256_before": "d85e9c7718746d7b1a5f288f9aae8e8042863641e9d92587911f11ded0789656",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_00052.wem",
+      "backup_size": 18136,
+      "current_size": 13553,
+      "backup_sha256": "303dcff34c39cf301929d61dbeac313dc16a386d18a040c11530b490f6b6d954",
+      "current_sha256_before": "dcaf98a5bd7e95e23bbdffd4de1a2f2e30607cc7361e809690ba5d9ef26e1e59",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_00150.wem",
+      "backup_size": 24572,
+      "current_size": 16579,
+      "backup_sha256": "f17a5bc07ddaf86c6eaa55a7d258245b52b5402aaa11c92acf560ce2eb10add1",
+      "current_sha256_before": "3015482eaec9d40b1813c93a125bdbcb241a09ecfa5c091672aada878640a8c6",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_00254.wem",
+      "backup_size": 44852,
+      "current_size": 20004,
+      "backup_sha256": "962617e6f03e02c6678d28cf55bc4a39734616f0edbde653db50ed2049c2b576",
+      "current_sha256_before": "66699934746d15086ebe3f11e12c6a6dfc147bdf9a97eace500505368bdb2c40",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_00358.wem",
+      "backup_size": 59364,
+      "current_size": 41187,
+      "backup_sha256": "f53b6465263ec1205e80c62a9b96974c6e550dd441cf6055c5d8020c3dbae55e",
+      "current_sha256_before": "8f8b623666987958e549591e67a93ee26b91b206d82a3bc8c7e9740bc8dabe02",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_00458.wem",
+      "backup_size": 25390,
+      "current_size": 13740,
+      "backup_sha256": "80508acc54c9c97c55533626a4437dd1db25ff20ea0c2310f3b7153f69f24ee3",
+      "current_sha256_before": "fd13fcbe47ff09774b91c976b9353f17af4d6d0afe2b0211e311203f22ed228e",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_00508.wem",
+      "backup_size": 22157,
+      "current_size": 12882,
+      "backup_sha256": "09542412296db47e904db7b79f64dad8e4c2cbd5bc163c70723f29c829340cf3",
+      "current_sha256_before": "1c71d53b922063f0cbdb40a723457e9bdfe0dd80222da519ce03be8b838fb906",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_02615.wem",
+      "backup_size": 28685,
+      "current_size": 20365,
+      "backup_sha256": "2f2b05adfdbe2354ee75508fb2e088900fb1d1dc1e701a10b27267ef6ff8d438",
+      "current_sha256_before": "bcc8671b80b8036a1ed5ff0278abbbd56f3b995e15d4ea692f817fea8f79ee72",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_02755.wem",
+      "backup_size": 30293,
+      "current_size": 17589,
+      "backup_sha256": "f743717c151ba6a2623bdab1da79f617e006ef2904f00002b95776abc1b21f4e",
+      "current_sha256_before": "eb3abda8f666a12d552e390dfcda16a20674d37db9b185434be8f918287e438a",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_03075.wem",
+      "backup_size": 36051,
+      "current_size": 30747,
+      "backup_sha256": "bb93847d914983a5636e4b22009a472bfa3e1667f1bdc592bb1da5f08904f658",
+      "current_sha256_before": "9f8986c3be27315318ccc04c137f4b933cea0c91a5cc9207e3ca649d67ef88b3",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_03110.wem",
+      "backup_size": 29925,
+      "current_size": 16088,
+      "backup_sha256": "3bff95fe893bdc0b71591a8f4e0a7f76a208bc47096a0a52790a77dede79e71c",
+      "current_sha256_before": "2f183113f8f6b1327fa4c84171626f89bf6ba40fdcd6e8f5c4aa4869ff124452",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_03230.wem",
+      "backup_size": 46630,
+      "current_size": 35158,
+      "backup_sha256": "2ae000d6053352c6b253a8f48fdbfd1d01921851aba39dc725cd55e99b8e4599",
+      "current_sha256_before": "3d10809ff68d88282f7fe417f47b6305d422919c2dafc62bc4db120fa1ff4797",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_03280.wem",
+      "backup_size": 36956,
+      "current_size": 20473,
+      "backup_sha256": "98acd94d3cec893381c663bfc71ff73d47e56a5b12d1a9d7a77c92be8ad2c214",
+      "current_sha256_before": "4050dd2cabd2c0c3f1a5d4999a35126d23e02b683d08198d4d7acffc1dd3c798",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_03335.wem",
+      "backup_size": 21688,
+      "current_size": 6057,
+      "backup_sha256": "359bd69ce39375990039a06e626f50ad2c690810db3b2df54df77996bb6fff73",
+      "current_sha256_before": "6b5f48102364d9f7b0246918f51f7bd1b79b1c6b945a55e3e5a67f9c3d501573",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_03608.wem",
+      "backup_size": 47409,
+      "current_size": 25333,
+      "backup_sha256": "7f34ceb1053f42849f7fb79990318b6adb3783739692590536297711b11c1bd8",
+      "current_sha256_before": "d1890c698a84e4dae4e933fde1795da63f9cc64ecd179448168a4cde01c1af8e",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_10_questdialog_contents_04051.wem",
+      "backup_size": 27874,
+      "current_size": 17086,
+      "backup_sha256": "b7f7b50e34055ebc03b393c3305c1f92f6c95f313a38874bfe7efe9238e4b09f",
+      "current_sha256_before": "1f6243c0b1b7dacfc9f4379d845ff1448bb735f6a7337cacd3cbb4f0b17d9495",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_00004.wem",
+      "backup_size": 21485,
+      "current_size": 15127,
+      "backup_sha256": "26f0ca0fda1dd2d6f7aaee5bd429eb2db14db27d8cac548e49c377e9888ec069",
+      "current_sha256_before": "144c6b9a98f3dd41cf710ac1a850341243b9d2e9a201cbc5f343177300685b25",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_00104.wem",
+      "backup_size": 31188,
+      "current_size": 18506,
+      "backup_sha256": "2026638a85823cc1884dea8665e33af8e9551436d4c3f61ee8407e6495526e79",
+      "current_sha256_before": "a5d33ecf848e19a0127e8c566e3067a515381d6c8c034ddc3d999c73ef97c298",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_00207.wem",
+      "backup_size": 79762,
+      "current_size": 49403,
+      "backup_sha256": "fec98d73a606ca513a21c60f8b26d7415a7d89f0c5867217f2c53a4aa2ae2fe8",
+      "current_sha256_before": "0d8860739f5bd008a92645a32cd84136bce2e041cdeb7a3edef2e74b9cc5bed9",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_00311.wem",
+      "backup_size": 61796,
+      "current_size": 29472,
+      "backup_sha256": "cb40103727cd4974c0540c1fc5f27941cad8803137eec0c7f9f79ea249205622",
+      "current_sha256_before": "a74935736a079467551612a55e0ecc1b91177731b23ca62f56a485e89023f2f9",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_00411.wem",
+      "backup_size": 19677,
+      "current_size": 13983,
+      "backup_sha256": "af2dff3183daea0b999c31982f158fcb2b6c7d845df4c65f5be180ac33364fdb",
+      "current_sha256_before": "d6f87499fdbcb60307f63943144c21ccae2413a7dd61e20bb5e4eb408f2d45f9",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_00462.wem",
+      "backup_size": 40098,
+      "current_size": 26703,
+      "backup_sha256": "bd5b07140859debbae0d6675167bc06ecf0b349757f7a94e036b939d8d07985e",
+      "current_sha256_before": "e79f3a138685a89d6bd106ff346b0a830d5e893776b071e803e2192ba383ae40",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_00513.wem",
+      "backup_size": 24373,
+      "current_size": 13902,
+      "backup_sha256": "cdecd9c37da0defe4f89491e8e8d476341bd3f6b916cb7a88eb8b84b6d4dc7e0",
+      "current_sha256_before": "93928401c0f289ce3e1a70c365c395fe8c9634ba5224dc51cc120c91cbd4143c",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_02130.wem",
+      "backup_size": 32259,
+      "current_size": 18633,
+      "backup_sha256": "3040397609aa09451c5d981255b868f2176e0fd178c1f5bd6f0fd575e9eb2286",
+      "current_sha256_before": "49525966ed7306c401a0450ea8d884868d13981af74d1ab55c1a85b7bfacd229",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_02480.wem",
+      "backup_size": 39812,
+      "current_size": 23119,
+      "backup_sha256": "ba019263e179c552a26d6f141fda272f0db769e7916466b9329c06919d93fe62",
+      "current_sha256_before": "6b62106b0caa9b91e1e226b803c6532053af9cfbd73d912fdc355fb18ac76228",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_02481.wem",
+      "backup_size": 56921,
+      "current_size": 37394,
+      "backup_sha256": "14b69b3a04e07cdde33ac3c4c0d213f05f9724e88abb350550caae092f856a21",
+      "current_sha256_before": "47ba8c87bb864093251b4a5e29da7a476bf0ce86ecde87583e7b0042566ac5de",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_02836.wem",
+      "backup_size": 44220,
+      "current_size": 31428,
+      "backup_sha256": "4f3bf83713f1afda47b02fb2765aae6d4050093d56d1eba063ef1663a66997ca",
+      "current_sha256_before": "02801a4713af0c4d24f03c7d41a8e17995cd82f04a7fde20a3c4ad03df9ab08c",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_02916.wem",
+      "backup_size": 28293,
+      "current_size": 15263,
+      "backup_sha256": "b18699b58957353fae74802764498af6ee43d42f37de95749e8c0587ea092347",
+      "current_sha256_before": "bad42ac99610bff1080fdc72f730b160830b9963721b28bc9b856b19657f8b2d",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_03030.wem",
+      "backup_size": 42565,
+      "current_size": 20609,
+      "backup_sha256": "83a50dc8b67cb6a51b91e60d7db1b2986d0824b71d1eb59852c8abfdd72f4597",
+      "current_sha256_before": "0beb02ba300b3ed36dde8c57b18441d8c57b135d16dd87faef2191cd88583e00",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_03180.wem",
+      "backup_size": 56692,
+      "current_size": 30807,
+      "backup_sha256": "fa47fe295b491d9f1c18c51119dfb8227bc109d331fa27b45e8fe0549417f61a",
+      "current_sha256_before": "c81d0a0f366980247cece40c55e28c1cea5ecf6070960da99e85f2f97aee2c7e",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_03235.wem",
+      "backup_size": 10888,
+      "current_size": 10737,
+      "backup_sha256": "d44e586bc7678e6d436a340d382e1cc21e05f6270af64d5bd0089189eaf77585",
+      "current_sha256_before": "7b0178ec741721a95bf40bdfb07419034586ae2e4ddf3f8d9f8ebe32f10d496a",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_03285.wem",
+      "backup_size": 20016,
+      "current_size": 16709,
+      "backup_sha256": "13497e28d5f702b69f65386fcb2598189b2fb9d6f4fcc3098e4ebb99a5629c10",
+      "current_sha256_before": "698849727b27a91f0271777ece7d32608df3209d61107d9c26c15fbcba6dbf70",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_03286.wem",
+      "backup_size": 57042,
+      "current_size": 42015,
+      "backup_sha256": "a670dfd21555b8c19e57f23ca9aae3d7e48ceff678ec3f5668b9c133c6abd64b",
+      "current_sha256_before": "4b64f75c63b0d0825385c50433d2daa5551056dc8ebe2cf0a6b430d1642ece97",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_03338.wem",
+      "backup_size": 23613,
+      "current_size": 18844,
+      "backup_sha256": "1c547e04379d16d6607abf81edfaa93041ac37d024d53117df31499c40cca0c3",
+      "current_sha256_before": "46286514527c63a828e9fc8e2a6f28bff55f772d6080c78c62d2adbd011133a3",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_03361.wem",
+      "backup_size": 33698,
+      "current_size": 25186,
+      "backup_sha256": "bd444fe47a9bc61867a1586e5c5d60579498413790672b045e355dfe42c26565",
+      "current_sha256_before": "49bab45c35742ef04bd1fc0dbadd25430a53146686a29326e4c7c87e05d22711",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_03565.wem",
+      "backup_size": 51553,
+      "current_size": 28646,
+      "backup_sha256": "7f92bc5610142739ebb9ce6ad6520e4975c8775d0a58bf0f4f539ff289ffbbd3",
+      "current_sha256_before": "3e899ff98f5ddcc8077768f4fe41f2b498110bc5aaed30c410f081b6b2a19e08",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_03986.wem",
+      "backup_size": 15678,
+      "current_size": 11812,
+      "backup_sha256": "7cd1a485d772758826e6b5fa7632243a6c93c44986d807e78ca064d8f7969d5c",
+      "current_sha256_before": "de6675a021d8db9c8be610011054cd0042c4561d18594736d8c257ee23343944",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_04107.wem",
+      "backup_size": 17503,
+      "current_size": 13337,
+      "backup_sha256": "81de82bc192b0bd201f6cb739cfcec6662f224f4db21c83878f73f393798ade3",
+      "current_sha256_before": "ac487387eaa7c5ae27feee5fbee7f57ddc2c9beedbfc2cb960a3fcd9cd401e98",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_contents_04239.wem",
+      "backup_size": 25202,
+      "current_size": 10940,
+      "backup_sha256": "982676b196218222309e7418d9014510837ad48d3ae53d536afbcd56968b781b",
+      "current_sha256_before": "0415df6ad2ec3e832c8b3f42b615afb9f8bb11b49e920735f0eb3af510573db5",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_main_00090.wem",
+      "backup_size": 27255,
+      "current_size": 18479,
+      "backup_sha256": "491b9b309c4d98f2d610af764f5f78c27d0a50c94963df022ba8ac3e91088871",
+      "current_sha256_before": "8a4ac37af7d45bd9201b479fd3c4f15c7089647856287384277434cfa2c9eb76",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_quest_01496.wem",
+      "backup_size": 19303,
+      "current_size": 7479,
+      "backup_sha256": "53a3cb82937b5a66d65e81f4a4871eca3941acd60c7a23839e311eaf24ae7704",
+      "current_sha256_before": "35f478f4fa87a60e41e0a5435cca066579fc30e7ba428dfd1d866d5f1f7bd9e1",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_1_questdialog_quest_01497.wem",
+      "backup_size": 21215,
+      "current_size": 14738,
+      "backup_sha256": "90cfcb2fbafc37ae26bd9db2c1297d5a0990127c0f77c8aa43d7ab436566c335",
+      "current_sha256_before": "238e57a7dcb8b3aee08c337fc1f85aba88473e75eb862a738651523570e3b3dc",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_faction_oakenshieldmanor_serkis_1100_npc_00_00007.wem",
+      "backup_size": 29904,
+      "current_size": 12782,
+      "backup_sha256": "d15e3cb2c47c845ec9a5ee01309ab5b055c0449b60f8ec2bbb77471459c63385",
+      "current_sha256_before": "5d0f36ca56888f65b4057507684a490f9febdffc93c2154482030544459235d0",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_00009.wem",
+      "backup_size": 13612,
+      "current_size": 13710,
+      "backup_sha256": "de540d9802a857fb84be2e74122678edde834bc481c5778ad70907fea57109f2",
+      "current_sha256_before": "c31f5d5cc4419cbe6c2250e3bbc25f89366363d3c5efb38d589042841afcbad2",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_00110.wem",
+      "backup_size": 30871,
+      "current_size": 16555,
+      "backup_sha256": "b413c02e16463441dc703ea5ffb02c935e55c363036f2b68e62906d226f83d63",
+      "current_sha256_before": "4b60c77734a27fdc2e99f3d9d1d490af5a44bb986e09610f3f50a54284791042",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_00212.wem",
+      "backup_size": 24278,
+      "current_size": 16395,
+      "backup_sha256": "847e5ee8094578d70aa87d2fd6207d863f3de61d86321eb64b2d8075fcb79405",
+      "current_sha256_before": "10e01d8e65c3f040db5f72340d7f459b0c49651ac4ae425e1ce349e9a4453bc9",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_00213.wem",
+      "backup_size": 33931,
+      "current_size": 18550,
+      "backup_sha256": "936bb1157c6aab75519ffe8911886f3b6f07bf357e755d1c7ccf1cf4cb6dc217",
+      "current_sha256_before": "42a2ebfbeab75a712344944e538190f4d54d9283c04bd4158ca924001595eb0d",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_00316.wem",
+      "backup_size": 68502,
+      "current_size": 34529,
+      "backup_sha256": "0204ac0986c03a5d124ed3d24d62fef16b848fcf1f041ae93b8878fb8b2e5e28",
+      "current_sha256_before": "d63b67ae6a3f4cd93c8625980c3a4657be0a428eacf33b5bbf785317b4c73e45",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_00416.wem",
+      "backup_size": 30062,
+      "current_size": 16328,
+      "backup_sha256": "d43d3c6b53b6a2e20690d05ec0c2f1704a00b5adaae454bfa3c4d3889a0debe2",
+      "current_sha256_before": "cd824115f151f87d5c3140f0a694f2986c1a99c0fece384b3a6516586898c65c",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_00467.wem",
+      "backup_size": 38125,
+      "current_size": 20503,
+      "backup_sha256": "def36849fa2850d826981f456669947a8a0e31b1083170de1dda700b58c350c7",
+      "current_sha256_before": "b4275901ce8d7adc873bd82f6871991ea69e13421ecde9e9f9754596af4bc189",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_00518.wem",
+      "backup_size": 58981,
+      "current_size": 35858,
+      "backup_sha256": "fed3b6a1e5b6c5489bd36fc09ff75ea14bd0bcf881d113826024f723d547a4cc",
+      "current_sha256_before": "808b3060682dff120a5d8a22fd4456044802f967984fd632fcb8fd01ffa0aa11",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_00519.wem",
+      "backup_size": 40466,
+      "current_size": 23359,
+      "backup_sha256": "8bef0abf86bbe2333908ebe3311a232e7acb3bf08bf5c55ca08b16e46b8b44dd",
+      "current_sha256_before": "f495d97a33bd506cb5ebc1303d4b4ca877b5f46c91ccc62d6c63dd35afc27d16",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_01532.wem",
+      "backup_size": 43389,
+      "current_size": 25633,
+      "backup_sha256": "b97d0ab8daaaa21f101429d7b66d4f1e4ba08b030bdd0f091323e8962eb36b6c",
+      "current_sha256_before": "58366200d616f4cba017cd0e973181e23973d72f55cb9fba9385e7f2c2bb2e15",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_02136.wem",
+      "backup_size": 57327,
+      "current_size": 18037,
+      "backup_sha256": "072fce0ac3c24718a4700cd1b383db29badb0c7709c4d701e77fb7e56ce45457",
+      "current_sha256_before": "b767e26ea09aa41c8fd58f293f090dd81749c2510bdd44a5e932676d99f84cc8",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_02840.wem",
+      "backup_size": 28342,
+      "current_size": 20406,
+      "backup_sha256": "c32a7becea2b40d0cc3c5d6fa32eb1ac1237ef16ad9a6ef31cac239862626a6a",
+      "current_sha256_before": "9ab3c1a920803dae61ce3989633f710de87c96a5175e323e43ae33666ceb2cc8",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_03021.wem",
+      "backup_size": 39287,
+      "current_size": 16951,
+      "backup_sha256": "0744c712bc6a53e89404478dafb73b2b58f8636406345ade2d4e5da55cfd8c81",
+      "current_sha256_before": "a3d811f34ab8eac326c9204340f79b050541144a167d0bb2860f048f1fa82cfd",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_03190.wem",
+      "backup_size": 22366,
+      "current_size": 9588,
+      "backup_sha256": "c0ee7fd03656ef45640dc398dfc9a5041748f838282d42dab8831de2eed89c2e",
+      "current_sha256_before": "d3cb1e61971d48d8ffe53b4a55c8df566a2fc6797c2441217ef1b4a050c7a544",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_03290.wem",
+      "backup_size": 27703,
+      "current_size": 16285,
+      "backup_sha256": "92c8e0782bfe620195a2519752a48ba1190a0c7c008cb82a43010453e5019304",
+      "current_sha256_before": "8e480c933df4922b07254e322f3d09e70576c854c6972c626ca91b08e5ebe589",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_03345.wem",
+      "backup_size": 23934,
+      "current_size": 15129,
+      "backup_sha256": "0fde545a77f7be44e82c459231fa6bdf36870be4687d417df9274d20763f29ca",
+      "current_sha256_before": "d13592dbc07470487b088effbe0c3f2904a88951128dd02415fc8a28ec6f8ded",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_03365.wem",
+      "backup_size": 19191,
+      "current_size": 11790,
+      "backup_sha256": "4248689a3c4353333268954ae76a9389963366400e1485a7cd68c8d7934ed9c5",
+      "current_sha256_before": "c28089b6c299985e605f6d3812da99f99bc34b08c635f610ef02b8d644b7f689",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_03570.wem",
+      "backup_size": 46189,
+      "current_size": 29392,
+      "backup_sha256": "4710be30789bdccc9e0514972d116cde8c58971226910f2e81e01eeafa391a85",
+      "current_sha256_before": "9453f5ec47ee2995b5c0a2c777a447c614a9323c10dcdef9c26c0082855a17b3",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_03991.wem",
+      "backup_size": 13833,
+      "current_size": 12022,
+      "backup_sha256": "cd1164e60377af78ea8caa7566d2500f1ec61be385a1197f35c6e53e810d33aa",
+      "current_sha256_before": "cdbee3f47b384280654b8c8a0c4c5072e21de68c2ac5e8f8e67b85e56c9ad061",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_2_questdialog_contents_03992.wem",
+      "backup_size": 35610,
+      "current_size": 26497,
+      "backup_sha256": "bd30461986d652542121886497807557b9820daf9106a29a439305891096bfb2",
+      "current_sha256_before": "e14e7f4e61a85b20e3f90a81b4388b2a0895a4a7553091fb9ecd0fe8c73185d3",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_00015.wem",
+      "backup_size": 31873,
+      "current_size": 14884,
+      "backup_sha256": "a000d7cae6212bad183cfc7b827ae74455fc8d69344e57000ee31e9c3eb9c4ab",
+      "current_sha256_before": "fdcc2ed509c53ddf7b0a7c74c62618ff148eca083a2574b70a13f3cf501667e7",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_00115.wem",
+      "backup_size": 31564,
+      "current_size": 22950,
+      "backup_sha256": "fbe5cf847835a401fcdcc6020ea310b4e82415ece03f8111033d8d42d589e470",
+      "current_sha256_before": "9fe4128d201fd2ae63faae021efaab544fe11431468105fa77ae55e8b7dd584b",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_00217.wem",
+      "backup_size": 47312,
+      "current_size": 24876,
+      "backup_sha256": "1890a2aeb3b85426c5289f7fcf08c6e837367a2cf68cd89dc18779e20a09def0",
+      "current_sha256_before": "cb18ef9eda3b35d98f6c0dc41167dcaac04fd17b76fc1c79c9afc147033f58d5",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_00320.wem",
+      "backup_size": 64940,
+      "current_size": 43419,
+      "backup_sha256": "1cd74899ae64ecb91c601598f38b0c2d7ffa1e460ab1527e5723c952309c6ca1",
+      "current_sha256_before": "73bbe2e9f1fe8fa22afbc6d2d9f00e00e4fce8534d2ca0b73e1a9455113fb91c",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_00421.wem",
+      "backup_size": 79206,
+      "current_size": 73143,
+      "backup_sha256": "621ba014fbac84f4d25bca3f1ee03d8d35c91fd89c5164a52a4fe79c847b4eed",
+      "current_sha256_before": "1338bfeee528c93f100955eae2d092eec8d835d81e5936ef23211f0c1d1af7ec",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_00472.wem",
+      "backup_size": 20747,
+      "current_size": 15077,
+      "backup_sha256": "e58b280822ce4ba38244a216bb456681943dfa401f07cffa7cc4ed2ff5148153",
+      "current_sha256_before": "aa5e88dcfbdaccb5df4e9be7799bcb135cc94f3af5961bc9d76ca7acc8b0a458",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_00523.wem",
+      "backup_size": 30352,
+      "current_size": 18776,
+      "backup_sha256": "eb8175287763b0e95feab4f6ba06139da6e4ad44a5498b5675b8827c421864b1",
+      "current_sha256_before": "b7b60eb5a610a2c89156e81a1c7d63ea8e9608600236477e3d04eb474c2b5536",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_01298.wem",
+      "backup_size": 37643,
+      "current_size": 10278,
+      "backup_sha256": "0a8f34b9121630ded70a11c7d02c98bc07ebfb60c8fc68f9412d580fe2d4e95e",
+      "current_sha256_before": "1d0fd13347da8fd99e9f497498cd64e1d8ed7d30c5dca96a10056e0d4ff420fa",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_01522.wem",
+      "backup_size": 41439,
+      "current_size": 19678,
+      "backup_sha256": "2ef01ac4e756a558d9003c89f1a2eccefb6f8521990704e21bc54e3cb077bfb6",
+      "current_sha256_before": "295da26c6b333fa68aa57d9572ddf5faaaeba397b54f8d88aec00b6d743a08cf",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_02140.wem",
+      "backup_size": 43378,
+      "current_size": 33980,
+      "backup_sha256": "ce822442f05ffb4953fa0ff1056e5727878340d2265656ef1dd204ac4d1263ff",
+      "current_sha256_before": "44dc42b4004cc700a1ad304503756e2a257891c9db0559ba60e4dde640520c90",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_02141.wem",
+      "backup_size": 28264,
+      "current_size": 14670,
+      "backup_sha256": "c2c4a6ba4f084eed72e3a4e699e21fda21d9740c98e5a32be249aaf1ecbb4007",
+      "current_sha256_before": "f9a4f9438f1744c6a41bd985ee0e688155c93a58169cfb015b57ecd576c501b5",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_02384.wem",
+      "backup_size": 28328,
+      "current_size": 16086,
+      "backup_sha256": "85f30d03344f5a4c8cd75e7be703612ac528a6e3c99de04c0e65b5ebc02d0c8d",
+      "current_sha256_before": "2dfe3ad4cf4ede1d1c3f16c7a7dd95b2d18354aa1480696ac442ef430bae9f03",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_02466.wem",
+      "backup_size": 33887,
+      "current_size": 4414,
+      "backup_sha256": "c6158922cce45a3d4c3a6ef50844050dcf4346da914c7ceca02a5b8adb5dda0a",
+      "current_sha256_before": "073a6e2ca9319ddd51a168ad58ec747bbb0b1a99e04125b2c77cd9e9ea607435",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_02830.wem",
+      "backup_size": 26412,
+      "current_size": 18230,
+      "backup_sha256": "73db8faeb184b3fc1ddfb7f577b3975a0b4b07edd8f204c1789e793881f94030",
+      "current_sha256_before": "87dbb4202fe69ae1c7cdba7f59e1df175ab21344519dafbe36865fa9d2122fc2",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_03026.wem",
+      "backup_size": 41835,
+      "current_size": 34102,
+      "backup_sha256": "6603c4860f29de98538586a2053b1b52f59b0d21402afa46d3a195d2f93d5f58",
+      "current_sha256_before": "853679781eeb5cc71ab8c7af1d90ba52a6e60f1268780b1f181ba9219c2ec707",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_03170.wem",
+      "backup_size": 42846,
+      "current_size": 31894,
+      "backup_sha256": "3b9902b7d8a5a8f1256c19ba53f0e15f066577ca9f73ae4bd35db4cd7f369511",
+      "current_sha256_before": "125aca656c5e358d623fd44884bca04b5f723bfe85d336da32d5fd58d60e8181",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_03195.wem",
+      "backup_size": 26925,
+      "current_size": 12740,
+      "backup_sha256": "ad2303ce22ff894ff96a04fbe8310966a28d679c92923387f67c38f539cfcd66",
+      "current_sha256_before": "ec0f13613c0ac09e72063ae2aa6e094636d691a388a273ff0d97cd42b74b4f3d",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_03245.wem",
+      "backup_size": 20155,
+      "current_size": 11429,
+      "backup_sha256": "0a4ff5a1b7bb8c022e55c50d7c7434cef08c2b46e3cf1c8d5c0f12e2a0942d17",
+      "current_sha256_before": "9514abd5e1b6ce2892227d79a119a99677967503d77f7a623aad24b589c0af2c",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_03295.wem",
+      "backup_size": 43768,
+      "current_size": 20992,
+      "backup_sha256": "948af00ef3a7420ff56310bfe3c5cfcf3d7a528a5410c28303916c532ddc59a0",
+      "current_sha256_before": "902912745b191a917bb934d38f9ef57286f49991a2281fd5f9063d30f5bac1a9",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_03350.wem",
+      "backup_size": 21054,
+      "current_size": 12712,
+      "backup_sha256": "a326606c9a4d983834b2c5663674e04ab6f84722ba9467ce7e97b68ecfc21de8",
+      "current_sha256_before": "8c5bff87238127440add52ee1021a2879c1967802f56b6219c41e3c200d7a0bd",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_03351.wem",
+      "backup_size": 15900,
+      "current_size": 11266,
+      "backup_sha256": "0bfc22cb6daa6d5f0daf9d23471039d98adb5768d27b88b71218e9459183bfc8",
+      "current_sha256_before": "7d83ce79a687e4f1faa1cda4b8168996e068dbfd09ec7eb18767b5c81437d720",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_03370.wem",
+      "backup_size": 24080,
+      "current_size": 14745,
+      "backup_sha256": "9f6d8d8158b19c2bae901949e2548855577ad425d415eed5bf249df3daca8c36",
+      "current_sha256_before": "56fb59b29d2d0442c9ee1f9f4d33ba8dfc3f68aa1637242ea0ba893a0f277a39",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_03575.wem",
+      "backup_size": 23899,
+      "current_size": 14252,
+      "backup_sha256": "e259ad3d2da6703bf64d0cf36f8affbfad009ba4df0c2693afe7c2d9bfaf0670",
+      "current_sha256_before": "46226be79057e8eae369601b3f594fd06a49441dbf2def9101e5aa543b966546",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_contents_03996.wem",
+      "backup_size": 58160,
+      "current_size": 39311,
+      "backup_sha256": "b6a94813bbbff479464b4e9a9e06c2b8635da765cc28b1cab60a031f9fe313f5",
+      "current_sha256_before": "c739ea1d7ab09d71e6a3b31bc5cba7155304342ab604fa8181ffcf6f842cbe9a",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_hello_00891.wem",
+      "backup_size": 49692,
+      "current_size": 37577,
+      "backup_sha256": "3fa01376950227d48b999aa1484452fc569639d8022b477381e55fe0725f4df8",
+      "current_sha256_before": "29088d09c535d1be698a5e7c59c15bbb253baf4fdb6db490cf9fb004cabdaf2f",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_4_questdialog_contents_00019.wem",
+      "backup_size": 27965,
+      "current_size": 12855,
+      "backup_sha256": "a533c72f1120b680dfa37c807dadda4a537c88127fc4014c8350d462c4fefd31",
+      "current_sha256_before": "99d2a39631190f4fb0ed393230d5ccb322fe43e9323d33521423d15b73e0e83e",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_4_questdialog_contents_00021.wem",
+      "backup_size": 46506,
+      "current_size": 23362,
+      "backup_sha256": "069b4b0ade1347cccb3e3381626c9f4eeffe508f7a6a130b8aa351ca419aef7c",
+      "current_sha256_before": "c090682a65a00ecd5ed690b4322ed8f0235f6d1d3e4f280493eb969eb4f4155c",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_4_questdialog_contents_00119.wem",
+      "backup_size": 48909,
+      "current_size": 27603,
+      "backup_sha256": "ea578e452ee4d0dc904458407c52b69a5b66f4f7c0fe2dca20bcc9935fc13d66",
+      "current_sha256_before": "6b8ec198bc992afe8e797c0f2ecbb7354f0406c52b7af2d0cf201ad67c781c3c",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_4_questdialog_contents_00224.wem",
+      "backup_size": 54925,
+      "current_size": 44612,
+      "backup_sha256": "e3451cde42dd960c4e9d495e0617c287b7397a2b480852224857e913c9770d6f",
+      "current_sha256_before": "7b1ef35ea931bbbb681e6ae26c3eba4616fa592300b7b05030b84a401bbd4970",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_4_questdialog_contents_00326.wem",
+      "backup_size": 54940,
+      "current_size": 30649,
+      "backup_sha256": "1e35469f78d80dc28e6792244a680ff2af573c96abff167fc4c6349dbdabc742",
+      "current_sha256_before": "bd923e059a6771a69adcb599d7703a3890ba2909cc4153d85c32450433a4be87",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_4_questdialog_contents_00426.wem",
+      "backup_size": 29459,
+      "current_size": 17399,
+      "backup_sha256": "304b1a6f47caf02dd1c3b37399b25c4dc325c03269a4a016c2dd94c5887638e1",
+      "current_sha256_before": "3cb1ba5e90536f57eba24237998837b0ab7f58c3583f9d81ad4c0445956f815c",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_4_questdialog_contents_00477.wem",
+      "backup_size": 59792,
+      "current_size": 24115,
+      "backup_sha256": "0def4abda377f7bd2cd31841e699ea286d7550f1dfb7ecf1270179cc2ea07222",
+      "current_sha256_before": "a11d0cbad41dbf2aca9b62773a3988d56b3c23ba163d9182f66421dbe4bc6554",
+      "same_before": false
+    },
+    {
+      "path": "sound/nhm_adult_citizen_4_questdialog_contents_00528.wem",
+      "backup_size": 62208,
+      "current_size": 63009,
+      "backup_sha256": "66fbfea25c039c4533e7d140c6eddadeb73e47f3ba7e3fae805eb34ef97b1bad",
+      "current_sha256_before": "9774f7f195cd620149229dc8ccd3aff6cf8796b4dffdc2b8436b7557bceccd29",
+      "same_before": false
+    }
+  ]
+}

@@ -18,7 +18,9 @@ Doppiaggio italiano AI fan-made per Crimson Desert.
 
 Sto preparando la versione `0.4` con una nuova passata ibrida ElevenLabs + modelli locali.
 
-[Ascolta le anteprime audio v0.4](community/voice-previews/v0.4-work-in-progress#sample-per-personaggio)
+[Apri il player audio v0.4](https://cdn.jsdelivr.net/gh/teogsxr/Mod_Translate@main/community/voice-previews/v0.4-work-in-progress/player.html)
+
+[Vai alla cartella delle anteprime v0.4](community/voice-previews/v0.4-work-in-progress#sample-per-personaggio)
 
 Sono preview di sviluppo, non file da installare nel gioco. Servono per far sentire come stanno evolvendo le voci e raccogliere feedback su tono, accento, emozione e coerenza dei personaggi.
 

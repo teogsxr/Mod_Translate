@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crimson Desert Italian Voice Mod - preview audio v0.4</title>
+  <style>
+    :root { color-scheme: dark; --bg: #11121a; --panel: #1b1d29; --text: #f3f5ff; --muted: #aab0c6; --line: #303446; --accent: #8ab4ff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background: var(--bg); color: var(--text); line-height: 1.45; }
+    header { padding: 28px 18px 16px; max-width: 1100px; margin: 0 auto; }
+    h1 { margin: 0 0 8px; font-size: clamp(1.6rem, 3vw, 2.4rem); }
+    p { margin: 0; }
+    .toolbar { max-width: 1100px; margin: 0 auto; padding: 0 18px 18px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    input { width: min(420px, 100%); border: 1px solid var(--line); background: #11131d; color: var(--text); padding: 10px 12px; border-radius: 8px; font-size: 1rem; }
+    a { color: var(--accent); }
+    main { max-width: 1100px; margin: 0 auto; padding: 0 18px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 12px; }
+    .sample { border: 1px solid var(--line); background: var(--panel); border-radius: 8px; padding: 14px; min-width: 0; scroll-margin-top: 18px; }
+    .meta { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-bottom: 8px; }
+    .meta strong { text-transform: capitalize; font-size: 1.04rem; }
+    .meta span { color: var(--muted); font-size: .82rem; overflow-wrap: anywhere; text-align: right; }
+    .sample:target { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+    .sample p { min-height: 3.2em; color: #e6e9f7; margin-bottom: 12px; }
+    audio { width: 100%; height: 38px; }
+    .muted { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Preview audio v0.4</h1>
+    <p class="muted">Crimson Desert Italian Voice Mod - sample di sviluppo, non file da installare nel gioco.</p>
+  </header>
+  <section class="toolbar">
+    <input id="filter" type="search" placeholder="Filtra per personaggio, file o frase" autocomplete="off">
+    <a href="https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml" target="_blank" rel="noopener noreferrer">Lascia feedback</a>
+    <a href="https://github.com/teogsxr/Mod_Translate/tree/main/community/voice-previews/v0.4-work-in-progress" target="_blank" rel="noopener noreferrer">Torna a GitHub</a>
+  </section>
+  <main id="samples">
+    <article class="sample" id="alustin_01">
+      <div class="meta">
+        <strong>alustin</strong>
+        <span>alustin_01.mp3</span>
+      </div>
+      <p>Sento che Corvo bianco non si trova pi&#249; a Hernand. Si sta dirigendo a Demeniss.</p>
+      <audio controls preload="none" src="alustin_01.mp3"></audio>
+    </article>
+    <article class="sample" id="alustin_02">
+      <div class="meta">
+        <strong>alustin</strong>
+        <span>alustin_02.mp3</span>
+      </div>
+      <p>Dobbiamo trovarla prima che sia troppo tardi.</p>
+      <audio controls preload="none" src="alustin_02.mp3"></audio>
+    </article>
+    <article class="sample" id="balthazar_01">
+      <div class="meta">
+        <strong>balthazar</strong>
+        <span>balthazar_01.mp3</span>
+      </div>
+      <p>Non avere l&#39;ardire di dirmi che sei qui per la viverna!</p>
+      <audio controls preload="none" src="balthazar_01.mp3"></audio>
+    </article>
+    <article class="sample" id="balthazar_02">
+      <div class="meta">
+        <strong>balthazar</strong>
+        <span>balthazar_02.mp3</span>
+      </div>
+      <p>Ti dar&#242; in pasto alla viverna io stesso!</p>
+      <audio controls preload="none" src="balthazar_02.mp3"></audio>
+    </article>
+    <article class="sample" id="caliburn_01">
+      <div class="meta">
+        <strong>caliburn</strong>
+        <span>caliburn_01.mp3</span>
+      </div>
+      <p>Tutto e tutti dovranno inginocchiarsi dinanzi a me... a noi!</p>
+      <audio controls preload="none" src="caliburn_01.mp3"></audio>
+    </article>
+    <article class="sample" id="caliburn_02">
+      <div class="meta">
+        <strong>caliburn</strong>
+        <span>caliburn_02.mp3</span>
+      </div>
+      <p>Perfino tu, Mantogrigio. Arrenditi o ti distrugger&#242;!</p>
+      <audio controls preload="none" src="caliburn_02.mp3"></audio>
+    </article>
+    <article class="sample" id="carl_01">
+      <div class="meta">
+        <strong>carl</strong>
+        <span>carl_01.mp3</span>
+      </div>
+      <p>Lo sta solo prendendo in giro. Tipico di Yann!</p>
+      <audio controls preload="none" src="carl_01.mp3"></audio>
+    </article>
+    <article class="sample" id="carl_02">
+      <div class="meta">
+        <strong>carl</strong>
+        <span>carl_02.mp3</span>
+      </div>
+      <p>Ross, da quanto tempo! Anche tu, Kliff...</p>
+      <audio controls preload="none" src="carl_02.mp3"></audio>
+    </article>
+    <article class="sample" id="crogg_01">
+      <div class="meta">
+        <strong>crogg</strong>
+        <span>crogg_01.mp3</span>
+      </div>
+      <p>Far&#242; polvere della tua carne e delle tue ossa, e la sparger&#242; fra le onde!</p>
+      <audio controls preload="none" src="crogg_01.mp3"></audio>
+    </article>
+    <article class="sample" id="crogg_02">
+      <div class="meta">
+        <strong>crogg</strong>
+        <span>crogg_02.mp3</span>
+      </div>
+      <p>Un mortale giunto fin qui per offrirsi in tributo al mio oceano!</p>
+      <audio controls preload="none" src="crogg_02.mp3"></audio>
+    </article>
+    <article class="sample" id="crowman">
+      <div class="meta">
+        <strong>crowman</strong>
+        <span>crowman.mp3</span>
+      </div>
+      <p>Vieni a cercarmi. La tua fine ti attende.</p>
+      <audio controls preload="none" src="crowman.mp3"></audio>
+    </article>
+    <article class="sample" id="damian_01">
+      <div class="meta">
+        <strong>damian</strong>
+        <span>damian_01.mp3</span>
+      </div>
+      <p>Un granchio dorsoroccioso!</p>
+      <audio controls preload="none" src="damian_01.mp3"></audio>
+    </article>
+    <article class="sample" id="damian_02">
+      <div class="meta">
+        <strong>damian</strong>
+        <span>damian_02.mp3</span>
+      </div>
+      <p>Il giorno in cui abbiamo eliminato Bastier... ho visto... una costruzione immensa che fluttuava in cielo.</p>
+      <audio controls preload="none" src="damian_02.mp3"></audio>
+    </article>
+    <article class="sample" id="deerking_01">
+      <div class="meta">
+        <strong>deerking</strong>
+        <span>deerking_01.mp3</span>
+      </div>
+      <p>Non avrai le ricchezze per le quali i miei sudditi hanno sparso il loro sangue!</p>
+      <audio controls preload="none" src="deerking_01.mp3"></audio>
+    </article>
+    <article class="sample" id="deerking_02">
+      <div class="meta">
+        <strong>deerking</strong>
+        <span>deerking_02.mp3</span>
+      </div>
+      <p>Ti strapper&#242; gli arti a uno a uno, e li appender&#242; sulla porta del castello!</p>
+      <audio controls preload="none" src="deerking_02.mp3"></audio>
+    </article>
+    <article class="sample" id="forgotten">
+      <div class="meta">
+        <strong>forgotten</strong>
+        <span>forgotten.mp3</span>
+      </div>
+      <p>Lascio il mio compagno nelle tue mani.</p>
+      <audio controls preload="none" src="forgotten.mp3"></audio>
+    </article>
+    <article class="sample" id="goldenmaskman_01">
+      <div class="meta">
+        <strong>goldenmaskman</strong>
+        <span>goldenmaskman_01.mp3</span>
+      </div>
+      <p>Se potessi studiare la tua forza, sarei ancora pi&#249; vicino alla perfezione!</p>
+      <audio controls preload="none" src="goldenmaskman_01.mp3"></audio>
+    </article>
+    <article class="sample" id="goldenmaskman_02">
+      <div class="meta">
+        <strong>goldenmaskman</strong>
+        <span>goldenmaskman_02.mp3</span>
+      </div>
+      <p>l&#39;intera struttura non sopravvivrebbe. Boom! Problema risolto.</p>
+      <audio controls preload="none" src="goldenmaskman_02.mp3"></audio>
+    </article>
+    <article class="sample" id="hexe">
+      <div class="meta">
+        <strong>hexe</strong>
+        <span>hexe.mp3</span>
+      </div>
+      <p>Sarai mio, Mantogrigio!</p>
+      <audio controls preload="none" src="hexe.mp3"></audio>
+    </article>
+    <article class="sample" id="joan_01">
+      <div class="meta">
+        <strong>joan</strong>
+        <span>joan_01.mp3</span>
+      </div>
+      <p>E abbiamo ancora forze per combattere!</p>
+      <audio controls preload="none" src="joan_01.mp3"></audio>
+    </article>
+    <article class="sample" id="joan_02">
+      <div class="meta">
+        <strong>joan</strong>
+        <span>joan_02.mp3</span>
+      </div>
+      <p>Sei proprio tu!</p>
+      <audio controls preload="none" src="joan_02.mp3"></audio>
+    </article>
+    <article class="sample" id="karzul_01">
+      <div class="meta">
+        <strong>karzul</strong>
+        <span>karzul_01.mp3</span>
+      </div>
+      <p>Gli uomini solitamente fuggono in preda al terrore, al solo udire la mia campana!</p>
+      <audio controls preload="none" src="karzul_01.mp3"></audio>
+    </article>
+    <article class="sample" id="karzul_02">
+      <div class="meta">
+        <strong>karzul</strong>
+        <span>karzul_02.mp3</span>
+      </div>
+      <p>La mia campana ti guider&#224; lungo la strada per l&#39;inferno!</p>
+      <audio controls preload="none" src="karzul_02.mp3"></audio>
+    </article>
+    <article class="sample" id="kliff_01">
+      <div class="meta">
+        <strong>kliff</strong>
+        <span>kliff_01.mp3</span>
+      </div>
+      <p>Fermo! Degli innocenti stanno morendo.</p>
+      <audio controls preload="none" src="kliff_01.mp3"></audio>
+    </article>
+    <article class="sample" id="kliff_02">
+      <div class="meta">
+        <strong>kliff</strong>
+        <span>kliff_02.mp3</span>
+      </div>
+      <p>Interrompi tutto!</p>
+      <audio controls preload="none" src="kliff_02.mp3"></audio>
+    </article>
+    <article class="sample" id="ludvig_01">
+      <div class="meta">
+        <strong>ludvig</strong>
+        <span>ludvig_01.mp3</span>
+      </div>
+      <p>Ti do il benvenuto nel mio regno. Pagherai il prezzo d&#39;ingresso a Pailune con la tua testa!</p>
+      <audio controls preload="none" src="ludvig_01.mp3"></audio>
+    </article>
+    <article class="sample" id="ludvig_02">
+      <div class="meta">
+        <strong>ludvig</strong>
+        <span>ludvig_02.mp3</span>
+      </div>
+      <p>quando gli mander&#242; la testa del suo prezioso orco ammaestrato!</p>
+      <audio controls preload="none" src="ludvig_02.mp3"></audio>
+    </article>
+    <article class="sample" id="marek_01">
+      <div class="meta">
+        <strong>marek</strong>
+        <span>marek_01.mp3</span>
+      </div>
+      <p>Spara a quel bastardo!</p>
+      <audio controls preload="none" src="marek_01.mp3"></audio>
+    </article>
+    <article class="sample" id="marek_02">
+      <div class="meta">
+        <strong>marek</strong>
+        <span>marek_02.mp3</span>
+      </div>
+      <p>Spara a quella roba!</p>
+      <audio controls preload="none" src="marek_02.mp3"></audio>
+    </article>
+    <article class="sample" id="marius_01">
+      <div class="meta">
+        <strong>marius</strong>
+        <span>marius_01.mp3</span>
+      </div>
+      <p>Sempre pi&#249; persone hanno avvistato dei Mantogrigio nelle vicinanze. Un&#39;ottima notizia!</p>
+      <audio controls preload="none" src="marius_01.mp3"></audio>
+    </article>
+    <article class="sample" id="marius_02">
+      <div class="meta">
+        <strong>marius</strong>
+        <span>marius_02.mp3</span>
+      </div>
+      <p>Cercher&#242; il modo di diffondere ancor pi&#249; lontano la notizia che li stiamo cercando!</p>
+      <audio controls preload="none" src="marius_02.mp3"></audio>
+    </article>
+    <article class="sample" id="myurdin_01">
+      <div class="meta">
+        <strong>myurdin</strong>
+        <span>myurdin_01.mp3</span>
+      </div>
+      <p>Di pi&#249;... me ne serviva di pi&#249;! Con un po&#39; pi&#249; di potere era spacciato!</p>
+      <audio controls preload="none" src="myurdin_01.mp3"></audio>
+    </article>
+    <article class="sample" id="myurdin_02">
+      <div class="meta">
+        <strong>myurdin</strong>
+        <span>myurdin_02.mp3</span>
+      </div>
+      <p>Persino un insetto come te pu&#242; avere uno scopo!</p>
+      <audio controls preload="none" src="myurdin_02.mp3"></audio>
+    </article>
+    <article class="sample" id="reeddevil_01">
+      <div class="meta">
+        <strong>reeddevil</strong>
+        <span>reeddevil_01.mp3</span>
+      </div>
+      <p>Liberati di questo involucro mortale e onora la nostra casata con la tua morte!&quot;</p>
+      <audio controls preload="none" src="reeddevil_01.mp3"></audio>
+    </article>
+    <article class="sample" id="reeddevil_02">
+      <div class="meta">
+        <strong>reeddevil</strong>
+        <span>reeddevil_02.mp3</span>
+      </div>
+      <p>Dietro questa maschera si cela una sofferenza infinita!</p>
+      <audio controls preload="none" src="reeddevil_02.mp3"></audio>
+    </article>
+    <article class="sample" id="shay_01">
+      <div class="meta">
+        <strong>shay</strong>
+        <span>shay_01.mp3</span>
+      </div>
+      <p>Coloro che trovano l&#39;illuminazione devono mitigare il loro potere con la piet&#224; e la saggezza.</p>
+      <audio controls preload="none" src="shay_01.mp3"></audio>
+    </article>
+    <article class="sample" id="shay_02">
+      <div class="meta">
+        <strong>shay</strong>
+        <span>shay_02.mp3</span>
+      </div>
+      <p>E ricorda: forza e potenza crescono dalla radice dell&#39;umilt&#224;.</p>
+      <audio controls preload="none" src="shay_02.mp3"></audio>
+    </article>
+    <article class="sample" id="splithorn_01">
+      <div class="meta">
+        <strong>splithorn</strong>
+        <span>splithorn_01.mp3</span>
+      </div>
+      <p>La pagherai cara per aver bramato con cupidigia la mia forza!</p>
+      <audio controls preload="none" src="splithorn_01.mp3"></audio>
+    </article>
+    <article class="sample" id="splithorn_02">
+      <div class="meta">
+        <strong>splithorn</strong>
+        <span>splithorn_02.mp3</span>
+      </div>
+      <p>Questo potere mi appartiene! Nessuno potr&#224; mai sottrarmelo!</p>
+      <audio controls preload="none" src="splithorn_02.mp3"></audio>
+    </article>
+    <article class="sample" id="tolstein_01">
+      <div class="meta">
+        <strong>tolstein</strong>
+        <span>tolstein_01.mp3</span>
+      </div>
+      <p>Chiedono vendetta sugli invasori blasfemi che hanno dissacrato la nostra terra!</p>
+      <audio controls preload="none" src="tolstein_01.mp3"></audio>
+    </article>
+    <article class="sample" id="tolstein_02">
+      <div class="meta">
+        <strong>tolstein</strong>
+        <span>tolstein_02.mp3</span>
+      </div>
+      <p>Ah, ecco che torna la miglior spada di Pailune!</p>
+      <audio controls preload="none" src="tolstein_02.mp3"></audio>
+    </article>
+    <article class="sample" id="valgash_01">
+      <div class="meta">
+        <strong>valgash</strong>
+        <span>valgash_01.mp3</span>
+      </div>
+      <p>Come se potessi permettere a quegli esseri di entrare! Hanno massacrato i miei uomini!</p>
+      <audio controls preload="none" src="valgash_01.mp3"></audio>
+    </article>
+    <article class="sample" id="valgash_02">
+      <div class="meta">
+        <strong>valgash</strong>
+        <span>valgash_02.mp3</span>
+      </div>
+      <p>Non dimenticarti di passare, una volta che avremo ricostruito la citt&#224;!</p>
+      <audio controls preload="none" src="valgash_02.mp3"></audio>
+    </article>
+    <article class="sample" id="whitecrow">
+      <div class="meta">
+        <strong>whitecrow</strong>
+        <span>whitecrow.mp3</span>
+      </div>
+      <p>C&#39;&#232; un mondo intero da esplorare!</p>
+      <audio controls preload="none" src="whitecrow.mp3"></audio>
+    </article>
+    <article class="sample" id="yann_01">
+      <div class="meta">
+        <strong>yann</strong>
+        <span>yann_01.mp3</span>
+      </div>
+      <p>Ammira le mie capacit&#224;. Di questo passo, fonderemo la Gilda dei mercanti Mantogrigio in men che non si dica!</p>
+      <audio controls preload="none" src="yann_01.mp3"></audio>
+    </article>
+    <article class="sample" id="yann_02">
+      <div class="meta">
+        <strong>yann</strong>
+        <span>yann_02.mp3</span>
+      </div>
+      <p>Oh, per le palle appese di Solumen, quello scontro mi ha fatto venire voglia di cavarmi gli occhi!</p>
+      <audio controls preload="none" src="yann_02.mp3"></audio>
+    </article>
+  </main>
+  <script>
+    const filter = document.getElementById('filter');
+    const samples = Array.from(document.querySelectorAll('.sample'));
+    filter.addEventListener('input', () => {
+      const q = filter.value.trim().toLowerCase();
+      for (const sample of samples) {
+        sample.hidden = q && !sample.innerText.toLowerCase().includes(q);
+      }
+    });
+  </script>
+</body>
+</html>

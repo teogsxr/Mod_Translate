@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Crimson Desert Italian Voice Mod - Anteprime audio v0.4</title>
+  <title>Crimson Desert Italian Voice Mod - Anteprime audio/video v0.4</title>
   <style>
     :root { color-scheme: dark; --bg: #11121a; --panel: #1b1d29; --text: #f3f5ff; --muted: #aab0c6; --line: #303446; --accent: #8ab4ff; }
     * { box-sizing: border-box; }
@@ -14,6 +14,12 @@
     .toolbar { max-width: 1100px; margin: 0 auto; padding: 0 18px 18px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
     input { width: min(420px, 100%); border: 1px solid var(--line); background: #11131d; color: var(--text); padding: 10px 12px; border-radius: 8px; font-size: 1rem; }
     a { color: var(--accent); }
+    .video-section { max-width: 1100px; margin: 0 auto; padding: 0 18px 24px; }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 12px; }
+    .video-card { border: 1px solid var(--line); background: var(--panel); border-radius: 8px; padding: 14px; scroll-margin-top: 18px; }
+    .video-card h2 { font-size: 1.04rem; margin: 0 0 8px; }
+    .video-card p { color: var(--muted); margin: 0 0 12px; }
+    video { width: 100%; display: block; border-radius: 6px; background: #05060a; }
     main { max-width: 1100px; margin: 0 auto; padding: 0 18px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 12px; }
     .sample { border: 1px solid var(--line); background: var(--panel); border-radius: 8px; padding: 14px; min-width: 0; scroll-margin-top: 18px; }
     .meta { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-bottom: 8px; }
@@ -27,13 +33,33 @@
 </head>
 <body>
   <header>
-    <h1>Anteprime audio v0.4</h1>
-    <p class="muted">Crimson Desert Italian Voice Mod - sample di sviluppo, non file da installare nel gioco.</p>
+    <h1>Anteprime audio/video v0.4</h1>
+    <p class="muted">Crimson Desert Italian Voice Mod - video gameplay e sample audio di sviluppo, non file da installare nel gioco.</p>
   </header>
   <section class="toolbar">
     <input id="filter" type="search" placeholder="Filtra per personaggio, file o frase" autocomplete="off">
     <a href="https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml" target="_blank" rel="noopener noreferrer">Lascia feedback</a>
     <a href="https://github.com/teogsxr/Mod_Translate/tree/main/community/voice-previews/v0.4-work-in-progress" target="_blank" rel="noopener noreferrer">Torna a GitHub</a>
+  </section>
+  <section class="video-section" id="video-preview">
+    <div class="video-grid">
+      <article class="video-card" id="video-breve">
+        <h2>Gameplay preview v0.4 - parte 1</h2>
+        <p>Dal minuto 00:50 al minuto 05:26. Build di sviluppo, non release finale.</p>
+        <p><a href="video-breve.html">Apri la pagina video breve</a></p>
+        <video controls preload="metadata" poster="video/crimson-desert-it-v04-preview-part-1.jpg">
+          <source src="https://raw.githubusercontent.com/teogsxr/Mod_Translate/main/docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-1.mp4" type="video/mp4">
+        </video>
+      </article>
+      <article class="video-card" id="video-lungo">
+        <h2>Gameplay preview v0.4 - parte 2</h2>
+        <p>Dal minuto 05:27 alla fine del taglio. Build di sviluppo, non release finale.</p>
+        <p><a href="video-lungo.html">Apri la pagina video lungo</a></p>
+        <video controls preload="metadata" poster="video/crimson-desert-it-v04-preview-part-2.jpg">
+          <source src="https://raw.githubusercontent.com/teogsxr/Mod_Translate/main/docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-2.mp4" type="video/mp4">
+        </video>
+      </article>
+    </div>
   </section>
   <main id="samples">
     <article class="sample" id="alustin_01">

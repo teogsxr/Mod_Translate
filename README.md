@@ -27,6 +27,7 @@ Ci sono oltre 51.000 linee audio: feedback precisi e contributi vocali aiutano a
 ## Link rapidi
 
 - [Pagina Nexus Mods](https://www.nexusmods.com/crimsondesert/mods/2741)
+- [Download GitHub Releases](https://github.com/teogsxr/Mod_Translate/releases)
 - [Player anteprime audio v0.4](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/#samples)
 - [Video gameplay preview v0.4](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/#video-preview)
 - [Feedback voce / audio](https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml)
@@ -67,6 +68,18 @@ Scarica il pacchetto dalla sezione **Releases** o dalla pagina Nexus Mods.
 Il pacchetto GitHub include Python portatile in `installer/python`, quindi non richiede Python installato nel sistema.
 
 Nota upgrade da `0.3` / `0.3.1`: prima di installare la `0.4` e' consigliato ripristinare o cancellare gli archivi `0006` gia patchati, poi farli riscaricare/verificare da Steam. La `0.4` lascia volutamente alcune urla e battute brevi nella voce originale inglese perche risultano piu naturali: partire da una base pulita evita che restino vecchie voci AI della `0.3` in quei punti.
+
+## Versioning
+
+La repository `main` contiene documentazione, strumenti, anteprime, template voce e storico tecnico. Non e' il metodo consigliato per installare la mod.
+
+I pacchetti installabili vengono pubblicati come asset nelle [GitHub Releases](https://github.com/teogsxr/Mod_Translate/releases) e su Nexus Mods. Ogni release usa:
+
+- tag GitHub: `vMAJOR.MINOR-label-YYYYMMDD`, per esempio `v0.4-beta-20260528`;
+- zip GitHub: `CrimsonDesert_ItalianVoiceMod_GITHUB_READY_vMAJOR.MINOR_YYYYMMDD.zip`;
+- zip Nexus: `CrimsonDesert_ItalianVoiceMod_NEXUS_SAFE_vMAJOR.MINOR_YYYYMMDD.zip`.
+
+Le cartelle installabili vecchie rimaste nella repository sono spostate in `legacy/packages/` e servono solo come storico. La release corrente resta sempre indicata in alto nel README e nella sezione Releases.
 
 ## Qualità e limiti
 

@@ -1,24 +1,21 @@
 # Voice previews
 
-Questi file sono esempi audio di sviluppo. Non fanno parte della patch installabile e non devono essere copiati nella cartella del gioco.
+Questa cartella contiene solo anteprime audio di sviluppo. Non fanno parte della patch installabile e non devono essere copiate nella cartella del gioco.
 
-## Sample disponibili
+## Versione in ascolto
 
-- `v0.4-work-in-progress/` - sample della nuova passata ibrida, con 1-2 audio per personaggio dove disponibili.
-- `kliff_candidate_01_adventure.mp3`
-- `kliff_candidate_02_adventure.mp3`
-- `kliff_candidate_03_adventure.mp3`
-- `myurdin_antagonist_sample.mp3`
+- `v0.4-work-in-progress/` - esempi della prossima versione `0.4`, con sample MP3 per i personaggi gia disponibili.
 
-## Cosa mi serve sapere
+Apri il README dentro `v0.4-work-in-progress` e usa i link `Play` per ascoltare gli MP3 direttamente dal browser tramite GitHub raw.
 
-Per Kliff: quale candidato funziona meglio come voce da protagonista?
+## Cosa valutare
 
-Cerco una voce italiana naturale, roca, carismatica, da avventura, senza accento inglese o straniero marcato e senza ritmo robotico.
+Per la `0.4` mi servono feedback concreti su:
 
-Per Myurdin: il tono da antagonista funziona? E abbastanza minaccioso senza sembrare mostruoso o finto?
+- voce troppo finta o con accento inglese/straniero;
+- personaggio che sembra avere eta, ruolo o tono sbagliato;
+- frase troncata o finale mangiata;
+- emozione assente in scene di rabbia, paura, combattimento o dolore;
+- pronunce sbagliate di nomi propri.
 
-Per la v0.4: ascoltate anche piu personaggi diversi e segnalate se una voce sembra fuori ruolo, troppo finta, troppo inglese/straniera, senza emozione o con finali troncate.
-
-I feedback migliori sono molto concreti: "Kliff 02 e piu naturale ma troppo vecchio", "Kliff 03 ha il tono giusto ma scandisce male", "Myurdin e buono ma serve piu cattiveria".
-
+Kliff e Marius sono ancora in revisione qualitativa. La priorita attuale e completare una copertura giocabile e poi rifinire le voci piu importanti una per una.

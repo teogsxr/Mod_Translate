@@ -1,5 +1,7 @@
 [url=https://github.com/teogsxr/Mod_Translate]Repository GitHub, tool diagnostici e segnalazione problemi[/url]
 
+[url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/]Anteprime audio/video v0.4 in sviluppo[/url]
+
 [size=4][b]Stato aggiornato - 28/05/2026[/b][/size]
 
 Questa è una versione [b]Beta giocabile[/b] del doppiaggio italiano AI per Crimson Desert.
@@ -9,6 +11,14 @@ La mod copre il gioco con audio italiano, ma non è ancora un doppiaggio profess
 Sto aggiornando il progetto giorno per giorno. Per via dei costi AI sto usando un mix tra modelli locali e servizi cloud: questo rallenta la parte fatta bene, ma permette di mantenere il gioco completo e giocabile mentre miglioro le voci più importanti.
 
 La priorità adesso è completare e rifinire prologo, main quest iniziale, personaggi principali, antagonisti, mercanti e guardie. La voce di Kliff è ancora in revisione: preferisco prima rendere solida la copertura generale e poi rifinire le voicebank personaggio per personaggio.
+
+[size=4][b]Anteprime audio/video v0.4[/b][/size]
+
+Ho pubblicato una pagina preview con sample audio e due video gameplay della versione 0.4 in sviluppo:
+
+[url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/]Apri le anteprime audio/video v0.4[/url]
+
+I video non rappresentano ancora la qualita finale: servono per mostrare l'avanzamento, raccogliere feedback e far capire la direzione della nuova passata audio.
 
 [size=4][b]Changelog / Work in progress[/b][/size]
 
@@ -168,4 +178,3 @@ Questa variante Nexus non contiene runtime Python portatile, file exe, DLL o zip
 Il pacchetto contiene file WEM sostitutivi, script leggibili PowerShell/Python, manifest JSON e documentazione.
 
 Gli script patchano la copia locale dell'utente e creano un backup automatico prima di modificare gli archivi audio.
-

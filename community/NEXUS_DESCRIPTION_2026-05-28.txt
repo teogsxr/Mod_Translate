@@ -1,6 +1,6 @@
 [url=https://github.com/teogsxr/Mod_Translate]Repository GitHub, tool diagnostici e segnalazione problemi[/url]
 
-[url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/]Anteprime audio/video v0.4 in sviluppo[/url]
+[url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/#video-preview]Anteprime audio/video v0.4 in sviluppo[/url]
 
 [size=4][b]Stato aggiornato - 28/05/2026[/b][/size]
 
@@ -9,8 +9,8 @@
 Ho pubblicato due video gameplay della versione 0.4 in sviluppo:
 
 [list]
-[*][url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/]Preview breve[/url] - primissima parte del gioco.[/*]
-[*][url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/]Preview lunga[/url] - primo blocco piu lungo, fino alla scena in cui Myurdin getta Kliff nel fiume.[/*]
+[*][url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/#video-breve]Preview breve[/url] - primissima parte del gioco.[/*]
+[*][url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/#video-lungo]Preview lunga[/url] - primo blocco piu lungo, fino alla scena in cui Myurdin getta Kliff nel fiume.[/*]
 [/list]
 
 Non e ancora una versione esente da difetti, ma serve per mostrare a che livello sta arrivando la localizzazione: il gioco e gia giocabile in italiano e, piu passa il tempo, piu sto correggendo accento, ritmo, emozioni, volume e frasi problematiche con modelli locali e cloud.

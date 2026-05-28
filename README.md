@@ -22,6 +22,8 @@ Sto preparando la versione `0.4` con una nuova passata ibrida ElevenLabs + model
 
 Sono preview di sviluppo, non file da installare nel gioco. Servono per far sentire come stanno evolvendo le voci e raccogliere feedback su tono, accento, emozione e coerenza dei personaggi.
 
+[Lascia un feedback audio strutturato](https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml)
+
 La mod attuale è una beta ampia e giocabile: copre il gioco con audio italiano generato tramite AI, ma non è ancora un doppiaggio professionale. Giorno per giorno sto correggendo le parti più visibili, soprattutto prologo, personaggi principali, antagonisti, mercanti e guardie.
 
 ## Stato attuale
@@ -71,7 +73,7 @@ Se volete aiutare, potete creare o provare voci su ElevenLabs e mandarmi:
 - file audio di preview o link;
 - nota sul tono desiderato, per esempio protagonista avventuroso, anziano roco, antagonista profondo, soldato giovane, mercante, guardia.
 
-Potete aprire una Issue GitHub usando il template `Feedback voce / audio`.
+Potete aprire una Issue GitHub usando il template [Feedback voce / audio](https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml).
 
 ## Installazione da GitHub
 

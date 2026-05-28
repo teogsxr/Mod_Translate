@@ -7,6 +7,8 @@ Questi file servono solo per ascoltare e lasciare feedback: non fanno parte dell
 
 I link `Apri audio` portano alla pagina GitHub del singolo MP3. I link raw di GitHub forzano spesso il download, quindi qui non li uso come ascolto principale.
 
+Se una voce non convince, apri un [Feedback voce / audio](https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml) indicando personaggio, scena, frase e cosa non va.
+
 ## Contenuto
 
 - Personaggi inclusi: 25

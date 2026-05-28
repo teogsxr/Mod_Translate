@@ -8,6 +8,8 @@ Questa cartella contiene solo anteprime audio di sviluppo. Non fanno parte della
 
 Apri il README dentro `v0.4-work-in-progress` e usa i link `Apri audio` per entrare nella pagina GitHub del singolo MP3.
 
+Per segnalare una voce da correggere, usa il template [Feedback voce / audio](https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml).
+
 ## Cosa valutare
 
 Per la `0.4` mi servono feedback concreti su:

@@ -1,45 +1,140 @@
 name: Feedback voce / audio
-description: Segnala una voce da migliorare o dai un parere sui sample audio
-title: "[Voice feedback] "
+description: Segnala una voce da correggere, una frase sbagliata o un problema di qualita audio
+title: "[Audio feedback] "
 labels: ["voice-feedback"]
 body:
   - type: markdown
     attributes:
       value: |
-        Grazie per il feedback. Piu dettagli ci sono, piu e facile correggere la voce giusta.
+        Grazie per il feedback. Questo modulo serve per raccogliere segnalazioni abbastanza precise da poterle trasformare in fix.
+
+        Se puoi, indica sempre scena, personaggio e frase. Anche una descrizione breve ma concreta e utile.
+
+  - type: dropdown
+    id: feedback_type
+    attributes:
+      label: Tipo di problema
+      description: Scegli il problema principale. Se ce ne sono piu di uno, descrivili sotto.
+      options:
+        - Voce sbagliata o incoerente
+        - Accento inglese o straniero troppo evidente
+        - Emozione assente o tono sbagliato
+        - Frase troncata o troppo veloce
+        - Audio muto, rotto o distorto
+        - Pronuncia sbagliata di nome/parola
+        - Sottotitolo e audio non coincidono
+        - Volume o sincronizzazione/lip sync
+        - Preview v0.4
+        - Altro
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Quanto e grave?
+      description: Aiuta a decidere cosa sistemare prima.
+      options:
+        - Blocca o rovina una scena importante
+        - Molto evidente ma giocabile
+        - Fastidioso, da rifinire
+        - Parere o proposta
+    validations:
+      required: true
+
   - type: input
     id: scene
     attributes:
-      label: Scena o punto del gioco
-      description: Esempio: prologo, primo villaggio, main quest, mercante, guardia.
+      label: Scena, missione o punto del gioco
+      description: Esempi: prologo, sala da pranzo, primo villaggio, mercante, guardia, boss fight, quest principale.
+      placeholder: Prologo, sala da pranzo
     validations:
       required: true
+
   - type: input
     id: character
     attributes:
-      label: Personaggio o voce
-      description: Esempio: Kliff, Myurdin, Sebastian, guardia, mercante.
+      label: Personaggio o tipo di voce
+      description: Esempi: Kliff, Myurdin, Yann, Dwayne, guardia, mercante, narratore.
+      placeholder: Kliff
     validations:
       required: true
+
   - type: textarea
-    id: problem
+    id: current_audio
     attributes:
-      label: Cosa non va?
-      description: Accento, ritmo, voce sbagliata, audio muto, frase troncata, pronuncia, emozione.
+      label: Cosa si sente ora?
+      description: Scrivi cosa dice o come suona adesso. Se e una pronuncia sbagliata, scrivila come la senti.
+      placeholder: "Esempio: dice 'calmati' con accento sbagliato, tipo calma-ti / sembra troppo veloce / sembra un'altra persona."
     validations:
       required: true
-  - type: input
-    id: file
-    attributes:
-      label: Nome file WEM, se lo conosci
-      description: Facoltativo, ma molto utile.
+
   - type: textarea
-    id: expected
+    id: expected_audio
     attributes:
       label: Come dovrebbe suonare?
-      description: Descrivi il tono ideale o indica quale sample preferisci.
+      description: Descrivi tono, emozione, intenzione o pronuncia corretta.
+      placeholder: "Esempio: dovrebbe essere arrabbiato, urlato, piu profondo, meno inglese, pronunciato 'Peilun'."
+    validations:
+      required: true
+
   - type: textarea
-    id: elevenlabs_prompt
+    id: exact_line
     attributes:
-      label: Prompt o sample ElevenLabs, se vuoi proporre una voce
-      description: Facoltativo. Incolla prompt, impostazioni, link o note sul sample che hai creato.
+      label: Frase o sottotitolo a schermo
+      description: Copia la frase se riesci. Serve a trovare la riga esatta.
+      placeholder: "Esempio: Dai, adesso calmati!"
+
+  - type: input
+    id: file_or_preview
+    attributes:
+      label: Nome file, sample o link, se disponibile
+      description: Nome WEM, file MP3 preview, link GitHub, screenshot o video.
+      placeholder: "kliff_01.mp3 oppure sound/unique_kliff_..."
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contesto della scena
+      description: Cosa sta succedendo nel gioco in quel momento? Combattimento, dialogo calmo, morte di un personaggio, battuta ironica, ecc.
+      placeholder: "Esempio: Kliff sta correndo verso Oongka durante il combattimento e dovrebbe urlare."
+
+  - type: dropdown
+    id: version
+    attributes:
+      label: Versione usata
+      description: Se non sei sicuro, scegli "Non so".
+      options:
+        - v0.3.1 pubblica
+        - Preview / sample v0.4
+        - Build di test ricevuta separatamente
+        - Non so
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Versione del gioco / store
+      options:
+        - Steam
+        - Epic
+        - GOG
+        - Xbox App / Microsoft Store
+        - Altro / non so
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_voice
+    attributes:
+      label: Proposta voce o prompt ElevenLabs, opzionale
+      description: Se hai creato una voce o un sample, incolla prompt, impostazioni, link o note.
+      placeholder: "Esempio: voce uomo maturo, roca, eroica, poco teatrale..."
+
+  - type: textarea
+    id: codex_summary
+    attributes:
+      label: Riassunto rapido per la correzione
+      description: Facoltativo, ma utilissimo se vuoi rendere il feedback subito lavorabile.
+      placeholder: "Personaggio: Kliff. Scena: prologo. Problema: frase troppo veloce e accento sbagliato su calmati. Fix desiderato: rifare con tono calmo ma urgente, stessa frase dei sottotitoli."

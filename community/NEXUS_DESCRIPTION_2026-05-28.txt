@@ -9,8 +9,8 @@
 Ho pubblicato due video gameplay della versione 0.4 in sviluppo:
 
 [list]
-[*][url=https://github.com/teogsxr/Mod_Translate/raw/refs/heads/main/docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-1.mp4]Preview breve[/url] - primissima parte del gioco.[/*]
-[*][url=https://github.com/teogsxr/Mod_Translate/raw/refs/heads/main/docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-2.mp4]Preview lunga[/url] - primo blocco piu lungo, fino alla scena in cui Myurdin getta Kliff nel fiume.[/*]
+[*][url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-breve.html]Preview breve[/url] - primissima parte del gioco.[/*]
+[*][url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-lungo.html]Preview lunga[/url] - primo blocco piu lungo, fino alla scena in cui Myurdin getta Kliff nel fiume.[/*]
 [/list]
 
 Non e ancora una versione esente da difetti, ma serve per mostrare a che livello sta arrivando la localizzazione: il gioco e gia giocabile in italiano e, piu passa il tempo, piu sto correggendo accento, ritmo, emozioni, volume e frasi problematiche con modelli locali e cloud.

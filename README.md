@@ -17,6 +17,7 @@ La mod sostituisce il package voce `0006` con audio italiano generato tramite AI
 
 - [Pagina Nexus Mods](https://www.nexusmods.com/crimsondesert/mods/2741)
 - [Player anteprime audio v0.4](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/)
+- [Video gameplay preview v0.4](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/)
 - [Feedback voce / audio](https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml)
 - [Archivio template voci e prompt ElevenLabs](community/voice-templates/)
 - [Tool diagnostica Xbox App](tools/xbox-compatibility-diagnostic/)
@@ -71,9 +72,9 @@ La versione `0.4` sta migliorando progressivamente le parti più visibili: prolo
 
 ## Anteprime audio v0.4
 
-Le anteprime pubblicate non sono file da installare nel gioco: servono per far ascoltare la direzione della nuova passata audio e raccogliere feedback su tono, accento, emozione e coerenza dei personaggi.
+Le anteprime pubblicate non sono file da installare nel gioco: servono per far ascoltare e vedere la direzione della nuova passata audio e raccogliere feedback su tono, accento, emozione e coerenza dei personaggi.
 
-- [Apri il player audio v0.4](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/)
+- [Apri il player audio/video v0.4](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/)
 - [Vai alla cartella delle anteprime](community/voice-previews/v0.4-work-in-progress#sample-per-personaggio)
 
 ## Contribuire con feedback

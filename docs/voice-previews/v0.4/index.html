@@ -14,6 +14,12 @@
     .toolbar { max-width: 1100px; margin: 0 auto; padding: 0 18px 18px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
     input { width: min(420px, 100%); border: 1px solid var(--line); background: #11131d; color: var(--text); padding: 10px 12px; border-radius: 8px; font-size: 1rem; }
     a { color: var(--accent); }
+    .video-section { max-width: 1100px; margin: 0 auto; padding: 0 18px 24px; }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 12px; }
+    .video-card { border: 1px solid var(--line); background: var(--panel); border-radius: 8px; padding: 14px; }
+    .video-card h2 { font-size: 1.04rem; margin: 0 0 8px; }
+    .video-card p { color: var(--muted); margin: 0 0 12px; }
+    video { width: 100%; display: block; border-radius: 6px; background: #05060a; }
     main { max-width: 1100px; margin: 0 auto; padding: 0 18px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 12px; }
     .sample { border: 1px solid var(--line); background: var(--panel); border-radius: 8px; padding: 14px; min-width: 0; scroll-margin-top: 18px; }
     .meta { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-bottom: 8px; }
@@ -34,6 +40,20 @@
     <input id="filter" type="search" placeholder="Filtra per personaggio, file o frase" autocomplete="off">
     <a href="https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml" target="_blank" rel="noopener noreferrer">Lascia feedback</a>
     <a href="https://github.com/teogsxr/Mod_Translate/tree/main/community/voice-previews/v0.4-work-in-progress" target="_blank" rel="noopener noreferrer">Torna a GitHub</a>
+  </section>
+  <section class="video-section">
+    <div class="video-grid">
+      <article class="video-card">
+        <h2>Gameplay preview v0.4 - parte 1</h2>
+        <p>Dal minuto 00:50 al minuto 05:26. Build di sviluppo, non release finale.</p>
+        <video controls preload="metadata" poster="video/crimson-desert-it-v04-preview-part-1.jpg" src="video/crimson-desert-it-v04-preview-part-1.mp4"></video>
+      </article>
+      <article class="video-card">
+        <h2>Gameplay preview v0.4 - parte 2</h2>
+        <p>Dal minuto 05:27 alla fine del taglio. Build di sviluppo, non release finale.</p>
+        <video controls preload="metadata" poster="video/crimson-desert-it-v04-preview-part-2.jpg" src="video/crimson-desert-it-v04-preview-part-2.mp4"></video>
+      </article>
+    </div>
   </section>
   <main id="samples">
     <article class="sample" id="alustin_01">

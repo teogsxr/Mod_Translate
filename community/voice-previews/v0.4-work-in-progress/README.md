@@ -5,9 +5,9 @@ Questi file servono solo per ascoltare e lasciare feedback: non fanno parte dell
 
 ## Ascolto
 
-Metodo consigliato: [apri il player audio v0.4](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/).
+Metodo consigliato: [apri il player audio/video v0.4](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/).
 
-Il player contiene tutti i sample in una pagina sola, con controlli audio veri e filtro per personaggio/frase.
+Il player contiene i sample audio e due video gameplay della `0.4` in sviluppo, con controlli reali e filtro per personaggio/frase.
 
 I link `Apri nel player` nella tabella portano allo stesso player, già posizionato sul sample scelto. GitHub non permette di forzare l'apertura in una nuova scheda dai README, quindi questo evita di finire su una pagina MP3 isolata.
 

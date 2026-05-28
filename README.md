@@ -19,8 +19,8 @@ La `0.4` non e' ancora esente da difetti, ma i video mostrano a che livello sta 
 
 | Preview | Cosa mostra | Guarda |
 | --- | --- | --- |
-| ![Preview v0.4 parte 1](docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-1.jpg) | Primissima parte del gioco, taglio breve. | [Guarda il video breve](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/#video-breve) |
-| ![Preview v0.4 parte 2](docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-2.jpg) | Primo blocco piu' lungo, fino alla scena in cui Myurdin getta Kliff nel fiume. | [Guarda il video lungo](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/#video-lungo) |
+| [![Preview v0.4 parte 1](docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-1.jpg)](https://github.com/teogsxr/Mod_Translate/raw/refs/heads/main/docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-1.mp4) | Primissima parte del gioco, taglio breve. | [Guarda il video breve](https://github.com/teogsxr/Mod_Translate/raw/refs/heads/main/docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-1.mp4) |
+| [![Preview v0.4 parte 2](docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-2.jpg)](https://github.com/teogsxr/Mod_Translate/raw/refs/heads/main/docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-2.mp4) | Primo blocco piu' lungo, fino alla scena in cui Myurdin getta Kliff nel fiume. | [Guarda il video lungo](https://github.com/teogsxr/Mod_Translate/raw/refs/heads/main/docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-2.mp4) |
 
 Ci sono circa 51.000 linee audio: feedback precisi e contributi vocali aiutano ad arrivare molto piu' velocemente a una versione rifinita.
 

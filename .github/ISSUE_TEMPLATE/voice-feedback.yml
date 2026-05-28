@@ -38,3 +38,8 @@ body:
     attributes:
       label: Come dovrebbe suonare?
       description: Descrivi il tono ideale o indica quale sample preferisci.
+  - type: textarea
+    id: elevenlabs_prompt
+    attributes:
+      label: Prompt o sample ElevenLabs, se vuoi proporre una voce
+      description: Facoltativo. Incolla prompt, impostazioni, link o note sul sample che hai creato.

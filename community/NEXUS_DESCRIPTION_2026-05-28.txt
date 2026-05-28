@@ -1,0 +1,171 @@
+[url=https://github.com/teogsxr/Mod_Translate]Repository GitHub, tool diagnostici e segnalazione problemi[/url]
+
+[size=4][b]Stato aggiornato - 28/05/2026[/b][/size]
+
+Questa è una versione [b]Beta giocabile[/b] del doppiaggio italiano AI per Crimson Desert.
+
+La mod copre il gioco con audio italiano, ma non è ancora un doppiaggio professionale. Alcune voci possono avere accento inglese o straniero, ritmo rigido, enfasi non perfetta, volume da rifinire o frasi da correggere.
+
+Sto aggiornando il progetto giorno per giorno. Per via dei costi AI sto usando un mix tra modelli locali e servizi cloud: questo rallenta la parte fatta bene, ma permette di mantenere il gioco completo e giocabile mentre miglioro le voci più importanti.
+
+La priorità adesso è completare e rifinire prologo, main quest iniziale, personaggi principali, antagonisti, mercanti e guardie. La voce di Kliff è ancora in revisione: preferisco prima rendere solida la copertura generale e poi rifinire le voicebank personaggio per personaggio.
+
+[size=4][b]Changelog / Work in progress[/b][/size]
+
+[b]In lavorazione verso 0.4[/b]
+
+[list]
+[*]Correzioni progressive sulle voci del prologo e delle prime missioni.[/*]
+[*]Miglioramento di personaggi principali e antagonisti con generazioni più curate.[/*]
+[*]Uso combinato di modelli locali e cloud per ridurre il consumo di crediti AI.[/*]
+[*]Controllo di pronunce, emozione, volume, frasi troncate e sottotitoli non allineati.[/*]
+[*]Studio di voci più stabili per mercanti e guardie, evitando che personaggi diversi parlino tutti uguali.[/*]
+[*]Raccolta feedback e sample voce dalla community.[/*]
+[/list]
+
+[b]Release attuale[/b]
+
+[list]
+[*]Versione pubblica corrente: 0.3 / 0.3.1 compat.[/*]
+[*]51.246 file audio italiani inclusi nella base pubblica.[/*]
+[*]Package audio modificato: 0006.[/*]
+[*]Hotfix per voci mancanti, placeholder StaticInfo e prime correzioni manuali.[/*]
+[*]Installer Xbox bloccato per sicurezza in attesa di report diagnostici.[/*]
+[/list]
+
+[size=4][b]Compatibilità testata[/b][/size]
+
+Test attuale eseguito su Steam.
+
+[list]
+[*][b]Store verificato:[/b] Steam[/*]
+[*][b]Steam buildid:[/b] 23374070[/*]
+[*][b]CrimsonDesert.exe:[/b] 1.0.0.1492[/*]
+[*][b]Ultimo aggiornamento Steam rilevato localmente:[/b] 24/05/2026 11:09 +02:00[/*]
+[/list]
+
+Su versioni diverse la mod potrebbe funzionare, ma non è garantito. Se provate con Epic, GOG o altri vendor, fatemi sapere se funziona indicando store, cartella del gioco ed eventuali errori.
+
+[b]Xbox App / Microsoft Store[/b]
+
+Al momento Xbox App / Microsoft Store è bloccata per sicurezza. Un utente ha segnalato errore all'avvio del gioco dopo la patch. Non so ancora se dipende da archivi diversi, controlli integrità Microsoft o struttura dei file differente.
+
+Se usi Xbox App o Microsoft Store, non forzare l'installazione. Scarica il tool diagnostico e mandami il report:
+
+[url=https://github.com/teogsxr/Mod_Translate/tree/main/tools/xbox-compatibility-diagnostic]Tool diagnostico Xbox / Microsoft Store[/url]
+
+Il tool non installa la mod e non modifica il gioco. Serve solo a raccogliere dati per capire come rendere compatibile quella versione.
+
+[size=4][b]Description[/b][/size]
+
+[b]Crimson Desert Italian Voice Mod[/b] è una mod fan-made gratuita che introduce il doppiaggio italiano AI per Crimson Desert.
+
+La mod sostituisce le voci del package audio 0006 con file WEM italiani generati tramite AI. La base attuale è pensata per rendere il gioco giocabile in italiano, poi verrà migliorata per qualità scena per scena.
+
+La mod è gratuita e non commerciale. Gli audio sono generati con AI e derivano o sono condizionati dalle voci originali del gioco. Non vendere, non mettere dietro paywall e non monetizzare questo pacchetto.
+
+[size=4][b]Segnalazione problemi audio[/b][/size]
+
+Per segnalare frasi da correggere, usa questo formato:
+
+[list]
+[*][b]Nome personaggio[/b][/*]
+[*][b]Scena o punto del gioco[/b][/*]
+[*][b]Frase pronunciata nella patch[/b][/*]
+[*][b]Problema rilevato[/b]: accento troppo inglese, frase ancora in inglese, pronuncia errata, tono non adatto, volume sbilanciato, frase tagliata, sottotitolo non coerente, ecc.[/*]
+[/list]
+
+Feedback precisi aiutano molto più di un generico "questa voce non va".
+
+[size=4][b]Aiutare con ElevenLabs[/b][/size]
+
+Se vuoi aiutarmi a migliorare le voci, puoi creare o provare una voce su ElevenLabs e mandarmi:
+
+[list]
+[*]personaggio a cui è destinata la voce;[/*]
+[*]prompt usato;[/*]
+[*]impostazioni principali, se le hai cambiate;[/*]
+[*]sample audio o link;[/*]
+[*]tono desiderato, per esempio protagonista roco, anziano, antagonista profondo, soldato giovane, mercante, guardia.[/*]
+[/list]
+
+La voce di Kliff non mi convince ancora del tutto, quindi i feedback sulle voci principali sono particolarmente utili. In questa fase però la priorità resta rendere il gioco completo e giocabile; il rifacimento estetico delle voci arriverà un passo alla volta.
+
+[size=4][b]Installation instructions[/b][/size]
+
+1. Chiudi Crimson Desert, Steam e CrimsonForge.
+2. Installa Python 3.10 o superiore, se non è già presente sul PC.
+3. Estrai lo zip della mod in una cartella normale, per esempio Desktop o Download.
+4. Avvia `CONTROLLA_PRIMA.cmd`.
+5. Se il controllo non segnala errori, avvia `INSTALLA_MOD_VOCI_ITALIANE.cmd`.
+6. Se richiesto, indica la cartella di installazione di Crimson Desert.
+
+L'installer crea automaticamente un backup degli archivi modificati prima di applicare la patch.
+
+[size=4][b]Main features[/b][/size]
+
+[list]
+[*]Doppiaggio italiano AI fan-made per Crimson Desert.[/*]
+[*]51.246 file voce italiani nella base pubblica attuale.[/*]
+[*]Patch del package audio 0006 tramite manifest.[/*]
+[*]Backup automatico prima della modifica.[/*]
+[*]Controllo prerequisiti e verifica build prima dell'installazione.[/*]
+[*]Hotfix per audio mancanti, placeholder StaticInfo e prime correzioni manuali dell'intro.[/*]
+[*]Pacchetto Nexus-safe senza python.exe, DLL o zip annidati.[/*]
+[/list]
+
+[size=4][b]Requirements[/b][/size]
+
+[list]
+[*]Crimson Desert installato da Steam per la compatibilità verificata.[/*]
+[*]Build testata: Steam buildid 23374070.[/*]
+[*]CrimsonDesert.exe testato: 1.0.0.1492.[/*]
+[*]Python 3.10 o superiore installato nel sistema.[/*]
+[*]Spazio libero sufficiente per il backup degli archivi audio modificati.[/*]
+[/list]
+
+[size=4][b]Come installare Python 3[/b][/size]
+
+Questa versione Nexus-safe non include python.exe, per ridurre falsi positivi e problemi di scansione del portale.
+
+Python serve solo per eseguire lo script locale della mod. Non servono pacchetti aggiuntivi, non serve pip e l'installer non scarica nulla da internet.
+
+[size=3][b]Metodo consigliato: Microsoft Store[/b][/size]
+
+1. Apri Microsoft Store.
+2. Cerca Python 3.
+3. Installa la versione Python 3 più recente pubblicata dalla Python Software Foundation.
+4. Chiudi e riapri la cartella della mod.
+5. Avvia `CONTROLLA_PRIMA.cmd`.
+
+[size=3][b]Metodo alternativo: python.org[/b][/size]
+
+1. Vai su https://www.python.org/downloads/windows/
+2. Scarica Python 3 per Windows.
+3. Avvia l'installer di Python.
+4. Nella prima schermata spunta `Add python.exe to PATH`, se disponibile.
+5. Clicca `Install Now`.
+6. Quando ha finito, avvia `CONTROLLA_PRIMA.cmd`.
+
+[size=4][b]Donations[/b][/size]
+
+La mod resta gratuita.
+
+Chi vuole può fare una donazione PayPal per contribuire all'acquisto di crediti AI e velocizzare il lavoro sulle prossime versioni, incluse correzioni audio, rigenerazioni e test con voci generate tramite ElevenLabs.
+
+Le donazioni sono facoltative e non danno accesso a contenuti esclusivi.
+
+[url=https://www.paypal.com/donate/?business=matteo.sai%40hotmail.it]Dona con PayPal[/url]
+
+[size=4][b]Shout outs[/b][/size]
+
+Grazie alla community di modding di Crimson Desert, agli autori degli strumenti di unpack/repack, ai tester che segnalano voci mute, pronunce strane, problemi Xbox o scene ancora da rifinire, e a chiunque vorrà contribuire con prompt, sample o feedback precisi.
+
+[size=4][b]Notes for moderators[/b][/size]
+
+Questa variante Nexus non contiene runtime Python portatile, file exe, DLL o zip annidati.
+
+Il pacchetto contiene file WEM sostitutivi, script leggibili PowerShell/Python, manifest JSON e documentazione.
+
+Gli script patchano la copia locale dell'utente e creano un backup automatico prima di modificare gli archivi audio.
+

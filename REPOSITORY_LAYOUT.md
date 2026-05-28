@@ -20,6 +20,7 @@ Contiene solo materiali di comunicazione e sviluppo:
 - roadmap voci;
 - sample audio da ascoltare;
 - richiesta feedback.
+- testo corrente proposto/pubblicato per la pagina Nexus.
 
 Questi file non sono necessari per installare la mod.
 

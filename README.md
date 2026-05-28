@@ -14,6 +14,12 @@ Dona con PayPal per acquistare crediti AI e velocizzare il processo di traduzion
 
 Doppiaggio italiano AI fan-made per Crimson Desert.
 
+Esempi audio della prossima versione `0.4` sono disponibili in:
+
+`community/voice-previews/v0.4-work-in-progress`
+
+Sono preview di sviluppo, non file da installare nel gioco. Servono per far sentire come stanno evolvendo le voci e raccogliere feedback su tono, accento, emozione e coerenza dei personaggi.
+
 La mod attuale è una beta ampia e giocabile: copre il gioco con audio italiano generato tramite AI, ma non è ancora un doppiaggio professionale. Giorno per giorno sto correggendo le parti più visibili, soprattutto prologo, personaggi principali, antagonisti, mercanti e guardie.
 
 ## Stato attuale

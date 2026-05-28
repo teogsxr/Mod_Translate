@@ -14,9 +14,11 @@ Dona con PayPal per acquistare crediti AI e velocizzare il processo di traduzion
 
 Doppiaggio italiano AI fan-made per Crimson Desert.
 
-Esempi audio della prossima versione `0.4` sono disponibili in:
+## Anteprime audio v0.4
 
-`community/voice-previews/v0.4-work-in-progress`
+Sto preparando la versione `0.4` con una nuova passata ibrida ElevenLabs + modelli locali.
+
+[Ascolta le anteprime audio v0.4](community/voice-previews/v0.4-work-in-progress#sample-per-personaggio)
 
 Sono preview di sviluppo, non file da installare nel gioco. Servono per far sentire come stanno evolvendo le voci e raccogliere feedback su tono, accento, emozione e coerenza dei personaggi.
 

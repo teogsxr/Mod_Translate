@@ -13,6 +13,17 @@ La mod sostituisce il package voce `0006` con audio italiano generato tramite AI
 
 > Progetto fan-made, gratuito, non ufficiale e non affiliato a Pearl Abyss. Non vendere, non caricare dietro paywall e non monetizzare il pacchetto.
 
+## Preview video v0.4 in sviluppo
+
+La `0.4` non e' ancora esente da difetti, ma i video mostrano a che livello sta arrivando la localizzazione: il gioco e' gia' giocabile in italiano e, piu' passa il tempo, piu' sto correggendo accento, ritmo, emozioni, volume e frasi problematiche con modelli locali e cloud.
+
+| Preview | Cosa mostra | Guarda |
+| --- | --- | --- |
+| ![Preview v0.4 parte 1](docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-1.jpg) | Primissima parte del gioco, taglio breve. | [Guarda il video breve](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/) |
+| ![Preview v0.4 parte 2](docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-2.jpg) | Primo blocco piu' lungo, fino alla scena in cui Myurdin getta Kliff nel fiume. | [Guarda il video lungo](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/) |
+
+Ci sono circa 51.000 linee audio: feedback precisi e contributi vocali aiutano ad arrivare molto piu' velocemente a una versione rifinita.
+
 ## Link rapidi
 
 - [Pagina Nexus Mods](https://www.nexusmods.com/crimsondesert/mods/2741)

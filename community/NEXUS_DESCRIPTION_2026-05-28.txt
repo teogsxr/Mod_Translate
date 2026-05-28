@@ -4,6 +4,19 @@
 
 [size=4][b]Stato aggiornato - 28/05/2026[/b][/size]
 
+[size=4][b]Preview video v0.4 in sviluppo[/b][/size]
+
+Ho pubblicato due video gameplay della versione 0.4 in sviluppo:
+
+[list]
+[*][url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/]Preview breve[/url] - primissima parte del gioco.[/*]
+[*][url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/]Preview lunga[/url] - primo blocco piu lungo, fino alla scena in cui Myurdin getta Kliff nel fiume.[/*]
+[/list]
+
+Non e ancora una versione esente da difetti, ma serve per mostrare a che livello sta arrivando la localizzazione: il gioco e gia giocabile in italiano e, piu passa il tempo, piu sto correggendo accento, ritmo, emozioni, volume e frasi problematiche con modelli locali e cloud.
+
+Le linee audio sono circa 51.000: piu la community contribuisce con feedback precisi, sample voce e segnalazioni, piu velocemente arriviamo a concludere e rifinire il progetto.
+
 Questa è una versione [b]Beta giocabile[/b] del doppiaggio italiano AI per Crimson Desert.
 
 La mod copre il gioco con audio italiano, ma non è ancora un doppiaggio professionale. Alcune voci possono avere accento inglese o straniero, ritmo rigido, enfasi non perfetta, volume da rifinire o frasi da correggere.
@@ -11,14 +24,6 @@ La mod copre il gioco con audio italiano, ma non è ancora un doppiaggio profess
 Sto aggiornando il progetto giorno per giorno. Per via dei costi AI sto usando un mix tra modelli locali e servizi cloud: questo rallenta la parte fatta bene, ma permette di mantenere il gioco completo e giocabile mentre miglioro le voci più importanti.
 
 La priorità adesso è completare e rifinire prologo, main quest iniziale, personaggi principali, antagonisti, mercanti e guardie. La voce di Kliff è ancora in revisione: preferisco prima rendere solida la copertura generale e poi rifinire le voicebank personaggio per personaggio.
-
-[size=4][b]Anteprime audio/video v0.4[/b][/size]
-
-Ho pubblicato una pagina preview con sample audio e due video gameplay della versione 0.4 in sviluppo:
-
-[url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/]Apri le anteprime audio/video v0.4[/url]
-
-I video non rappresentano ancora la qualita finale: servono per mostrare l'avanzamento, raccogliere feedback e far capire la direzione della nuova passata audio.
 
 [size=4][b]Changelog / Work in progress[/b][/size]
 

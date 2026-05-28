@@ -37,6 +37,12 @@ Su build diverse puo funzionare, ma non e garantito. Se il gioco viene aggiornat
 
 L'installer crea un backup automatico degli archivi modificati prima di applicare i WEM italiani.
 
+### Upgrade da 0.3 / 0.3.1
+
+Prima di installare la `0.4` sopra una `0.3` o `0.3.1`, e' consigliato ripristinare o cancellare gli archivi `0006` gia patchati e poi farli riscaricare/verificare da Steam.
+
+La `0.4` lascia volutamente alcune urla e battute brevi nella voce originale inglese perche risultano piu naturali rispetto alla vecchia generazione AI. Partire da una base pulita evita che in quei punti restino file audio della `0.3`.
+
 ## Diagnostica per store non compatibili
 
 Se il gioco e installato con Xbox App/Microsoft Store, o se l'installer non trova il gioco, avvia:

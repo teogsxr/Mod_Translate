@@ -1,13 +1,13 @@
 # Changelog
 
-## Work in progress - 0.4 voice pass
+## 0.4-beta-20260528
 
-- In preparazione una release `0.4` con correzioni qualitative sulle voci, senza cambiare oggi i file pubblici della mod.
-- Il lavoro sta usando un mix di modelli locali e cloud per ridurre i costi AI: la qualità alta richiede più tempo, ma permette di tenere il gioco giocabile e completo mentre le voci vengono migliorate.
-- Priorità attuale: prologo, main quest iniziale, Kliff, Myurdin, Sebastian, personaggi del prologo, mercanti e guardie.
-- Alcune voci principali, inclusa Kliff, restano in revisione: prima verrà migliorata la copertura generale, poi verranno rifinite le voicebank una per una.
-- Aggiunte note per chi vuole contribuire con prompt e sample ElevenLabs.
-- Ribadita compatibilità verificata su Steam buildid `23374070`, `CrimsonDesert.exe` `1.0.0.1492`; Xbox App/Microsoft Store resta bloccata finché non arrivano report diagnostici.
+- Pubblicato pacchetto `0.4` con 51.461 WEM italiani.
+- Aggiunte 220 righe prioritarie recuperate dall'audio originale inglese e rigenerate in italiano.
+- Esclusi volutamente 5 urli/battute brevi di Kliff dal payload: restano originali inglesi perche suonano piu naturali della vecchia generazione AI.
+- Il recupero massivo delle righe senza testo e' pronto come manifest/lavoro tecnico, ma viene spostato alla `0.5` per non pubblicare una passata troppo automatica senza review.
+- Per l'upgrade da `0.3` / `0.3.1` e' consigliato ripristinare/cancellare gli archivi `0006` gia patchati prima di installare la `0.4`, cosi i file lasciati originali non restano presi dalla vecchia voce AI.
+- Ribadita compatibilita verificata su Steam buildid `23374070`, `CrimsonDesert.exe` `1.0.0.1492`; Xbox App/Microsoft Store resta bloccata finche non arrivano report diagnostici.
 
 ## 0.3.1-compat-20260527
 

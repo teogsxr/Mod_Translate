@@ -40,6 +40,8 @@ La mod e pensata per rendere il gioco giocabile in italiano, non per sostituire 
 
 L'installer crea un backup automatico degli archivi modificati.
 
+Nota upgrade da `0.3` / `0.3.1`: prima di installare la `0.4` e' consigliato ripristinare o cancellare gli archivi `0006` gia patchati, poi farli riscaricare/verificare da Steam. La `0.4` lascia volutamente alcune urla e battute brevi nella voce originale inglese perche risultano piu naturali: partire da una base pulita evita che restino vecchie voci AI della `0.3` in quei punti.
+
 ## Uso e distribuzione
 
 Progetto fan gratuito, non commerciale. Gli audio sono generati con AI e derivano o sono condizionati dalle voci originali del gioco; per questo e vietata la vendita, il paywall o qualunque monetizzazione del pacchetto.

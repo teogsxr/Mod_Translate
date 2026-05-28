@@ -3,26 +3,26 @@
 # Crimson Desert Italian Voice Mod
 
 ![Status](https://img.shields.io/badge/status-beta-orange)
-![Current version](https://img.shields.io/badge/current-0.3.1--compat--20260527-blue)
+![Current version](https://img.shields.io/badge/current-0.4--beta--20260528-blue)
 ![Steam tested](https://img.shields.io/badge/Steam-tested-brightgreen)
 ![Non commercial](https://img.shields.io/badge/non--commercial-free-lightgrey)
 
 Doppiaggio italiano AI fan-made per **Crimson Desert**.
 
-La mod sostituisce il package voce `0006` con audio italiano generato tramite AI. La versione pubblica attuale copre il gioco in modo ampio e giocabile, mentre la prossima versione `0.4` è in lavorazione con un approccio più curato: voci dedicate, correzioni manuali, ElevenLabs per le scene importanti e modelli locali per accelerare la copertura.
+La mod sostituisce il package voce `0006` con audio italiano generato tramite AI. La versione pubblica attuale e' la `0.4-beta-20260528`: copre il gioco in modo ampio e giocabile, aggiunge una passata qualitativa sulle prime parti e include 220 righe recuperate che prima rischiavano di restare fuori.
 
 > Progetto fan-made, gratuito, non ufficiale e non affiliato a Pearl Abyss. Non vendere, non caricare dietro paywall e non monetizzare il pacchetto.
 
-## Preview video v0.4 in sviluppo
+## Preview video v0.4
 
-La `0.4` non e' ancora esente da difetti, ma i video mostrano a che livello sta arrivando la localizzazione: il gioco e' gia' giocabile in italiano e, piu' passa il tempo, piu' sto correggendo accento, ritmo, emozioni, volume e frasi problematiche con modelli locali e cloud.
+La `0.4` non e' esente da difetti, ma i video mostrano il livello attuale della localizzazione: il gioco e' giocabile in italiano e continuera' a migliorare con correzioni su accento, ritmo, emozioni, volume e frasi problematiche.
 
 | Preview | Cosa mostra | Guarda |
 | --- | --- | --- |
 | [![Preview v0.4 parte 1](docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-1.jpg)](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-breve.html) | Primissima parte del gioco, taglio breve. | [Guarda il video breve](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-breve.html) |
 | [![Preview v0.4 parte 2](docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-2.jpg)](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-lungo.html) | Primo blocco piu' lungo, fino alla scena in cui Myurdin getta Kliff nel fiume. | [Guarda il video lungo](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-lungo.html) |
 
-Ci sono circa 51.000 linee audio: feedback precisi e contributi vocali aiutano ad arrivare molto piu' velocemente a una versione rifinita.
+Ci sono oltre 51.000 linee audio: feedback precisi e contributi vocali aiutano ad arrivare molto piu' velocemente a una versione rifinita.
 
 ## Link rapidi
 
@@ -37,9 +37,9 @@ Ci sono circa 51.000 linee audio: feedback precisi e contributi vocali aiutano a
 
 | Voce | Stato |
 | --- | --- |
-| Release pubblica corrente | `0.3.1-compat-20260527` |
-| Prossima release | `0.4`, in sviluppo |
-| File voce italiani inclusi | 51.246 WEM |
+| Release pubblica corrente | `0.4-beta-20260528` |
+| Prossima release | `0.5`, recupero massivo delle righe senza testo e altro polish |
+| File voce italiani inclusi | 51.461 WEM |
 | Package modificato | `0006` |
 | Ultima verifica locale | 28/05/2026 |
 | Versione Steam verificata | buildid `23374070`, `CrimsonDesert.exe` `1.0.0.1492` |
@@ -57,14 +57,16 @@ Se usi una versione non Steam, prova solo se sai ripristinare i file del gioco e
 
 ## Installazione da GitHub
 
-Al momento i file sono pubblicati nella repository. La sezione **Releases** verrà usata quando ci sarà un pacchetto ufficiale più stabile.
+Scarica il pacchetto dalla sezione **Releases** o dalla pagina Nexus Mods.
 
-1. Scarica la repository.
-2. Apri `CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.2_20260524`.
+1. Scarica `CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.4_20260528.zip`.
+2. Estrai lo zip in una cartella normale del PC.
 3. Avvia `CONTROLLA_PRIMA.cmd`.
 4. Avvia `INSTALLA_MOD_VOCI_ITALIANE.cmd`.
 
 Il pacchetto GitHub include Python portatile in `installer/python`, quindi non richiede Python installato nel sistema.
+
+Nota upgrade da `0.3` / `0.3.1`: prima di installare la `0.4` e' consigliato ripristinare o cancellare gli archivi `0006` gia patchati, poi farli riscaricare/verificare da Steam. La `0.4` lascia volutamente alcune urla e battute brevi nella voce originale inglese perche risultano piu naturali: partire da una base pulita evita che restino vecchie voci AI della `0.3` in quei punti.
 
 ## Qualità e limiti
 
@@ -79,7 +81,7 @@ Le prime versioni sono state generate in massa per ottenere rapidamente una base
 - pronunce da correggere;
 - personaggi secondari con voci non ancora definitive.
 
-La versione `0.4` sta migliorando progressivamente le parti più visibili: prologo, personaggi principali, antagonisti, mercanti, guardie e scene emotive. L'obiettivo è rendere prima tutto il gioco giocabile in italiano, poi rifinire le voci una per una.
+La versione `0.4` migliora progressivamente le parti piu' visibili: prologo, personaggi principali, antagonisti, mercanti, guardie e scene emotive. Il recupero massivo delle righe senza testo e' gia preparato ma viene spostato alla `0.5`, per non pubblicare una passata troppo automatica senza controllo.
 
 ## Anteprime audio v0.4
 

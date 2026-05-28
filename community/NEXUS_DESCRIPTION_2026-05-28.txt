@@ -1,12 +1,12 @@
 [url=https://github.com/teogsxr/Mod_Translate]Repository GitHub, tool diagnostici e segnalazione problemi[/url]
 
-[url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/#video-preview]Anteprime audio/video v0.4 in sviluppo[/url]
+[url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/#video-preview]Anteprime audio/video v0.4[/url]
 
 [size=4][b]Stato aggiornato - 28/05/2026[/b][/size]
 
-[size=4][b]Preview video v0.4 in sviluppo[/b][/size]
+[size=4][b]Preview video v0.4[/b][/size]
 
-Ho pubblicato due video gameplay della versione 0.4 in sviluppo:
+Ho pubblicato due video gameplay della versione 0.4:
 
 [list]
 [*][url=https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-breve.html]Preview breve[/url] - primissima parte del gioco.[/*]
@@ -17,32 +17,31 @@ Non e ancora una versione esente da difetti, ma serve per mostrare a che livello
 
 Le linee audio sono circa 51.000: piu la community contribuisce con feedback precisi, sample voce e segnalazioni, piu velocemente arriviamo a concludere e rifinire il progetto.
 
-Questa è una versione [b]Beta giocabile[/b] del doppiaggio italiano AI per Crimson Desert.
+Questa e' la versione [b]0.4 Beta giocabile[/b] del doppiaggio italiano AI per Crimson Desert.
 
 La mod copre il gioco con audio italiano, ma non è ancora un doppiaggio professionale. Alcune voci possono avere accento inglese o straniero, ritmo rigido, enfasi non perfetta, volume da rifinire o frasi da correggere.
 
 Sto aggiornando il progetto giorno per giorno. Per via dei costi AI sto usando un mix tra modelli locali e servizi cloud: questo rallenta la parte fatta bene, ma permette di mantenere il gioco completo e giocabile mentre miglioro le voci più importanti.
 
-La priorità adesso è completare e rifinire prologo, main quest iniziale, personaggi principali, antagonisti, mercanti e guardie. La voce di Kliff è ancora in revisione: preferisco prima rendere solida la copertura generale e poi rifinire le voicebank personaggio per personaggio.
+La 0.4 migliora la copertura e alcune parti visibili, ma non chiude ancora tutto il lavoro qualitativo: prologo, main quest iniziale, personaggi principali, antagonisti, mercanti e guardie continueranno a ricevere correzioni. La voce di Kliff e' ancora in revisione.
 
-[size=4][b]Changelog / Work in progress[/b][/size]
+[size=4][b]Changelog[/b][/size]
 
-[b]In lavorazione verso 0.4[/b]
+[b]Versione 0.4-beta-20260528[/b]
 
 [list]
-[*]Correzioni progressive sulle voci del prologo e delle prime missioni.[/*]
-[*]Miglioramento di personaggi principali e antagonisti con generazioni più curate.[/*]
-[*]Uso combinato di modelli locali e cloud per ridurre il consumo di crediti AI.[/*]
-[*]Controllo di pronunce, emozione, volume, frasi troncate e sottotitoli non allineati.[/*]
-[*]Studio di voci più stabili per mercanti e guardie, evitando che personaggi diversi parlino tutti uguali.[/*]
-[*]Raccolta feedback e sample voce dalla community.[/*]
+[*]51.461 file WEM italiani inclusi nel pacchetto.[/*]
+[*]Aggiunte 220 righe prioritarie recuperate dall'audio originale inglese.[/*]
+[*]5 urli/battute brevi di Kliff lasciati originali inglesi perche suonano piu naturali della vecchia generazione AI.[/*]
+[*]Pacchetto Nexus-safe senza python.exe, DLL o zip annidati.[/*]
+[*]Il recupero massivo delle righe senza testo resta pianificato per la 0.5.[/*]
 [/list]
 
 [b]Release attuale[/b]
 
 [list]
-[*]Versione pubblica corrente: 0.3 / 0.3.1 compat.[/*]
-[*]51.246 file audio italiani inclusi nella base pubblica.[/*]
+[*]Versione pubblica corrente: 0.4-beta-20260528.[/*]
+[*]51.461 file audio italiani inclusi nella base pubblica.[/*]
 [*]Package audio modificato: 0006.[/*]
 [*]Hotfix per voci mancanti, placeholder StaticInfo e prime correzioni manuali.[/*]
 [*]Installer Xbox bloccato per sicurezza in attesa di report diagnostici.[/*]
@@ -117,11 +116,16 @@ La voce di Kliff non mi convince ancora del tutto, quindi i feedback sulle voci 
 
 L'installer crea automaticamente un backup degli archivi modificati prima di applicare la patch.
 
+[b]Upgrade da 0.3 / 0.3.1[/b]
+Se hai gia installato una versione 0.3 o 0.3.1, prima di installare la 0.4 e' consigliato ripristinare o cancellare gli archivi `0006` gia patchati e poi farli riscaricare/verificare dal client del gioco, per esempio Steam.
+
+Motivo: nella 0.4 alcune urla e battute brevi vengono lasciate volutamente nella voce originale inglese perche sono piu naturali rispetto alla vecchia generazione AI. Partire da una base pulita evita che in quei punti restino file audio della 0.3.
+
 [size=4][b]Main features[/b][/size]
 
 [list]
 [*]Doppiaggio italiano AI fan-made per Crimson Desert.[/*]
-[*]51.246 file voce italiani nella base pubblica attuale.[/*]
+[*]51.461 file voce italiani nella base pubblica attuale.[/*]
 [*]Patch del package audio 0006 tramite manifest.[/*]
 [*]Backup automatico prima della modifica.[/*]
 [*]Controllo prerequisiti e verifica build prima dell'installazione.[/*]

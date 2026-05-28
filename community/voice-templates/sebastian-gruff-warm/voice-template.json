@@ -1,0 +1,73 @@
+{
+    "id":  "sebastian_gruff_warm",
+    "display_name":  "sebastian gruff warm",
+    "type":  "",
+    "role":  "",
+    "status":  "draft",
+    "current_voice_name":  "CDIT sebastian gruff warm",
+    "current_voice_id":  "",
+    "current_prompt":  "Italian male voice, late forties or early fifties, bearded mapmaker with a warmer gruff tone, dry close microphone, zero room echo, zero church resonance. Sounds like a real supporting videogame character, kind but not soft, experienced but not heroic narrator, conversational Italian, no English accent.",
+    "current_preview_script":  "Mantogrigio... sei tu? Ti ho appena tirato fuori dal fiume. Sentite, vi ho già pagato. Q-Quali interessi? Io... Sto bene. T-Ti ringrazio. Non è la prima volta che quei bastardi mi aggrediscono.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260527_214731/preview_report.json",
+    "line_count":  "",
+    "known_chars":  "",
+    "notes":  [
+                  "Sebastian alternative dry no echo"
+              ],
+    "planning_records":  [
+
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_214731/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_214731",
+                                 "kind":  "custom",
+                                 "name":  "sebastian gruff warm",
+                                 "voice_design_prompt":  "Italian male voice, late forties or early fifties, bearded mapmaker with a warmer gruff tone, dry close microphone, zero room echo, zero church resonance. Sounds like a real supporting videogame character, kind but not soft, experienced but not heroic narrator, conversational Italian, no English accent.",
+                                 "preview_script":  "Mantogrigio... sei tu? Ti ho appena tirato fuori dal fiume. Sentite, vi ho già pagato. Q-Quali interessi? Io... Sto bene. T-Ti ringrazio. Non è la prima volta che quei bastardi mi aggrediscono.",
+                                 "generated_text_returned":  "Mantogrigio... sei tu? Ti ho appena tirato fuori dal fiume. Sentite, vi ho già pagato. Q-Quali interessi? Io... Sto bene. T-Ti ringrazio. Non è la prima volta che quei bastardi mi aggrediscono.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "5IHJQLsyYig3U3BM7qZa",
+                                                      "duration_secs":  14.525958333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_214731/mp3/02_sebastian_gruff_warm_sebastian_gruff_warm_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_214731/wav/02_sebastian_gruff_warm_sebastian_gruff_warm_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "nrHvmmPzLy6GicutRqIO",
+                                                      "duration_secs":  17.007583333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_214731/mp3/02_sebastian_gruff_warm_sebastian_gruff_warm_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_214731/wav/02_sebastian_gruff_warm_sebastian_gruff_warm_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "tHQ0pQFg5zrp6VXRe2Pl",
+                                                      "duration_secs":  15.23125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_214731/mp3/02_sebastian_gruff_warm_sebastian_gruff_warm_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_214731/wav/02_sebastian_gruff_warm_sebastian_gruff_warm_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_214731/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT sebastian gruff warm",
+                                 "selected_preview_index":  "",
+                                 "create":  "",
+                                 "notes":  "Sebastian alternative dry no echo",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+
+                              ],
+    "folder":  "sebastian-gruff-warm",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

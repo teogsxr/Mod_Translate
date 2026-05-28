@@ -1,0 +1,192 @@
+{
+    "id":  "unique_marius",
+    "display_name":  "marius",
+    "type":  "unique_character",
+    "role":  "alleato / stratega",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT marius",
+    "current_voice_id":  "LKkbAEqgs2OhWXeYX3rL",
+    "current_prompt":  "Italian male voice, middle aged strategist, educated, controlled, serious and politically aware. Low-medium pitch, elegant diction, natural Italian cadence, no English accent.",
+    "current_preview_script":  "Ah, eccoti. . Mi dispiace per Gared e Rodrick... . Jian avrà sperato che i tre potessero guidare Pailune insieme. . Ma la loro audacia, sarà ricordata come parte dell\u0027indomito spirito di Pailune. . E non dubito che Clemence possa assumersi l\u0027onere, in memoria degli altri.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+    "line_count":  "271",
+    "known_chars":  "9275",
+    "notes":  [
+                  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign."
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/cast_plan_main_and_early.csv",
+                                 "role":  "alleato / stratega",
+                                 "type":  "unique_character",
+                                 "line_count":  "271",
+                                 "known_chars":  "9275",
+                                 "prompt":  "Italian male voice, middle aged strategist, educated, controlled, serious and politically aware. Low-medium pitch, elegant diction, natural Italian cadence, no English accent.",
+                                 "sample":  "Ah, eccoti. | Mi dispiace per Gared e Rodrick... | Jian avrà sperato che i tre potessero guidare Pailune insieme. | Ma la loro audacia, sarà ricordata come parte dell\u0027indomito spirito di Pailune. | E non dubito che Clemence possa assumersi l\u0027onere, in memoria degli altri.",
+                                 "strategy":  "ElevenLabs voice design previews first; do not create final voice until listened.",
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  null
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "main",
+                                 "name":  "marius",
+                                 "voice_design_prompt":  "Italian male voice, middle aged strategist, educated, controlled, serious and politically aware. Low-medium pitch, elegant diction, natural Italian cadence, no English accent.",
+                                 "preview_script":  "Ah, eccoti. . Mi dispiace per Gared e Rodrick... . Jian avrà sperato che i tre potessero guidare Pailune insieme. . Ma la loro audacia, sarà ricordata come parte dell\u0027indomito spirito di Pailune. . E non dubito che Clemence possa assumersi l\u0027onere, in memoria degli altri.",
+                                 "generated_text_returned":  "Ah, eccoti. . Mi dispiace per Gared e Rodrick... . Jian avrà sperato che i tre potessero guidare Pailune insieme. . Ma la loro audacia, sarà ricordata come parte dell\u0027indomito spirito di Pailune. . E non dubito che Clemence possa assumersi l\u0027onere, in memoria degli altri.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "rcd5nxq8VAkHN8DmqJ0B",
+                                                      "duration_secs":  17.79125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/04_unique_marius_marius_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/04_unique_marius_marius_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "rWVrOPX90y1bNt8YEgVR",
+                                                      "duration_secs":  16.850833333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/04_unique_marius_marius_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/04_unique_marius_marius_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "luPutqxgGCba1AWbOabT",
+                                                      "duration_secs":  20.1945,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/04_unique_marius_marius_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/04_unique_marius_marius_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_185825",
+                                 "kind":  "main",
+                                 "name":  "marius",
+                                 "voice_design_prompt":  "Italian male voice, middle aged strategist, educated, controlled, serious and politically aware. Low-medium pitch, elegant diction, natural Italian cadence, no English accent.",
+                                 "preview_script":  "Ah, eccoti. . Mi dispiace per Gared e Rodrick... . Jian avrà sperato che i tre potessero guidare Pailune insieme. . Ma la loro audacia, sarà ricordata come parte dell\u0027indomito spirito di Pailune. . E non dubito che Clemence possa assumersi l\u0027onere, in memoria degli altri.",
+                                 "generated_text_returned":  "Ah, eccoti. . Mi dispiace per Gared e Rodrick... . Jian avrà sperato che i tre potessero guidare Pailune insieme. . Ma la loro audacia, sarà ricordata come parte dell\u0027indomito spirito di Pailune. . E non dubito che Clemence possa assumersi l\u0027onere, in memoria degli altri.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "XisUhhNhahdPURHEowgZ",
+                                                      "duration_secs":  17.79125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/04_unique_marius_marius_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/04_unique_marius_marius_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "gRvWOdmJ30YQgDypzTwd",
+                                                      "duration_secs":  16.850833333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/04_unique_marius_marius_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/04_unique_marius_marius_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "GoPvzcL3ciukFzX4lrgL",
+                                                      "duration_secs":  19.959416666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/04_unique_marius_marius_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/04_unique_marius_marius_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_012618",
+                                 "kind":  "main_missing_preview",
+                                 "name":  "marius",
+                                 "voice_design_prompt":  "Italian male voice, middle aged strategist, educated, controlled, serious and politically aware. Low-medium pitch, elegant diction, natural Italian cadence, no English accent.",
+                                 "preview_script":  "Ah, eccoti. . Mi dispiace per Gared e Rodrick... . Jian avrà sperato che i tre potessero guidare Pailune insieme. . Ma la loro audacia, sarà ricordata come parte dell\u0027indomito spirito di Pailune. . E non dubito che Clemence possa assumersi l\u0027onere, in memoria degli altri.",
+                                 "generated_text_returned":  "Ah, eccoti. . Mi dispiace per Gared e Rodrick... . Jian avrà sperato che i tre potessero guidare Pailune insieme. . Ma la loro audacia, sarà ricordata come parte dell\u0027indomito spirito di Pailune. . E non dubito che Clemence possa assumersi l\u0027onere, in memoria degli altri.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "LKkbAEqgs2OhWXeYX3rL",
+                                                      "duration_secs":  19.227958333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/03_unique_marius_marius_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/03_unique_marius_marius_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "xLSpc1BWMJl4128Za8Je",
+                                                      "duration_secs":  20.1945,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/03_unique_marius_marius_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/03_unique_marius_marius_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "cA2H0mDLOjBt7zZAMp3t",
+                                                      "duration_secs":  21.787958333333332,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/03_unique_marius_marius_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/03_unique_marius_marius_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT marius",
+                                 "selected_preview_index":  "",
+                                 "create":  "",
+                                 "notes":  "",
+                                 "voice_description":  null
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT marius",
+                                 "selected_preview_index":  "1",
+                                 "create":  "yes",
+                                 "notes":  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign.",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_012618/created_voices/20260528_014918/created_voices.csv",
+                                      "voice_name":  "CDIT marius",
+                                      "created_voice_id":  "LKkbAEqgs2OhWXeYX3rL",
+                                      "generated_voice_id":  "LKkbAEqgs2OhWXeYX3rL",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/03_unique_marius_marius_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT marius",
+                                      "created_voice_id":  "LKkbAEqgs2OhWXeYX3rL",
+                                      "generated_voice_id":  "LKkbAEqgs2OhWXeYX3rL",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/03_unique_marius_marius_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT marius",
+                                      "created_voice_id":  "LKkbAEqgs2OhWXeYX3rL",
+                                      "generated_voice_id":  "LKkbAEqgs2OhWXeYX3rL",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/03_unique_marius_marius_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT marius",
+                                      "created_voice_id":  "LKkbAEqgs2OhWXeYX3rL",
+                                      "generated_voice_id":  "LKkbAEqgs2OhWXeYX3rL",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/03_unique_marius_marius_preview1.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-marius",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

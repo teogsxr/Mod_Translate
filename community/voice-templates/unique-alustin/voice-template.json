@@ -1,0 +1,165 @@
+{
+    "id":  "unique_alustin",
+    "display_name":  "unique alustin",
+    "type":  "",
+    "role":  "",
+    "status":  "draft",
+    "current_voice_name":  "CDIT unique alustin",
+    "current_voice_id":  "BScVw3TGca2iN7IcugSu",
+    "current_prompt":  "Italian elderly hermit and alchemist voice, mysterious but human, dry close-mic recording, frail only when needed, sly wisdom, no church echo, no fake old-man caricature, no English accent.",
+    "current_preview_script":  "Il mondo e\u0027 colmo di sofferenza. Finalmente incontro una mano amica. Per favore, prendi. A tempo debito, la chiave ti guidera.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260527_220501/preview_report.json",
+    "line_count":  "81",
+    "known_chars":  "3241",
+    "notes":  [
+                  "Selected preview 2 on 2026-05-27.",
+                  "Selected preview 2 on 2026-05-27.",
+                  "User selected preview 2 on 2026-05-27"
+              ],
+    "planning_records":  [
+
+                         ],
+    "profile_records":  [
+                            {
+                                "source":  "13_pilots/elevenlabs_first_city_extra_20260527/required_voice_profiles.csv",
+                                "voice_name":  "CDIT unique alustin",
+                                "line_count":  "81",
+                                "chars":  "3241",
+                                "prompt":  "Italian elderly hermit and alchemist voice, mysterious but human, dry close-mic recording, frail only when needed, sly wisdom, no church echo, no fake old-man caricature, no English accent.",
+                                "sample":  "Il mondo e\u0027 colmo di sofferenza. Finalmente incontro una mano amica. Per favore, prendi. A tempo debito, la chiave ti guidera.",
+                                "created_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                "notes":  "Selected preview 2 on 2026-05-27."
+                            },
+                            {
+                                "source":  "13_pilots/elevenlabs_first_city_extra_20260527/required_voice_profiles_no_merchants.csv",
+                                "voice_name":  "CDIT unique alustin",
+                                "line_count":  "81",
+                                "chars":  "3241",
+                                "prompt":  "Italian elderly hermit and alchemist voice, mysterious but human, dry close-mic recording, frail only when needed, sly wisdom, no church echo, no fake old-man caricature, no English accent.",
+                                "sample":  "Il mondo e\u0027 colmo di sofferenza. Finalmente incontro una mano amica. Per favore, prendi. A tempo debito, la chiave ti guidera.",
+                                "created_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                "notes":  "Selected preview 2 on 2026-05-27."
+                            }
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_220501/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_220501",
+                                 "kind":  "custom",
+                                 "name":  "unique alustin",
+                                 "voice_design_prompt":  "Italian elderly hermit and alchemist voice, mysterious but human, dry close-mic recording, frail only when needed, sly wisdom, no church echo, no fake old-man caricature, no English accent.",
+                                 "preview_script":  "Il mondo e\u0027 colmo di sofferenza. Finalmente incontro una mano amica. Per favore, prendi. A tempo debito, la chiave ti guidera.",
+                                 "generated_text_returned":  "Il mondo e\u0027 colmo di sofferenza. Finalmente incontro una mano amica. Per favore, prendi. A tempo debito, la chiave ti guidera.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "9Ao8i6rbSvVnv8oRG6dm",
+                                                      "duration_secs":  14.682666666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_220501/mp3/02_unique_alustin_unique_alustin_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_220501/wav/02_unique_alustin_unique_alustin_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                                      "duration_secs":  12.592875,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_220501/mp3/02_unique_alustin_unique_alustin_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_220501/wav/02_unique_alustin_unique_alustin_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "tQrE7y4wiEs6uMzGhuy0",
+                                                      "duration_secs":  15.0745,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_220501/mp3/02_unique_alustin_unique_alustin_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_220501/wav/02_unique_alustin_unique_alustin_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_220501/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT unique alustin",
+                                 "selected_preview_index":  "2",
+                                 "create":  "yes",
+                                 "notes":  "User selected preview 2 on 2026-05-27",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260527_220501/created_voices/20260527_220747/created_voices.csv",
+                                      "voice_name":  "CDIT unique alustin",
+                                      "created_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "generated_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_220501/wav/02_unique_alustin_unique_alustin_preview2.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_004746/manifests/approved_created_voices.csv",
+                                      "voice_name":  "CDIT unique alustin",
+                                      "created_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "generated_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_220501/wav/02_unique_alustin_unique_alustin_preview2.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_004814/manifests/approved_created_voices.csv",
+                                      "voice_name":  "CDIT unique alustin",
+                                      "created_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "generated_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_220501/wav/02_unique_alustin_unique_alustin_preview2.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_005404/manifests/approved_created_voices.csv",
+                                      "voice_name":  "CDIT unique alustin",
+                                      "created_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "generated_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_220501/wav/02_unique_alustin_unique_alustin_preview2.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_005616/manifests/approved_created_voices.csv",
+                                      "voice_name":  "CDIT unique alustin",
+                                      "created_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "generated_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_220501/wav/02_unique_alustin_unique_alustin_preview2.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT unique alustin",
+                                      "created_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "generated_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_220501/wav/02_unique_alustin_unique_alustin_preview2.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT unique alustin",
+                                      "created_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "generated_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_220501/wav/02_unique_alustin_unique_alustin_preview2.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT unique alustin",
+                                      "created_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "generated_voice_id":  "BScVw3TGca2iN7IcugSu",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_220501/wav/02_unique_alustin_unique_alustin_preview2.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-alustin",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

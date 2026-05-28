@@ -1,0 +1,81 @@
+{
+    "id":  "sebastian_dry_cartographer",
+    "display_name":  "sebastian dry cartographer",
+    "type":  "",
+    "role":  "",
+    "status":  "draft",
+    "current_voice_name":  "CDIT sebastian mapmaker",
+    "current_voice_id":  "36avmVMUikVpWcPicEv1",
+    "current_prompt":  "Italian male voice, around fifty years old, bearded practical cartographer, close-mic dry studio recording, no reverb, no echo, no cathedral, no solemn priest tone. Natural videogame NPC acting, grounded and believable, warm but plainspoken, slightly rough from travel, calm human breath, clear neutral Italian diction.",
+    "current_preview_script":  "Mantogrigio... sei tu? Ti ho appena tirato fuori dal fiume. Le notizie qui viaggiano veloci, quindi se cerchi informazioni le troverai alla taverna di Hernand. Io sto andando in città. Posso unirmi a te?",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260527_214731/preview_report.json",
+    "line_count":  "",
+    "known_chars":  "",
+    "notes":  [
+                  "User selected preview 2 for Sebastian on 2026-05-27"
+              ],
+    "planning_records":  [
+
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_214731/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_214731",
+                                 "kind":  "custom",
+                                 "name":  "sebastian dry cartographer",
+                                 "voice_design_prompt":  "Italian male voice, around fifty years old, bearded practical cartographer, close-mic dry studio recording, no reverb, no echo, no cathedral, no solemn priest tone. Natural videogame NPC acting, grounded and believable, warm but plainspoken, slightly rough from travel, calm human breath, clear neutral Italian diction.",
+                                 "preview_script":  "Mantogrigio... sei tu? Ti ho appena tirato fuori dal fiume. Le notizie qui viaggiano veloci, quindi se cerchi informazioni le troverai alla taverna di Hernand. Io sto andando in città. Posso unirmi a te?",
+                                 "generated_text_returned":  "Mantogrigio... sei tu? Ti ho appena tirato fuori dal fiume. Le notizie qui viaggiano veloci, quindi se cerchi informazioni le troverai alla taverna di Hernand. Io sto andando in città. Posso unirmi a te?",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "18JvgK93H1hxN2cVlxdi",
+                                                      "duration_secs":  16.276125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_214731/mp3/01_sebastian_dry_cartographer_sebastian_dry_cartographer_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_214731/wav/01_sebastian_dry_cartographer_sebastian_dry_cartographer_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "36avmVMUikVpWcPicEv1",
+                                                      "duration_secs":  14.917791666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_214731/mp3/01_sebastian_dry_cartographer_sebastian_dry_cartographer_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_214731/wav/01_sebastian_dry_cartographer_sebastian_dry_cartographer_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "EaJmxEj9nevihwJzjsro",
+                                                      "duration_secs":  16.04104166666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_214731/mp3/01_sebastian_dry_cartographer_sebastian_dry_cartographer_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_214731/wav/01_sebastian_dry_cartographer_sebastian_dry_cartographer_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_214731/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT sebastian mapmaker",
+                                 "selected_preview_index":  "2",
+                                 "create":  "yes",
+                                 "notes":  "User selected preview 2 for Sebastian on 2026-05-27",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260527_214731/created_voices/20260527_215756/created_voices.csv",
+                                      "voice_name":  "CDIT sebastian mapmaker",
+                                      "created_voice_id":  "36avmVMUikVpWcPicEv1",
+                                      "generated_voice_id":  "36avmVMUikVpWcPicEv1",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_214731/wav/01_sebastian_dry_cartographer_sebastian_dry_cartographer_preview2.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "sebastian-dry-cartographer",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

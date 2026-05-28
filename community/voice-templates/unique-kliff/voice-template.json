@@ -1,0 +1,274 @@
+{
+    "id":  "unique_kliff",
+    "display_name":  "Kliff Adventure Candidate 03",
+    "type":  "unique_character",
+    "role":  "protagonista",
+    "status":  "needs_preview",
+    "current_voice_name":  "Kliff Good Clone",
+    "current_voice_id":  "UjgfAgrbkJ4UuHyxmIwr",
+    "current_prompt":  "Italian male action-adventure protagonist voice, early forties, rugged and charismatic, warm deep timbre with a dry ironic edge. Classic treasure-hunter adventure energy without imitating any real actor: confident, lived-in, brave, slightly weary, expressive but natural. Clear neutral Italian diction, no English accent, no eastern European accent, no robotic pacing, no long breathing pauses. Rougher than a clean narrator, but still human and cinematic.",
+    "current_preview_script":  "Dai, adesso calmati. Giails, riposa in pace. Tratti l\u0027arma con troppa foga. Non sono qui per discutere. Grosso errore. Lo so. Dimmi, per chi lavori?",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260527_222330/preview_report.json",
+    "line_count":  "1211",
+    "known_chars":  "33124",
+    "notes":  [
+                  "User approved preview 3 on 2026-05-27; check individual weak line unique_kliff_aidialogstringinfogroup_criminal_02789 before patch.",
+                  "Decision log: Kliff Good Clone is the active voice; keep emotion tags in tts_text."
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/cast_plan_main_and_early.csv",
+                                 "role":  "protagonista",
+                                 "type":  "unique_character",
+                                 "line_count":  "1350",
+                                 "known_chars":  "27506",
+                                 "prompt":  "Italian male voice, adult in his thirties or early forties, deep, slightly rough, warm, cinematic but natural. Calm determination, restrained emotion, no foreign accent, no theatrical pauses, clear Italian diction, believable action adventure lead.",
+                                 "sample":  "La spada di Giails... | Giails... riposa in pace. | Luke, Ronald. | Sì. Ci stiamo radunando tutti in un accampamento. | Ci avevate creduto?",
+                                 "strategy":  "ElevenLabs voice design previews first; do not create final voice until listened.",
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  null
+                             }
+                         ],
+    "profile_records":  [
+                            {
+                                "source":  "13_pilots/elevenlabs_kliff_sebastian_myurdin_intro_enemies_20260527/required_voice_profiles.csv",
+                                "voice_name":  "CDIT Kliff Adventure Candidate 03",
+                                "line_count":  "1211",
+                                "chars":  "33124",
+                                "prompt":  "Italian male action-adventure protagonist voice, early forties, rugged and charismatic, warm deep timbre with a dry ironic edge. Confident, lived-in, brave, slightly weary, expressive but natural. Clear neutral Italian diction, no English accent, no eastern European accent, no robotic pacing, no long breathing pauses.",
+                                "sample":  "L\u0027ho scoperto mentre parlava del furto. Lo so. Che stai tramando? Dimmi, per chi lavori?",
+                                "created_voice_id":  "k14eDIkv7qI0PRiCdtyg",
+                                "notes":  "User approved preview 3 on 2026-05-27; check individual weak line unique_kliff_aidialogstringinfogroup_criminal_02789 before patch."
+                            }
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "main",
+                                 "name":  "kliff",
+                                 "voice_design_prompt":  "Italian male voice, adult in his thirties or early forties, deep, slightly rough, warm, cinematic but natural. Calm determination, restrained emotion, no foreign accent, no theatrical pauses, clear Italian diction, believable action adventure lead.",
+                                 "preview_script":  "La spada di Giails... . Giails... riposa in pace. . Luke, Ronald. . Sì. Ci stiamo radunando tutti in un accampamento. . Ci avevate creduto?",
+                                 "generated_text_returned":  "La spada di Giails... . Giails... riposa in pace. . Luke, Ronald. . Sì. Ci stiamo radunando tutti in un accampamento. . Ci avevate creduto?",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "My9kJ05j3Y3HJuMVNRRZ",
+                                                      "duration_secs":  12.827958333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/01_unique_kliff_kliff_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/01_unique_kliff_kliff_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "onLQDEpNaek4BUTJUKJ7",
+                                                      "duration_secs":  14.996125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/01_unique_kliff_kliff_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/01_unique_kliff_kliff_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "gMavzT7psjJgHHUqGwJK",
+                                                      "duration_secs":  14.682666666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/01_unique_kliff_kliff_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/01_unique_kliff_kliff_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_185825",
+                                 "kind":  "main",
+                                 "name":  "kliff",
+                                 "voice_design_prompt":  "Italian male voice, adult in his thirties or early forties, deep, slightly rough, warm, cinematic but natural. Calm determination, restrained emotion, no foreign accent, no theatrical pauses, clear Italian diction, believable action adventure lead.",
+                                 "preview_script":  "La spada di Giails... . Giails... riposa in pace. . Luke, Ronald. . Sì. Ci stiamo radunando tutti in un accampamento. . Ci avevate creduto?",
+                                 "generated_text_returned":  "La spada di Giails... . Giails... riposa in pace. . Luke, Ronald. . Sì. Ci stiamo radunando tutti in un accampamento. . Ci avevate creduto?",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "FAKwlxCwvOGGuglKRocH",
+                                                      "duration_secs":  12.827958333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/01_unique_kliff_kliff_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/01_unique_kliff_kliff_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "gd9YNh55ZixFsaeEqCYy",
+                                                      "duration_secs":  14.996125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/01_unique_kliff_kliff_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/01_unique_kliff_kliff_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "Ezj5gJ8lyRcyXEQIFUey",
+                                                      "duration_secs":  14.682666666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/01_unique_kliff_kliff_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/01_unique_kliff_kliff_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_222330/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_222330",
+                                 "kind":  "custom",
+                                 "name":  "unique kliff adventure",
+                                 "voice_design_prompt":  "Italian male action-adventure protagonist voice, early forties, rugged and charismatic, warm deep timbre with a dry ironic edge. Classic treasure-hunter adventure energy without imitating any real actor: confident, lived-in, brave, slightly weary, expressive but natural. Clear neutral Italian diction, no English accent, no eastern European accent, no robotic pacing, no long breathing pauses. Rougher than a clean narrator, but still human and cinematic.",
+                                 "preview_script":  "Dai, adesso calmati. Giails, riposa in pace. Tratti l\u0027arma con troppa foga. Non sono qui per discutere. Grosso errore. Lo so. Dimmi, per chi lavori?",
+                                 "generated_text_returned":  "Dai, adesso calmati. Giails, riposa in pace. Tratti l\u0027arma con troppa foga. Non sono qui per discutere. Grosso errore. Lo so. Dimmi, per chi lavori?",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "zV6Z5vWpaTaNDstoE1OF",
+                                                      "duration_secs":  14.029625,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_222330/mp3/01_unique_kliff_unique_kliff_adventure_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_222330/wav/01_unique_kliff_unique_kliff_adventure_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "IrjA7GZVdwCggaXGc27g",
+                                                      "duration_secs":  14.761041666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_222330/mp3/01_unique_kliff_unique_kliff_adventure_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_222330/wav/01_unique_kliff_unique_kliff_adventure_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "k14eDIkv7qI0PRiCdtyg",
+                                                      "duration_secs":  15.492458333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_222330/mp3/01_unique_kliff_unique_kliff_adventure_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_222330/wav/01_unique_kliff_unique_kliff_adventure_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT kliff",
+                                 "selected_preview_index":  "",
+                                 "create":  "",
+                                 "notes":  "",
+                                 "voice_description":  null
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_222330/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT Kliff Adventure Candidate 03",
+                                 "selected_preview_index":  "3",
+                                 "create":  "yes",
+                                 "notes":  null,
+                                 "voice_description":  "Italian male action-adventure protagonist voice, early forties, rugged and charismatic, warm deep timbre with a dry ironic edge. Confident, lived-in, brave, slightly weary, expressive but natural. Clear neutral Italian diction, no English accent, no eastern European accent, no robotic pacing, no long breathing pauses."
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260527_222330/created_voices/20260527_223251/created_voices.csv",
+                                      "voice_name":  "CDIT Kliff Adventure Candidate 03",
+                                      "created_voice_id":  "k14eDIkv7qI0PRiCdtyg",
+                                      "generated_voice_id":  "k14eDIkv7qI0PRiCdtyg",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_222330/wav/01_unique_kliff_unique_kliff_adventure_preview3.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "13_pilots/elevenlabs_kliff_sebastian_myurdin_intro_enemies_20260527/created_voices_for_pilot.csv",
+                                      "voice_name":  "CDIT Kliff Adventure Candidate 03",
+                                      "created_voice_id":  "k14eDIkv7qI0PRiCdtyg",
+                                      "generated_voice_id":  "k14eDIkv7qI0PRiCdtyg",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_222330/wav/01_unique_kliff_unique_kliff_adventure_preview3.wav",
+                                      "notes":  "User approved preview 3 after extra line audition on 2026-05-27. Former clone UjgfAgrbkJ4UuHyxmIwr kept as fallback."
+                                  },
+                                  {
+                                      "source":  "13_pilots/kliff_intro_0310_elevenlabs_20260527/created_voices_unique_kliff.csv",
+                                      "voice_name":  "CDIT Kliff Adventure Candidate 03",
+                                      "created_voice_id":  "k14eDIkv7qI0PRiCdtyg",
+                                      "generated_voice_id":  "k14eDIkv7qI0PRiCdtyg",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_222330/wav/01_unique_kliff_unique_kliff_adventure_preview3.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "13_pilots/kliff_intro_0310_giails_variants_20260528/created_voices_unique_kliff.csv",
+                                      "voice_name":  "CDIT Kliff Adventure Candidate 03",
+                                      "created_voice_id":  "k14eDIkv7qI0PRiCdtyg",
+                                      "generated_voice_id":  "k14eDIkv7qI0PRiCdtyg",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_222330/wav/01_unique_kliff_unique_kliff_adventure_preview3.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_004746/manifests/approved_created_voices.csv",
+                                      "voice_name":  "CDIT Kliff Adventure Candidate 03",
+                                      "created_voice_id":  "k14eDIkv7qI0PRiCdtyg",
+                                      "generated_voice_id":  "k14eDIkv7qI0PRiCdtyg",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_222330/wav/01_unique_kliff_unique_kliff_adventure_preview3.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_004814/manifests/approved_created_voices.csv",
+                                      "voice_name":  "CDIT Kliff Adventure Candidate 03",
+                                      "created_voice_id":  "k14eDIkv7qI0PRiCdtyg",
+                                      "generated_voice_id":  "k14eDIkv7qI0PRiCdtyg",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_222330/wav/01_unique_kliff_unique_kliff_adventure_preview3.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_005404/manifests/approved_created_voices.csv",
+                                      "voice_name":  "Kliff Good Clone",
+                                      "created_voice_id":  "UjgfAgrbkJ4UuHyxmIwr",
+                                      "generated_voice_id":  "UjgfAgrbkJ4UuHyxmIwr",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_222330/wav/01_unique_kliff_unique_kliff_adventure_preview3.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_005616/manifests/approved_created_voices.csv",
+                                      "voice_name":  "Kliff Good Clone",
+                                      "created_voice_id":  "UjgfAgrbkJ4UuHyxmIwr",
+                                      "generated_voice_id":  "UjgfAgrbkJ4UuHyxmIwr",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_222330/wav/01_unique_kliff_unique_kliff_adventure_preview3.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "Kliff Good Clone",
+                                      "created_voice_id":  "UjgfAgrbkJ4UuHyxmIwr",
+                                      "generated_voice_id":  "UjgfAgrbkJ4UuHyxmIwr",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "Kliff Good Clone",
+                                      "created_voice_id":  "UjgfAgrbkJ4UuHyxmIwr",
+                                      "generated_voice_id":  "UjgfAgrbkJ4UuHyxmIwr",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "Kliff Good Clone",
+                                      "created_voice_id":  "UjgfAgrbkJ4UuHyxmIwr",
+                                      "generated_voice_id":  "UjgfAgrbkJ4UuHyxmIwr",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "28_full_game_autopilot/kliff_punto_hotfix_20260528_1510/created_voices.csv",
+                                      "voice_name":  null,
+                                      "created_voice_id":  "UjgfAgrbkJ4UuHyxmIwr",
+                                      "generated_voice_id":  null,
+                                      "voice_id":  null,
+                                      "chosen_wav":  "",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-kliff",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

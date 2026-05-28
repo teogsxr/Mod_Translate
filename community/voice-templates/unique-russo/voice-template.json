@@ -1,0 +1,90 @@
+{
+    "id":  "unique_russo",
+    "display_name":  "Ross",
+    "type":  "",
+    "role":  "",
+    "status":  "draft",
+    "current_voice_name":  "CDIT Ross",
+    "current_voice_id":  "l1YHi1od2NLK4KfUZMUW",
+    "current_prompt":  "Italian male soldier, late 30s to 40s. Rough Greymane veteran, grounded, warm when friendly, sharp and angry in battle. Natural Italian diction, no English accent, cinematic RPG performance, not cartoonish.",
+    "current_preview_script":  "Bello vederti. Sei rimasto scoperto! Colpisco dove fa male! Così disonori tutti noi. Maledetti bastardi, come hanno osato.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_105442/preview_report.json",
+    "line_count":  "",
+    "known_chars":  "",
+    "notes":  [
+                  "Decision log: dedicated old-provider-cleanup voice created on 2026-05-28."
+              ],
+    "planning_records":  [
+
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_105442/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_105442",
+                                 "kind":  "custom",
+                                 "name":  "Ross",
+                                 "voice_design_prompt":  "Italian male soldier, late 30s to 40s. Rough Greymane veteran, grounded, warm when friendly, sharp and angry in battle. Natural Italian diction, no English accent, cinematic RPG performance, not cartoonish.",
+                                 "preview_script":  "Bello vederti. Sei rimasto scoperto! Colpisco dove fa male! Così disonori tutti noi. Maledetti bastardi, come hanno osato.",
+                                 "generated_text_returned":  "Bello vederti. Sei rimasto scoperto! Colpisco dove fa male! Così disonori tutti noi. Maledetti bastardi, come hanno osato.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "p1Z9Cy5KOi4UeDXLovLn",
+                                                      "duration_secs":  11.809208333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_105442/mp3/01_unique_russo_Ross_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/01_unique_russo_Ross_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "l1YHi1od2NLK4KfUZMUW",
+                                                      "duration_secs":  9.876125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_105442/mp3/01_unique_russo_Ross_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/01_unique_russo_Ross_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "gQNTccbgD1blO9jzKSHh",
+                                                      "duration_secs":  9.719416666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_105442/mp3/01_unique_russo_Ross_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/01_unique_russo_Ross_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_105442/selected_voice_choices_old_provider_cleanup.csv",
+                                 "voice_name":  "CDIT Ross",
+                                 "selected_preview_index":  "2",
+                                 "create":  "yes",
+                                 "notes":  null,
+                                 "voice_description":  "selected for old provider cleanup dedicated voice pass"
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_105442/created_voices/20260528_105645/created_voices.csv",
+                                      "voice_name":  "CDIT Ross",
+                                      "created_voice_id":  "l1YHi1od2NLK4KfUZMUW",
+                                      "generated_voice_id":  "l1YHi1od2NLK4KfUZMUW",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/01_unique_russo_Ross_preview2.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT Ross",
+                                      "created_voice_id":  "l1YHi1od2NLK4KfUZMUW",
+                                      "generated_voice_id":  "l1YHi1od2NLK4KfUZMUW",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/01_unique_russo_Ross_preview2.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-russo",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

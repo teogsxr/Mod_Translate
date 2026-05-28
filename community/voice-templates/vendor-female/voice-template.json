@@ -1,0 +1,104 @@
+{
+    "id":  "vendor_female",
+    "display_name":  "vendor female",
+    "type":  "",
+    "role":  "",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT vendor female",
+    "current_voice_id":  "IxYcX3PPDGdnp3kPix6L",
+    "current_prompt":  "Italian female merchant voice, adult, warm, clear and professional. Natural Italian, no regional caricature, no English accent.",
+    "current_preview_script":  " Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. vendor_female mantiene emozione, chiarezza e controllo.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+    "line_count":  "",
+    "known_chars":  "",
+    "notes":  [
+
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/voice_pool_plan_guard_vendor_generic.csv",
+                                 "role":  null,
+                                 "type":  null,
+                                 "line_count":  null,
+                                 "known_chars":  null,
+                                 "prompt":  "Italian female merchant voice, adult, warm, clear and professional. Natural Italian, no regional caricature, no English accent.",
+                                 "sample":  null,
+                                 "strategy":  null,
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  "Map deterministicamente per voice_key+family/story_group; non random per click."
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "pool",
+                                 "name":  "vendor_female",
+                                 "voice_design_prompt":  "Italian female merchant voice, adult, warm, clear and professional. Natural Italian, no regional caricature, no English accent.",
+                                 "preview_script":  " Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. vendor_female mantiene emozione, chiarezza e controllo.",
+                                 "generated_text_returned":  "Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. vendor_female mantiene emozione, chiarezza e controllo.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "IxYcX3PPDGdnp3kPix6L",
+                                                      "duration_secs":  14.290833333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/23_vendor_female_vendor_female_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/23_vendor_female_vendor_female_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "1gkOqdtmXa2fjdmt8tFl",
+                                                      "duration_secs":  25.392875,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/23_vendor_female_vendor_female_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/23_vendor_female_vendor_female_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "lfebjslJwlDGeWeeeCmC",
+                                                      "duration_secs":  21.161041666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/23_vendor_female_vendor_female_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/23_vendor_female_vendor_female_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260527_184601/created_voices/20260528_015118/created_voices.csv",
+                                      "voice_name":  "CDIT vendor female",
+                                      "created_voice_id":  "IxYcX3PPDGdnp3kPix6L",
+                                      "generated_voice_id":  "IxYcX3PPDGdnp3kPix6L",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/23_vendor_female_vendor_female_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT vendor female",
+                                      "created_voice_id":  "IxYcX3PPDGdnp3kPix6L",
+                                      "generated_voice_id":  "IxYcX3PPDGdnp3kPix6L",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/23_vendor_female_vendor_female_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT vendor female",
+                                      "created_voice_id":  "IxYcX3PPDGdnp3kPix6L",
+                                      "generated_voice_id":  "IxYcX3PPDGdnp3kPix6L",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/23_vendor_female_vendor_female_preview1.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "vendor-female",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

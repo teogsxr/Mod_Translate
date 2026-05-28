@@ -1,0 +1,78 @@
+{
+    "id":  "citizen_female",
+    "display_name":  "citizen_female",
+    "type":  "",
+    "role":  "",
+    "status":  "needs_preview",
+    "current_voice_name":  "",
+    "current_voice_id":  "",
+    "current_prompt":  "Italian female civilian voice, adult, natural and understated, suitable for ambient townspeople. Neutral Italian, no English accent.",
+    "current_preview_script":  " Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. citizen_female mantiene emozione, chiarezza e controllo.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+    "line_count":  "",
+    "known_chars":  "",
+    "notes":  [
+
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/voice_pool_plan_guard_vendor_generic.csv",
+                                 "role":  null,
+                                 "type":  null,
+                                 "line_count":  null,
+                                 "known_chars":  null,
+                                 "prompt":  "Italian female civilian voice, adult, natural and understated, suitable for ambient townspeople. Neutral Italian, no English accent.",
+                                 "sample":  null,
+                                 "strategy":  null,
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  "Map deterministicamente per voice_key."
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "pool",
+                                 "name":  "citizen_female",
+                                 "voice_design_prompt":  "Italian female civilian voice, adult, natural and understated, suitable for ambient townspeople. Neutral Italian, no English accent.",
+                                 "preview_script":  " Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. citizen_female mantiene emozione, chiarezza e controllo.",
+                                 "generated_text_returned":  "Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. citizen_female mantiene emozione, chiarezza e controllo.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "TaXq0ImJMmcMVgFTmrtS",
+                                                      "duration_secs":  21.31779166666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/25_citizen_female_citizen_female_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/25_citizen_female_citizen_female_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "G0y4M5MzfVkSGZAMfGva",
+                                                      "duration_secs":  16.772458333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/25_citizen_female_citizen_female_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/25_citizen_female_citizen_female_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "Uqd4TZ03GMlneMAcaDyL",
+                                                      "duration_secs":  273.4777916666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/25_citizen_female_citizen_female_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/25_citizen_female_citizen_female_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+
+                         ],
+    "created_voice_history":  [
+
+                              ],
+    "folder":  "citizen-female",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

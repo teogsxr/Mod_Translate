@@ -1,0 +1,192 @@
+{
+    "id":  "unique_joan",
+    "display_name":  "joan",
+    "type":  "unique_character",
+    "role":  "alleata",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT joan",
+    "current_voice_id":  "Fwyw5k8UuatyLp4WTWLw",
+    "current_prompt":  "Italian female voice, adult fighter, clear, strong, pragmatic and emotionally present. Natural neutral Italian, no regional caricature, no English accent, energetic but controlled.",
+    "current_preview_script":  "Estendiamo le ricerche. . Non ho fatto che sognare questo momento... ma stavolta è vero. . Per cui non siamo i soli Mantogrigio rimasti? . E abbiamo ancora forze per combattere! . Non ho smesso di allenarmi... in attesa di questo giorno.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+    "line_count":  "66",
+    "known_chars":  "280",
+    "notes":  [
+                  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign."
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/cast_plan_main_and_early.csv",
+                                 "role":  "alleata",
+                                 "type":  "unique_character",
+                                 "line_count":  "66",
+                                 "known_chars":  "280",
+                                 "prompt":  "Italian female voice, adult fighter, clear, strong, pragmatic and emotionally present. Natural neutral Italian, no regional caricature, no English accent, energetic but controlled.",
+                                 "sample":  "Estendiamo le ricerche. | Non ho fatto che sognare questo momento... ma stavolta è vero. | Per cui non siamo i soli Mantogrigio rimasti? | E abbiamo ancora forze per combattere! | Non ho smesso di allenarmi... in attesa di questo giorno.",
+                                 "strategy":  "ElevenLabs voice design previews first; do not create final voice until listened.",
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  null
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "main",
+                                 "name":  "joan",
+                                 "voice_design_prompt":  "Italian female voice, adult fighter, clear, strong, pragmatic and emotionally present. Natural neutral Italian, no regional caricature, no English accent, energetic but controlled.",
+                                 "preview_script":  "Estendiamo le ricerche. . Non ho fatto che sognare questo momento... ma stavolta è vero. . Per cui non siamo i soli Mantogrigio rimasti? . E abbiamo ancora forze per combattere! . Non ho smesso di allenarmi... in attesa di questo giorno.",
+                                 "generated_text_returned":  "Estendiamo le ricerche. . Non ho fatto che sognare questo momento... ma stavolta è vero. . Per cui non siamo i soli Mantogrigio rimasti? . E abbiamo ancora forze per combattere! . Non ho smesso di allenarmi... in attesa di questo giorno.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "5wItiMK41prtG0pVfsiC",
+                                                      "duration_secs":  13.95125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/06_unique_joan_joan_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/06_unique_joan_joan_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "DMMaLJ4Sxx45u4YMh9Po",
+                                                      "duration_secs":  13.716125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/06_unique_joan_joan_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/06_unique_joan_joan_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "Nvr1OY9vN98vdFtFex8w",
+                                                      "duration_secs":  16.51125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/06_unique_joan_joan_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/06_unique_joan_joan_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_185825",
+                                 "kind":  "main",
+                                 "name":  "joan",
+                                 "voice_design_prompt":  "Italian female voice, adult fighter, clear, strong, pragmatic and emotionally present. Natural neutral Italian, no regional caricature, no English accent, energetic but controlled.",
+                                 "preview_script":  "Estendiamo le ricerche. . Non ho fatto che sognare questo momento... ma stavolta è vero. . Per cui non siamo i soli Mantogrigio rimasti? . E abbiamo ancora forze per combattere! . Non ho smesso di allenarmi... in attesa di questo giorno.",
+                                 "generated_text_returned":  "Estendiamo le ricerche. . Non ho fatto che sognare questo momento... ma stavolta è vero. . Per cui non siamo i soli Mantogrigio rimasti? . E abbiamo ancora forze per combattere! . Non ho smesso di allenarmi... in attesa di questo giorno.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "lGno5MwMJ4rgDw15hkio",
+                                                      "duration_secs":  13.95125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/06_unique_joan_joan_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/06_unique_joan_joan_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "DUd14e0dN31Lsw90nlR0",
+                                                      "duration_secs":  13.716125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/06_unique_joan_joan_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/06_unique_joan_joan_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "uiVr9KHPjv0AOKOuvDG7",
+                                                      "duration_secs":  15.962666666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/06_unique_joan_joan_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/06_unique_joan_joan_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_012618",
+                                 "kind":  "main_missing_preview",
+                                 "name":  "joan",
+                                 "voice_design_prompt":  "Italian female voice, adult fighter, clear, strong, pragmatic and emotionally present. Natural neutral Italian, no regional caricature, no English accent, energetic but controlled.",
+                                 "preview_script":  "Estendiamo le ricerche. . Non ho fatto che sognare questo momento... ma stavolta è vero. . Per cui non siamo i soli Mantogrigio rimasti? . E abbiamo ancora forze per combattere! . Non ho smesso di allenarmi... in attesa di questo giorno.",
+                                 "generated_text_returned":  "Estendiamo le ricerche. . Non ho fatto che sognare questo momento... ma stavolta è vero. . Per cui non siamo i soli Mantogrigio rimasti? . E abbiamo ancora forze per combattere! . Non ho smesso di allenarmi... in attesa di questo giorno.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "Fwyw5k8UuatyLp4WTWLw",
+                                                      "duration_secs":  13.716125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/05_unique_joan_joan_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/05_unique_joan_joan_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "3qxv7RIyTE3KWpRgv5dv",
+                                                      "duration_secs":  14.290833333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/05_unique_joan_joan_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/05_unique_joan_joan_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "iK5IAuHeUvM3Bo3IGGma",
+                                                      "duration_secs":  14.761041666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/05_unique_joan_joan_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/05_unique_joan_joan_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT joan",
+                                 "selected_preview_index":  "",
+                                 "create":  "",
+                                 "notes":  "",
+                                 "voice_description":  null
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT joan",
+                                 "selected_preview_index":  "1",
+                                 "create":  "yes",
+                                 "notes":  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign.",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_012618/created_voices/20260528_014918/created_voices.csv",
+                                      "voice_name":  "CDIT joan",
+                                      "created_voice_id":  "Fwyw5k8UuatyLp4WTWLw",
+                                      "generated_voice_id":  "Fwyw5k8UuatyLp4WTWLw",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/05_unique_joan_joan_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT joan",
+                                      "created_voice_id":  "Fwyw5k8UuatyLp4WTWLw",
+                                      "generated_voice_id":  "Fwyw5k8UuatyLp4WTWLw",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/05_unique_joan_joan_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT joan",
+                                      "created_voice_id":  "Fwyw5k8UuatyLp4WTWLw",
+                                      "generated_voice_id":  "Fwyw5k8UuatyLp4WTWLw",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/05_unique_joan_joan_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT joan",
+                                      "created_voice_id":  "Fwyw5k8UuatyLp4WTWLw",
+                                      "generated_voice_id":  "Fwyw5k8UuatyLp4WTWLw",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/05_unique_joan_joan_preview1.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-joan",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

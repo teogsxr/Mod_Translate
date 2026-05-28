@@ -22,6 +22,8 @@ Sto preparando la versione `0.4` con una nuova passata ibrida ElevenLabs + model
 
 [Vai alla cartella delle anteprime v0.4](community/voice-previews/v0.4-work-in-progress#sample-per-personaggio)
 
+[Archivio template voci e prompt ElevenLabs](community/voice-templates/)
+
 Sono preview di sviluppo, non file da installare nel gioco. Servono per far sentire come stanno evolvendo le voci e raccogliere feedback su tono, accento, emozione e coerenza dei personaggi.
 
 [Lascia un feedback audio strutturato](https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml)
@@ -76,6 +78,8 @@ Se volete aiutare, potete creare o provare voci su ElevenLabs e mandarmi:
 - nota sul tono desiderato, per esempio protagonista avventuroso, anziano roco, antagonista profondo, soldato giovane, mercante, guardia.
 
 Potete aprire una Issue GitHub usando il template [Feedback voce / audio](https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml).
+
+I prompt già usati sono raccolti in [community/voice-templates](community/voice-templates/), così le voci possono essere ricreate anche se vengono cancellate da ElevenLabs.
 
 ## Installazione da GitHub
 

@@ -1,0 +1,192 @@
+{
+    "id":  "unique_yann",
+    "display_name":  "yann",
+    "type":  "unique_character",
+    "role":  "alleato principale",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT yann",
+    "current_voice_id":  "BGS4WB0yNhvx4evloOX1",
+    "current_prompt":  "Italian male voice, young adult, agile and lively, friendly but battle-worn. Natural conversational rhythm, clear Italian pronunciation, expressive without sounding comic, no English accent.",
+    "current_preview_script":  "Ce ne hai messo di tempo! Ecco, è qui, forza! . Sì sì, certo. La vita fa schifo. . Allora forza! Stanno aspettando! Prendiamo la birra! Andiamo! . Ed ecco a voi, il messaggero del liquore. . Quindi è qui che ciondoli?",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+    "line_count":  "661",
+    "known_chars":  "24510",
+    "notes":  [
+                  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign."
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/cast_plan_main_and_early.csv",
+                                 "role":  "alleato principale",
+                                 "type":  "unique_character",
+                                 "line_count":  "661",
+                                 "known_chars":  "24510",
+                                 "prompt":  "Italian male voice, young adult, agile and lively, friendly but battle-worn. Natural conversational rhythm, clear Italian pronunciation, expressive without sounding comic, no English accent.",
+                                 "sample":  "Ce ne hai messo di tempo! Ecco, è qui, forza! | Sì sì, certo. La vita fa schifo. | Allora forza! Stanno aspettando! Prendiamo la birra! Andiamo! | Ed ecco a voi, il messaggero del liquore. | Quindi è qui che ciondoli?",
+                                 "strategy":  "ElevenLabs voice design previews first; do not create final voice until listened.",
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  null
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "main",
+                                 "name":  "yann",
+                                 "voice_design_prompt":  "Italian male voice, young adult, agile and lively, friendly but battle-worn. Natural conversational rhythm, clear Italian pronunciation, expressive without sounding comic, no English accent.",
+                                 "preview_script":  "Ce ne hai messo di tempo! Ecco, è qui, forza! . Sì sì, certo. La vita fa schifo. . Allora forza! Stanno aspettando! Prendiamo la birra! Andiamo! . Ed ecco a voi, il messaggero del liquore. . Quindi è qui che ciondoli?",
+                                 "generated_text_returned":  "Ce ne hai messo di tempo! Ecco, è qui, forza! . Sì sì, certo. La vita fa schifo. . Allora forza! Stanno aspettando! Prendiamo la birra! Andiamo! . Ed ecco a voi, il messaggero del liquore. . Quindi è qui che ciondoli?",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "xRdFYgWzJUnZ4ft9xkjT",
+                                                      "duration_secs":  15.570833333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/02_unique_yann_yann_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/02_unique_yann_yann_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "npHWbp9d0ROHDJeeshPu",
+                                                      "duration_secs":  13.402666666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/02_unique_yann_yann_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/02_unique_yann_yann_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "FOUkGzHz0CbPQiCNIEUR",
+                                                      "duration_secs":  16.772458333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/02_unique_yann_yann_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/02_unique_yann_yann_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_185825",
+                                 "kind":  "main",
+                                 "name":  "yann",
+                                 "voice_design_prompt":  "Italian male voice, young adult, agile and lively, friendly but battle-worn. Natural conversational rhythm, clear Italian pronunciation, expressive without sounding comic, no English accent.",
+                                 "preview_script":  "Ce ne hai messo di tempo! Ecco, è qui, forza! . Sì sì, certo. La vita fa schifo. . Allora forza! Stanno aspettando! Prendiamo la birra! Andiamo! . Ed ecco a voi, il messaggero del liquore. . Quindi è qui che ciondoli?",
+                                 "generated_text_returned":  "Ce ne hai messo di tempo! Ecco, è qui, forza! . Sì sì, certo. La vita fa schifo. . Allora forza! Stanno aspettando! Prendiamo la birra! Andiamo! . Ed ecco a voi, il messaggero del liquore. . Quindi è qui che ciondoli?",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "nMkXHkrYbeIZMPThdSQj",
+                                                      "duration_secs":  16.772458333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/02_unique_yann_yann_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/02_unique_yann_yann_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "mrgCpJeeYVKfSry83isW",
+                                                      "duration_secs":  13.402666666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/02_unique_yann_yann_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/02_unique_yann_yann_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "OYupqitdpoIdaJFILuQl",
+                                                      "duration_secs":  16.3545,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/02_unique_yann_yann_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/02_unique_yann_yann_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_012618",
+                                 "kind":  "main_missing_preview",
+                                 "name":  "yann",
+                                 "voice_design_prompt":  "Italian male voice, young adult, agile and lively, friendly but battle-worn. Natural conversational rhythm, clear Italian pronunciation, expressive without sounding comic, no English accent.",
+                                 "preview_script":  "Ce ne hai messo di tempo! Ecco, è qui, forza! . Sì sì, certo. La vita fa schifo. . Allora forza! Stanno aspettando! Prendiamo la birra! Andiamo! . Ed ecco a voi, il messaggero del liquore. . Quindi è qui che ciondoli?",
+                                 "generated_text_returned":  "Ce ne hai messo di tempo! Ecco, è qui, forza! . Sì sì, certo. La vita fa schifo. . Allora forza! Stanno aspettando! Prendiamo la birra! Andiamo! . Ed ecco a voi, il messaggero del liquore. . Quindi è qui che ciondoli?",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "BGS4WB0yNhvx4evloOX1",
+                                                      "duration_secs":  16.667958333333335,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/01_unique_yann_yann_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/01_unique_yann_yann_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "pEDTKaO3HiDqxp1SD78f",
+                                                      "duration_secs":  16.92920833333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/01_unique_yann_yann_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/01_unique_yann_yann_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "iZCj3BVmC4WxAONcF5sC",
+                                                      "duration_secs":  14.525958333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/01_unique_yann_yann_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/01_unique_yann_yann_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT yann",
+                                 "selected_preview_index":  "",
+                                 "create":  "",
+                                 "notes":  "",
+                                 "voice_description":  null
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT yann",
+                                 "selected_preview_index":  "1",
+                                 "create":  "yes",
+                                 "notes":  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign.",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_012618/created_voices/20260528_014918/created_voices.csv",
+                                      "voice_name":  "CDIT yann",
+                                      "created_voice_id":  "BGS4WB0yNhvx4evloOX1",
+                                      "generated_voice_id":  "BGS4WB0yNhvx4evloOX1",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/01_unique_yann_yann_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT yann",
+                                      "created_voice_id":  "BGS4WB0yNhvx4evloOX1",
+                                      "generated_voice_id":  "BGS4WB0yNhvx4evloOX1",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/01_unique_yann_yann_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT yann",
+                                      "created_voice_id":  "BGS4WB0yNhvx4evloOX1",
+                                      "generated_voice_id":  "BGS4WB0yNhvx4evloOX1",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/01_unique_yann_yann_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT yann",
+                                      "created_voice_id":  "BGS4WB0yNhvx4evloOX1",
+                                      "generated_voice_id":  "BGS4WB0yNhvx4evloOX1",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/01_unique_yann_yann_preview1.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-yann",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

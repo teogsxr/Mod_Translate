@@ -1,0 +1,152 @@
+{
+    "id":  "unique_matilda",
+    "display_name":  "matilda",
+    "type":  "unique_character",
+    "role":  "personaggio iniziale / da verificare",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT matilda",
+    "current_voice_id":  "jgStB2UPhrJ4oPHkWrFs",
+    "current_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+    "current_preview_script":  "Piantala di predicare e datti da fare! . Hai intenzione di bere fino a una morte precoce? . Non siamo sopravvissuti a quella notte per farti fare la vita da ubriacone fannullone. . R-Razza di...! . Razza di bastardo! Sei vivo!",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+    "line_count":  "57",
+    "known_chars":  "494",
+    "notes":  [
+                  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign."
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/cast_plan_main_and_early.csv",
+                                 "role":  "personaggio iniziale / da verificare",
+                                 "type":  "unique_character",
+                                 "line_count":  "57",
+                                 "known_chars":  "494",
+                                 "prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "sample":  "Piantala di predicare e datti da fare! | Hai intenzione di bere fino a una morte precoce? | Non siamo sopravvissuti a quella notte per farti fare la vita da ubriacone fannullone. | R-Razza di...! | Razza di bastardo! Sei vivo!",
+                                 "strategy":  "ElevenLabs voice design previews first; do not create final voice until listened.",
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  null
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "main",
+                                 "name":  "matilda",
+                                 "voice_design_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "preview_script":  "Piantala di predicare e datti da fare! . Hai intenzione di bere fino a una morte precoce? . Non siamo sopravvissuti a quella notte per farti fare la vita da ubriacone fannullone. . R-Razza di...! . Razza di bastardo! Sei vivo!",
+                                 "generated_text_returned":  "Piantala di predicare e datti da fare! . Hai intenzione di bere fino a una morte precoce? . Non siamo sopravvissuti a quella notte per farti fare la vita da ubriacone fannullone. . R-Razza di...! . Razza di bastardo! Sei vivo!",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "xtpYzlbkkK1r1VQ0CLBm",
+                                                      "duration_secs":  18.13083333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/14_unique_matilda_matilda_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/14_unique_matilda_matilda_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "1Gta1J8aYeGRlZYuUnnB",
+                                                      "duration_secs":  18.287583333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/14_unique_matilda_matilda_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/14_unique_matilda_matilda_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "2FVrd58JgNNjQR0m39xz",
+                                                      "duration_secs":  19.959416666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/14_unique_matilda_matilda_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/14_unique_matilda_matilda_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_012618",
+                                 "kind":  "main_missing_preview",
+                                 "name":  "matilda",
+                                 "voice_design_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "preview_script":  "Piantala di predicare e datti da fare! . Hai intenzione di bere fino a una morte precoce? . Non siamo sopravvissuti a quella notte per farti fare la vita da ubriacone fannullone. . R-Razza di...! . Razza di bastardo! Sei vivo!",
+                                 "generated_text_returned":  "Piantala di predicare e datti da fare! . Hai intenzione di bere fino a una morte precoce? . Non siamo sopravvissuti a quella notte per farti fare la vita da ubriacone fannullone. . R-Razza di...! . Razza di bastardo! Sei vivo!",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "jgStB2UPhrJ4oPHkWrFs",
+                                                      "duration_secs":  16.04104166666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/12_unique_matilda_matilda_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/12_unique_matilda_matilda_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "HQpxIPSl2YRE76nveICU",
+                                                      "duration_secs":  15.962666666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/12_unique_matilda_matilda_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/12_unique_matilda_matilda_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "8KbPeRftYSF7mgUgLYBU",
+                                                      "duration_secs":  15.805958333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/12_unique_matilda_matilda_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/12_unique_matilda_matilda_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT matilda",
+                                 "selected_preview_index":  "1",
+                                 "create":  "yes",
+                                 "notes":  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign.",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_012618/created_voices/20260528_014918/created_voices.csv",
+                                      "voice_name":  "CDIT matilda",
+                                      "created_voice_id":  "jgStB2UPhrJ4oPHkWrFs",
+                                      "generated_voice_id":  "jgStB2UPhrJ4oPHkWrFs",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/12_unique_matilda_matilda_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT matilda",
+                                      "created_voice_id":  "jgStB2UPhrJ4oPHkWrFs",
+                                      "generated_voice_id":  "jgStB2UPhrJ4oPHkWrFs",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/12_unique_matilda_matilda_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT matilda",
+                                      "created_voice_id":  "jgStB2UPhrJ4oPHkWrFs",
+                                      "generated_voice_id":  "jgStB2UPhrJ4oPHkWrFs",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/12_unique_matilda_matilda_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT matilda",
+                                      "created_voice_id":  "jgStB2UPhrJ4oPHkWrFs",
+                                      "generated_voice_id":  "jgStB2UPhrJ4oPHkWrFs",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/12_unique_matilda_matilda_preview1.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-matilda",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

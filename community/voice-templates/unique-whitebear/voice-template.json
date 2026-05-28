@@ -1,0 +1,90 @@
+{
+    "id":  "unique_whitebear",
+    "display_name":  "Whitebear",
+    "type":  "",
+    "role":  "",
+    "status":  "draft",
+    "current_voice_name":  "CDIT Whitebear",
+    "current_voice_id":  "B5DUZDey6kzpRmVZqoFd",
+    "current_prompt":  "Italian male enemy soldier, brutal Black Bear fighter. Low gritty voice, threatening, aggressive, battle-worn. Natural Italian pronunciation, strong anger and menace, not demonic, not metallic.",
+    "current_preview_script":  "Muori, Mantogrigio! Quanta boria da parte di uno che è scampato alla fossa per un pelo. Non riuscirai a fuggire. Sei solo una merda sul mio stivale.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_105442/preview_report.json",
+    "line_count":  "",
+    "known_chars":  "",
+    "notes":  [
+                  "Decision log: dedicated old-provider-cleanup voice created on 2026-05-28."
+              ],
+    "planning_records":  [
+
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_105442/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_105442",
+                                 "kind":  "custom",
+                                 "name":  "Whitebear",
+                                 "voice_design_prompt":  "Italian male enemy soldier, brutal Black Bear fighter. Low gritty voice, threatening, aggressive, battle-worn. Natural Italian pronunciation, strong anger and menace, not demonic, not metallic.",
+                                 "preview_script":  "Muori, Mantogrigio! Quanta boria da parte di uno che è scampato alla fossa per un pelo. Non riuscirai a fuggire. Sei solo una merda sul mio stivale.",
+                                 "generated_text_returned":  "Muori, Mantogrigio! Quanta boria da parte di uno che è scampato alla fossa per un pelo. Non riuscirai a fuggire. Sei solo una merda sul mio stivale.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "Bou4p0ANLvtJiYakKA4Z",
+                                                      "duration_secs":  11.965958333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_105442/mp3/04_unique_whitebear_Whitebear_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/04_unique_whitebear_Whitebear_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "B5DUZDey6kzpRmVZqoFd",
+                                                      "duration_secs":  10.372458333333332,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_105442/mp3/04_unique_whitebear_Whitebear_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/04_unique_whitebear_Whitebear_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "DnkeX1LBlLOau9BUlL33",
+                                                      "duration_secs":  10.685958333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_105442/mp3/04_unique_whitebear_Whitebear_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/04_unique_whitebear_Whitebear_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_105442/selected_voice_choices_old_provider_cleanup.csv",
+                                 "voice_name":  "CDIT Whitebear",
+                                 "selected_preview_index":  "2",
+                                 "create":  "yes",
+                                 "notes":  null,
+                                 "voice_description":  "selected for old provider cleanup dedicated voice pass"
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_105442/created_voices/20260528_105645/created_voices.csv",
+                                      "voice_name":  "CDIT Whitebear",
+                                      "created_voice_id":  "B5DUZDey6kzpRmVZqoFd",
+                                      "generated_voice_id":  "B5DUZDey6kzpRmVZqoFd",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/04_unique_whitebear_Whitebear_preview2.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT Whitebear",
+                                      "created_voice_id":  "B5DUZDey6kzpRmVZqoFd",
+                                      "generated_voice_id":  "B5DUZDey6kzpRmVZqoFd",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/04_unique_whitebear_Whitebear_preview2.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-whitebear",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

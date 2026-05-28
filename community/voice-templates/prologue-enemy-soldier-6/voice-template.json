@@ -1,0 +1,245 @@
+{
+    "id":  "prologue_enemy_soldier_6",
+    "display_name":  "prologue enemy soldier 6",
+    "type":  "",
+    "role":  "",
+    "status":  "draft",
+    "current_voice_name":  "CDIT prologue enemy soldier 6",
+    "current_voice_id":  "VrJCyvho0WMvpME1G3zv",
+    "current_prompt":  "Italian male bandit soldier voice, adult, heavier and brutal, direct combat shouts. Natural Italian pronunciation, angry but intelligible, no English accent.",
+    "current_preview_script":  "Muori, bestiaccia! Stronzo arrogante! Non sei così forte adesso, vero? Vieni avanti, fatti sotto. Ti farò a pezzi.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260527_212910/preview_report.json",
+    "line_count":  "2",
+    "known_chars":  "36",
+    "notes":  [
+                  "scelta utente 2026-05-27"
+              ],
+    "planning_records":  [
+
+                         ],
+    "profile_records":  [
+                            {
+                                "source":  "13_pilots/elevenlabs_kliff_sebastian_myurdin_intro_enemies_20260527/required_voice_profiles.csv",
+                                "voice_name":  "CDIT prologue enemy soldier 6",
+                                "line_count":  "2",
+                                "chars":  "36",
+                                "prompt":  "Italian male bandit soldier voice, adult, heavier and brutal, direct combat shouts. Natural Italian pronunciation, angry but intelligible, no English accent.",
+                                "sample":  "Muori, bestiaccia! Stronzo arrogante! Non sei così forte adesso, vero? Vieni avanti, fatti sotto. Ti farò a pezzi.",
+                                "created_voice_id":  "",
+                                "notes":  ""
+                            },
+                            {
+                                "source":  "13_pilots/elevenlabs_kliff_sebastian_myurdin_intro_enemies_20260527/required_voice_profiles_preview_missing_kliff.csv",
+                                "voice_name":  "CDIT prologue enemy soldier 6",
+                                "line_count":  "2",
+                                "chars":  "36",
+                                "prompt":  "Italian male bandit soldier voice, adult, heavier and brutal, direct combat shouts. Natural Italian pronunciation, angry but intelligible, no English accent.",
+                                "sample":  "Muori, bestiaccia! Stronzo arrogante! Non sei così forte adesso, vero? Vieni avanti, fatti sotto. Ti farò a pezzi.",
+                                "created_voice_id":  "",
+                                "notes":  ""
+                            }
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_212459/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_212459",
+                                 "kind":  "custom",
+                                 "name":  "prologue enemy soldier 6",
+                                 "voice_design_prompt":  "Italian male bandit soldier voice, adult, heavier and brutal, direct combat shouts. Natural Italian pronunciation, angry but intelligible, no English accent.",
+                                 "preview_script":  "Muori, bestiaccia! Stronzo arrogante! Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. prologue_enemy_soldier_6 mantiene emozione, chiarezza e controllo.",
+                                 "generated_text_returned":  "Muori, bestiaccia! Stronzo arrogante! Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. prologue_enemy_soldier_6 mantiene emozione, chiarezza e controllo.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "WfX3oUmlbzn9BKdcsms2",
+                                                      "duration_secs":  18.992875,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212459/mp3/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212459/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "TAesPc69aGlvrYqkwLYb",
+                                                      "duration_secs":  16.432875,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212459/mp3/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212459/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "HsFifi62j86ErYr321Ha",
+                                                      "duration_secs":  16.432875,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212459/mp3/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212459/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_212711/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_212711",
+                                 "kind":  "custom",
+                                 "name":  "prologue enemy soldier 6",
+                                 "voice_design_prompt":  "Italian male bandit soldier voice, adult, heavier and brutal, direct combat shouts. Natural Italian pronunciation, angry but intelligible, no English accent.",
+                                 "preview_script":  "Muori, bestiaccia! Stronzo arrogante! Non sei così forte adesso, vero? Vieni avanti, fatti sotto. Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. prologue_enemy_soldier_6 mantiene emozione, chiarezza e controllo.",
+                                 "generated_text_returned":  "Muori, bestiaccia! Stronzo arrogante! Non sei così forte adesso, vero? Vieni avanti, fatti sotto. Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. prologue_enemy_soldier_6 mantiene emozione, chiarezza e controllo.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "qhoNCZc2rUPYfPUvdRQ1",
+                                                      "duration_secs":  19.227958333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212711/mp3/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212711/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "KablIsXMt3e25uXHUbcX",
+                                                      "duration_secs":  18.522666666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212711/mp3/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212711/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "7C9sVtU3J2cdJvJwY7xG",
+                                                      "duration_secs":  20.272875,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212711/mp3/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212711/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_212910/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_212910",
+                                 "kind":  "custom",
+                                 "name":  "prologue enemy soldier 6",
+                                 "voice_design_prompt":  "Italian male bandit soldier voice, adult, heavier and brutal, direct combat shouts. Natural Italian pronunciation, angry but intelligible, no English accent.",
+                                 "preview_script":  "Muori, bestiaccia! Stronzo arrogante! Non sei così forte adesso, vero? Vieni avanti, fatti sotto. Ti farò a pezzi.",
+                                 "generated_text_returned":  "Muori, bestiaccia! Stronzo arrogante! Non sei così forte adesso, vero? Vieni avanti, fatti sotto. Ti farò a pezzi.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "txjoFKJRYmmurJsd5dud",
+                                                      "duration_secs":  9.327583333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212910/mp3/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "JxUUAVf9wgPYmRpKhWBW",
+                                                      "duration_secs":  8.439416666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212910/mp3/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                                      "duration_secs":  10.032875,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212910/mp3/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_212910/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT prologue enemy soldier 6",
+                                 "selected_preview_index":  "3",
+                                 "create":  "yes",
+                                 "notes":  "scelta utente 2026-05-27",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260527_212910/created_voices/20260527_214534/created_voices.csv",
+                                      "voice_name":  "CDIT prologue enemy soldier 6",
+                                      "created_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "generated_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "13_pilots/elevenlabs_kliff_sebastian_myurdin_intro_enemies_20260527/created_voices_for_pilot.csv",
+                                      "voice_name":  "CDIT prologue enemy soldier 6",
+                                      "created_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "generated_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.wav",
+                                      "notes":  "User selected preview 3 on 2026-05-27."
+                                  },
+                                  {
+                                      "source":  "13_pilots/jian_to_gin_hotfix_20260528/created_voices_from_existing_patches.csv",
+                                      "voice_name":  "existing prologue_enemy_soldier_6",
+                                      "created_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "generated_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_004746/manifests/approved_created_voices.csv",
+                                      "voice_name":  "CDIT prologue enemy soldier 6",
+                                      "created_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "generated_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_004814/manifests/approved_created_voices.csv",
+                                      "voice_name":  "CDIT prologue enemy soldier 6",
+                                      "created_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "generated_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_005404/manifests/approved_created_voices.csv",
+                                      "voice_name":  "CDIT prologue enemy soldier 6",
+                                      "created_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "generated_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_005616/manifests/approved_created_voices.csv",
+                                      "voice_name":  "CDIT prologue enemy soldier 6",
+                                      "created_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "generated_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT prologue enemy soldier 6",
+                                      "created_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "generated_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT prologue enemy soldier 6",
+                                      "created_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "generated_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT prologue enemy soldier 6",
+                                      "created_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "generated_voice_id":  "VrJCyvho0WMvpME1G3zv",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/04_prologue_enemy_soldier_6_prologue_enemy_soldier_6_preview3.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "prologue-enemy-soldier-6",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

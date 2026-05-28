@@ -1,0 +1,44 @@
+{
+    "id":  "unique_shop_pub",
+    "display_name":  "unique shop pub",
+    "type":  "",
+    "role":  "",
+    "status":  "draft",
+    "current_voice_name":  "CDIT unique shop pub",
+    "current_voice_id":  "",
+    "current_prompt":  "Italian tavern keeper voice, warm, slightly amused, lived-in, social and informal. Natural Italian rhythm, no foreign accent, no echo, close conversational recording.",
+    "current_preview_script":  "Una birra potrebbe farti bene. Questo lo riservo ai miei clienti abituali. C\u0027è qualcuno qui? Forza, slegami! Offro da bere a chi mi salva!",
+    "current_prompt_source":  "13_pilots/elevenlabs_first_city_extra_20260527/required_voice_profiles.csv",
+    "line_count":  "116",
+    "known_chars":  "6031",
+    "notes":  [
+
+              ],
+    "planning_records":  [
+
+                         ],
+    "profile_records":  [
+                            {
+                                "source":  "13_pilots/elevenlabs_first_city_extra_20260527/required_voice_profiles.csv",
+                                "voice_name":  "CDIT unique shop pub",
+                                "line_count":  "116",
+                                "chars":  "6031",
+                                "prompt":  "Italian tavern keeper voice, warm, slightly amused, lived-in, social and informal. Natural Italian rhythm, no foreign accent, no echo, close conversational recording.",
+                                "sample":  "Una birra potrebbe farti bene. Questo lo riservo ai miei clienti abituali. C\u0027è qualcuno qui? Forza, slegami! Offro da bere a chi mi salva!",
+                                "created_voice_id":  "",
+                                "notes":  ""
+                            }
+                        ],
+    "preview_attempts":  [
+
+                         ],
+    "selected_choices":  [
+
+                         ],
+    "created_voice_history":  [
+
+                              ],
+    "folder":  "unique-shop-pub",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

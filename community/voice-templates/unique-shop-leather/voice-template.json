@@ -1,0 +1,44 @@
+{
+    "id":  "unique_shop_leather",
+    "display_name":  "unique shop leather",
+    "type":  "",
+    "role":  "",
+    "status":  "draft",
+    "current_voice_name":  "CDIT unique shop leather",
+    "current_voice_id":  "",
+    "current_prompt":  "Italian leatherworker voice, rough, dry, slightly sarcastic, mature artisan tone. Close-mic, no echo, clear Italian, no English accent.",
+    "current_preview_script":  "Sono io che devo stare qui a scuoiare mentre tu te ne vai a caccia, ahah! Un giorno ti tornerà utile. Questa corda non è nulla in confronto al cuoio che tratto... Aspetta e vedrai, appena mi libero... Prega che non mi liberi mai.",
+    "current_prompt_source":  "13_pilots/elevenlabs_first_city_extra_20260527/required_voice_profiles.csv",
+    "line_count":  "84",
+    "known_chars":  "4266",
+    "notes":  [
+
+              ],
+    "planning_records":  [
+
+                         ],
+    "profile_records":  [
+                            {
+                                "source":  "13_pilots/elevenlabs_first_city_extra_20260527/required_voice_profiles.csv",
+                                "voice_name":  "CDIT unique shop leather",
+                                "line_count":  "84",
+                                "chars":  "4266",
+                                "prompt":  "Italian leatherworker voice, rough, dry, slightly sarcastic, mature artisan tone. Close-mic, no echo, clear Italian, no English accent.",
+                                "sample":  "Sono io che devo stare qui a scuoiare mentre tu te ne vai a caccia, ahah! Un giorno ti tornerà utile. Questa corda non è nulla in confronto al cuoio che tratto... Aspetta e vedrai, appena mi libero... Prega che non mi liberi mai.",
+                                "created_voice_id":  "",
+                                "notes":  ""
+                            }
+                        ],
+    "preview_attempts":  [
+
+                         ],
+    "selected_choices":  [
+
+                         ],
+    "created_voice_history":  [
+
+                              ],
+    "folder":  "unique-shop-leather",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

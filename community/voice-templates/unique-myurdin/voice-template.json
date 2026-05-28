@@ -1,0 +1,289 @@
+{
+    "id":  "unique_myurdin",
+    "display_name":  "unique myurdin",
+    "type":  "unique_character",
+    "role":  "figura narrativa iniziale",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT unique myurdin",
+    "current_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+    "current_prompt":  "Italian male antagonist voice, older but powerful, dark and authoritative, theatrical only when needed. Deep controlled tone, clear Italian diction, no foreign accent, intimidating without monster distortion.",
+    "current_preview_script":  "Ahahah! Ti sta bene! Alla fine non eri altro che un insetto insignificante. Da questo momento apparterrai a me...! Pensare che abbiano pianificato una cosa simile...",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260527_212910/preview_report.json",
+    "line_count":  "102",
+    "known_chars":  "3623",
+    "notes":  [
+                  "scelta utente 2026-05-27"
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/cast_plan_main_and_early.csv",
+                                 "role":  "figura narrativa iniziale",
+                                 "type":  "unique_character",
+                                 "line_count":  "100",
+                                 "known_chars":  "2298",
+                                 "prompt":  "Italian male voice, older but not frail, mystical and grave, controlled dramatic presence. Clear Italian diction, no foreign accent, no excessive theatrical delay.",
+                                 "sample":  "",
+                                 "strategy":  "ElevenLabs voice design previews first; do not create final voice until listened.",
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  null
+                             }
+                         ],
+    "profile_records":  [
+                            {
+                                "source":  "13_pilots/elevenlabs_kliff_sebastian_myurdin_intro_enemies_20260527/required_voice_profiles.csv",
+                                "voice_name":  "CDIT unique myurdin",
+                                "line_count":  "102",
+                                "chars":  "3623",
+                                "prompt":  "Italian male antagonist voice, older but powerful, dark and authoritative, theatrical only when needed. Deep controlled tone, clear Italian diction, no foreign accent, intimidating without monster distortion.",
+                                "sample":  "Ahahah! Ti sta bene! Alla fine non eri altro che un insetto insignificante. Da questo momento apparterrai a me...! Pensare che abbiano pianificato una cosa simile...",
+                                "created_voice_id":  "",
+                                "notes":  ""
+                            },
+                            {
+                                "source":  "13_pilots/elevenlabs_kliff_sebastian_myurdin_intro_enemies_20260527/required_voice_profiles_preview_missing_kliff.csv",
+                                "voice_name":  "CDIT unique myurdin",
+                                "line_count":  "102",
+                                "chars":  "3623",
+                                "prompt":  "Italian male antagonist voice, older but powerful, dark and authoritative, theatrical only when needed. Deep controlled tone, clear Italian diction, no foreign accent, intimidating without monster distortion.",
+                                "sample":  "Ahahah! Ti sta bene! Alla fine non eri altro che un insetto insignificante. Da questo momento apparterrai a me...! Pensare che abbiano pianificato una cosa simile...",
+                                "created_voice_id":  "",
+                                "notes":  ""
+                            }
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "main",
+                                 "name":  "myurdin",
+                                 "voice_design_prompt":  "Italian male voice, older but not frail, mystical and grave, controlled dramatic presence. Clear Italian diction, no foreign accent, no excessive theatrical delay.",
+                                 "preview_script":  " Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. unique_myurdin mantiene emozione, chiarezza e controllo.",
+                                 "generated_text_returned":  "Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. unique_myurdin mantiene emozione, chiarezza e controllo.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "wYOvFi1qoGiHooHgP03h",
+                                                      "duration_secs":  18.601041666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/10_unique_myurdin_myurdin_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/10_unique_myurdin_myurdin_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "W8u7X1M5yo2Gs4WxzqoM",
+                                                      "duration_secs":  16.119416666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/10_unique_myurdin_myurdin_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/10_unique_myurdin_myurdin_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "GezQJGyKFyJRAQrBQEjj",
+                                                      "duration_secs":  15.805958333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/10_unique_myurdin_myurdin_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/10_unique_myurdin_myurdin_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_212459/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_212459",
+                                 "kind":  "custom",
+                                 "name":  "unique myurdin",
+                                 "voice_design_prompt":  "Italian male antagonist voice, older but powerful, dark and authoritative, theatrical only when needed. Deep controlled tone, clear Italian diction, no foreign accent, intimidating without monster distortion.",
+                                 "preview_script":  "Ahahah! Ti sta bene! Alla fine non eri altro che un insetto insignificante. Da questo momento apparterrai a me...! Pensare che abbiano pianificato una cosa simile...",
+                                 "generated_text_returned":  "Ahahah! Ti sta bene! Alla fine non eri altro che un insetto insignificante. Da questo momento apparterrai a me...! Pensare che abbiano pianificato una cosa simile...",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "xZKHRxNblrfjAtFSMSi7",
+                                                      "duration_secs":  14.917791666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212459/mp3/06_unique_myurdin_unique_myurdin_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212459/wav/06_unique_myurdin_unique_myurdin_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "6fNNDNHa25drNplmWJ2S",
+                                                      "duration_secs":  9.9545,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212459/mp3/06_unique_myurdin_unique_myurdin_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212459/wav/06_unique_myurdin_unique_myurdin_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "RHxEIs1OEc9kbTaiva4b",
+                                                      "duration_secs":  13.089208333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212459/mp3/06_unique_myurdin_unique_myurdin_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212459/wav/06_unique_myurdin_unique_myurdin_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_212711/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_212711",
+                                 "kind":  "custom",
+                                 "name":  "unique myurdin",
+                                 "voice_design_prompt":  "Italian male antagonist voice, older but powerful, dark and authoritative, theatrical only when needed. Deep controlled tone, clear Italian diction, no foreign accent, intimidating without monster distortion.",
+                                 "preview_script":  "Ahahah! Ti sta bene! Alla fine non eri altro che un insetto insignificante. Da questo momento apparterrai a me...! Pensare che abbiano pianificato una cosa simile...",
+                                 "generated_text_returned":  "Ahahah! Ti sta bene! Alla fine non eri altro che un insetto insignificante. Da questo momento apparterrai a me...! Pensare che abbiano pianificato una cosa simile...",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "9sIh9h5M2xFPASU9R42D",
+                                                      "duration_secs":  14.917791666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212711/mp3/06_unique_myurdin_unique_myurdin_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212711/wav/06_unique_myurdin_unique_myurdin_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "MEFlMeadhFezqdtjWLIu",
+                                                      "duration_secs":  9.9545,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212711/mp3/06_unique_myurdin_unique_myurdin_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212711/wav/06_unique_myurdin_unique_myurdin_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "4TjVoFoDSKH2nGqLToeg",
+                                                      "duration_secs":  13.089208333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212711/mp3/06_unique_myurdin_unique_myurdin_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212711/wav/06_unique_myurdin_unique_myurdin_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_212910/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_212910",
+                                 "kind":  "custom",
+                                 "name":  "unique myurdin",
+                                 "voice_design_prompt":  "Italian male antagonist voice, older but powerful, dark and authoritative, theatrical only when needed. Deep controlled tone, clear Italian diction, no foreign accent, intimidating without monster distortion.",
+                                 "preview_script":  "Ahahah! Ti sta bene! Alla fine non eri altro che un insetto insignificante. Da questo momento apparterrai a me...! Pensare che abbiano pianificato una cosa simile...",
+                                 "generated_text_returned":  "Ahahah! Ti sta bene! Alla fine non eri altro che un insetto insignificante. Da questo momento apparterrai a me...! Pensare che abbiano pianificato una cosa simile...",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                                      "duration_secs":  14.917791666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212910/mp3/06_unique_myurdin_unique_myurdin_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/06_unique_myurdin_unique_myurdin_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "rImsZqgYN2kfzBCgVC34",
+                                                      "duration_secs":  9.9545,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212910/mp3/06_unique_myurdin_unique_myurdin_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/06_unique_myurdin_unique_myurdin_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "YDajbeUCP36P7d4S9lJL",
+                                                      "duration_secs":  13.089208333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_212910/mp3/06_unique_myurdin_unique_myurdin_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/06_unique_myurdin_unique_myurdin_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_212910/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT unique myurdin",
+                                 "selected_preview_index":  "1",
+                                 "create":  "yes",
+                                 "notes":  "scelta utente 2026-05-27",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260527_212910/created_voices/20260527_214534/created_voices.csv",
+                                      "voice_name":  "CDIT unique myurdin",
+                                      "created_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "generated_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/06_unique_myurdin_unique_myurdin_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "13_pilots/elevenlabs_kliff_sebastian_myurdin_intro_enemies_20260527/created_voices_for_pilot.csv",
+                                      "voice_name":  "CDIT unique myurdin",
+                                      "created_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "generated_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/06_unique_myurdin_unique_myurdin_preview1.wav",
+                                      "notes":  "User selected preview 1 on 2026-05-27."
+                                  },
+                                  {
+                                      "source":  "13_pilots/jian_to_gin_hotfix_20260528/created_voices_from_existing_patches.csv",
+                                      "voice_name":  "existing unique_myurdin",
+                                      "created_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "generated_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_004746/manifests/approved_created_voices.csv",
+                                      "voice_name":  "CDIT unique myurdin",
+                                      "created_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "generated_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/06_unique_myurdin_unique_myurdin_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_004814/manifests/approved_created_voices.csv",
+                                      "voice_name":  "CDIT unique myurdin",
+                                      "created_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "generated_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/06_unique_myurdin_unique_myurdin_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_005404/manifests/approved_created_voices.csv",
+                                      "voice_name":  "CDIT unique myurdin",
+                                      "created_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "generated_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/06_unique_myurdin_unique_myurdin_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "16_overnight_runs/kliff_prologue_20260528_005616/manifests/approved_created_voices.csv",
+                                      "voice_name":  "CDIT unique myurdin",
+                                      "created_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "generated_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/06_unique_myurdin_unique_myurdin_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT unique myurdin",
+                                      "created_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "generated_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/06_unique_myurdin_unique_myurdin_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT unique myurdin",
+                                      "created_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "generated_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/06_unique_myurdin_unique_myurdin_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT unique myurdin",
+                                      "created_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "generated_voice_id":  "gRRwo3pjJtO7j5yEyKBE",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_212910/wav/06_unique_myurdin_unique_myurdin_preview1.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-myurdin",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

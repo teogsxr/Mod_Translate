@@ -1,0 +1,184 @@
+{
+    "id":  "unique_oongka",
+    "display_name":  "oongka",
+    "type":  "unique_character",
+    "role":  "alleato principale",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT Oongka Original Reference",
+    "current_voice_id":  "gma3zoQRrj9mVpgcxrII",
+    "current_prompt":  "Italian male voice, mature northern warrior, grounded and reassuring, medium-low pitch, practical and loyal. Natural Italian, steady pacing, no foreign accent, no exaggerated growl.",
+    "current_preview_script":  "Eccoti. . Mmh. . Andiamo. . Sei venuto. . Ronnie vuole del pesce. Fermati. Vieni avanti, se hai coraggio. Non uscirai vivo da qui. Te lo ripeto: abbassa la testa e obbedisci.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+    "line_count":  "620",
+    "known_chars":  "5103",
+    "notes":  [
+                  "Decision log: prefer original-reference/Oongka direction; do not bulk overwrite with generic ElevenLabs unless a concrete defect is found."
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/cast_plan_main_and_early.csv",
+                                 "role":  "alleato principale",
+                                 "type":  "unique_character",
+                                 "line_count":  "620",
+                                 "known_chars":  "5103",
+                                 "prompt":  "Italian male voice, mature northern warrior, grounded and reassuring, medium-low pitch, practical and loyal. Natural Italian, steady pacing, no foreign accent, no exaggerated growl.",
+                                 "sample":  "Eccoti. | Mmh. | Andiamo. | Sei venuto. | Ronnie vuole del pesce.",
+                                 "strategy":  "ElevenLabs voice design previews first; do not create final voice until listened.",
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  null
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "main",
+                                 "name":  "oongka",
+                                 "voice_design_prompt":  "Italian male voice, mature northern warrior, grounded and reassuring, medium-low pitch, practical and loyal. Natural Italian, steady pacing, no foreign accent, no exaggerated growl.",
+                                 "preview_script":  "Eccoti. . Mmh. . Andiamo. . Sei venuto. . Ronnie vuole del pesce. Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. unique_oongka mantiene emozione, chiarezza e controllo.",
+                                 "generated_text_returned":  "Eccoti. . Mmh. . Andiamo. . Sei venuto. . Ronnie vuole del pesce. Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. unique_oongka mantiene emozione, chiarezza e controllo.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "fsWOBorGLXBi5LHsDBWE",
+                                                      "duration_secs":  16.772458333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/03_unique_oongka_oongka_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/03_unique_oongka_oongka_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "GHz9Uw2v7gzbgtr6R4Pd",
+                                                      "duration_secs":  17.164291666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/03_unique_oongka_oongka_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/03_unique_oongka_oongka_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "XLgnuax1RuvwNq17Fiqs",
+                                                      "duration_secs":  18.757791666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/03_unique_oongka_oongka_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/03_unique_oongka_oongka_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_185825",
+                                 "kind":  "main",
+                                 "name":  "oongka",
+                                 "voice_design_prompt":  "Italian male voice, mature northern warrior, grounded and reassuring, medium-low pitch, practical and loyal. Natural Italian, steady pacing, no foreign accent, no exaggerated growl.",
+                                 "preview_script":  "Eccoti. . Mmh. . Andiamo. . Sei venuto. . Ronnie vuole del pesce. Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. unique_oongka mantiene emozione, chiarezza e controllo.",
+                                 "generated_text_returned":  "Eccoti. . Mmh. . Andiamo. . Sei venuto. . Ronnie vuole del pesce. Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. unique_oongka mantiene emozione, chiarezza e controllo.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "bUavPdxDARQ86ySNyv3u",
+                                                      "duration_secs":  16.772458333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/03_unique_oongka_oongka_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/03_unique_oongka_oongka_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "K2RvqmGrFCAqUPGND2w0",
+                                                      "duration_secs":  17.164291666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/03_unique_oongka_oongka_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/03_unique_oongka_oongka_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "iRYjJ4Q5iJ9rnL6ImB5U",
+                                                      "duration_secs":  18.757791666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/03_unique_oongka_oongka_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/03_unique_oongka_oongka_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_012618",
+                                 "kind":  "main_missing_preview",
+                                 "name":  "oongka",
+                                 "voice_design_prompt":  "Italian male voice, mature northern warrior, grounded and reassuring, medium-low pitch, practical and loyal. Natural Italian, steady pacing, no foreign accent, no exaggerated growl.",
+                                 "preview_script":  "Eccoti. . Mmh. . Andiamo. . Sei venuto. . Ronnie vuole del pesce. Fermati. Vieni avanti, se hai coraggio. Non uscirai vivo da qui. Te lo ripeto: abbassa la testa e obbedisci.",
+                                 "generated_text_returned":  "Eccoti. . Mmh. . Andiamo. . Sei venuto. . Ronnie vuole del pesce. Fermati. Vieni avanti, se hai coraggio. Non uscirai vivo da qui. Te lo ripeto: abbassa la testa e obbedisci.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "3e60eCV4p7dGAH8WGY32",
+                                                      "duration_secs":  16.04104166666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/02_unique_oongka_oongka_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/02_unique_oongka_oongka_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "3V5kypuJBz2bRYHD50h4",
+                                                      "duration_secs":  15.0745,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/02_unique_oongka_oongka_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/02_unique_oongka_oongka_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "1EfkjpgsjtM09XzHNHle",
+                                                      "duration_secs":  14.029625,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/02_unique_oongka_oongka_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/02_unique_oongka_oongka_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT oongka",
+                                 "selected_preview_index":  "",
+                                 "create":  "",
+                                 "notes":  "",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/created_ivc_voices/20260528_013936/created_voices.csv",
+                                      "voice_name":  "CDIT Oongka Original Reference",
+                                      "created_voice_id":  "gma3zoQRrj9mVpgcxrII",
+                                      "generated_voice_id":  "",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "02_voice_references/oongka_original_candidates_20260528/backup_20260524_111821/wav/unique_oongka_beforewar_00_npc_01_00022.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT Oongka Original Reference",
+                                      "created_voice_id":  "gma3zoQRrj9mVpgcxrII",
+                                      "generated_voice_id":  "gma3zoQRrj9mVpgcxrII",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "02_voice_references/oongka_original_candidates_20260528/backup_20260524_111821/wav/unique_oongka_beforewar_00_npc_01_00022.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT Oongka Original Reference",
+                                      "created_voice_id":  "gma3zoQRrj9mVpgcxrII",
+                                      "generated_voice_id":  "gma3zoQRrj9mVpgcxrII",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "02_voice_references/oongka_original_candidates_20260528/backup_20260524_111821/wav/unique_oongka_beforewar_00_npc_01_00022.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT Oongka Original Reference",
+                                      "created_voice_id":  "gma3zoQRrj9mVpgcxrII",
+                                      "generated_voice_id":  "gma3zoQRrj9mVpgcxrII",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "02_voice_references/oongka_original_candidates_20260528/backup_20260524_111821/wav/unique_oongka_beforewar_00_npc_01_00022.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-oongka",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

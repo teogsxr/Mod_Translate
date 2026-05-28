@@ -1,0 +1,152 @@
+{
+    "id":  "unique_ryan",
+    "display_name":  "ryan",
+    "type":  "unique_character",
+    "role":  "personaggio iniziale / da verificare",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT ryan",
+    "current_voice_id":  "Urbe8Cm73NXKEo2IR2Ut",
+    "current_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+    "current_preview_script":  "Tutte le notti, le loro facce perseguitano i miei sogni... . Sei... . Non credo... di poterlo fare... . Ogni notte mi appaiono i volti di chi non sono riuscito a salvare. . Volti insanguinati, che urlano agonizzanti...",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+    "line_count":  "55",
+    "known_chars":  "419",
+    "notes":  [
+                  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign."
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/cast_plan_main_and_early.csv",
+                                 "role":  "personaggio iniziale / da verificare",
+                                 "type":  "unique_character",
+                                 "line_count":  "55",
+                                 "known_chars":  "419",
+                                 "prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "sample":  "Tutte le notti, le loro facce perseguitano i miei sogni... | Sei... | Non credo... di poterlo fare... | Ogni notte mi appaiono i volti di chi non sono riuscito a salvare. | Volti insanguinati, che urlano agonizzanti...",
+                                 "strategy":  "ElevenLabs voice design previews first; do not create final voice until listened.",
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  null
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "main",
+                                 "name":  "ryan",
+                                 "voice_design_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "preview_script":  "Tutte le notti, le loro facce perseguitano i miei sogni... . Sei... . Non credo... di poterlo fare... . Ogni notte mi appaiono i volti di chi non sono riuscito a salvare. . Volti insanguinati, che urlano agonizzanti...",
+                                 "generated_text_returned":  "Tutte le notti, le loro facce perseguitano i miei sogni... . Sei... . Non credo... di poterlo fare... . Ogni notte mi appaiono i volti di chi non sono riuscito a salvare. . Volti insanguinati, che urlano agonizzanti...",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "BTxfxtYjK0rbzencIOAi",
+                                                      "duration_secs":  16.3545,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/18_unique_ryan_ryan_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/18_unique_ryan_ryan_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "72OOwlktHiGJrExXrHn1",
+                                                      "duration_secs":  17.712875,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/18_unique_ryan_ryan_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/18_unique_ryan_ryan_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "o33k2SunsJ0RpJrZJ5T4",
+                                                      "duration_secs":  16.119416666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/18_unique_ryan_ryan_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/18_unique_ryan_ryan_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_012618",
+                                 "kind":  "main_missing_preview",
+                                 "name":  "ryan",
+                                 "voice_design_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "preview_script":  "Tutte le notti, le loro facce perseguitano i miei sogni... . Sei... . Non credo... di poterlo fare... . Ogni notte mi appaiono i volti di chi non sono riuscito a salvare. . Volti insanguinati, che urlano agonizzanti...",
+                                 "generated_text_returned":  "Tutte le notti, le loro facce perseguitano i miei sogni... . Sei... . Non credo... di poterlo fare... . Ogni notte mi appaiono i volti di chi non sono riuscito a salvare. . Volti insanguinati, che urlano agonizzanti...",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "Urbe8Cm73NXKEo2IR2Ut",
+                                                      "duration_secs":  19.489208333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/16_unique_ryan_ryan_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/16_unique_ryan_ryan_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "pYd0xxkGs4o710iB1Occ",
+                                                      "duration_secs":  17.869625,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/16_unique_ryan_ryan_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/16_unique_ryan_ryan_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "SINuNruCyu8xnNFfEeIo",
+                                                      "duration_secs":  16.589625,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/16_unique_ryan_ryan_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/16_unique_ryan_ryan_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT ryan",
+                                 "selected_preview_index":  "1",
+                                 "create":  "yes",
+                                 "notes":  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign.",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_012618/created_voices/20260528_014918/created_voices.csv",
+                                      "voice_name":  "CDIT ryan",
+                                      "created_voice_id":  "Urbe8Cm73NXKEo2IR2Ut",
+                                      "generated_voice_id":  "Urbe8Cm73NXKEo2IR2Ut",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/16_unique_ryan_ryan_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT ryan",
+                                      "created_voice_id":  "Urbe8Cm73NXKEo2IR2Ut",
+                                      "generated_voice_id":  "Urbe8Cm73NXKEo2IR2Ut",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/16_unique_ryan_ryan_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT ryan",
+                                      "created_voice_id":  "Urbe8Cm73NXKEo2IR2Ut",
+                                      "generated_voice_id":  "Urbe8Cm73NXKEo2IR2Ut",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/16_unique_ryan_ryan_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT ryan",
+                                      "created_voice_id":  "Urbe8Cm73NXKEo2IR2Ut",
+                                      "generated_voice_id":  "Urbe8Cm73NXKEo2IR2Ut",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/16_unique_ryan_ryan_preview1.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-ryan",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

@@ -1,0 +1,90 @@
+{
+    "id":  "unique_silvan",
+    "display_name":  "Silvan",
+    "type":  "",
+    "role":  "",
+    "status":  "draft",
+    "current_voice_name":  "CDIT Silvan",
+    "current_voice_id":  "1Ui2JOiJW1pgJBbqNG4D",
+    "current_prompt":  "Italian male duelist, 30s. Confident, agile, slightly amused, elegant but dangerous. Smooth natural Italian voice, no English accent, clear consonants, good emotion range for teasing and combat.",
+    "current_preview_script":  "Bene. Vederti mi fa iniziare bene la giornata. Farà male! Non sei male, ma io sono meglio. Lasciami in pace!",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_105442/preview_report.json",
+    "line_count":  "",
+    "known_chars":  "",
+    "notes":  [
+                  "Decision log: dedicated old-provider-cleanup voice created on 2026-05-28."
+              ],
+    "planning_records":  [
+
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_105442/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_105442",
+                                 "kind":  "custom",
+                                 "name":  "Silvan",
+                                 "voice_design_prompt":  "Italian male duelist, 30s. Confident, agile, slightly amused, elegant but dangerous. Smooth natural Italian voice, no English accent, clear consonants, good emotion range for teasing and combat.",
+                                 "preview_script":  "Bene. Vederti mi fa iniziare bene la giornata. Farà male! Non sei male, ma io sono meglio. Lasciami in pace!",
+                                 "generated_text_returned":  "Bene. Vederti mi fa iniziare bene la giornata. Farà male! Non sei male, ma io sono meglio. Lasciami in pace!",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "mJP6ZAD5kvAzNkoEtry8",
+                                                      "duration_secs":  8.517791666666668,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_105442/mp3/03_unique_silvan_Silvan_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/03_unique_silvan_Silvan_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "1Ui2JOiJW1pgJBbqNG4D",
+                                                      "duration_secs":  10.450833333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_105442/mp3/03_unique_silvan_Silvan_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/03_unique_silvan_Silvan_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "zmvGr20uGJlOJvh3MNX7",
+                                                      "duration_secs":  8.83125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_105442/mp3/03_unique_silvan_Silvan_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/03_unique_silvan_Silvan_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_105442/selected_voice_choices_old_provider_cleanup.csv",
+                                 "voice_name":  "CDIT Silvan",
+                                 "selected_preview_index":  "2",
+                                 "create":  "yes",
+                                 "notes":  null,
+                                 "voice_description":  "selected for old provider cleanup dedicated voice pass"
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_105442/created_voices/20260528_105645/created_voices.csv",
+                                      "voice_name":  "CDIT Silvan",
+                                      "created_voice_id":  "1Ui2JOiJW1pgJBbqNG4D",
+                                      "generated_voice_id":  "1Ui2JOiJW1pgJBbqNG4D",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/03_unique_silvan_Silvan_preview2.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT Silvan",
+                                      "created_voice_id":  "1Ui2JOiJW1pgJBbqNG4D",
+                                      "generated_voice_id":  "1Ui2JOiJW1pgJBbqNG4D",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/03_unique_silvan_Silvan_preview2.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-silvan",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

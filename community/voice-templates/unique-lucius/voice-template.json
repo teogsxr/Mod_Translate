@@ -1,0 +1,152 @@
+{
+    "id":  "unique_lucius",
+    "display_name":  "lucius",
+    "type":  "unique_character",
+    "role":  "personaggio iniziale / da verificare",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT lucius",
+    "current_voice_id":  "Mmq1jnVSnqP5FdQsqrEx",
+    "current_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+    "current_preview_script":  "Agli apicoltori non importa... mi offrono pure l\u0027idromele... . Perché farfugli...? . Ma... Com\u0027è possibile...? . Sei tu?! O è il tuo fantasma che si prende gioco di noi?! . È davvero lui!",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+    "line_count":  "58",
+    "known_chars":  "423",
+    "notes":  [
+                  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign."
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/cast_plan_main_and_early.csv",
+                                 "role":  "personaggio iniziale / da verificare",
+                                 "type":  "unique_character",
+                                 "line_count":  "58",
+                                 "known_chars":  "423",
+                                 "prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "sample":  "Agli apicoltori non importa... mi offrono pure l\u0027idromele... | Perché farfugli...? | Ma... Com\u0027è possibile...? | Sei tu?! O è il tuo fantasma che si prende gioco di noi?! | È davvero lui!",
+                                 "strategy":  "ElevenLabs voice design previews first; do not create final voice until listened.",
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  null
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "main",
+                                 "name":  "lucius",
+                                 "voice_design_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "preview_script":  "Agli apicoltori non importa... mi offrono pure l\u0027idromele... . Perché farfugli...? . Ma... Com\u0027è possibile...? . Sei tu?! O è il tuo fantasma che si prende gioco di noi?! . È davvero lui!",
+                                 "generated_text_returned":  "Agli apicoltori non importa... mi offrono pure l\u0027idromele... . Perché farfugli...? . Ma... Com\u0027è possibile...? . Sei tu?! O è il tuo fantasma che si prende gioco di noi?! . È davvero lui!",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "y4eqPw2QepgYcwT0ifOv",
+                                                      "duration_secs":  14.761041666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/15_unique_lucius_lucius_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/15_unique_lucius_lucius_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "VLjakli0Zc41sDfzkCOk",
+                                                      "duration_secs":  12.592875,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/15_unique_lucius_lucius_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/15_unique_lucius_lucius_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "m9vOMd2fJ4yXIizdWMoI",
+                                                      "duration_secs":  13.716125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/15_unique_lucius_lucius_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/15_unique_lucius_lucius_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_012618",
+                                 "kind":  "main_missing_preview",
+                                 "name":  "lucius",
+                                 "voice_design_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "preview_script":  "Agli apicoltori non importa... mi offrono pure l\u0027idromele... . Perché farfugli...? . Ma... Com\u0027è possibile...? . Sei tu?! O è il tuo fantasma che si prende gioco di noi?! . È davvero lui!",
+                                 "generated_text_returned":  "Agli apicoltori non importa... mi offrono pure l\u0027idromele... . Perché farfugli...? . Ma... Com\u0027è possibile...? . Sei tu?! O è il tuo fantasma che si prende gioco di noi?! . È davvero lui!",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "Mmq1jnVSnqP5FdQsqrEx",
+                                                      "duration_secs":  13.010833333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/13_unique_lucius_lucius_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/13_unique_lucius_lucius_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "NUcC9dc2riuNtP4zpfGv",
+                                                      "duration_secs":  16.04104166666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/13_unique_lucius_lucius_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/13_unique_lucius_lucius_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "WDJVjwQUYuTvOVEuIuJH",
+                                                      "duration_secs":  15.387958333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/13_unique_lucius_lucius_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/13_unique_lucius_lucius_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT lucius",
+                                 "selected_preview_index":  "1",
+                                 "create":  "yes",
+                                 "notes":  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign.",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_012618/created_voices/20260528_014918/created_voices.csv",
+                                      "voice_name":  "CDIT lucius",
+                                      "created_voice_id":  "Mmq1jnVSnqP5FdQsqrEx",
+                                      "generated_voice_id":  "Mmq1jnVSnqP5FdQsqrEx",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/13_unique_lucius_lucius_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT lucius",
+                                      "created_voice_id":  "Mmq1jnVSnqP5FdQsqrEx",
+                                      "generated_voice_id":  "Mmq1jnVSnqP5FdQsqrEx",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/13_unique_lucius_lucius_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT lucius",
+                                      "created_voice_id":  "Mmq1jnVSnqP5FdQsqrEx",
+                                      "generated_voice_id":  "Mmq1jnVSnqP5FdQsqrEx",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/13_unique_lucius_lucius_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT lucius",
+                                      "created_voice_id":  "Mmq1jnVSnqP5FdQsqrEx",
+                                      "generated_voice_id":  "Mmq1jnVSnqP5FdQsqrEx",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/13_unique_lucius_lucius_preview1.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-lucius",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

@@ -1,0 +1,192 @@
+{
+    "id":  "unique_dwayne",
+    "display_name":  "dwayne",
+    "type":  "unique_character",
+    "role":  "personaggio iniziale importante",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT dwayne",
+    "current_voice_id":  "dEF3x6FrEr4VpbkpWYVW",
+    "current_prompt":  "Italian male voice, adult, sharp and worldly, slightly cynical, intelligent and restrained. Natural Italian cadence, medium-low pitch, no English accent.",
+    "current_preview_script":  "Ah, fammi indovinare... è stato Marius a dirtelo? . Ultimamente ha le mani in pasta un po\u0027 dappertutto... . Si affanna a dirigere il nuovo insediamento e a tenere in piedi la sua piccola rete di spionaggio... . Il viso di quell\u0027uomo è smunto e pallido come un cadavere redivivo. . Suppongo che i bassifondi non siano stati così clementi con lui come vorrebbe farci credere.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+    "line_count":  "304",
+    "known_chars":  "9165",
+    "notes":  [
+                  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign."
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/cast_plan_main_and_early.csv",
+                                 "role":  "personaggio iniziale importante",
+                                 "type":  "unique_character",
+                                 "line_count":  "304",
+                                 "known_chars":  "9165",
+                                 "prompt":  "Italian male voice, adult, sharp and worldly, slightly cynical, intelligent and restrained. Natural Italian cadence, medium-low pitch, no English accent.",
+                                 "sample":  "Ah, fammi indovinare... è stato Marius a dirtelo? | Ultimamente ha le mani in pasta un po\u0027 dappertutto... | Si affanna a dirigere il nuovo insediamento e a tenere in piedi la sua piccola rete di spionaggio... | Il viso di quell\u0027uomo è smunto e pallido come un cadavere redivivo. | Suppongo che i bassifondi non siano stati così clementi con lui come vorrebbe farci credere.",
+                                 "strategy":  "ElevenLabs voice design previews first; do not create final voice until listened.",
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  null
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "main",
+                                 "name":  "dwayne",
+                                 "voice_design_prompt":  "Italian male voice, adult, sharp and worldly, slightly cynical, intelligent and restrained. Natural Italian cadence, medium-low pitch, no English accent.",
+                                 "preview_script":  "Ah, fammi indovinare... è stato Marius a dirtelo? . Ultimamente ha le mani in pasta un po\u0027 dappertutto... . Si affanna a dirigere il nuovo insediamento e a tenere in piedi la sua piccola rete di spionaggio... . Il viso di quell\u0027uomo è smunto e pallido come un cadavere redivivo. . Suppongo che i bassifondi non siano stati così clementi con lui come vorrebbe farci credere.",
+                                 "generated_text_returned":  "Ah, fammi indovinare... è stato Marius a dirtelo? . Ultimamente ha le mani in pasta un po\u0027 dappertutto... . Si affanna a dirigere il nuovo insediamento e a tenere in piedi la sua piccola rete di spionaggio... . Il viso di quell\u0027uomo è smunto e pallido come un cadavere redivivo. . Suppongo che i bassifondi non siano stati così clementi con lui come vorrebbe farci credere.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "szKlVkVpUrdIyYT6JDyh",
+                                                      "duration_secs":  23.067958333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/08_unique_dwayne_dwayne_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/08_unique_dwayne_dwayne_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "CvF7Uw2DdtyS77ighYPm",
+                                                      "duration_secs":  23.067958333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/08_unique_dwayne_dwayne_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/08_unique_dwayne_dwayne_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "MELnXyxIuUgxxv5Ricwb",
+                                                      "duration_secs":  21.63125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/08_unique_dwayne_dwayne_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/08_unique_dwayne_dwayne_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_185825",
+                                 "kind":  "main",
+                                 "name":  "dwayne",
+                                 "voice_design_prompt":  "Italian male voice, adult, sharp and worldly, slightly cynical, intelligent and restrained. Natural Italian cadence, medium-low pitch, no English accent.",
+                                 "preview_script":  "Ah, fammi indovinare... è stato Marius a dirtelo? . Ultimamente ha le mani in pasta un po\u0027 dappertutto... . Si affanna a dirigere il nuovo insediamento e a tenere in piedi la sua piccola rete di spionaggio... . Il viso di quell\u0027uomo è smunto e pallido come un cadavere redivivo. . Suppongo che i bassifondi non siano stati così clementi con lui come vorrebbe farci credere.",
+                                 "generated_text_returned":  "Ah, fammi indovinare... è stato Marius a dirtelo? . Ultimamente ha le mani in pasta un po\u0027 dappertutto... . Si affanna a dirigere il nuovo insediamento e a tenere in piedi la sua piccola rete di spionaggio... . Il viso di quell\u0027uomo è smunto e pallido come un cadavere redivivo. . Suppongo che i bassifondi non siano stati così clementi con lui come vorrebbe farci credere.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "RYgvqBoQDtM1S67rGNW2",
+                                                      "duration_secs":  23.250833333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/08_unique_dwayne_dwayne_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/08_unique_dwayne_dwayne_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "C1LKuVQqSNriLXXeUhm2",
+                                                      "duration_secs":  23.067958333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/08_unique_dwayne_dwayne_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/08_unique_dwayne_dwayne_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "JamgBwlrTNrUuvdULUMr",
+                                                      "duration_secs":  21.63125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/08_unique_dwayne_dwayne_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/08_unique_dwayne_dwayne_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_012618",
+                                 "kind":  "main_missing_preview",
+                                 "name":  "dwayne",
+                                 "voice_design_prompt":  "Italian male voice, adult, sharp and worldly, slightly cynical, intelligent and restrained. Natural Italian cadence, medium-low pitch, no English accent.",
+                                 "preview_script":  "Ah, fammi indovinare... è stato Marius a dirtelo? . Ultimamente ha le mani in pasta un po\u0027 dappertutto... . Si affanna a dirigere il nuovo insediamento e a tenere in piedi la sua piccola rete di spionaggio... . Il viso di quell\u0027uomo è smunto e pallido come un cadavere redivivo. . Suppongo che i bassifondi non siano stati così clementi con lui come vorrebbe farci credere.",
+                                 "generated_text_returned":  "Ah, fammi indovinare... è stato Marius a dirtelo? . Ultimamente ha le mani in pasta un po\u0027 dappertutto... . Si affanna a dirigere il nuovo insediamento e a tenere in piedi la sua piccola rete di spionaggio... . Il viso di quell\u0027uomo è smunto e pallido come un cadavere redivivo. . Suppongo che i bassifondi non siano stati così clementi con lui come vorrebbe farci credere.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "dEF3x6FrEr4VpbkpWYVW",
+                                                      "duration_secs":  23.721041666666668,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/07_unique_dwayne_dwayne_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/07_unique_dwayne_dwayne_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "SGdMAlRtKBzkFNAkVEh7",
+                                                      "duration_secs":  22.676125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/07_unique_dwayne_dwayne_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/07_unique_dwayne_dwayne_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "ASzK0LSXMsFzmOsUOJa0",
+                                                      "duration_secs":  19.645958333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/07_unique_dwayne_dwayne_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/07_unique_dwayne_dwayne_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT dwayne",
+                                 "selected_preview_index":  "",
+                                 "create":  "",
+                                 "notes":  "",
+                                 "voice_description":  null
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT dwayne",
+                                 "selected_preview_index":  "1",
+                                 "create":  "yes",
+                                 "notes":  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign.",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_012618/created_voices/20260528_014918/created_voices.csv",
+                                      "voice_name":  "CDIT dwayne",
+                                      "created_voice_id":  "dEF3x6FrEr4VpbkpWYVW",
+                                      "generated_voice_id":  "dEF3x6FrEr4VpbkpWYVW",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/07_unique_dwayne_dwayne_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT dwayne",
+                                      "created_voice_id":  "dEF3x6FrEr4VpbkpWYVW",
+                                      "generated_voice_id":  "dEF3x6FrEr4VpbkpWYVW",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/07_unique_dwayne_dwayne_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT dwayne",
+                                      "created_voice_id":  "dEF3x6FrEr4VpbkpWYVW",
+                                      "generated_voice_id":  "dEF3x6FrEr4VpbkpWYVW",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/07_unique_dwayne_dwayne_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT dwayne",
+                                      "created_voice_id":  "dEF3x6FrEr4VpbkpWYVW",
+                                      "generated_voice_id":  "dEF3x6FrEr4VpbkpWYVW",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/07_unique_dwayne_dwayne_preview1.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-dwayne",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

@@ -1,0 +1,73 @@
+{
+    "id":  "sebastian_cinematic_npc_dry",
+    "display_name":  "sebastian cinematic npc dry",
+    "type":  "",
+    "role":  "",
+    "status":  "draft",
+    "current_voice_name":  "CDIT sebastian cinematic npc dry",
+    "current_voice_id":  "",
+    "current_prompt":  "Italian male voice, fifty year old bearded civilian adventurer, cinematic NPC dialogue but intimate and dry, no reverb, no echo, no chapel or church sound. Slightly raspy, quietly charismatic, human and imperfect, not theatrical, not announcer-like, natural Italian timing and diction.",
+    "current_preview_script":  "Mantogrigio... sei tu? È così, e tu... sei cambiato. Un bel po\u0027. Quando si viaggia tanto come faccio io, sono le novità a trovare te. Devo tutto a te, Mantogrigio.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260527_214731/preview_report.json",
+    "line_count":  "",
+    "known_chars":  "",
+    "notes":  [
+                  "Sebastian alternative dry no echo"
+              ],
+    "planning_records":  [
+
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_214731/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_214731",
+                                 "kind":  "custom",
+                                 "name":  "sebastian cinematic npc dry",
+                                 "voice_design_prompt":  "Italian male voice, fifty year old bearded civilian adventurer, cinematic NPC dialogue but intimate and dry, no reverb, no echo, no chapel or church sound. Slightly raspy, quietly charismatic, human and imperfect, not theatrical, not announcer-like, natural Italian timing and diction.",
+                                 "preview_script":  "Mantogrigio... sei tu? È così, e tu... sei cambiato. Un bel po\u0027. Quando si viaggia tanto come faccio io, sono le novità a trovare te. Devo tutto a te, Mantogrigio.",
+                                 "generated_text_returned":  "Mantogrigio... sei tu? È così, e tu... sei cambiato. Un bel po\u0027. Quando si viaggia tanto come faccio io, sono le novità a trovare te. Devo tutto a te, Mantogrigio.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "jHygXBi0hHvB1ixj1kLZ",
+                                                      "duration_secs":  15.152875,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_214731/mp3/03_sebastian_cinematic_npc_dry_sebastian_cinematic_npc_dry_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_214731/wav/03_sebastian_cinematic_npc_dry_sebastian_cinematic_npc_dry_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "Za0WhuwUgdWW1qLm5T1l",
+                                                      "duration_secs":  13.7945,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_214731/mp3/03_sebastian_cinematic_npc_dry_sebastian_cinematic_npc_dry_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_214731/wav/03_sebastian_cinematic_npc_dry_sebastian_cinematic_npc_dry_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "5UtF2I29AegpxrevZIcj",
+                                                      "duration_secs":  16.276125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_214731/mp3/03_sebastian_cinematic_npc_dry_sebastian_cinematic_npc_dry_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_214731/wav/03_sebastian_cinematic_npc_dry_sebastian_cinematic_npc_dry_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_214731/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT sebastian cinematic npc dry",
+                                 "selected_preview_index":  "",
+                                 "create":  "",
+                                 "notes":  "Sebastian alternative dry no echo",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+
+                              ],
+    "folder":  "sebastian-cinematic-npc-dry",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

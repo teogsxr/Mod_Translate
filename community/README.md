@@ -30,6 +30,8 @@ Apri una Issue su GitHub e indica:
 
 Per i sample audio, guarda `voice-previews/`.
 
+Per i prompt e lo storico delle voci, guarda `voice-templates/`.
+
 ## Contribuire con voci ElevenLabs
 
 Se vuoi proporre una voce, apri una Issue e allega:
@@ -41,3 +43,5 @@ Se vuoi proporre una voce, apri una Issue e allega:
 - idea del tono, per esempio protagonista roco, anziano, antagonista profondo, soldato giovane, mercante o guardia.
 
 Non serve rifare tutto il gioco: anche un buon prompt per un personaggio importante puo aiutare molto.
+
+Prima di proporre una voce nuova, controlla anche `voice-templates/`: contiene i prompt già usati, gli script di preview e le note sui personaggi.

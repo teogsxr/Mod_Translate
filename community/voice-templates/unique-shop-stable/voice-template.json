@@ -1,0 +1,44 @@
+{
+    "id":  "unique_shop_stable",
+    "display_name":  "unique shop stable",
+    "type":  "",
+    "role":  "",
+    "status":  "draft",
+    "current_voice_name":  "CDIT unique shop stable",
+    "current_voice_id":  "",
+    "current_prompt":  "Italian stable keeper voice, steady, outdoorsy, patient and practical. Natural Italian, no English accent, close dry recording.",
+    "current_preview_script":  "Perfino i cavalli sono più allegri con te. Ci ho pensato parecchio. C\u0027è qualcuno? Aiuto! Perché lo stai facendo? Qualcuno mi aiuti, per favore! Sono un po\u0027 in difficoltà!",
+    "current_prompt_source":  "13_pilots/elevenlabs_first_city_extra_20260527/required_voice_profiles.csv",
+    "line_count":  "33",
+    "known_chars":  "1013",
+    "notes":  [
+
+              ],
+    "planning_records":  [
+
+                         ],
+    "profile_records":  [
+                            {
+                                "source":  "13_pilots/elevenlabs_first_city_extra_20260527/required_voice_profiles.csv",
+                                "voice_name":  "CDIT unique shop stable",
+                                "line_count":  "33",
+                                "chars":  "1013",
+                                "prompt":  "Italian stable keeper voice, steady, outdoorsy, patient and practical. Natural Italian, no English accent, close dry recording.",
+                                "sample":  "Perfino i cavalli sono più allegri con te. Ci ho pensato parecchio. C\u0027è qualcuno? Aiuto! Perché lo stai facendo? Qualcuno mi aiuti, per favore! Sono un po\u0027 in difficoltà!",
+                                "created_voice_id":  "",
+                                "notes":  ""
+                            }
+                        ],
+    "preview_attempts":  [
+
+                         ],
+    "selected_choices":  [
+
+                         ],
+    "created_voice_history":  [
+
+                              ],
+    "folder":  "unique-shop-stable",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

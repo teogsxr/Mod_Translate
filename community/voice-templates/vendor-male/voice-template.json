@@ -1,0 +1,152 @@
+{
+    "id":  "vendor_male",
+    "display_name":  "vendor male",
+    "type":  "",
+    "role":  "",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT vendor male",
+    "current_voice_id":  "ayNgP8rdzU0QpOwdcua3",
+    "current_prompt":  "Italian male merchant voice, adult, approachable, practical, clear and friendly. Natural shopkeeper cadence, no English accent, not exaggerated.",
+    "current_preview_script":  " Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. vendor_male mantiene emozione, chiarezza e controllo.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260527_185825/preview_report.json",
+    "line_count":  "",
+    "known_chars":  "",
+    "notes":  [
+
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/voice_pool_plan_guard_vendor_generic.csv",
+                                 "role":  null,
+                                 "type":  null,
+                                 "line_count":  null,
+                                 "known_chars":  null,
+                                 "prompt":  "Italian male merchant voice, adult, approachable, practical, clear and friendly. Natural shopkeeper cadence, no English accent, not exaggerated.",
+                                 "sample":  null,
+                                 "strategy":  null,
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  "Map deterministicamente per voice_key+family/story_group; non random per click."
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "pool",
+                                 "name":  "vendor_male",
+                                 "voice_design_prompt":  "Italian male merchant voice, adult, approachable, practical, clear and friendly. Natural shopkeeper cadence, no English accent, not exaggerated.",
+                                 "preview_script":  " Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. vendor_male mantiene emozione, chiarezza e controllo.",
+                                 "generated_text_returned":  "Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. vendor_male mantiene emozione, chiarezza e controllo.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "nmocDJrLP7isON4kmvce",
+                                                      "duration_secs":  22.284291666666668,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/22_vendor_male_vendor_male_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/22_vendor_male_vendor_male_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "b1LSlQTiPpYIcHKTZWBx",
+                                                      "duration_secs":  12.932458333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/22_vendor_male_vendor_male_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/22_vendor_male_vendor_male_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "rtlBgfIjTmrsZtBEyX3W",
+                                                      "duration_secs":  18.44429166666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/22_vendor_male_vendor_male_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/22_vendor_male_vendor_male_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_185825",
+                                 "kind":  "pool",
+                                 "name":  "vendor_male",
+                                 "voice_design_prompt":  "Italian male merchant voice, adult, approachable, practical, clear and friendly. Natural shopkeeper cadence, no English accent, not exaggerated.",
+                                 "preview_script":  " Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. vendor_male mantiene emozione, chiarezza e controllo.",
+                                 "generated_text_returned":  "Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. vendor_male mantiene emozione, chiarezza e controllo.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "ayNgP8rdzU0QpOwdcua3",
+                                                      "duration_secs":  14.604291666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/12_vendor_male_vendor_male_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/12_vendor_male_vendor_male_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "MAJKQWymfJBj5KhCBEVw",
+                                                      "duration_secs":  23.329208333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/12_vendor_male_vendor_male_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/12_vendor_male_vendor_male_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "d4BEnmb9XgVlHJQSbZ2Z",
+                                                      "duration_secs":  14.761041666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/12_vendor_male_vendor_male_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/12_vendor_male_vendor_male_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT vendor male",
+                                 "selected_preview_index":  "",
+                                 "create":  "",
+                                 "notes":  "",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260527_185825/created_voices/20260528_015118/created_voices.csv",
+                                      "voice_name":  "CDIT vendor male",
+                                      "created_voice_id":  "ayNgP8rdzU0QpOwdcua3",
+                                      "generated_voice_id":  "ayNgP8rdzU0QpOwdcua3",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/12_vendor_male_vendor_male_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT vendor male",
+                                      "created_voice_id":  "ayNgP8rdzU0QpOwdcua3",
+                                      "generated_voice_id":  "ayNgP8rdzU0QpOwdcua3",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/12_vendor_male_vendor_male_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT vendor male",
+                                      "created_voice_id":  "ayNgP8rdzU0QpOwdcua3",
+                                      "generated_voice_id":  "ayNgP8rdzU0QpOwdcua3",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/12_vendor_male_vendor_male_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT vendor male",
+                                      "created_voice_id":  "ayNgP8rdzU0QpOwdcua3",
+                                      "generated_voice_id":  "ayNgP8rdzU0QpOwdcua3",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/12_vendor_male_vendor_male_preview1.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "vendor-male",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

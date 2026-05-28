@@ -1,0 +1,152 @@
+{
+    "id":  "unique_conrad",
+    "display_name":  "conrad",
+    "type":  "unique_character",
+    "role":  "personaggio iniziale / da verificare",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT conrad",
+    "current_voice_id":  "0EGfhVoKmNSt9UhV48Ed",
+    "current_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+    "current_preview_script":  "Ti pare una proposta sensata? . Vale il doppio di quello che offri! . Ve l\u0027avevo detto! Non hanno mai trovato un corpo! . Kamu, Alec, Ed e Ben sono ancora tra noi! . Noialtri siamo rimasti uniti.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+    "line_count":  "83",
+    "known_chars":  "513",
+    "notes":  [
+                  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign."
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/cast_plan_main_and_early.csv",
+                                 "role":  "personaggio iniziale / da verificare",
+                                 "type":  "unique_character",
+                                 "line_count":  "83",
+                                 "known_chars":  "513",
+                                 "prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "sample":  "Ti pare una proposta sensata? | Vale il doppio di quello che offri! | Ve l\u0027avevo detto! Non hanno mai trovato un corpo! | Kamu, Alec, Ed e Ben sono ancora tra noi! | Noialtri siamo rimasti uniti.",
+                                 "strategy":  "ElevenLabs voice design previews first; do not create final voice until listened.",
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  null
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "main",
+                                 "name":  "conrad",
+                                 "voice_design_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "preview_script":  "Ti pare una proposta sensata? . Vale il doppio di quello che offri! . Ve l\u0027avevo detto! Non hanno mai trovato un corpo! . Kamu, Alec, Ed e Ben sono ancora tra noi! . Noialtri siamo rimasti uniti.",
+                                 "generated_text_returned":  "Ti pare una proposta sensata? . Vale il doppio di quello che offri! . Ve l\u0027avevo detto! Non hanno mai trovato un corpo! . Kamu, Alec, Ed e Ben sono ancora tra noi! . Noialtri siamo rimasti uniti.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "ZlJM5H9eIE1pKQ4JGztT",
+                                                      "duration_secs":  15.152875,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/11_unique_conrad_conrad_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/11_unique_conrad_conrad_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "5WsvgyKdn7fLNCBcu9Cz",
+                                                      "duration_secs":  16.51125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/11_unique_conrad_conrad_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/11_unique_conrad_conrad_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "db3zJIeotGprs57KihFL",
+                                                      "duration_secs":  14.682666666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/11_unique_conrad_conrad_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/11_unique_conrad_conrad_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_012618",
+                                 "kind":  "main_missing_preview",
+                                 "name":  "conrad",
+                                 "voice_design_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "preview_script":  "Ti pare una proposta sensata? . Vale il doppio di quello che offri! . Ve l\u0027avevo detto! Non hanno mai trovato un corpo! . Kamu, Alec, Ed e Ben sono ancora tra noi! . Noialtri siamo rimasti uniti.",
+                                 "generated_text_returned":  "Ti pare una proposta sensata? . Vale il doppio di quello che offri! . Ve l\u0027avevo detto! Non hanno mai trovato un corpo! . Kamu, Alec, Ed e Ben sono ancora tra noi! . Noialtri siamo rimasti uniti.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "0EGfhVoKmNSt9UhV48Ed",
+                                                      "duration_secs":  14.996125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/09_unique_conrad_conrad_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/09_unique_conrad_conrad_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "hED1u77fAmcsv4z9T9wH",
+                                                      "duration_secs":  13.872875,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/09_unique_conrad_conrad_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/09_unique_conrad_conrad_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "o7c37S05kT9ZrX0CgH15",
+                                                      "duration_secs":  14.682666666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/09_unique_conrad_conrad_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/09_unique_conrad_conrad_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT conrad",
+                                 "selected_preview_index":  "1",
+                                 "create":  "yes",
+                                 "notes":  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign.",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_012618/created_voices/20260528_014918/created_voices.csv",
+                                      "voice_name":  "CDIT conrad",
+                                      "created_voice_id":  "0EGfhVoKmNSt9UhV48Ed",
+                                      "generated_voice_id":  "0EGfhVoKmNSt9UhV48Ed",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/09_unique_conrad_conrad_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT conrad",
+                                      "created_voice_id":  "0EGfhVoKmNSt9UhV48Ed",
+                                      "generated_voice_id":  "0EGfhVoKmNSt9UhV48Ed",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/09_unique_conrad_conrad_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT conrad",
+                                      "created_voice_id":  "0EGfhVoKmNSt9UhV48Ed",
+                                      "generated_voice_id":  "0EGfhVoKmNSt9UhV48Ed",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/09_unique_conrad_conrad_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT conrad",
+                                      "created_voice_id":  "0EGfhVoKmNSt9UhV48Ed",
+                                      "generated_voice_id":  "0EGfhVoKmNSt9UhV48Ed",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/09_unique_conrad_conrad_preview1.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-conrad",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

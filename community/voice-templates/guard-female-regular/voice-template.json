@@ -1,0 +1,117 @@
+{
+    "id":  "guard_female_regular",
+    "display_name":  "guard female regular",
+    "type":  "",
+    "role":  "",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT guard female regular",
+    "current_voice_id":  "",
+    "current_prompt":  "Italian female guard voice, adult, disciplined, clear, firm. Neutral Italian pronunciation, no English accent.",
+    "current_preview_script":  " Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. guard_female_regular mantiene emozione, chiarezza e controllo.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260527_185825/preview_report.json",
+    "line_count":  "",
+    "known_chars":  "",
+    "notes":  [
+
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/voice_pool_plan_guard_vendor_generic.csv",
+                                 "role":  null,
+                                 "type":  null,
+                                 "line_count":  null,
+                                 "known_chars":  null,
+                                 "prompt":  "Italian female guard voice, adult, disciplined, clear, firm. Neutral Italian pronunciation, no English accent.",
+                                 "sample":  null,
+                                 "strategy":  null,
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  "Map deterministicamente per voice_key+family/story_group; non random per click."
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "pool",
+                                 "name":  "guard_female_regular",
+                                 "voice_design_prompt":  "Italian female guard voice, adult, disciplined, clear, firm. Neutral Italian pronunciation, no English accent.",
+                                 "preview_script":  " Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. guard_female_regular mantiene emozione, chiarezza e controllo.",
+                                 "generated_text_returned":  "Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. guard_female_regular mantiene emozione, chiarezza e controllo.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "EjHVmHD3K6k3RqthKtWd",
+                                                      "duration_secs":  11.730833333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/21_guard_female_regular_guard_female_regular_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/21_guard_female_regular_guard_female_regular_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "BTTDmHJrVsCyFtk9lDaM",
+                                                      "duration_secs":  12.122666666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/21_guard_female_regular_guard_female_regular_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/21_guard_female_regular_guard_female_regular_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "gKl22o8NgfJ4uzremQFr",
+                                                      "duration_secs":  11.730833333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/21_guard_female_regular_guard_female_regular_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/21_guard_female_regular_guard_female_regular_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_185825",
+                                 "kind":  "pool",
+                                 "name":  "guard_female_regular",
+                                 "voice_design_prompt":  "Italian female guard voice, adult, disciplined, clear, firm. Neutral Italian pronunciation, no English accent.",
+                                 "preview_script":  " Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. guard_female_regular mantiene emozione, chiarezza e controllo.",
+                                 "generated_text_returned":  "Questa voce deve parlare italiano in modo naturale, senza accento inglese, con ritmo credibile per una scena di Crimson Desert. guard_female_regular mantiene emozione, chiarezza e controllo.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "6DA9jPThRBYTBOfntZUh",
+                                                      "duration_secs":  12.67125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/11_guard_female_regular_guard_female_regular_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/11_guard_female_regular_guard_female_regular_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "K6QHhYCQ6eIKdtY2Dsi2",
+                                                      "duration_secs":  25.001041666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/11_guard_female_regular_guard_female_regular_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/11_guard_female_regular_guard_female_regular_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "mb6pm4moAUrifjqtwN7T",
+                                                      "duration_secs":  11.2345,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/11_guard_female_regular_guard_female_regular_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/11_guard_female_regular_guard_female_regular_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT guard female regular",
+                                 "selected_preview_index":  "",
+                                 "create":  "",
+                                 "notes":  "",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+
+                              ],
+    "folder":  "guard-female-regular",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

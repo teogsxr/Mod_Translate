@@ -1,0 +1,192 @@
+{
+    "id":  "unique_carl",
+    "display_name":  "carl",
+    "type":  "unique_character",
+    "role":  "alleato / soldato",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT carl",
+    "current_voice_id":  "oT48X0Co1CSjl3tQydUF",
+    "current_prompt":  "Italian male voice, adult soldier, grounded and direct, warm but firm. Natural Italian pronunciation, not too old, not childish, no English accent, believable military companion.",
+    "current_preview_script":  "Ecco che ricomincia... . Me l\u0027aspettavo. . Lo sta solo prendendo in giro. Tipico di Yann! . Sappiamo già tutto! . Allora è vero.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+    "line_count":  "80",
+    "known_chars":  "359",
+    "notes":  [
+                  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign."
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/cast_plan_main_and_early.csv",
+                                 "role":  "alleato / soldato",
+                                 "type":  "unique_character",
+                                 "line_count":  "80",
+                                 "known_chars":  "359",
+                                 "prompt":  "Italian male voice, adult soldier, grounded and direct, warm but firm. Natural Italian pronunciation, not too old, not childish, no English accent, believable military companion.",
+                                 "sample":  "Ecco che ricomincia... | Me l\u0027aspettavo. | Lo sta solo prendendo in giro. Tipico di Yann! | Sappiamo già tutto! | Allora è vero.",
+                                 "strategy":  "ElevenLabs voice design previews first; do not create final voice until listened.",
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  null
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "main",
+                                 "name":  "carl",
+                                 "voice_design_prompt":  "Italian male voice, adult soldier, grounded and direct, warm but firm. Natural Italian pronunciation, not too old, not childish, no English accent, believable military companion.",
+                                 "preview_script":  "Ecco che ricomincia... . Me l\u0027aspettavo. . Lo sta solo prendendo in giro. Tipico di Yann! . Sappiamo già tutto! . Allora è vero.",
+                                 "generated_text_returned":  "Ecco che ricomincia... . Me l\u0027aspettavo. . Lo sta solo prendendo in giro. Tipico di Yann! . Sappiamo già tutto! . Allora è vero.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "dIVRTeKov0oPruQeK7GZ",
+                                                      "duration_secs":  8.439416666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/05_unique_carl_carl_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/05_unique_carl_carl_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "T0GType4N5qdrZsZvRe0",
+                                                      "duration_secs":  7.812458333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/05_unique_carl_carl_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/05_unique_carl_carl_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "IfzpOhREi4JyIu8ewld8",
+                                                      "duration_secs":  9.327583333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/05_unique_carl_carl_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/05_unique_carl_carl_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_185825",
+                                 "kind":  "main",
+                                 "name":  "carl",
+                                 "voice_design_prompt":  "Italian male voice, adult soldier, grounded and direct, warm but firm. Natural Italian pronunciation, not too old, not childish, no English accent, believable military companion.",
+                                 "preview_script":  "Ecco che ricomincia... . Me l\u0027aspettavo. . Lo sta solo prendendo in giro. Tipico di Yann! . Sappiamo già tutto! . Allora è vero.",
+                                 "generated_text_returned":  "Ecco che ricomincia... . Me l\u0027aspettavo. . Lo sta solo prendendo in giro. Tipico di Yann! . Sappiamo già tutto! . Allora è vero.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "catqyC5JWymHYNrlxjib",
+                                                      "duration_secs":  8.439416666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/05_unique_carl_carl_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/05_unique_carl_carl_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "VzofG6DVglsGtrNOrzng",
+                                                      "duration_secs":  7.812458333333334,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/05_unique_carl_carl_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/05_unique_carl_carl_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "0N0Y6IoPhhgSoL0N7KJW",
+                                                      "duration_secs":  9.327583333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/05_unique_carl_carl_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/05_unique_carl_carl_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_012618",
+                                 "kind":  "main_missing_preview",
+                                 "name":  "carl",
+                                 "voice_design_prompt":  "Italian male voice, adult soldier, grounded and direct, warm but firm. Natural Italian pronunciation, not too old, not childish, no English accent, believable military companion.",
+                                 "preview_script":  "Ecco che ricomincia... . Me l\u0027aspettavo. . Lo sta solo prendendo in giro. Tipico di Yann! . Sappiamo già tutto! . Allora è vero.",
+                                 "generated_text_returned":  "Ecco che ricomincia... . Me l\u0027aspettavo. . Lo sta solo prendendo in giro. Tipico di Yann! . Sappiamo già tutto! . Allora è vero.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "oT48X0Co1CSjl3tQydUF",
+                                                      "duration_secs":  9.719416666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/04_unique_carl_carl_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/04_unique_carl_carl_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "scr72EW25ROq0u6MBr1F",
+                                                      "duration_secs":  10.11125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/04_unique_carl_carl_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/04_unique_carl_carl_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "6lBjjsHfljqwzTk4LkOG",
+                                                      "duration_secs":  8.987958333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/04_unique_carl_carl_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/04_unique_carl_carl_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT carl",
+                                 "selected_preview_index":  "",
+                                 "create":  "",
+                                 "notes":  "",
+                                 "voice_description":  null
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT carl",
+                                 "selected_preview_index":  "1",
+                                 "create":  "yes",
+                                 "notes":  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign.",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_012618/created_voices/20260528_014918/created_voices.csv",
+                                      "voice_name":  "CDIT carl",
+                                      "created_voice_id":  "oT48X0Co1CSjl3tQydUF",
+                                      "generated_voice_id":  "oT48X0Co1CSjl3tQydUF",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/04_unique_carl_carl_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT carl",
+                                      "created_voice_id":  "oT48X0Co1CSjl3tQydUF",
+                                      "generated_voice_id":  "oT48X0Co1CSjl3tQydUF",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/04_unique_carl_carl_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT carl",
+                                      "created_voice_id":  "oT48X0Co1CSjl3tQydUF",
+                                      "generated_voice_id":  "oT48X0Co1CSjl3tQydUF",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/04_unique_carl_carl_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT carl",
+                                      "created_voice_id":  "oT48X0Co1CSjl3tQydUF",
+                                      "generated_voice_id":  "oT48X0Co1CSjl3tQydUF",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/04_unique_carl_carl_preview1.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-carl",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

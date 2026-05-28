@@ -1,0 +1,192 @@
+{
+    "id":  "unique_nairah",
+    "display_name":  "nairah",
+    "type":  "unique_character",
+    "role":  "personaggio iniziale importante",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT nairah",
+    "current_voice_id":  "9JZAS83sM4jmBetk1rDv",
+    "current_prompt":  "Italian female voice, young adult, alert and brave, emotionally sincere, quick reactions. Natural Italian, clean diction, no foreign accent, not melodramatic.",
+    "current_preview_script":  "Mi fa piacere che ci siamo incrociati. . Un momento! Mi sembra di aver sentito qualcosa laggiù. . Andiamo a vedere! . Che aspetti? . Su!",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+    "line_count":  "342",
+    "known_chars":  "10721",
+    "notes":  [
+                  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign."
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/cast_plan_main_and_early.csv",
+                                 "role":  "personaggio iniziale importante",
+                                 "type":  "unique_character",
+                                 "line_count":  "342",
+                                 "known_chars":  "10721",
+                                 "prompt":  "Italian female voice, young adult, alert and brave, emotionally sincere, quick reactions. Natural Italian, clean diction, no foreign accent, not melodramatic.",
+                                 "sample":  "Mi fa piacere che ci siamo incrociati. | Un momento! Mi sembra di aver sentito qualcosa laggiù. | Andiamo a vedere! | Che aspetti? | Su!",
+                                 "strategy":  "ElevenLabs voice design previews first; do not create final voice until listened.",
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  null
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "main",
+                                 "name":  "nairah",
+                                 "voice_design_prompt":  "Italian female voice, young adult, alert and brave, emotionally sincere, quick reactions. Natural Italian, clean diction, no foreign accent, not melodramatic.",
+                                 "preview_script":  "Mi fa piacere che ci siamo incrociati. . Un momento! Mi sembra di aver sentito qualcosa laggiù. . Andiamo a vedere! . Che aspetti? . Su!",
+                                 "generated_text_returned":  "Mi fa piacere che ci siamo incrociati. . Un momento! Mi sembra di aver sentito qualcosa laggiù. . Andiamo a vedere! . Che aspetti? . Su!",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "7O8duIhUOQ1bb2Vqy8zZ",
+                                                      "duration_secs":  8.909625,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/07_unique_nairah_nairah_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/07_unique_nairah_nairah_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "o183fKhb1yUEblMtLOJu",
+                                                      "duration_secs":  8.439416666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/07_unique_nairah_nairah_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/07_unique_nairah_nairah_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "VSiW1ny2TpQHDzhSyoPy",
+                                                      "duration_secs":  8.83125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/07_unique_nairah_nairah_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/07_unique_nairah_nairah_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_185825",
+                                 "kind":  "main",
+                                 "name":  "nairah",
+                                 "voice_design_prompt":  "Italian female voice, young adult, alert and brave, emotionally sincere, quick reactions. Natural Italian, clean diction, no foreign accent, not melodramatic.",
+                                 "preview_script":  "Mi fa piacere che ci siamo incrociati. . Un momento! Mi sembra di aver sentito qualcosa laggiù. . Andiamo a vedere! . Che aspetti? . Su!",
+                                 "generated_text_returned":  "Mi fa piacere che ci siamo incrociati. . Un momento! Mi sembra di aver sentito qualcosa laggiù. . Andiamo a vedere! . Che aspetti? . Su!",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "geGwqcodTPk933TcF2L1",
+                                                      "duration_secs":  10.11125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/07_unique_nairah_nairah_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/07_unique_nairah_nairah_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "UfyD90UeH7R0DrUH6IjY",
+                                                      "duration_secs":  8.439416666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/07_unique_nairah_nairah_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/07_unique_nairah_nairah_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "a2iAPktSDvbBz2ofFsy7",
+                                                      "duration_secs":  8.83125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_185825/mp3/07_unique_nairah_nairah_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_185825/wav/07_unique_nairah_nairah_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_012618",
+                                 "kind":  "main_missing_preview",
+                                 "name":  "nairah",
+                                 "voice_design_prompt":  "Italian female voice, young adult, alert and brave, emotionally sincere, quick reactions. Natural Italian, clean diction, no foreign accent, not melodramatic.",
+                                 "preview_script":  "Mi fa piacere che ci siamo incrociati. . Un momento! Mi sembra di aver sentito qualcosa laggiù. . Andiamo a vedere! . Che aspetti? . Su!",
+                                 "generated_text_returned":  "Mi fa piacere che ci siamo incrociati. . Un momento! Mi sembra di aver sentito qualcosa laggiù. . Andiamo a vedere! . Che aspetti? . Su!",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "9JZAS83sM4jmBetk1rDv",
+                                                      "duration_secs":  9.876125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/06_unique_nairah_nairah_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/06_unique_nairah_nairah_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "CFjKPzdhRzyyJhXrju9u",
+                                                      "duration_secs":  8.909625,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/06_unique_nairah_nairah_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/06_unique_nairah_nairah_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "yzOcpkMmBZnsa4GvQTV6",
+                                                      "duration_secs":  9.327583333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/06_unique_nairah_nairah_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/06_unique_nairah_nairah_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_185825/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT nairah",
+                                 "selected_preview_index":  "",
+                                 "create":  "",
+                                 "notes":  "",
+                                 "voice_description":  null
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT nairah",
+                                 "selected_preview_index":  "1",
+                                 "create":  "yes",
+                                 "notes":  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign.",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_012618/created_voices/20260528_014918/created_voices.csv",
+                                      "voice_name":  "CDIT nairah",
+                                      "created_voice_id":  "9JZAS83sM4jmBetk1rDv",
+                                      "generated_voice_id":  "9JZAS83sM4jmBetk1rDv",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/06_unique_nairah_nairah_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT nairah",
+                                      "created_voice_id":  "9JZAS83sM4jmBetk1rDv",
+                                      "generated_voice_id":  "9JZAS83sM4jmBetk1rDv",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/06_unique_nairah_nairah_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT nairah",
+                                      "created_voice_id":  "9JZAS83sM4jmBetk1rDv",
+                                      "generated_voice_id":  "9JZAS83sM4jmBetk1rDv",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/06_unique_nairah_nairah_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT nairah",
+                                      "created_voice_id":  "9JZAS83sM4jmBetk1rDv",
+                                      "generated_voice_id":  "9JZAS83sM4jmBetk1rDv",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/06_unique_nairah_nairah_preview1.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-nairah",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

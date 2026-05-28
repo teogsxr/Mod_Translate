@@ -1,0 +1,152 @@
+{
+    "id":  "unique_gerald",
+    "display_name":  "gerald",
+    "type":  "unique_character",
+    "role":  "personaggio iniziale / da verificare",
+    "status":  "needs_preview",
+    "current_voice_name":  "CDIT gerald",
+    "current_voice_id":  "zvmjxZZY3ouPImkOvANQ",
+    "current_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+    "current_preview_script":  "Sono tornato. . E scorgo un volto nuovo. Che assomiglia un sacco a Kliff. . Kliff... . Non sapevo che avesse un gemello! . Mi spiace per tuo fratello.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+    "line_count":  "73",
+    "known_chars":  "468",
+    "notes":  [
+                  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign."
+              ],
+    "planning_records":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/cast_plan_main_and_early.csv",
+                                 "role":  "personaggio iniziale / da verificare",
+                                 "type":  "unique_character",
+                                 "line_count":  "73",
+                                 "known_chars":  "468",
+                                 "prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "sample":  "Sono tornato. | E scorgo un volto nuovo. Che assomiglia un sacco a Kliff. | Kliff... | Non sapevo che avesse un gemello! | Mi spiace per tuo fratello.",
+                                 "strategy":  "ElevenLabs voice design previews first; do not create final voice until listened.",
+                                 "status":  "needs_preview",
+                                 "chosen_voice_id":  "",
+                                 "stable_mapping_rule":  null
+                             }
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260527_184601/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260527_184601",
+                                 "kind":  "main",
+                                 "name":  "gerald",
+                                 "voice_design_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "preview_script":  "Sono tornato. . E scorgo un volto nuovo. Che assomiglia un sacco a Kliff. . Kliff... . Non sapevo che avesse un gemello! . Mi spiace per tuo fratello.",
+                                 "generated_text_returned":  "Sono tornato. . E scorgo un volto nuovo. Che assomiglia un sacco a Kliff. . Kliff... . Non sapevo che avesse un gemello! . Mi spiace per tuo fratello.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "DoyUMZG88TJTv58cXP2Z",
+                                                      "duration_secs":  12.592875,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/13_unique_gerald_gerald_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/13_unique_gerald_gerald_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "7ftFqcYiZdodTZeQjPSc",
+                                                      "duration_secs":  13.716125,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/13_unique_gerald_gerald_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/13_unique_gerald_gerald_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "m3wbSEtnCeOUQBKvdw0c",
+                                                      "duration_secs":  13.559416666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260527_184601/mp3/13_unique_gerald_gerald_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260527_184601/wav/13_unique_gerald_gerald_preview3.wav"
+                                                  }
+                                              ]
+                             },
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_012618",
+                                 "kind":  "main_missing_preview",
+                                 "name":  "gerald",
+                                 "voice_design_prompt":  "Italian game character voice, adult, natural and emotionally believable. Clear neutral Italian pronunciation, no English accent, no caricature, no excessive pauses.",
+                                 "preview_script":  "Sono tornato. . E scorgo un volto nuovo. Che assomiglia un sacco a Kliff. . Kliff... . Non sapevo che avesse un gemello! . Mi spiace per tuo fratello.",
+                                 "generated_text_returned":  "Sono tornato. . E scorgo un volto nuovo. Che assomiglia un sacco a Kliff. . Kliff... . Non sapevo che avesse un gemello! . Mi spiace per tuo fratello.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "zvmjxZZY3ouPImkOvANQ",
+                                                      "duration_secs":  12.122666666666667,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/11_unique_gerald_gerald_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/11_unique_gerald_gerald_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "LLe0tsP9AgtPQaha6fys",
+                                                      "duration_secs":  13.7945,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/11_unique_gerald_gerald_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/11_unique_gerald_gerald_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "lCi5V1iACFsvo3HMrDAl",
+                                                      "duration_secs":  13.481041666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_012618/mp3/11_unique_gerald_gerald_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/11_unique_gerald_gerald_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_012618/selected_voice_choices.csv",
+                                 "voice_name":  "CDIT gerald",
+                                 "selected_preview_index":  "1",
+                                 "create":  "yes",
+                                 "notes":  "User selected preview 1 on 2026-05-28; Oongka excluded for redesign.",
+                                 "voice_description":  null
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_012618/created_voices/20260528_014918/created_voices.csv",
+                                      "voice_name":  "CDIT gerald",
+                                      "created_voice_id":  "zvmjxZZY3ouPImkOvANQ",
+                                      "generated_voice_id":  "zvmjxZZY3ouPImkOvANQ",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/11_unique_gerald_gerald_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015307/combined_created_voices.csv",
+                                      "voice_name":  "CDIT gerald",
+                                      "created_voice_id":  "zvmjxZZY3ouPImkOvANQ",
+                                      "generated_voice_id":  "zvmjxZZY3ouPImkOvANQ",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/11_unique_gerald_gerald_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "17_aggressive_plan_c_runs/20260528_015702/combined_created_voices.csv",
+                                      "voice_name":  "CDIT gerald",
+                                      "created_voice_id":  "zvmjxZZY3ouPImkOvANQ",
+                                      "generated_voice_id":  "zvmjxZZY3ouPImkOvANQ",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/11_unique_gerald_gerald_preview1.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT gerald",
+                                      "created_voice_id":  "zvmjxZZY3ouPImkOvANQ",
+                                      "generated_voice_id":  "zvmjxZZY3ouPImkOvANQ",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_012618/wav/11_unique_gerald_gerald_preview1.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-gerald",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

@@ -1,0 +1,90 @@
+{
+    "id":  "unique_shane",
+    "display_name":  "Shane",
+    "type":  "",
+    "role":  "",
+    "status":  "draft",
+    "current_voice_name":  "CDIT Shane",
+    "current_voice_id":  "uZidUikYYVKdVi00KzWq",
+    "current_prompt":  "Italian male warrior, mid 30s. Dry, direct, loyal, practical. Firm chest voice, natural Italian, expressive but not theatrical. Can shout in combat without becoming nasal or childish.",
+    "current_preview_script":  "Qualcuno è di buon umore oggi. Coraggio! Vieni avanti. Kliff! Lasciamo stare, non ne vale la pena. Fermati. Vieni avanti, se hai coraggio. Non uscirai vivo da qui. Te lo ripeto: abbassa la testa e obbedisci.",
+    "current_prompt_source":  "08_elevenlabs_cast/previews/20260528_105442/preview_report.json",
+    "line_count":  "",
+    "known_chars":  "",
+    "notes":  [
+                  "Decision log: dedicated old-provider-cleanup voice created on 2026-05-28."
+              ],
+    "planning_records":  [
+
+                         ],
+    "profile_records":  [
+
+                        ],
+    "preview_attempts":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_105442/preview_report.json",
+                                 "run_dir":  "08_elevenlabs_cast/previews/20260528_105442",
+                                 "kind":  "custom",
+                                 "name":  "Shane",
+                                 "voice_design_prompt":  "Italian male warrior, mid 30s. Dry, direct, loyal, practical. Firm chest voice, natural Italian, expressive but not theatrical. Can shout in combat without becoming nasal or childish.",
+                                 "preview_script":  "Qualcuno è di buon umore oggi. Coraggio! Vieni avanti. Kliff! Lasciamo stare, non ne vale la pena. Fermati. Vieni avanti, se hai coraggio. Non uscirai vivo da qui. Te lo ripeto: abbassa la testa e obbedisci.",
+                                 "generated_text_returned":  "Qualcuno è di buon umore oggi. Coraggio! Vieni avanti. Kliff! Lasciamo stare, non ne vale la pena. Fermati. Vieni avanti, se hai coraggio. Non uscirai vivo da qui. Te lo ripeto: abbassa la testa e obbedisci.",
+                                 "previews":  [
+                                                  {
+                                                      "preview_index":  1,
+                                                      "generated_voice_id":  "FvXC9BgWBqUFZRxAq0Xj",
+                                                      "duration_secs":  15.570833333333333,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_105442/mp3/02_unique_shane_Shane_preview1.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/02_unique_shane_Shane_preview1.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  2,
+                                                      "generated_voice_id":  "uZidUikYYVKdVi00KzWq",
+                                                      "duration_secs":  15.0745,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_105442/mp3/02_unique_shane_Shane_preview2.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/02_unique_shane_Shane_preview2.wav"
+                                                  },
+                                                  {
+                                                      "preview_index":  3,
+                                                      "generated_voice_id":  "2QMeInhu4EEue1re1V9R",
+                                                      "duration_secs":  17.321041666666666,
+                                                      "mp3":  "08_elevenlabs_cast/previews/20260528_105442/mp3/02_unique_shane_Shane_preview3.mp3",
+                                                      "wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/02_unique_shane_Shane_preview3.wav"
+                                                  }
+                                              ]
+                             }
+                         ],
+    "selected_choices":  [
+                             {
+                                 "source":  "08_elevenlabs_cast/previews/20260528_105442/selected_voice_choices_old_provider_cleanup.csv",
+                                 "voice_name":  "CDIT Shane",
+                                 "selected_preview_index":  "2",
+                                 "create":  "yes",
+                                 "notes":  null,
+                                 "voice_description":  "selected for old provider cleanup dedicated voice pass"
+                             }
+                         ],
+    "created_voice_history":  [
+                                  {
+                                      "source":  "08_elevenlabs_cast/previews/20260528_105442/created_voices/20260528_105645/created_voices.csv",
+                                      "voice_name":  "CDIT Shane",
+                                      "created_voice_id":  "uZidUikYYVKdVi00KzWq",
+                                      "generated_voice_id":  "uZidUikYYVKdVi00KzWq",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/02_unique_shane_Shane_preview2.wav",
+                                      "notes":  null
+                                  },
+                                  {
+                                      "source":  "24_old_provider_cleanup/20260528_ross_shane_silvan_whitebear/combined_created_voices_with_cleanup_dedicated_20260528.csv",
+                                      "voice_name":  "CDIT Shane",
+                                      "created_voice_id":  "uZidUikYYVKdVi00KzWq",
+                                      "generated_voice_id":  "uZidUikYYVKdVi00KzWq",
+                                      "voice_id":  null,
+                                      "chosen_wav":  "08_elevenlabs_cast/previews/20260528_105442/wav/02_unique_shane_Shane_preview2.wav",
+                                      "notes":  null
+                                  }
+                              ],
+    "folder":  "unique-shane",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

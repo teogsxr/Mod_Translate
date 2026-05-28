@@ -1,0 +1,44 @@
+{
+    "id":  "unique_shop_meat",
+    "display_name":  "unique shop meat",
+    "type":  "",
+    "role":  "",
+    "status":  "draft",
+    "current_voice_name":  "CDIT unique shop meat",
+    "current_voice_id":  "",
+    "current_prompt":  "Italian butcher voice, robust and direct, a little coarse but friendly when selling. Clear Italian, no English accent, no comic exaggeration.",
+    "current_preview_script":  "Su, almeno dai un\u0027occhiata alla carne. Non voglio sottrarti del denaro, prendi e basta. Presto! La mia carne va a male! Qualcuno mi dia una mano, cazzo! Qualcuno mi liberi!",
+    "current_prompt_source":  "13_pilots/elevenlabs_first_city_extra_20260527/required_voice_profiles.csv",
+    "line_count":  "80",
+    "known_chars":  "3938",
+    "notes":  [
+
+              ],
+    "planning_records":  [
+
+                         ],
+    "profile_records":  [
+                            {
+                                "source":  "13_pilots/elevenlabs_first_city_extra_20260527/required_voice_profiles.csv",
+                                "voice_name":  "CDIT unique shop meat",
+                                "line_count":  "80",
+                                "chars":  "3938",
+                                "prompt":  "Italian butcher voice, robust and direct, a little coarse but friendly when selling. Clear Italian, no English accent, no comic exaggeration.",
+                                "sample":  "Su, almeno dai un\u0027occhiata alla carne. Non voglio sottrarti del denaro, prendi e basta. Presto! La mia carne va a male! Qualcuno mi dia una mano, cazzo! Qualcuno mi liberi!",
+                                "created_voice_id":  "",
+                                "notes":  ""
+                            }
+                        ],
+    "preview_attempts":  [
+
+                         ],
+    "selected_choices":  [
+
+                         ],
+    "created_voice_history":  [
+
+                              ],
+    "folder":  "unique-shop-meat",
+    "generated_at":  "2026-05-28",
+    "public_safety_note":  "No API keys are stored here. Voice IDs are historical identifiers only, not credentials."
+}

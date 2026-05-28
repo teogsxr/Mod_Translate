@@ -6,7 +6,7 @@ Questa cartella contiene solo anteprime audio di sviluppo. Non fanno parte della
 
 - [`v0.4-work-in-progress/`](v0.4-work-in-progress/) - esempi della prossima versione `0.4`, con sample MP3 per i personaggi gia disponibili.
 
-Apri il README dentro `v0.4-work-in-progress` e usa i link `Apri audio` per entrare nella pagina GitHub del singolo MP3.
+Apri il README dentro `v0.4-work-in-progress` e usa i link `Ascolta` per aprire direttamente gli MP3 dal browser.
 
 Per segnalare una voce da correggere, usa il template [Feedback voce / audio](https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml).
 

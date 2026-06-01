@@ -1,5 +1,12 @@
 # Changelog
 
+## Work in progress - 0.5
+
+- Avviata una pipeline piu conservativa e professionale per la ricostruzione audio: confronto con audio originale, timing, pause, respiri, loudness, fade e movimenti di distanza prima di rigenerare.
+- In recupero le righe ancora in inglese o rimaste fuori dalla `0.4`, inclusi avvisi di taglia, volantini, testi letti e dialoghi secondari.
+- Aggiunta protezione concettuale per non sovrascrivere automaticamente vocalizzazioni, urli brevi o asset premium quando e' meglio mantenerli o ripararli.
+- Obiettivo `0.5`: aumentare la copertura reale e ridurre i buchi, lasciando il polish artistico fine come passata progressiva per personaggi e scene importanti.
+
 ## 0.4-beta-20260528
 
 - Pubblicato pacchetto `0.4` con 51.461 WEM italiani.

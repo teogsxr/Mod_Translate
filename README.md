@@ -28,6 +28,7 @@ Ci sono oltre 51.000 linee audio: feedback precisi e contributi vocali aiutano a
 
 - [Pagina Nexus Mods](https://www.nexusmods.com/crimsondesert/mods/2741)
 - [Download GitHub Releases](https://github.com/teogsxr/Mod_Translate/releases)
+- [Aggiornamento sviluppo v0.5](community/UPDATE_2026-06-01.md)
 - [Player anteprime audio v0.4](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/#samples)
 - [Video gameplay preview v0.4](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/#video-preview)
 - [Feedback voce / audio](https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml)
@@ -39,12 +40,18 @@ Ci sono oltre 51.000 linee audio: feedback precisi e contributi vocali aiutano a
 | Voce | Stato |
 | --- | --- |
 | Release pubblica corrente | `0.4-beta-20260528` |
-| Prossima release | `0.5`, recupero massivo delle righe senza testo e altro polish |
+| Prossima release | `0.5`, recupero righe ancora inglesi, pipeline timing/loudness e polish progressivo |
 | File voce italiani inclusi | 51.461 WEM |
 | Package modificato | `0006` |
 | Ultima verifica locale | 28/05/2026 |
 | Versione Steam verificata | buildid `23374070`, `CrimsonDesert.exe` `1.0.0.1492` |
 | Ultimo aggiornamento Steam rilevato | 24/05/2026 11:09 +02:00 |
+
+## Sviluppo v0.5 in corso
+
+La `0.5` non e' solo un altro giro di TTS. Sto aggiornando la pipeline per usare l'audio originale come riferimento tecnico e artistico: durata, pause, respiri, silenzi, picchi di volume, fade, voci lontane e parti non linguistiche vengono analizzati prima di decidere se tenere, riparare, ricostruire o rigenerare una battuta.
+
+In parallelo sto recuperando le righe ancora in inglese o rimaste fuori dalla `0.4`, inclusi volantini, avvisi di taglia, dialoghi secondari e altre linee ad alta visibilita'. L'obiettivo della `0.5` e' aumentare la copertura reale senza peggiorare le scene gia accettabili: prima si chiudono i buchi, poi si rifiniscono voce, accento ed emozione personaggio per personaggio.
 
 ## Compatibilità
 

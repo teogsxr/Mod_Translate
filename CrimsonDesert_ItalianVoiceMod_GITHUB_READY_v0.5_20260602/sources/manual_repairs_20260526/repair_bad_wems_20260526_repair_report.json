@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-05-26T06:46:37+00:00",
+  "patched": [
+    {
+      "path": "sound/nhm_adult_citizen_2_aidialogstringinfogroup_criminal_02903.wem",
+      "method": "tts_rebuild",
+      "text": "Aah...",
+      "wem": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\repair_bad_wems_20260526\\wem\\nhm_adult_citizen_2_aidialogstringinfogroup_criminal_02903.wem",
+      "size": 10034,
+      "sha256": "23144915b722b3b06598e29713cc38bfb057fe797d24ef0195d346d18cac17e2"
+    },
+    {
+      "path": "sound/nhm_adult_citizen_3_questdialog_hello_00891.wem",
+      "method": "restore_from_v01",
+      "text": "Sono andato a pescare nelle Colline orientali e ne ho preso uno grande quanto il mio avambraccio!",
+      "wem": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\repair_bad_wems_20260526\\wem\\nhm_adult_citizen_3_questdialog_hello_00891.wem",
+      "size": 49758,
+      "sha256": "ebce396f4a203adb871a51306e5aeef6308fabfc12804016fb6d2adc1d6054e6"
+    }
+  ],
+  "before": {
+    "sound/nhm_adult_citizen_2_aidialogstringinfogroup_criminal_02903.wem": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\repair_bad_wems_20260526\\before_wem\\nhm_adult_citizen_2_aidialogstringinfogroup_criminal_02903.wem",
+    "sound/nhm_adult_citizen_3_questdialog_hello_00891.wem": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\repair_bad_wems_20260526\\before_wem\\nhm_adult_citizen_3_questdialog_hello_00891.wem",
+    "sound/nhm_adult_citizen_2_aidialogstringinfogroup_criminal_00001.wem": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\repair_bad_wems_20260526\\before_wem\\nhm_adult_citizen_2_aidialogstringinfogroup_criminal_00001.wem"
+  }
+}

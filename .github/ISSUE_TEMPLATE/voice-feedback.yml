@@ -1,14 +1,14 @@
 name: Feedback voce / audio
-description: Segnala una voce da correggere, una frase sbagliata o un problema di qualita audio
+description: Segnala una voce da correggere, una frase sbagliata, un sottotitolo non allineato o un problema di qualita audio
 title: "[Audio feedback] "
 labels: ["voice-feedback"]
 body:
   - type: markdown
     attributes:
       value: |
-        Grazie per il feedback. Questo modulo serve per raccogliere segnalazioni abbastanza precise da poterle trasformare in fix.
+        Grazie per il feedback. Questo modulo serve per raccogliere segnalazioni abbastanza precise da trasformare in fix tecnici.
 
-        Se puoi, indica sempre scena, personaggio e frase. Anche una descrizione breve ma concreta e utile.
+        Se puoi, indica sempre versione, scena, personaggio e frase. I feedback vengono letti, messi in una coda operativa e trasformati in una proposta di correzione. I fix vengono integrati solo dopo approvazione dell'autore della mod.
 
   - type: dropdown
     id: feedback_type
@@ -23,8 +23,11 @@ body:
         - Audio muto, rotto o distorto
         - Pronuncia sbagliata di nome/parola
         - Sottotitolo e audio non coincidono
+        - Frase rimasta in inglese
+        - Testo letto male da volantino / avviso / libro
         - Volume o sincronizzazione/lip sync
-        - Preview v0.4
+        - Regressione v0.5 rispetto alla v0.4
+        - Preview / sample
         - Altro
     validations:
       required: true
@@ -39,6 +42,34 @@ body:
         - Molto evidente ma giocabile
         - Fastidioso, da rifinire
         - Parere o proposta
+    validations:
+      required: true
+
+  - type: dropdown
+    id: version
+    attributes:
+      label: Versione mod usata
+      description: Se non sei sicuro, scegli "Non so".
+      options:
+        - v0.5 beta
+        - v0.4 pubblica
+        - v0.3.1 pubblica
+        - Preview / sample
+        - Build di test ricevuta separatamente
+        - Non so
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Versione del gioco / store
+      options:
+        - Steam
+        - Epic
+        - GOG
+        - Xbox App / Microsoft Store
+        - Altro / non so
     validations:
       required: true
 
@@ -64,8 +95,8 @@ body:
     id: current_audio
     attributes:
       label: Cosa si sente ora?
-      description: Scrivi cosa dice o come suona adesso. Se e una pronuncia sbagliata, scrivila come la senti.
-      placeholder: "Esempio: dice 'calmati' con accento sbagliato, tipo calma-ti / sembra troppo veloce / sembra un'altra persona."
+      description: Scrivi cosa dice o come suona adesso. Se e' una pronuncia sbagliata, scrivila come la senti.
+      placeholder: "Esempio: dice 'calmati' con accento sbagliato / sembra troppo veloce / sembra un'altra persona."
     validations:
       required: true
 
@@ -85,6 +116,13 @@ body:
       description: Copia la frase se riesci. Serve a trovare la riga esatta.
       placeholder: "Esempio: Dai, adesso calmati!"
 
+  - type: textarea
+    id: subtitle_mismatch
+    attributes:
+      label: Se riguarda sottotitoli, cosa vedi a schermo?
+      description: Scrivi il sottotitolo esatto e cosa dovrebbe diventare. Lascia vuoto se non riguarda i sottotitoli.
+      placeholder: "Esempio: sottotitolo 'Jian e morto', audio dice 'Gin e caduto'."
+
   - type: input
     id: file_or_preview
     attributes:
@@ -99,32 +137,6 @@ body:
       description: Cosa sta succedendo nel gioco in quel momento? Combattimento, dialogo calmo, morte di un personaggio, battuta ironica, ecc.
       placeholder: "Esempio: Kliff sta correndo verso Oongka durante il combattimento e dovrebbe urlare."
 
-  - type: dropdown
-    id: version
-    attributes:
-      label: Versione usata
-      description: Se non sei sicuro, scegli "Non so".
-      options:
-        - v0.3.1 pubblica
-        - Preview / sample v0.4
-        - Build di test ricevuta separatamente
-        - Non so
-    validations:
-      required: true
-
-  - type: dropdown
-    id: platform
-    attributes:
-      label: Versione del gioco / store
-      options:
-        - Steam
-        - Epic
-        - GOG
-        - Xbox App / Microsoft Store
-        - Altro / non so
-    validations:
-      required: true
-
   - type: textarea
     id: proposed_voice
     attributes:
@@ -137,4 +149,15 @@ body:
     attributes:
       label: Riassunto rapido per la correzione
       description: Facoltativo, ma utilissimo se vuoi rendere il feedback subito lavorabile.
-      placeholder: "Personaggio: Kliff. Scena: prologo. Problema: frase troppo veloce e accento sbagliato su calmati. Fix desiderato: rifare con tono calmo ma urgente, stessa frase dei sottotitoli."
+      placeholder: "Personaggio: Kliff. Scena: prologo. Problema: frase troppo veloce e accento sbagliato. Fix desiderato: rifare con tono calmo ma urgente."
+
+  - type: dropdown
+    id: fix_permission_note
+    attributes:
+      label: Uso del feedback
+      description: Il feedback puo essere trasformato in una proposta tecnica di fix.
+      options:
+        - Va bene usarlo per pianificare un fix nella prossima patch
+        - Preferisco solo segnalarlo, senza priorita
+    validations:
+      required: true

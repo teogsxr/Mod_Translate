@@ -3,63 +3,82 @@
 # Crimson Desert Italian Voice Mod
 
 ![Status](https://img.shields.io/badge/status-beta-orange)
-![Current version](https://img.shields.io/badge/current-0.4--beta--20260528-blue)
+![Current version](https://img.shields.io/badge/current-0.5--beta--20260602-blue)
 ![Steam tested](https://img.shields.io/badge/Steam-tested-brightgreen)
 ![Non commercial](https://img.shields.io/badge/non--commercial-free-lightgrey)
 
 Doppiaggio italiano AI fan-made per **Crimson Desert**.
 
-La mod sostituisce il package voce `0006` con audio italiano generato tramite AI. La versione pubblica attuale e' la `0.4-beta-20260528`: copre il gioco in modo ampio e giocabile, aggiunge una passata qualitativa sulle prime parti e include 220 righe recuperate che prima rischiavano di restare fuori.
+La mod sostituisce il package voce `0006` con audio italiano generato e ricostruito tramite una pipeline ibrida AI/local/cloud. La versione `0.5-beta-20260602` mantiene la copertura ampia della `0.4` e integra il delta tecnico piu recente: 700 file WEM cambiati rispetto alla `0.4`, inclusi 223 file committati nel gioco il 02/06/2026 con WEM Vorbis, repack e verifica SHA.
 
 > Progetto fan-made, gratuito, non ufficiale e non affiliato a Pearl Abyss. Non vendere, non caricare dietro paywall e non monetizzare il pacchetto.
-
-## Preview video v0.4
-
-La `0.4` non e' esente da difetti, ma i video mostrano il livello attuale della localizzazione: il gioco e' giocabile in italiano e continuera' a migliorare con correzioni su accento, ritmo, emozioni, volume e frasi problematiche.
-
-| Preview | Cosa mostra | Guarda |
-| --- | --- | --- |
-| [![Preview v0.4 parte 1](docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-1.jpg)](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-breve.html) | Primissima parte del gioco, taglio breve. | [Guarda il video breve](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-breve.html) |
-| [![Preview v0.4 parte 2](docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-2.jpg)](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-lungo.html) | Primo blocco piu' lungo, fino alla scena in cui Myurdin getta Kliff nel fiume. | [Guarda il video lungo](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-lungo.html) |
-
-Ci sono oltre 51.000 linee audio: feedback precisi e contributi vocali aiutano ad arrivare molto piu' velocemente a una versione rifinita.
 
 ## Link rapidi
 
 - [Pagina Nexus Mods](https://www.nexusmods.com/crimsondesert/mods/2741)
 - [Download GitHub Releases](https://github.com/teogsxr/Mod_Translate/releases)
-- [Aggiornamento sviluppo v0.5](community/UPDATE_2026-06-01.md)
-- [Player anteprime audio v0.4](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/#samples)
-- [Video gameplay preview v0.4](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/#video-preview)
+- [Aggiornamento sviluppo v0.5](community/UPDATE_2026-06-02.md)
 - [Feedback voce / audio](https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml)
 - [Archivio template voci e prompt ElevenLabs](community/voice-templates/)
 - [Tool diagnostica Xbox App](tools/xbox-compatibility-diagnostic/)
+- [Player anteprime audio/video v0.4](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/)
 
 ## Stato del progetto
 
 | Voce | Stato |
 | --- | --- |
-| Release pubblica corrente | `0.4-beta-20260528` |
-| Prossima release | `0.5`, recupero righe ancora inglesi, pipeline timing/loudness e polish progressivo |
-| File voce italiani inclusi | 51.461 WEM |
-| Package modificato | `0006` |
-| Ultima verifica locale | 28/05/2026 |
+| Release corrente | `0.5-beta-20260602` |
+| File voce italiani nel payload | 51.461 WEM |
+| Package voce modificato | `0006` |
+| Piattaforma test principale | Steam |
 | Versione Steam verificata | buildid `23374070`, `CrimsonDesert.exe` `1.0.0.1492` |
-| Ultimo aggiornamento Steam rilevato | 24/05/2026 11:09 +02:00 |
+| Pacchetto GitHub 0.5 | preparato |
+| Pacchetto Nexus-safe 0.5 | preparato, non ancora caricato |
+| Xbox App / Microsoft Store | non garantita, in attesa di test/log |
 
-## Sviluppo v0.5 in corso
+## Delta release
 
-La `0.5` non e' solo un altro giro di TTS. Sto aggiornando la pipeline per usare l'audio originale come riferimento tecnico e artistico: durata, pause, respiri, silenzi, picchi di volume, fade, voci lontane e parti non linguistiche vengono analizzati prima di decidere se tenere, riparare, ricostruire o rigenerare una battuta.
+| Confronto | Risultato |
+| --- | ---: |
+| Backup originale inglese `0006` | 55.586 file |
+| Payload v0.4 | 51.461 WEM italiani |
+| Payload v0.5 | 51.461 WEM italiani |
+| Backup originale -> v0.4 | 51.461 WEM diversi |
+| v0.4 -> v0.5 | 700 WEM cambiati |
+| Backup originale -> v0.5 | 51.461 WEM diversi |
+| Commit tecnico 02/06/2026 | 223 WEM patchati e verificati SHA |
 
-In parallelo sto recuperando le righe ancora in inglese o rimaste fuori dalla `0.4`, inclusi volantini, avvisi di taglia, dialoghi secondari e altre linee ad alta visibilita'. L'obiettivo della `0.5` e' aumentare la copertura reale senza peggiorare le scene gia accettabili: prima si chiudono i buchi, poi si rifiniscono voce, accento ed emozione personaggio per personaggio.
+La `0.5` non aggiunge nuovi path al payload rispetto alla `0.4`: aggiorna 700 audio gia presenti. Di questi, 223 sono stati committati nel gioco il 02/06/2026; gli altri 477 includono modifiche integrate nel lavoro precedente, compresi volantini, avvisi/testi letti e fix tecnici gia presenti nello stato live usato per creare il pacchetto.
 
-## Compatibilità
+## Nuovo approccio 0.5
+
+La `0.5` non tratta piu tutte le 51k linee come semplici frasi TTS. La pipeline decide caso per caso se:
+
+- tenere l'audio esistente;
+- mantenere l'originale per vocalizzazioni non linguistiche;
+- riparare loudness, tail, fade o volume;
+- ricostruire timing, pause e respiri;
+- rigenerare con template voce corretto;
+- segnare una riga per fix sottotitoli se il testo audio e' stato adattato.
+
+Le priorita sono: voce corretta, pronuncia, emozione, volume coerente, assenza di effetto radio, finali vocalici non troncati e testo coerente con la scena. Il timing viene mantenuto il piu possibile, ma non deve peggiorare recitazione e comprensibilita.
+
+## Preview video v0.4
+
+I video v0.4 restano utili per capire la direzione generale della localizzazione. La `0.5` migliora la pipeline e aggiorna il payload, ma resta una beta in sviluppo.
+
+| Preview | Cosa mostra | Guarda |
+| --- | --- | --- |
+| [![Preview v0.4 parte 1](docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-1.jpg)](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-breve.html) | Primissima parte del gioco, taglio breve. | [Guarda il video breve](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-breve.html) |
+| [![Preview v0.4 parte 2](docs/voice-previews/v0.4/video/crimson-desert-it-v04-preview-part-2.jpg)](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-lungo.html) | Primo blocco piu lungo, fino alla scena in cui Myurdin getta Kliff nel fiume. | [Guarda il video lungo](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/video-lungo.html) |
+
+## Compatibilita
 
 | Piattaforma | Stato |
 | --- | --- |
 | Steam | Supportata e testata |
 | Epic / GOG / altri store | Non ancora verificati |
-| Xbox App / Microsoft Store | Bloccata per sicurezza in attesa di log |
+| Xbox App / Microsoft Store | Bloccata/non garantita finche non arrivano test affidabili |
 
 Se usi una versione non Steam, prova solo se sai ripristinare i file del gioco e apri una Issue con piattaforma, versione e log. Per Xbox App/Microsoft Store usa il tool in `tools/xbox-compatibility-diagnostic/`: non installa la mod e non modifica il gioco.
 
@@ -67,14 +86,14 @@ Se usi una versione non Steam, prova solo se sai ripristinare i file del gioco e
 
 Scarica il pacchetto dalla sezione **Releases** o dalla pagina Nexus Mods.
 
-1. Scarica `CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.4_20260528.zip`.
+1. Scarica lo zip della release piu recente.
 2. Estrai lo zip in una cartella normale del PC.
 3. Avvia `CONTROLLA_PRIMA.cmd`.
 4. Avvia `INSTALLA_MOD_VOCI_ITALIANE.cmd`.
 
 Il pacchetto GitHub include Python portatile in `installer/python`, quindi non richiede Python installato nel sistema.
 
-Nota upgrade da `0.3` / `0.3.1`: prima di installare la `0.4` e' consigliato ripristinare o cancellare gli archivi `0006` gia patchati, poi farli riscaricare/verificare da Steam. La `0.4` lascia volutamente alcune urla e battute brevi nella voce originale inglese perche risultano piu naturali: partire da una base pulita evita che restino vecchie voci AI della `0.3` in quei punti.
+Nota upgrade: se arrivi da una versione precedente e senti voci vecchie in punti che dovrebbero essere originali o aggiornati, ripristina/verifica da Steam gli archivi `0006` prima di reinstallare. Alcune righe vengono lasciate originali apposta quando l'originale funziona meglio di una generazione AI.
 
 ## Versioning
 
@@ -82,69 +101,59 @@ La repository `main` contiene documentazione, strumenti, anteprime, template voc
 
 I pacchetti installabili vengono pubblicati come asset nelle [GitHub Releases](https://github.com/teogsxr/Mod_Translate/releases) e su Nexus Mods. Ogni release usa:
 
-- tag GitHub: `vMAJOR.MINOR-label-YYYYMMDD`, per esempio `v0.4-beta-20260528`;
+- tag GitHub: `vMAJOR.MINOR-label-YYYYMMDD`, per esempio `v0.5-beta-20260602`;
 - zip GitHub: `CrimsonDesert_ItalianVoiceMod_GITHUB_READY_vMAJOR.MINOR_YYYYMMDD.zip`;
 - zip Nexus: `CrimsonDesert_ItalianVoiceMod_NEXUS_SAFE_vMAJOR.MINOR_YYYYMMDD.zip`.
 
-La cartella `CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.4_20260528` resta visibile nella root della repository per chi vuole navigare i file senza scaricare lo zip. Per l'installazione normale resta consigliato usare lo zip nella sezione Releases o su Nexus Mods.
+## Qualita e limiti
 
-Le cartelle vecchie restano in `legacy/packages/` e servono solo come storico.
-
-## Qualità e limiti
-
-Questa è una beta AI ampia e giocabile, non un doppiaggio professionale completo.
-
-Le prime versioni sono state generate in massa per ottenere rapidamente una base italiana. Alcune battute possono ancora avere:
+Questa e' una beta AI ampia e giocabile, non un doppiaggio professionale completo. Alcune battute possono ancora avere:
 
 - accento inglese o straniero;
 - ritmo non perfetto o lipsync impreciso;
 - enfasi troppo piatta o troppo teatrale;
 - volume non sempre uniforme;
 - pronunce da correggere;
+- sottotitoli non ancora riallineati dove il testo audio e' stato adattato;
 - personaggi secondari con voci non ancora definitive.
 
-La versione `0.4` migliora progressivamente le parti piu' visibili: prologo, personaggi principali, antagonisti, mercanti, guardie e scene emotive. Il recupero massivo delle righe senza testo e' gia preparato ma viene spostato alla `0.5`, per non pubblicare una passata troppo automatica senza controllo.
+La direzione 0.6 sara personaggio per personaggio: template voce/emozione corretti, generazione controllata, QA automatica, fix sottotitoli dove serve e test in gioco.
 
-## Anteprime audio v0.4
+## Feedback che posso usare per correggere
 
-Le anteprime pubblicate non sono file da installare nel gioco: servono per far ascoltare e vedere la direzione della nuova passata audio e raccogliere feedback su tono, accento, emozione e coerenza dei personaggi.
+I feedback piu utili sono concreti e verificabili. Apri una Issue con il template [Feedback voce / audio](https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml) e indica:
 
-- [Apri il player audio/video v0.4](https://teogsxr.github.io/Mod_Translate/voice-previews/v0.4/)
-- [Vai alla cartella delle anteprime](community/voice-previews/v0.4-work-in-progress#sample-per-personaggio)
-
-## Contribuire con feedback
-
-I feedback più utili sono concreti e verificabili. Quando segnali un problema, se possibile indica:
-
+- versione mod usata;
+- piattaforma/store;
 - personaggio;
 - scena o quest;
-- frase pronunciata;
-- cosa non funziona, per esempio accento, parola sbagliata, voce troppo diversa, finale troncato, volume, ritmo o emozione;
-- piattaforma usata, se riguarda compatibilità.
+- frase pronunciata o sottotitolo a schermo;
+- cosa non funziona: pronuncia, voce, volume, emozione, finale troncato, frase inglese rimasta, sottotitolo non allineato;
+- come dovrebbe suonare.
 
-Apri una Issue con il template [Feedback voce / audio](https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml).
+I feedback verranno raccolti in una coda operativa. Prima di applicare fix nel gioco, li trasformo in un piano tecnico e li approvo con l'autore della mod.
 
 ## Contribuire con voci ElevenLabs
 
-Puoi aiutare proponendo voci o prompt per personaggi specifici. I prompt già usati sono raccolti in [community/voice-templates](community/voice-templates/), così le voci possono essere ricreate anche se vengono cancellate da ElevenLabs.
+Puoi aiutare proponendo voci o prompt per personaggi specifici. I prompt gia usati sono raccolti in [community/voice-templates](community/voice-templates/), cosi le voci possono essere ricreate anche se vengono cancellate da ElevenLabs.
 
 Se proponi una voce, allega:
 
-- personaggio a cui è destinata;
+- personaggio a cui e' destinata;
 - prompt usato per crearla;
 - impostazioni principali, se le hai cambiate;
 - file audio di preview o link;
-- nota sul tono desiderato, per esempio protagonista avventuroso, anziano roco, antagonista profondo, soldato giovane, mercante o guardia.
+- nota sul tono desiderato.
 
 ## Nexus Mods
 
-La variante Nexus è più prudente rispetto a quella GitHub: non include Python portatile e richiede Python 3 installato sul PC. Questa scelta riduce falsi positivi antivirus e problemi di scansione del portale.
+La variante Nexus e' piu prudente rispetto a quella GitHub: non include Python portatile e richiede Python 3 installato sul PC. Questa scelta riduce falsi positivi antivirus e problemi di scansione del portale.
 
 Pagina Nexus: https://www.nexusmods.com/crimsondesert/mods/2741
 
 ## Supporto al progetto
 
-Il progetto resta gratuito e andrà avanti anche senza donazioni. Le eventuali donazioni vengono usate per acquistare crediti AI e migliorare più velocemente il pacchetto.
+Il progetto resta gratuito e andra avanti anche senza donazioni. Le eventuali donazioni vengono usate per acquistare crediti AI e migliorare piu velocemente il pacchetto.
 
 <p align="center">
   <a href="https://www.paypal.com/donate/?business=matteo.sai%40hotmail.it&currency_code=EUR" target="_blank" rel="noopener noreferrer">
@@ -154,4 +163,4 @@ Il progetto resta gratuito e andrà avanti anche senza donazioni. Le eventuali d
 
 ## Uso non commerciale
 
-Questa mod è gratuita e non a scopo di lucro. Gli audio sono generati con AI e derivano o sono condizionati dalle voci originali del gioco. Non vendere il pacchetto, non metterlo dietro paywall e non monetizzarlo.
+Questa mod e' gratuita e non a scopo di lucro. Gli audio sono generati con AI e derivano o sono condizionati dalle voci originali del gioco. Non vendere il pacchetto, non metterlo dietro paywall e non monetizzarlo.

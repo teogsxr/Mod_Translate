@@ -1,0 +1,8 @@
+Principali modifiche rilevanti:
+
+- config.py legge settings.json con utf-8-sig per evitare errori da BOM.
+- ui/tab_audio.py: Generate All + Patch e batch worker saltano i record gia completati.
+- utils/tts_patch_progress.py: aggiunto has_completed_record e gestione dei record force_regenerate_reason.
+- Batch audio limitato al package 0006, file WEM, con Text Dialogue esclusi.
+- Pulizia testo TTS per evitare lettura di tag tipo StaticInfo e markup.
+- Script di stato aggiornati per non contare Text Dialogue come mancanti.

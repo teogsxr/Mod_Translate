@@ -1,11 +1,25 @@
 # Changelog
 
-## Work in progress - 0.5
+## 0.5-beta-20260602
 
-- Avviata una pipeline piu conservativa e professionale per la ricostruzione audio: confronto con audio originale, timing, pause, respiri, loudness, fade e movimenti di distanza prima di rigenerare.
-- In recupero le righe ancora in inglese o rimaste fuori dalla `0.4`, inclusi avvisi di taglia, volantini, testi letti e dialoghi secondari.
-- Aggiunta protezione concettuale per non sovrascrivere automaticamente vocalizzazioni, urli brevi o asset premium quando e' meglio mantenerli o ripararli.
-- Obiettivo `0.5`: aumentare la copertura reale e ridurre i buchi, lasciando il polish artistico fine come passata progressiva per personaggi e scene importanti.
+- Preparato pacchetto GitHub `CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.5_20260602`.
+- Preparato pacchetto Nexus-safe `CrimsonDesert_ItalianVoiceMod_NEXUS_SAFE_v0.5_20260602` senza caricarlo.
+- Payload v0.5: 51.461 WEM italiani.
+- Delta reale rispetto alla v0.4: 700 WEM cambiati, 0 aggiunti, 0 rimossi.
+- Commit tecnico del 02/06/2026: 223 WEM patchati nel gioco, convertiti in WEM Vorbis, repackati e verificati SHA.
+- Il delta 0.5 include anche modifiche gia integrate nel lavoro del 01/06/2026, compresi volantini, avvisi/testi letti e altri fix tecnici.
+- Aggiunto confronto release:
+  - backup originale -> v0.4: 51.461 WEM diversi;
+  - v0.4 -> v0.5: 700 WEM cambiati;
+  - backup originale -> v0.5: 51.461 WEM diversi.
+- Aggiornato il metodo operativo: la pipeline ora usa quality gate su voce, pronuncia, emozione, volume, finali vocalici, effetto radio e coerenza testo prima di committare audio nel gioco.
+- Tracciate 35 righe con `subtitle_update_required` per riallineamento futuro tramite mapping Forge sicuro.
+
+## Work in progress - 0.6
+
+- Prossima fase: produzione personaggio per personaggio con template voce/emozione corretti.
+- I feedback utenti verranno raccolti come coda operativa, trasformati in piano tecnico e applicati solo dopo approvazione dell'autore della mod.
+- Le righe escluse dalla 0.5 per testo sospetto o candidato non verificabile restano in backlog, non vengono scartate.
 
 ## 0.4-beta-20260528
 
@@ -21,7 +35,7 @@
 - Aggiunto autodetect percorsi per Steam, Epic, GOG, XboxGames e percorsi manuali.
 - Aggiunto `DIAGNOSTICA_COMPATIBILITA.cmd` per creare report senza modificare il gioco.
 - Aggiunto dry-run compatibilita prima della patch.
-- Bloccata per sicurezza l'installazione su Xbox App/Microsoft Store: e stato segnalato errore all'avvio dopo patch e serve verificare gli archivi prima di dichiararla compatibile.
+- Bloccata per sicurezza l'installazione su Xbox App/Microsoft Store: e' stato segnalato errore all'avvio dopo patch e serve verificare gli archivi prima di dichiararla compatibile.
 - Aggiornate istruzioni GitHub/Nexus con matrice compatibilita store.
 
 ## Work in progress - revisione voci

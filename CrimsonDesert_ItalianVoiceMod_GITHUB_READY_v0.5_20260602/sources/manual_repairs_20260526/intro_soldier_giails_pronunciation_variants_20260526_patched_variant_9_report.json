@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-05-26T06:25:56+00:00",
+  "target": "sound/nhm_adult_soldier_8_intro_0310_npc_01_00023.wem",
+  "selected_variant": 9,
+  "display_text": "Giails...",
+  "synth_text": "Gia-ils...",
+  "wav": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\intro_soldier_giails_pronunciation_variants_20260526\\wav\\09_giails_split.wav",
+  "wav_stats": {
+    "duration": 1.19,
+    "rms": 0.05144920557663622,
+    "peak": 0.33819580078125,
+    "sample_rate": 24000,
+    "channels": 1
+  },
+  "fixed_wem": "C:\\Users\\matte\\Documents\\Codex\\2026-05-21\\ho-provato-a-installare-omnivoice-ma\\intro_soldier_giails_pronunciation_variants_20260526\\wem\\nhm_adult_soldier_8_intro_0310_npc_01_00023_variante_9_giails_split.wem",
+  "sha256": "1720eaeec5e9a081e2b631ce76a1307bd354951aa88d730b35e18568bdb7ca64",
+  "signature": "6afacd26e33db8535af5ded4be5693c1debbcafc57414574209774592deb751a"
+}

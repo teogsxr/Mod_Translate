@@ -1,0 +1,41 @@
+PySide6>=6.7.0
+PyOpenGL>=3.1.0
+# Native-C accelerator for PyOpenGL — wraps the hot per-call paths
+# in CPython extensions and removes the "OpenGL_accelerate module
+# loaded: No" line from the startup log. Wheels are available for
+# every shipping CPython including 3.14 (verified against
+# pyopengl_accelerate-3.1.10-cp314-cp314-win_amd64.whl). Without
+# it the app still runs — it just falls back to pure-Python
+# OpenGL bindings — but the Explorer's mesh-preview upload path
+# benefits noticeably from the accelerator.
+PyOpenGL_accelerate>=3.1.10
+lz4>=4.3.0
+cryptography>=42.0.0
+fonttools>=4.50.0
+openai>=1.60.0
+anthropic>=0.40.0
+google-genai>=1.5.0
+cohere>=5.13.0
+deepl>=1.17.0
+numpy>=1.26.0
+Pillow>=10.3.0
+chardet>=5.2.0
+
+# Optional but recommended — soft fallbacks exist in the code if
+# missing, so the app still runs without these. Listed here so the
+# default `pip install -r requirements.txt` flow gives users the
+# best experience.
+#
+# psutil:    accurate "available memory" check before mesh repacks.
+#            Falls back to Windows GlobalMemoryStatusEx if missing.
+# edge_tts:  free Microsoft Edge cloud TTS in the Audio tab.
+#            The TTS provider list shows / hides it based on
+#            whether this import succeeds.
+psutil>=5.9.0
+edge-tts>=6.1.0
+
+# Optional, NOT installed by default — local Whisper STT downloads
+# multi-GB model weights on first use. Uncomment if you want
+# offline speech-to-text in the Audio tab. Cloud STT (OpenAI
+# whisper-1, gpt-4o-transcribe) works without it.
+# openai-whisper>=20231117

@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+
+# Build outputs
+build/
+dist/
+env
+
+# Generated exports
+exports/
+export_test/
+CrimsonForgeOverlay/
+
+# Local test workshop — never committed.
+# Holds research notes, scratch tools, and UI prototypes that
+# experiment with the import / patch pipeline outside the main app.
+test_only/
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+
+# IDE / editor / agent state
+.claude/
+.idea/
+.vscode/
+
+# Reverse-engineering scratch dumps (generated, kept locally for inspection
+# but not source-of-truth artefacts the repo needs to track)
+double_23.csv
+hits.csv
+tools/probe_log.csv
+tools/probe_snapshot.txt
+tools/probe_v2_dump.txt
+tools/probe_v2_log.csv
+tools/probe_v3_hits.txt
+tools/probe_v3_log.csv
+tools/dumps/
+tools/ce_state.json
+tools/flame_knight/
+tools/ogre_file_hits/
+tools/boss_ogre_rows_in_characterinfo.txt
+tools/characterinfo_pabgh_first200.txt
+tools/difficulty_*.txt
+tools/final_ogre_diagnosis.txt
+tools/ogre_*.txt
+tools/ogre_*.csv
+tools/ogre_*.md
+tools/save_difficulty_dump.txt
+tools/schema_hints.txt
+tools/sibling_*_row_dump.csv
+tools/sibling_*_row_dump.txt
+tools/FINAL_REPORT.md
+tools/FLAME_KNIGHT_DEEP_TRACE.md
+tools/MAP_TOOLTIP_UI_TRACE.md
+tools/OGRE_DEEP_TRACE.md

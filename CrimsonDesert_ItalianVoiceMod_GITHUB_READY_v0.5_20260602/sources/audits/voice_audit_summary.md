@@ -1,0 +1,83 @@
+# Crimson Desert Voice Audit 2026-05-26
+
+- Manifest entries: 51,246
+- Payload WEM files: 51,246
+- Hard errors: 0
+- Placeholder/static text still in IT overrides: 297
+- Very small WEM < 2500 bytes: 19
+- Small WEM 2500-5000 bytes: 210
+
+## Top Categories
+- Scene Dialogue: 8,320
+- AI Ambient (Group): 8,195
+- Quest Side Content: 5,452
+- Quest (Pywel): 3,942
+- Quest Main Dialogue: 3,780
+- Quest Lines: 3,147
+- AI Criminal (Group): 3,116
+- Quest Greeting: 2,393
+- Node Scene: 2,344
+- AI Blame: 1,481
+- AI Bump: 1,480
+- AI Cheerful: 1,420
+- Other Dialogue: 1,410
+- Memory Scene: 1,354
+- Quest Dialogue: 884
+- AI Callback: 737
+- AI Ambient: 330
+- AI Trading: 327
+- AI Friendly: 312
+- Cutscene: 187
+- AI Dev/Debug: 164
+- Quest Day 2: 151
+- One-Time Quest: 123
+- AI Criminal: 117
+- Quest Node: 71
+
+## Top Speakers / Groups
+- nhm_adult_soldier_1: 730
+- nhm_adult_citizen_5: 698
+- nhm_adult_citizen_4: 678
+- nhm_adult_citizen_2: 675
+- nhm_adult_soldier_3: 652
+- nhm_adult_citizen_8: 618
+- nhm_adult_citizen_1: 608
+- nhm_adult_citizen_9: 606
+- nhm_adult_soldier_5: 598
+- nhm_adult_citizen_7: 594
+- nhm_adult_citizen_3: 591
+- nhm_adult_soldier_6: 584
+- nhm_adult_soldier_2: 573
+- nhm_adult_citizen_6: 572
+- nhm_adult_soldier_8: 547
+- nhm_adult_soldier_9: 535
+- nhm_adult_soldier_10: 516
+- nhm_adult_soldier_4: 506
+- nhm_adult_soldier_7: 491
+- nhm_adult_citizen_10: 487
+- nom_adult_5: 473
+- nom_adult_1: 429
+- nom_adult_3: 407
+- nom_adult_2: 379
+- ntm_adult_5: 342
+- ntm_adult_1: 338
+- nhw_adult_citizen_5: 330
+- ntm_adult_6: 321
+- ndm_adult_1: 318
+- ndm_adult_2: 315
+- nhw_adult_soldier_2: 315
+- ntm_adult_7: 314
+- ngm_adult_5: 310
+- nhw_adult_citizen_4: 304
+- nhw_adult_citizen_8: 302
+- ntm_adult_2: 300
+- nhw_adult_soldier_3: 294
+- ngm_adult_3: 293
+- nhw_adult_citizen_3: 293
+- nom_adult_4: 292
+
+## Review Notes
+- No missing files, hash mismatches, invalid WEM headers, missing completed records, or force-regenerate records were found.
+- Small files are not automatically wrong, but they are the first queue to sample for silent/near-silent lines.
+- Speakers spanning many categories are map/context groups, not necessarily bugs; they help locate game areas.
+- This audit is structural/heuristic. It cannot understand acting quality or accent without listening/ASR pass.

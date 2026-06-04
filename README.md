@@ -3,13 +3,15 @@
 # Crimson Desert Italian Voice Mod
 
 ![Status](https://img.shields.io/badge/status-beta-orange)
-![Current version](https://img.shields.io/badge/current-0.5--beta--20260602-blue)
+![Current version](https://img.shields.io/badge/current-0.5--beta-blue)
 ![Steam tested](https://img.shields.io/badge/Steam-tested-brightgreen)
 ![Non commercial](https://img.shields.io/badge/non--commercial-free-lightgrey)
 
 Doppiaggio italiano AI fan-made per **Crimson Desert**.
 
-La mod sostituisce il package voce `0006` con audio italiano generato e ricostruito tramite una pipeline ibrida AI/local/cloud. La versione `0.5-beta-20260602` mantiene la copertura ampia della `0.4` e integra il delta tecnico piu recente: 700 file WEM cambiati rispetto alla `0.4`, inclusi 223 file committati nel gioco il 02/06/2026 con WEM Vorbis, repack e verifica SHA.
+La mod sostituisce il package voce `0006` con audio italiano generato e ricostruito tramite una pipeline ibrida AI/local/cloud. La `0.5` corrente e' una base giocabile ripulita: mantiene la copertura ampia della `0.4`, recupera le versioni precedenti dove suonavano meglio e usa i fix `0.5` solo nei punti in cui migliorano davvero voce, urli, timing o coerenza.
+
+La priorita di questa build non e' promettere un doppiaggio professionale completo su 51k+ linee, ma dare al gioco una localizzazione italiana ascoltabile e stabile, con personaggi principali e scene visibili trattati con piu attenzione.
 
 > Progetto fan-made, gratuito, non ufficiale e non affiliato a Pearl Abyss. Non vendere, non caricare dietro paywall e non monetizzare il pacchetto.
 
@@ -17,7 +19,7 @@ La mod sostituisce il package voce `0006` con audio italiano generato e ricostru
 
 - [Pagina Nexus Mods](https://www.nexusmods.com/crimsondesert/mods/2741)
 - [Download GitHub Releases](https://github.com/teogsxr/Mod_Translate/releases)
-- [Aggiornamento sviluppo v0.5](community/UPDATE_2026-06-02.md)
+- [Aggiornamento sviluppo v0.5](community/UPDATE_2026-06-04.md)
 - [Feedback voce / audio](https://github.com/teogsxr/Mod_Translate/issues/new?template=voice-feedback.yml)
 - [Archivio template voci e prompt ElevenLabs](community/voice-templates/)
 - [Tool diagnostica Xbox App](tools/xbox-compatibility-diagnostic/)
@@ -27,13 +29,13 @@ La mod sostituisce il package voce `0006` con audio italiano generato e ricostru
 
 | Voce | Stato |
 | --- | --- |
-| Release corrente | `0.5-beta-20260602` |
+| Release corrente | `0.5-beta` |
 | File voce italiani nel payload | 51.461 WEM |
 | Package voce modificato | `0006` |
 | Piattaforma test principale | Steam |
 | Versione Steam verificata | buildid `23374070`, `CrimsonDesert.exe` `1.0.0.1492` |
-| Pacchetto GitHub 0.5 | preparato |
-| Pacchetto Nexus-safe 0.5 | preparato, non ancora caricato |
+| Pacchetto GitHub 0.5 | presente nella repository |
+| Pacchetto Nexus-safe 0.5 | preparato separatamente |
 | Xbox App / Microsoft Store | non garantita, in attesa di test/log |
 
 ## Delta release
@@ -49,6 +51,23 @@ La mod sostituisce il package voce `0006` con audio italiano generato e ricostru
 | Commit tecnico 02/06/2026 | 223 WEM patchati e verificati SHA |
 
 La `0.5` non aggiunge nuovi path al payload rispetto alla `0.4`: aggiorna 700 audio gia presenti. Di questi, 223 sono stati committati nel gioco il 02/06/2026; gli altri 477 includono modifiche integrate nel lavoro precedente, compresi volantini, avvisi/testi letti e fix tecnici gia presenti nello stato live usato per creare il pacchetto.
+
+## Stato voci 0.5
+
+La `0.5` distingue tra voci stabilizzate e copertura italiana provvisoria. Alcune voci sono state riportate alla versione precedente perche risultavano piu naturali della nuova generazione.
+
+| Area / personaggio | Stato 0.5 | Nota |
+| --- | --- | --- |
+| Kliff | Stabilizzato | Base calma recuperata dalla 0.4; urli, comandi urgenti e alcune battute emotive mantenute dalla 0.5 dove funzionano meglio. |
+| Myurdin | Stabilizzato | Recuperato dalla base 0.4, considerata piu coerente nello stato attuale. |
+| Oongka | Stabilizzato | Base 0.4 con urli/comandi 0.5 dove rendono meglio. |
+| Alustin / eremita | Voce 0.5 approvata | Usata come riferimento per le scene in cui il personaggio deve sembrare piu solenne. |
+| Strega Bianca / White Crow | Voce 0.5 approvata | Mantenuta nello stato corrente. |
+| Carl e soldati generici dell'intro | Stabilizzati su base 0.4 | Evitato di sostituirli con generazioni piu deboli. |
+| Ibano / Aveeno e alcuni nomi comuni | Parzialmente sistemati | Applicati fix di coerenza voce dove esistevano sorgenti sicure; altri casi restano da trattare. |
+| Yann, Nairah, Dwayne, Marius, Sebastian, Andrew, venditori, guardie e molti NPC secondari | Copertura italiana / in revisione | L'audio e' in italiano e giocabile, ma non tutte le voci sono definitive o rifinite personaggio per personaggio. |
+
+In pratica: la mod e' giocabile e copre moltissimo testo, ma non ogni battuta ha ancora voce, emozione, volume e timing da produzione finale.
 
 ## Nuovo approccio 0.5
 
@@ -117,7 +136,13 @@ Questa e' una beta AI ampia e giocabile, non un doppiaggio professionale complet
 - sottotitoli non ancora riallineati dove il testo audio e' stato adattato;
 - personaggi secondari con voci non ancora definitive.
 
-La direzione 0.6 sara personaggio per personaggio: template voce/emozione corretti, generazione controllata, QA automatica, fix sottotitoli dove serve e test in gioco.
+La direzione futura sara personaggio per personaggio: template voce/emozione corretti, generazione controllata, QA automatica, fix sottotitoli dove serve e test in gioco.
+
+## Costi AI e ritmo del progetto
+
+Questa mod e' gratuita, ma generare e verificare migliaia di linee con AI ha un costo reale in crediti, tempo e test in gioco. Al momento il progetto ha un pubblico piccolo, quindi la 0.5 resta soprattutto una base italiana giocabile e la rifinitura premium andra avanti in modo mirato: priorita alle scene importanti, ai personaggi principali e ai feedback concreti ricevuti dagli utenti.
+
+Se la community mostra interesse, segnala bug audio o contribuisce con test e voci, diventa molto piu sensato investire altri crediti AI per migliorare progressivamente il doppiaggio.
 
 ## Feedback che posso usare per correggere
 

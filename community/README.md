@@ -8,16 +8,16 @@ Serve per mostrare in modo trasparente cosa sta cambiando nella prossima version
 
 La versione installabile attuale resta nella cartella:
 
-`CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.2_20260524`
+`CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.5_20260602`
 
-Il lavoro in corso riguarda una futura versione con una voicebank piu ordinata e con correzioni progressive giorno per giorno. Per contenere i costi AI sto usando un mix di modelli locali e servizi cloud: le parti piu importanti vengono curate meglio, ma richiedono piu tempo.
+La `0.5` e' lo stato giocabile corrente: copre moltissimo audio in italiano, recupera le versioni precedenti dove suonavano meglio e mantiene i fix piu recenti solo nei punti in cui migliorano davvero la resa.
 
-- personaggi principali con voci dedicate e piu stabili;
-- Kliff in revisione: la voce attuale non mi convince ancora al 100%, ma preferisco prima completare la copertura generale e poi rifinirla;
-- Myurdin e altri antagonisti con voci piu riconoscibili;
-- minori problemi di accento inglese o straniero;
-- meno casi di personaggi diversi che parlano con la stessa voce;
-- migliore controllo manuale delle scene piu importanti.
+Per contenere i costi AI sto usando un mix di modelli locali e servizi cloud. Le parti piu importanti vengono curate meglio, ma richiedono piu tempo e crediti. Al momento il progetto ha un pubblico piccolo, quindi la rifinitura premium andra avanti in modo mirato, soprattutto dove arrivano feedback concreti.
+
+- Kliff, Myurdin, Oongka e alcuni personaggi dell'intro sono stati stabilizzati usando le versioni che funzionano meglio nello stato attuale.
+- Alustin/eremita e Strega Bianca hanno una voce 0.5 approvata.
+- Alcuni casi di nomi comuni, come Ibano/Aveeno ed erboristi, sono stati corretti dove esistevano sorgenti voce sicure.
+- Molti NPC secondari, venditori e guardie restano una copertura italiana provvisoria: sono utili per giocare/ascoltare il gioco in italiano, ma non sono ancora doppiaggio finale personaggio per personaggio.
 
 ## Come lasciare feedback
 

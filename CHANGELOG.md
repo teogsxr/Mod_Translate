@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.5-beta cleanup - 20260604
+
+- Documentato lo stato corrente della `0.5` come build giocabile ripulita, non come la precedente passata sperimentale/sporca.
+- Aggiornata la pagina iniziale con distinzione tra:
+  - voci stabilizzate o approvate;
+  - copertura italiana provvisoria utile per giocare/ascoltare il gioco in italiano;
+  - personaggi e NPC ancora in revisione.
+- Registrato il rollback selettivo dello stato operativo:
+  - Kliff: base 0.4, con urli/comandi 0.5 dove funzionano meglio;
+  - Myurdin: base 0.4;
+  - Oongka: base 0.4 con urli/comandi 0.5;
+  - Carl e soldati intro: base 0.4;
+  - Alustin/eremita e Strega Bianca: voci 0.5 approvate.
+- Documentato il fix parziale dei nomi comuni fuori intro: 59 WEM patchati live e verificati SHA usando solo sorgenti voce sicure.
+- Chiarito che la rifinitura premium delle voci andra avanti in modo mirato, in base a feedback concreti e interesse della community, perche il costo AI del progetto e' significativo.
+
 ## 0.5-beta-20260602
 
 - Preparato pacchetto GitHub `CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.5_20260602`.

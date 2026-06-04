@@ -1,4 +1,4 @@
-# Crimson Desert Italian Voice Mod 0.5-beta-20260602 Beta
+# Crimson Desert Italian Voice Mod 0.5-beta-20260604 Beta
 
 Doppiaggio italiano AI fan-made per Crimson Desert.
 
@@ -11,7 +11,7 @@ Questa mod applica 51.461 file audio italiani al package voce `0006`. Il pacchet
 - Steam AppID: `3321460`
 - Steam buildid testato: `23374070`
 - `CrimsonDesert.exe`: `1.0.0.1492`
-- Release pacchetto: `2026-06-02`
+- Release pacchetto: `2026-06-04`
 
 Steam e la piattaforma verificata.
 
@@ -48,13 +48,13 @@ Progetto fan gratuito, non commerciale. Gli audio sono generati con AI e derivan
 
 ## Nota v0.5 beta
 
-Questa build include lo stato live aggiornato del package voce 0006 dopo il commit tecnico del 02/06/2026. Comprende il delta della v0.4, le modifiche effettuate ieri e 223 file audio aggiuntivi committati nel gioco con verifica SHA. Alcune righe restano volutamente escluse se il testo o il candidato audio non sono ancora sicuri.
+Questa build include lo stato live aggiornato del package voce `0006` al 04/06/2026. Comprende il delta della v0.4, i rollback selettivi alle voci piu stabili, i fix `0.5` mantenuti, il fix dei nomi comuni fuori intro e 223 file audio aggiuntivi committati nel gioco con verifica SHA. Alcune righe restano volutamente escluse se il testo o il candidato audio non sono ancora sicuri.
 
 
 ## Changelog rapido v0.5 beta
 
-- Payload voce estratto dal gioco live aggiornato al 02/06/2026.
+- Payload voce estratto dal gioco live aggiornato al 04/06/2026.
 - 223 file audio aggiuntivi committati nel gioco con WEM Vorbis e verifica SHA.
-- Include anche il delta tecnico gia presente nel gioco dopo le modifiche del 01/06/2026.
+- Include anche il delta tecnico gia presente nel gioco dopo le modifiche del 01/06/2026, i rollback selettivi e il fix dei nomi comuni fuori intro del 04/06/2026.
 - 35 righe hanno testo audio adattato e sono tracciate per riallineamento sottotitoli/Forge.
 - La pipeline 0.5 usa gating qualit?: pronuncia, voce, emozione, volume e finali vocalici contano piu del timing perfetto al millisecondo.

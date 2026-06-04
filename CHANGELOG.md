@@ -2,6 +2,8 @@
 
 ## 0.5-beta cleanup - 20260604
 
+- Riallineato il payload GitHub della `0.5` allo stato live del gioco del 04/06/2026: il pacchetto precedente in repository era ancora la fotografia `20260602`.
+- Aggiornato il confronto release corrente: v0.4 -> v0.5 live `20260604` = 9.149 WEM cambiati, 0 path aggiunti, 0 path rimossi.
 - Documentato lo stato corrente della `0.5` come build giocabile ripulita, non come la precedente passata sperimentale/sporca.
 - Aggiornata la pagina iniziale con distinzione tra:
   - voci stabilizzate o approvate;

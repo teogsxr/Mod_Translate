@@ -1,4 +1,4 @@
-# Crimson Desert Italian Voice Mod 0.5-beta-20260602
+# Crimson Desert Italian Voice Mod 0.5-beta-20260604
 
 Pacchetto pronto per installare le voci italiane AI fan-made di Crimson Desert.
 
@@ -8,7 +8,8 @@ Pacchetto pronto per installare le voci italiane AI fan-made di Crimson Desert.
 - Package voce modificato: `0006`
 - Payload audio: `data/wem_replacements_0006/`
 - Python portatile: incluso in `installer/python`
-- Data release: `2026-06-02`
+- Data release: `2026-06-04`
+- Nota pacchetto: la cartella mantiene il nome storico `20260602`, ma il payload audio e il manifest sono stati riallineati allo stato live del gioco del `2026-06-04`.
 
 ## Compatibilita verificata
 
@@ -69,4 +70,4 @@ Questo pacchetto e gratuito e non a scopo di lucro. Gli audio sono generati con 
 
 ## Nota v0.5 beta
 
-Questa build include lo stato live aggiornato del package voce 0006 dopo il commit tecnico del 02/06/2026. Comprende il delta della v0.4, le modifiche effettuate ieri e 223 file audio aggiuntivi committati nel gioco con verifica SHA. Alcune righe restano volutamente escluse se il testo o il candidato audio non sono ancora sicuri.
+Questa build include lo stato live aggiornato del package voce `0006` al 04/06/2026. Comprende il delta della v0.4, i rollback selettivi alle voci piu stabili, i fix `0.5` mantenuti, il fix dei nomi comuni fuori intro e 223 file audio aggiuntivi committati nel gioco con verifica SHA. Alcune righe restano volutamente escluse se il testo o il candidato audio non sono ancora sicuri.

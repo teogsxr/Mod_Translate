@@ -34,8 +34,8 @@ La priorita di questa build non e' promettere un doppiaggio professionale comple
 | Package voce modificato | `0006` |
 | Piattaforma test principale | Steam |
 | Versione Steam verificata | buildid `23374070`, `CrimsonDesert.exe` `1.0.0.1492` |
-| Pacchetto GitHub 0.5 | presente nella repository |
-| Pacchetto Nexus-safe 0.5 | preparato separatamente |
+| Pacchetto GitHub 0.5 | payload live refresh `20260604` presente nella repository |
+| Pacchetto Nexus-safe 0.5 | preparato separatamente dal gioco live `20260604` |
 | Xbox App / Microsoft Store | non garantita, in attesa di test/log |
 
 ## Delta release
@@ -46,11 +46,12 @@ La priorita di questa build non e' promettere un doppiaggio professionale comple
 | Payload v0.4 | 51.461 WEM italiani |
 | Payload v0.5 | 51.461 WEM italiani |
 | Backup originale -> v0.4 | 51.461 WEM diversi |
-| v0.4 -> v0.5 | 700 WEM cambiati |
+| v0.4 -> v0.5 live `20260604` | 9.149 WEM cambiati |
 | Backup originale -> v0.5 | 51.461 WEM diversi |
 | Commit tecnico 02/06/2026 | 223 WEM patchati e verificati SHA |
+| Fix nomi comuni 04/06/2026 | 59 WEM patchati live fuori intro |
 
-La `0.5` non aggiunge nuovi path al payload rispetto alla `0.4`: aggiorna 700 audio gia presenti. Di questi, 223 sono stati committati nel gioco il 02/06/2026; gli altri 477 includono modifiche integrate nel lavoro precedente, compresi volantini, avvisi/testi letti e fix tecnici gia presenti nello stato live usato per creare il pacchetto.
+La `0.5` non aggiunge nuovi path al payload rispetto alla `0.4`: aggiorna audio gia presenti nel package `0006`. Il pacchetto corrente e' stato riallineato allo stato live del gioco del 04/06/2026, includendo rollback selettivi, fix voce/personaggio, volantini, avvisi/testi letti e il fix dei nomi comuni fuori intro.
 
 ## Stato voci 0.5
 
@@ -120,7 +121,7 @@ La repository `main` contiene documentazione, strumenti, anteprime, template voc
 
 I pacchetti installabili vengono pubblicati come asset nelle [GitHub Releases](https://github.com/teogsxr/Mod_Translate/releases) e su Nexus Mods. Ogni release usa:
 
-- tag GitHub: `vMAJOR.MINOR-label-YYYYMMDD`, per esempio `v0.5-beta-20260602`;
+- tag GitHub: `vMAJOR.MINOR-label-YYYYMMDD`, per esempio `v0.5-beta-20260604`;
 - zip GitHub: `CrimsonDesert_ItalianVoiceMod_GITHUB_READY_vMAJOR.MINOR_YYYYMMDD.zip`;
 - zip Nexus: `CrimsonDesert_ItalianVoiceMod_NEXUS_SAFE_vMAJOR.MINOR_YYYYMMDD.zip`.
 

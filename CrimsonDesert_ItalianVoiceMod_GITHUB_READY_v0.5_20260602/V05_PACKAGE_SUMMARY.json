@@ -1,10 +1,23 @@
 {
   "target": "C:\\Users\\matte\\Documents\\Codex\\github-Mod_Translate\\CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.5_20260602",
-  "zip": "C:\\aaa-crimson-mod\\CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.5_20260602.zip",
-  "zip_size": 1601819790,
-  "zip_sha256": "c91825cde2996a2a9758a0767c1e77e0ae50c28b1b9f8b51e5db75d1beb8981e",
+  "tracked_folder_name_note": "Folder name is historical v0.5_20260602; payload is refreshed live 20260604.",
+  "zip": "C:\\aaa-crimson-mod\\CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.5_20260604.zip",
+  "zip_size": "computed_in_external_zip_summary",
+  "zip_sha256": "computed_in_external_zip_summary_not_embedded_to_avoid_circular_hash",
+  "root_folder_inside_zip": "CrimsonDesert_ItalianVoiceMod_GITHUB_READY_v0.5_20260604",
+  "manifest_version": "0.5-beta-20260604",
+  "manifest_created_at": "2026-06-04T08:10:21+00:00",
   "wem_count": 51461,
+  "folder_file_count": 51903,
+  "folder_size": 1570558026,
+  "delta_vs_v04_changed_wem_count": 9149,
+  "delta_vs_v04_added_wem_count": 0,
+  "delta_vs_v04_removed_wem_count": 0,
+  "v05_common_display_name_safe_patch_count": 59,
   "patch_count": 223,
   "subtitle_updates_required": 35,
-  "missing_patch_paths_from_v04_manifest": 0
+  "missing_patch_paths_from_v04_manifest": 0,
+  "contains_bundled_python": true,
+  "payload_source": "C:\\aaa-crimson-mod\\CrimsonDesert_ItalianVoiceMod_NEXUS_SAFE_v0.5_20260604\\data",
+  "refreshed_for_github_at": "2026-06-04T10:25:00+02:00"
 }
